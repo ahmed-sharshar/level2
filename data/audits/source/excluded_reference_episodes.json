@@ -1,0 +1,44 @@
+[
+  {
+    "assembly_id": "PX4nDJXEHrG:reviewed_portal:253,256",
+    "scan_id": "PX4nDJXEHrG",
+    "boundary_object_id": 253,
+    "pre_crossing_pixels": [
+      56,
+      305,
+      45,
+      0,
+      0,
+      0
+    ],
+    "reason": "Fewer than two pre-crossing sightings at 100 pixels; no route reselection attempted."
+  },
+  {
+    "assembly_id": "b8cTxDM8gDG:portal:113",
+    "scan_id": "b8cTxDM8gDG",
+    "boundary_object_id": 113,
+    "pre_crossing_pixels": [
+      45,
+      99,
+      0,
+      0,
+      0,
+      0
+    ],
+    "reason": "Fewer than two pre-crossing sightings at 100 pixels; no route reselection attempted."
+  },
+  {
+    "assembly_id": "vyrNrziPKCB:portal:1075",
+    "scan_id": "vyrNrziPKCB",
+    "boundary_object_id": 1075,
+    "pre_crossing_pixels": [
+      198,
+      78,
+      0,
+      0,
+      0,
+      0
+    ],
+    "reason": "Fewer than two pre-crossing sightings at 100 pixels; no route reselection attempted."
+  }
+]

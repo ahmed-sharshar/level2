@@ -1,0 +1,4753 @@
+{
+  "scan_id": "HxpKQynjfin",
+  "model_visible": false,
+  "resolution": [
+    160,
+    128
+  ],
+  "arrays": {
+    "instance_ids": "Native semseg group.id / .house O ID; -1 is unassigned or no mesh hit.",
+    "depths": "Fresh raycast axial depth in metres; NaN for no hit; annotation only.",
+    "camera_to_world": "Freshly read native undistorted .conf camera transforms.",
+    "intrinsics": "[fx,fy,cx,cy,native_RGB_width,native_RGB_height]; bottom-origin native y.",
+    "image_names": "Original RGB image names in array-index order."
+  },
+  "mapping": "Mesh face -> fsegs segment -> semseg group.id -> .house O category_id -> .house C mpcat40; O region_id -> R region.",
+  "context_caveat": "Region context mapping is assistant-screened and is not pixel-level human GT.",
+  "native_instance_caveat": "A native door-labeled instance can include frame, wall or other geometry; pixel counts do not certify isolated door-leaf visibility.",
+  "objects": {
+    "0": {
+      "object_id": 0,
+      "region_id": 0,
+      "native_category_id": 39,
+      "obb_center_m": [
+        1.87888,
+        -0.87124,
+        1.00557
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.2021,
+        1.0273,
+        0.885213
+      ],
+      "raw_category": "unknown",
+      "native_label_index": 40,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "1": {
+      "object_id": 1,
+      "region_id": 0,
+      "native_category_id": 2,
+      "obb_center_m": [
+        1.66915,
+        -0.660359,
+        2.11391
+      ],
+      "obb_axis0": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        -0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.66705,
+        0.607076,
+        0.0843422
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "2": {
+      "object_id": 2,
+      "region_id": 0,
+      "native_category_id": 797,
+      "obb_center_m": [
+        1.9489,
+        0.0977233,
+        1.14375
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.0172,
+        0.326095,
+        0.0936493
+      ],
+      "raw_category": "door/other room",
+      "native_label_index": 798,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "3": {
+      "object_id": 3,
+      "region_id": 0,
+      "native_category_id": 89,
+      "obb_center_m": [
+        1.97002,
+        -1.77099,
+        1.10173
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.0857,
+        0.339112,
+        0.324966
+      ],
+      "raw_category": "wardrobe",
+      "native_label_index": 90,
+      "mpcat40_id": 36,
+      "mpcat40_name": "furniture",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "4": {
+      "object_id": 4,
+      "region_id": 0,
+      "native_category_id": 1,
+      "obb_center_m": [
+        2.20222,
+        -0.47666,
+        1.08508
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.07026,
+        0.417996,
+        0.145858
+      ],
+      "raw_category": "door",
+      "native_label_index": 2,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "5": {
+      "object_id": 5,
+      "region_id": 0,
+      "native_category_id": 89,
+      "obb_center_m": [
+        1.59719,
+        -1.12653,
+        1.0985
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.08705,
+        0.472749,
+        0.245038
+      ],
+      "raw_category": "wardrobe",
+      "native_label_index": 90,
+      "mpcat40_id": 36,
+      "mpcat40_name": "furniture",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "6": {
+      "object_id": 6,
+      "region_id": 0,
+      "native_category_id": 7,
+      "obb_center_m": [
+        2.68607,
+        -1.00249,
+        1.10306
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.08786,
+        0.506429,
+        0.126724
+      ],
+      "raw_category": "doorframe",
+      "native_label_index": 8,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "7": {
+      "object_id": 7,
+      "region_id": 0,
+      "native_category_id": 1251,
+      "obb_center_m": [
+        1.68265,
+        -0.279987,
+        0.986289
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.729001,
+        0.365554,
+        0.270412
+      ],
+      "raw_category": "robes",
+      "native_label_index": 1252,
+      "mpcat40_id": 38,
+      "mpcat40_name": "clothes",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "8": {
+      "object_id": 8,
+      "region_id": 0,
+      "native_category_id": 0,
+      "obb_center_m": [
+        1.29951,
+        -0.459754,
+        1.09844
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.382683,
+        0.92388,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.07534,
+        0.626267,
+        0.354902
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "9": {
+      "object_id": 9,
+      "region_id": 0,
+      "native_category_id": 2,
+      "obb_center_m": [
+        2.47569,
+        -1.14696,
+        2.11858
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.08111,
+        0.585722,
+        0.11364
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "10": {
+      "object_id": 10,
+      "region_id": 0,
+      "native_category_id": 89,
+      "obb_center_m": [
+        1.44417,
+        -0.327111,
+        1.1915
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        -0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.90684,
+        0.404499,
+        0.187013
+      ],
+      "raw_category": "wardrobe",
+      "native_label_index": 90,
+      "mpcat40_id": 36,
+      "mpcat40_name": "furniture",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "11": {
+      "object_id": 11,
+      "region_id": 0,
+      "native_category_id": 8,
+      "obb_center_m": [
+        1.96287,
+        -1.82722,
+        1.89497
+      ],
+      "obb_axis0": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.311279,
+        0.28869,
+        0.279619
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "12": {
+      "object_id": 12,
+      "region_id": 0,
+      "native_category_id": 10,
+      "obb_center_m": [
+        2.06773,
+        -1.90013,
+        1.82646
+      ],
+      "obb_axis0": [
+        0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.293401,
+        0.284017,
+        0.223322
+      ],
+      "raw_category": "object",
+      "native_label_index": 11,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "13": {
+      "object_id": 13,
+      "region_id": 0,
+      "native_category_id": 171,
+      "obb_center_m": [
+        2.34316,
+        -0.539432,
+        1.16161
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.02445,
+        0.354379,
+        0.0568739
+      ],
+      "raw_category": "wall/other room",
+      "native_label_index": 172,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "14": {
+      "object_id": 14,
+      "region_id": 0,
+      "native_category_id": 7,
+      "obb_center_m": [
+        2.11378,
+        -1.01563,
+        1.06109
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        -0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.04552,
+        0.387679,
+        0.11335
+      ],
+      "raw_category": "doorframe",
+      "native_label_index": 8,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "15": {
+      "object_id": 15,
+      "region_id": 0,
+      "native_category_id": 290,
+      "obb_center_m": [
+        1.4837,
+        -0.406296,
+        2.00689
+      ],
+      "obb_axis0": [
+        -0.707107,
+        -0.707107,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.253105,
+        0.157287,
+        0.12324
+      ],
+      "raw_category": "boxes",
+      "native_label_index": 291,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "16": {
+      "object_id": 16,
+      "region_id": 3,
+      "native_category_id": 354,
+      "obb_center_m": [
+        2.36903,
+        -0.40464,
+        -0.0198878
+      ],
+      "obb_axis0": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.01152,
+        0.340508,
+        0.189378
+      ],
+      "raw_category": "floor/other room",
+      "native_label_index": 355,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "17": {
+      "object_id": 17,
+      "region_id": 3,
+      "native_category_id": 0,
+      "obb_center_m": [
+        3.02551,
+        -1.20123,
+        1.16086
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.02199,
+        0.0472617,
+        0.0436737
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "18": {
+      "object_id": 18,
+      "region_id": 0,
+      "native_category_id": 3,
+      "obb_center_m": [
+        1.83798,
+        -1.12493,
+        0.0261971
+      ],
+      "obb_axis0": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.00839,
+        0.670763,
+        0.0598045
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 0,
+        "native_region_code": "c",
+        "context_class": "indoor"
+      }
+    },
+    "19": {
+      "object_id": 19,
+      "region_id": 1,
+      "native_category_id": 2,
+      "obb_center_m": [
+        0.0978464,
+        0.0161502,
+        2.17843
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.895957,
+        0.723648,
+        0.0435643
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "20": {
+      "object_id": 20,
+      "region_id": 1,
+      "native_category_id": 0,
+      "obb_center_m": [
+        0.148638,
+        0.0311128,
+        1.08902
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.09486,
+        1.01177,
+        0.739045
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "21": {
+      "object_id": 21,
+      "region_id": 1,
+      "native_category_id": 1,
+      "obb_center_m": [
+        -0.358631,
+        0.649762,
+        1.05791
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.0485,
+        0.470923,
+        0.123935
+      ],
+      "raw_category": "door",
+      "native_label_index": 2,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "22": {
+      "object_id": 22,
+      "region_id": 1,
+      "native_category_id": 94,
+      "obb_center_m": [
+        -0.593829,
+        -0.45669,
+        0.363971
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.363236,
+        0.232135,
+        0.197723
+      ],
+      "raw_category": "stand",
+      "native_label_index": 95,
+      "mpcat40_id": 5,
+      "mpcat40_name": "table",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "23": {
+      "object_id": 23,
+      "region_id": 1,
+      "native_category_id": 15,
+      "obb_center_m": [
+        -0.629009,
+        -0.465537,
+        0.924657
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.309052,
+        0.158821,
+        0.140737
+      ],
+      "raw_category": "plant",
+      "native_label_index": 16,
+      "mpcat40_id": 14,
+      "mpcat40_name": "plant",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "24": {
+      "object_id": 24,
+      "region_id": 1,
+      "native_category_id": 3,
+      "obb_center_m": [
+        0.126781,
+        0.0258728,
+        0.0493581
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.941449,
+        0.732401,
+        0.0856216
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "25": {
+      "object_id": 25,
+      "region_id": 1,
+      "native_category_id": 7,
+      "obb_center_m": [
+        0.868116,
+        0.0404026,
+        1.15054
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.01872,
+        0.328964,
+        0.0712035
+      ],
+      "raw_category": "doorframe",
+      "native_label_index": 8,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "26": {
+      "object_id": 26,
+      "region_id": 1,
+      "native_category_id": 39,
+      "obb_center_m": [
+        -0.674903,
+        -0.500365,
+        0.637196
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.92388,
+        0.382683,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.629111,
+        0.178148,
+        0.163277
+      ],
+      "raw_category": "unknown",
+      "native_label_index": 40,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "27": {
+      "object_id": 27,
+      "region_id": 2,
+      "native_category_id": 15,
+      "obb_center_m": [
+        4.21639,
+        -1.10144,
+        1.27048
+      ],
+      "obb_axis0": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.474456,
+        0.474081,
+        0.25731
+      ],
+      "raw_category": "plant",
+      "native_label_index": 16,
+      "mpcat40_id": 14,
+      "mpcat40_name": "plant",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "28": {
+      "object_id": 28,
+      "region_id": 2,
+      "native_category_id": 39,
+      "obb_center_m": [
+        3.05608,
+        -2.86387,
+        1.19644
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        2.08178,
+        1.58785,
+        1.19269
+      ],
+      "raw_category": "unknown",
+      "native_label_index": 40,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "29": {
+      "object_id": 29,
+      "region_id": 2,
+      "native_category_id": 2,
+      "obb_center_m": [
+        3.24583,
+        -3.24538,
+        2.27284
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.82168,
+        0.801112,
+        0.119498
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "30": {
+      "object_id": 30,
+      "region_id": 2,
+      "native_category_id": 76,
+      "obb_center_m": [
+        4.36918,
+        -1.77173,
+        0.400685
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.616588,
+        0.380249,
+        0.245595
+      ],
+      "raw_category": "dresser",
+      "native_label_index": 77,
+      "mpcat40_id": 13,
+      "mpcat40_name": "chest of drawers",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "31": {
+      "object_id": 31,
+      "region_id": 2,
+      "native_category_id": 3,
+      "obb_center_m": [
+        2.89714,
+        -2.9181,
+        0.0726413
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        2.02984,
+        1.34176,
+        0.0692027
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "32": {
+      "object_id": 32,
+      "region_id": 2,
+      "native_category_id": 0,
+      "obb_center_m": [
+        3.21896,
+        -2.75596,
+        1.10202
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.90225,
+        1.43722,
+        1.08604
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "33": {
+      "object_id": 33,
+      "region_id": 2,
+      "native_category_id": 13,
+      "obb_center_m": [
+        4.33434,
+        -4.71458,
+        1.09417
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.92388,
+        0.382683,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.08257,
+        0.343984,
+        0.150649
+      ],
+      "raw_category": "curtain",
+      "native_label_index": 14,
+      "mpcat40_id": 12,
+      "mpcat40_name": "curtain",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "34": {
+      "object_id": 34,
+      "region_id": 2,
+      "native_category_id": 4,
+      "obb_center_m": [
+        4.61431,
+        -3.2708,
+        1.64688
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.563639,
+        0.423634,
+        0.0349131
+      ],
+      "raw_category": "picture",
+      "native_label_index": 5,
+      "mpcat40_id": 6,
+      "mpcat40_name": "picture",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "35": {
+      "object_id": 35,
+      "region_id": 2,
+      "native_category_id": 5,
+      "obb_center_m": [
+        4.05516,
+        -1.1641,
+        1.45313
+      ],
+      "obb_axis0": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.76265,
+        0.666108,
+        0.453605
+      ],
+      "raw_category": "window",
+      "native_label_index": 6,
+      "mpcat40_id": 9,
+      "mpcat40_name": "window",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "36": {
+      "object_id": 36,
+      "region_id": 2,
+      "native_category_id": 2,
+      "obb_center_m": [
+        3.14872,
+        -2.72671,
+        2.11542
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.84852,
+        1.45581,
+        0.0762928
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "37": {
+      "object_id": 37,
+      "region_id": 2,
+      "native_category_id": 13,
+      "obb_center_m": [
+        1.81336,
+        -2.58052,
+        1.09238
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.08172,
+        0.229236,
+        0.173335
+      ],
+      "raw_category": "curtain",
+      "native_label_index": 14,
+      "mpcat40_id": 12,
+      "mpcat40_name": "curtain",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "38": {
+      "object_id": 38,
+      "region_id": 2,
+      "native_category_id": 26,
+      "obb_center_m": [
+        4.39628,
+        -4.40981,
+        0.347382
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.339748,
+        0.224552,
+        0.222931
+      ],
+      "raw_category": "nightstand",
+      "native_label_index": 27,
+      "mpcat40_id": 13,
+      "mpcat40_name": "chest of drawers",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "39": {
+      "object_id": 39,
+      "region_id": 2,
+      "native_category_id": 25,
+      "obb_center_m": [
+        3.56773,
+        -3.29134,
+        0.467722
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.0762,
+        1.03619,
+        0.460437
+      ],
+      "raw_category": "bed",
+      "native_label_index": 26,
+      "mpcat40_id": 11,
+      "mpcat40_name": "bed",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "40": {
+      "object_id": 40,
+      "region_id": 2,
+      "native_category_id": 0,
+      "obb_center_m": [
+        1.99491,
+        -4.64239,
+        1.10954
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.990839,
+        0.213176,
+        0.0542026
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "41": {
+      "object_id": 41,
+      "region_id": 2,
+      "native_category_id": 133,
+      "obb_center_m": [
+        3.79722,
+        -1.2036,
+        0.435927
+      ],
+      "obb_axis0": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.461005,
+        0.432178,
+        0.31117
+      ],
+      "raw_category": "desk chair",
+      "native_label_index": 134,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "42": {
+      "object_id": 42,
+      "region_id": 2,
+      "native_category_id": 13,
+      "obb_center_m": [
+        1.72364,
+        -4.41125,
+        1.09002
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.08263,
+        0.265617,
+        0.204084
+      ],
+      "raw_category": "curtain",
+      "native_label_index": 14,
+      "mpcat40_id": 12,
+      "mpcat40_name": "curtain",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "43": {
+      "object_id": 43,
+      "region_id": 2,
+      "native_category_id": 13,
+      "obb_center_m": [
+        2.40057,
+        -4.69434,
+        1.10256
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.08625,
+        0.255658,
+        0.154011
+      ],
+      "raw_category": "curtain",
+      "native_label_index": 14,
+      "mpcat40_id": 12,
+      "mpcat40_name": "curtain",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "44": {
+      "object_id": 44,
+      "region_id": 2,
+      "native_category_id": 200,
+      "obb_center_m": [
+        3.19871,
+        -1.33985,
+        1.13454
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.177421,
+        0.106449,
+        0.0591103
+      ],
+      "raw_category": "phone",
+      "native_label_index": 201,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "45": {
+      "object_id": 45,
+      "region_id": 2,
+      "native_category_id": 19,
+      "obb_center_m": [
+        4.51165,
+        -1.62755,
+        0.837579
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.170856,
+        0.124947,
+        0.104234
+      ],
+      "raw_category": "mirror",
+      "native_label_index": 20,
+      "mpcat40_id": 21,
+      "mpcat40_name": "mirror",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "46": {
+      "object_id": 46,
+      "region_id": 2,
+      "native_category_id": 41,
+      "obb_center_m": [
+        3.90187,
+        -1.12856,
+        0.850393
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.709618,
+        0.257172,
+        0.194891
+      ],
+      "raw_category": "desk",
+      "native_label_index": 42,
+      "mpcat40_id": 5,
+      "mpcat40_name": "table",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "47": {
+      "object_id": 47,
+      "region_id": 2,
+      "native_category_id": 175,
+      "obb_center_m": [
+        4.49421,
+        -1.84341,
+        0.718139
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.163427,
+        0.122214,
+        0.0530972
+      ],
+      "raw_category": "telephone",
+      "native_label_index": 176,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "48": {
+      "object_id": 48,
+      "region_id": 2,
+      "native_category_id": 0,
+      "obb_center_m": [
+        2.95359,
+        -1.37456,
+        1.12002
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.06782,
+        0.129143,
+        0.0523133
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "49": {
+      "object_id": 49,
+      "region_id": 3,
+      "native_category_id": 54,
+      "obb_center_m": [
+        4.09072,
+        0.196017,
+        0.484411
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.917547,
+        0.515993,
+        0.343182
+      ],
+      "raw_category": "bathtub",
+      "native_label_index": 55,
+      "mpcat40_id": 25,
+      "mpcat40_name": "bathtub",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "50": {
+      "object_id": 50,
+      "region_id": 3,
+      "native_category_id": 2,
+      "obb_center_m": [
+        3.36052,
+        -0.0565154,
+        2.05727
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.25213,
+        1.17829,
+        0.182802
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "51": {
+      "object_id": 51,
+      "region_id": 3,
+      "native_category_id": 85,
+      "obb_center_m": [
+        2.55699,
+        0.110216,
+        1.18847
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.05161,
+        0.680962,
+        0.255556
+      ],
+      "raw_category": "frame",
+      "native_label_index": 86,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "52": {
+      "object_id": 52,
+      "region_id": 3,
+      "native_category_id": 39,
+      "obb_center_m": [
+        3.34868,
+        -0.115537,
+        1.09729
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.25804,
+        1.23874,
+        1.09112
+      ],
+      "raw_category": "unknown",
+      "native_label_index": 40,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "53": {
+      "object_id": 53,
+      "region_id": 3,
+      "native_category_id": 0,
+      "obb_center_m": [
+        4.11498,
+        1.09244,
+        1.41717
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.753038,
+        0.485572,
+        0.0307685
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "54": {
+      "object_id": 54,
+      "region_id": 3,
+      "native_category_id": 45,
+      "obb_center_m": [
+        3.16463,
+        0.979021,
+        1.15887
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.01065,
+        0.474095,
+        0.146269
+      ],
+      "raw_category": "shower wall",
+      "native_label_index": 46,
+      "mpcat40_id": 23,
+      "mpcat40_name": "shower",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "55": {
+      "object_id": 55,
+      "region_id": 3,
+      "native_category_id": 1,
+      "obb_center_m": [
+        3.22133,
+        -0.959661,
+        1.15922
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.01915,
+        0.37809,
+        0.0939139
+      ],
+      "raw_category": "door",
+      "native_label_index": 2,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "56": {
+      "object_id": 56,
+      "region_id": 3,
+      "native_category_id": 3,
+      "obb_center_m": [
+        2.90017,
+        -0.0520941,
+        0.16772
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.15023,
+        0.789566,
+        0.161556
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "57": {
+      "object_id": 57,
+      "region_id": 2,
+      "native_category_id": 0,
+      "obb_center_m": [
+        4.03134,
+        -0.731061,
+        1.16177
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.01474,
+        0.580048,
+        0.0564191
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "58": {
+      "object_id": 58,
+      "region_id": 3,
+      "native_category_id": 0,
+      "obb_center_m": [
+        4.54415,
+        0.195061,
+        1.42593
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.921551,
+        0.739265,
+        0.0748529
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "59": {
+      "object_id": 59,
+      "region_id": 3,
+      "native_category_id": -1,
+      "obb_center_m": [
+        3.24552,
+        0.306023,
+        1.39012
+      ],
+      "obb_axis0": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        1.15188,
+        0.644078,
+        0.404122
+      ],
+      "raw_category": "unlabeled",
+      "mpcat40_id": -1,
+      "mpcat40_name": "unknown",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "60": {
+      "object_id": 60,
+      "region_id": 2,
+      "native_category_id": 20,
+      "obb_center_m": [
+        4.26208,
+        -0.623336,
+        1.67893
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.350911,
+        0.247024,
+        0.0932532
+      ],
+      "raw_category": "towel",
+      "native_label_index": 21,
+      "mpcat40_id": 20,
+      "mpcat40_name": "towel",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "61": {
+      "object_id": 61,
+      "region_id": 2,
+      "native_category_id": 20,
+      "obb_center_m": [
+        4.15094,
+        -0.640626,
+        1.20183
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.291946,
+        0.246736,
+        0.0813677
+      ],
+      "raw_category": "towel",
+      "native_label_index": 21,
+      "mpcat40_id": 20,
+      "mpcat40_name": "towel",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "62": {
+      "object_id": 62,
+      "region_id": 3,
+      "native_category_id": 8,
+      "obb_center_m": [
+        3.43393,
+        0.179726,
+        2.08006
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        2.22045e-16,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.224494,
+        0.0596229,
+        0.0533922
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "63": {
+      "object_id": 63,
+      "region_id": 3,
+      "native_category_id": 20,
+      "obb_center_m": [
+        3.08861,
+        0.388978,
+        1.91484
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.172364,
+        0.140756,
+        0.0674619
+      ],
+      "raw_category": "towel",
+      "native_label_index": 21,
+      "mpcat40_id": 20,
+      "mpcat40_name": "towel",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "64": {
+      "object_id": 64,
+      "region_id": 3,
+      "native_category_id": 8,
+      "obb_center_m": [
+        3.47411,
+        -0.381091,
+        1.17685
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.328696,
+        0.233055,
+        0.217634
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "65": {
+      "object_id": 65,
+      "region_id": 3,
+      "native_category_id": 8,
+      "obb_center_m": [
+        3.45294,
+        0.285304,
+        0.512677
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.322143,
+        0.163506,
+        0.0316929
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "66": {
+      "object_id": 66,
+      "region_id": 3,
+      "native_category_id": 8,
+      "obb_center_m": [
+        4.29348,
+        0.769255,
+        0.772457
+      ],
+      "obb_axis0": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.207037,
+        0.198692,
+        0.119148
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "67": {
+      "object_id": 67,
+      "region_id": 2,
+      "native_category_id": 20,
+      "obb_center_m": [
+        4.41224,
+        -0.630677,
+        1.26202
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.201262,
+        0.194781,
+        0.0504717
+      ],
+      "raw_category": "towel",
+      "native_label_index": 21,
+      "mpcat40_id": 20,
+      "mpcat40_name": "towel",
+      "region": {
+        "region_id": 2,
+        "native_region_code": "b",
+        "context_class": "indoor"
+      }
+    },
+    "68": {
+      "object_id": 68,
+      "region_id": 3,
+      "native_category_id": 8,
+      "obb_center_m": [
+        3.91446,
+        -0.288905,
+        0.798738
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.184159,
+        0.0792184,
+        0.0652646
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "69": {
+      "object_id": 69,
+      "region_id": 3,
+      "native_category_id": 8,
+      "obb_center_m": [
+        3.21299,
+        1.07159,
+        0.82197
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.616801,
+        0.226693,
+        0.0537044
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "70": {
+      "object_id": 70,
+      "region_id": 3,
+      "native_category_id": 8,
+      "obb_center_m": [
+        3.80234,
+        1.08252,
+        0.876148
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.0491037,
+        0.0330397,
+        0.0143258
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 3,
+        "native_region_code": "a",
+        "context_class": "indoor"
+      }
+    },
+    "71": {
+      "object_id": 71,
+      "region_id": 4,
+      "native_category_id": 20,
+      "obb_center_m": [
+        0.464323,
+        0.623158,
+        1.72981
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.240846,
+        0.160156,
+        0.0794767
+      ],
+      "raw_category": "towel",
+      "native_label_index": 21,
+      "mpcat40_id": 20,
+      "mpcat40_name": "towel",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "72": {
+      "object_id": 72,
+      "region_id": 4,
+      "native_category_id": 0,
+      "obb_center_m": [
+        1.44146,
+        0.699271,
+        1.18673
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        1.22455,
+        1.05038,
+        0.915495
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "73": {
+      "object_id": 73,
+      "region_id": 4,
+      "native_category_id": 8,
+      "obb_center_m": [
+        1.46149,
+        0.408891,
+        1.19335
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.948837,
+        0.926713,
+        0.43216
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "74": {
+      "object_id": 74,
+      "region_id": 4,
+      "native_category_id": 2,
+      "obb_center_m": [
+        1.44373,
+        0.476667,
+        2.16981
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        2.22045e-16,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.22065,
+        0.658321,
+        0.167862
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "75": {
+      "object_id": 75,
+      "region_id": 4,
+      "native_category_id": 2,
+      "obb_center_m": [
+        0.993115,
+        1.31197,
+        2.07692
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.766868,
+        0.371438,
+        0.106855
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "76": {
+      "object_id": 76,
+      "region_id": 4,
+      "native_category_id": 70,
+      "obb_center_m": [
+        1.01443,
+        1.23794,
+        0.919428
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        2.22045e-16,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.592487,
+        0.289464,
+        0.223744
+      ],
+      "raw_category": "washbasin",
+      "native_label_index": 71,
+      "mpcat40_id": 15,
+      "mpcat40_name": "sink",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "77": {
+      "object_id": 77,
+      "region_id": 4,
+      "native_category_id": 1,
+      "obb_center_m": [
+        1.84353,
+        0.285944,
+        1.11933
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.981621,
+        0.326407,
+        0.272298
+      ],
+      "raw_category": "door",
+      "native_label_index": 2,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "78": {
+      "object_id": 78,
+      "region_id": 4,
+      "native_category_id": 39,
+      "obb_center_m": [
+        1.38317,
+        0.692263,
+        0.854677
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.983458,
+        0.928257,
+        0.720712
+      ],
+      "raw_category": "unknown",
+      "native_label_index": 40,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "79": {
+      "object_id": 79,
+      "region_id": 4,
+      "native_category_id": 27,
+      "obb_center_m": [
+        2.19205,
+        0.840284,
+        0.412461
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.286348,
+        0.276143,
+        0.266274
+      ],
+      "raw_category": "toilet",
+      "native_label_index": 28,
+      "mpcat40_id": 18,
+      "mpcat40_name": "toilet",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "80": {
+      "object_id": 80,
+      "region_id": 4,
+      "native_category_id": 20,
+      "obb_center_m": [
+        0.499609,
+        0.584548,
+        1.46495
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.281562,
+        0.120039,
+        0.0614817
+      ],
+      "raw_category": "towel",
+      "native_label_index": 21,
+      "mpcat40_id": 20,
+      "mpcat40_name": "towel",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "81": {
+      "object_id": 81,
+      "region_id": 4,
+      "native_category_id": 1,
+      "obb_center_m": [
+        1.30538,
+        0.0528908,
+        1.15298
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.01379,
+        0.381421,
+        0.102291
+      ],
+      "raw_category": "door",
+      "native_label_index": 2,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "82": {
+      "object_id": 82,
+      "region_id": 4,
+      "native_category_id": 3,
+      "obb_center_m": [
+        1.4428,
+        0.656246,
+        0.259297
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.22045,
+        0.793154,
+        0.126398
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "83": {
+      "object_id": 83,
+      "region_id": 4,
+      "native_category_id": 19,
+      "obb_center_m": [
+        0.952028,
+        1.53534,
+        1.56649
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.674704,
+        0.503151,
+        0.0963221
+      ],
+      "raw_category": "mirror",
+      "native_label_index": 20,
+      "mpcat40_id": 21,
+      "mpcat40_name": "mirror",
+      "region": {
+        "region_id": 4,
+        "native_region_code": "t",
+        "context_class": "indoor"
+      }
+    },
+    "84": {
+      "object_id": 84,
+      "region_id": 5,
+      "native_category_id": 3,
+      "obb_center_m": [
+        1.86883,
+        -6.6333,
+        0.176953
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        2.87361,
+        1.47588,
+        0.227856
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "85": {
+      "object_id": 85,
+      "region_id": 5,
+      "native_category_id": 2,
+      "obb_center_m": [
+        1.93546,
+        -6.00914,
+        2.54211
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        2.22045e-16,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        2.76692,
+        0.825551,
+        0.221035
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "86": {
+      "object_id": 86,
+      "region_id": 5,
+      "native_category_id": 39,
+      "obb_center_m": [
+        1.91168,
+        -6.51559,
+        1.36394
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        2.22045e-16,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        3.00509,
+        1.61164,
+        1.41105
+      ],
+      "raw_category": "unknown",
+      "native_label_index": 40,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "87": {
+      "object_id": 87,
+      "region_id": 5,
+      "native_category_id": 6,
+      "obb_center_m": [
+        0.58224,
+        -6.61483,
+        0.43125
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.810001,
+        0.504975,
+        0.448907
+      ],
+      "raw_category": "chair",
+      "native_label_index": 7,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "88": {
+      "object_id": 88,
+      "region_id": 5,
+      "native_category_id": 1,
+      "obb_center_m": [
+        3.36304,
+        -5.19423,
+        1.1165
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.05268,
+        0.869486,
+        0.15567
+      ],
+      "raw_category": "door",
+      "native_label_index": 2,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "89": {
+      "object_id": 89,
+      "region_id": 5,
+      "native_category_id": 49,
+      "obb_center_m": [
+        1.90465,
+        -6.65491,
+        1.03176
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        2.919,
+        1.49959,
+        1.07111
+      ],
+      "raw_category": "wall frame",
+      "native_label_index": 50,
+      "mpcat40_id": 6,
+      "mpcat40_name": "picture",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "90": {
+      "object_id": 90,
+      "region_id": 5,
+      "native_category_id": 33,
+      "obb_center_m": [
+        3.19406,
+        -7.04299,
+        0.405675
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        2.22045e-16,
+        1.0,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.438005,
+        0.403541,
+        0.309859
+      ],
+      "raw_category": "armchair",
+      "native_label_index": 34,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "91": {
+      "object_id": 91,
+      "region_id": 5,
+      "native_category_id": 0,
+      "obb_center_m": [
+        1.9181,
+        -5.99876,
+        1.81035
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        2.99866,
+        0.942501,
+        0.841138
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "92": {
+      "object_id": 92,
+      "region_id": 5,
+      "native_category_id": 0,
+      "obb_center_m": [
+        4.66094,
+        -6.63401,
+        1.20788
+      ],
+      "obb_axis0": [
+        2.22045e-16,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        1.3122,
+        1.07654,
+        0.0430315
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "93": {
+      "object_id": 93,
+      "region_id": 5,
+      "native_category_id": 33,
+      "obb_center_m": [
+        2.63526,
+        -6.53343,
+        0.429052
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.438448,
+        0.375134,
+        0.320664
+      ],
+      "raw_category": "armchair",
+      "native_label_index": 34,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "94": {
+      "object_id": 94,
+      "region_id": 5,
+      "native_category_id": 33,
+      "obb_center_m": [
+        3.24231,
+        -5.96724,
+        0.458836
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.465759,
+        0.360571,
+        0.330747
+      ],
+      "raw_category": "armchair",
+      "native_label_index": 34,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "95": {
+      "object_id": 95,
+      "region_id": 5,
+      "native_category_id": 7,
+      "obb_center_m": [
+        3.332,
+        -5.12447,
+        1.16536
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.16907,
+        1.10635,
+        0.227171
+      ],
+      "raw_category": "doorframe",
+      "native_label_index": 8,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "96": {
+      "object_id": 96,
+      "region_id": 5,
+      "native_category_id": 33,
+      "obb_center_m": [
+        3.67454,
+        -6.53682,
+        0.424468
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.438588,
+        0.402723,
+        0.304267
+      ],
+      "raw_category": "armchair",
+      "native_label_index": 34,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "97": {
+      "object_id": 97,
+      "region_id": 5,
+      "native_category_id": 6,
+      "obb_center_m": [
+        -0.430073,
+        -6.53113,
+        0.460305
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.766243,
+        0.471718,
+        0.345338
+      ],
+      "raw_category": "chair",
+      "native_label_index": 7,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 5,
+        "native_region_code": "p",
+        "context_class": "outdoor"
+      }
+    },
+    "98": {
+      "object_id": 98,
+      "region_id": 6,
+      "native_category_id": 7,
+      "obb_center_m": [
+        0.566119,
+        -5.15498,
+        1.15623
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.15247,
+        1.06776,
+        0.206215
+      ],
+      "raw_category": "doorframe",
+      "native_label_index": 8,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "99": {
+      "object_id": 99,
+      "region_id": 6,
+      "native_category_id": 1,
+      "obb_center_m": [
+        0.596237,
+        -5.20105,
+        1.08745
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.08212,
+        0.919191,
+        0.149372
+      ],
+      "raw_category": "door",
+      "native_label_index": 2,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "100": {
+      "object_id": 100,
+      "region_id": 6,
+      "native_category_id": 13,
+      "obb_center_m": [
+        -0.328441,
+        -4.83618,
+        1.13881
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.02917,
+        0.27005,
+        0.226072
+      ],
+      "raw_category": "curtain",
+      "native_label_index": 14,
+      "mpcat40_id": 12,
+      "mpcat40_name": "curtain",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "101": {
+      "object_id": 101,
+      "region_id": 6,
+      "native_category_id": 39,
+      "obb_center_m": [
+        0.436304,
+        -3.88367,
+        1.08671
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.40136,
+        1.24919,
+        1.10465
+      ],
+      "raw_category": "unknown",
+      "native_label_index": 40,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "102": {
+      "object_id": 102,
+      "region_id": 6,
+      "native_category_id": 2,
+      "obb_center_m": [
+        0.438993,
+        -3.80334,
+        2.05889
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.34037,
+        1.26053,
+        0.134134
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "103": {
+      "object_id": 103,
+      "region_id": 6,
+      "native_category_id": 269,
+      "obb_center_m": [
+        0.521649,
+        -5.10378,
+        1.10341
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.08291,
+        0.868699,
+        0.17796
+      ],
+      "raw_category": "doors",
+      "native_label_index": 270,
+      "mpcat40_id": 4,
+      "mpcat40_name": "door",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "104": {
+      "object_id": 104,
+      "region_id": 6,
+      "native_category_id": 23,
+      "obb_center_m": [
+        -0.359449,
+        -3.41307,
+        0.485082
+      ],
+      "obb_axis0": [
+        2.22045e-16,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.944439,
+        0.476844,
+        0.45998
+      ],
+      "raw_category": "couch",
+      "native_label_index": 24,
+      "mpcat40_id": 10,
+      "mpcat40_name": "sofa",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "105": {
+      "object_id": 105,
+      "region_id": 6,
+      "native_category_id": 0,
+      "obb_center_m": [
+        0.43468,
+        -3.83993,
+        1.10896
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.38159,
+        1.26277,
+        1.07652
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "106": {
+      "object_id": 106,
+      "region_id": 6,
+      "native_category_id": 4,
+      "obb_center_m": [
+        -0.785597,
+        -3.39154,
+        1.5706
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.562335,
+        0.47357,
+        0.0424955
+      ],
+      "raw_category": "picture",
+      "native_label_index": 5,
+      "mpcat40_id": 6,
+      "mpcat40_name": "picture",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "107": {
+      "object_id": 107,
+      "region_id": 6,
+      "native_category_id": 9,
+      "obb_center_m": [
+        -0.577642,
+        -3.69975,
+        0.707901
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        -0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.262164,
+        0.227593,
+        0.223452
+      ],
+      "raw_category": "pillow",
+      "native_label_index": 10,
+      "mpcat40_id": 8,
+      "mpcat40_name": "cushion",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "108": {
+      "object_id": 108,
+      "region_id": 6,
+      "native_category_id": 14,
+      "obb_center_m": [
+        -0.440305,
+        -4.45156,
+        0.385775
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.32622,
+        0.310563,
+        0.213474
+      ],
+      "raw_category": "table",
+      "native_label_index": 15,
+      "mpcat40_id": 5,
+      "mpcat40_name": "table",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "109": {
+      "object_id": 109,
+      "region_id": 6,
+      "native_category_id": 14,
+      "obb_center_m": [
+        0.521414,
+        -3.36236,
+        0.296866
+      ],
+      "obb_axis0": [
+        0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.437763,
+        0.361253,
+        0.28245
+      ],
+      "raw_category": "table",
+      "native_label_index": 15,
+      "mpcat40_id": 5,
+      "mpcat40_name": "table",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "110": {
+      "object_id": 110,
+      "region_id": 6,
+      "native_category_id": 13,
+      "obb_center_m": [
+        1.52632,
+        -4.45982,
+        1.09905
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.09003,
+        0.37908,
+        0.213448
+      ],
+      "raw_category": "curtain",
+      "native_label_index": 14,
+      "mpcat40_id": 12,
+      "mpcat40_name": "curtain",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "111": {
+      "object_id": 111,
+      "region_id": 6,
+      "native_category_id": 28,
+      "obb_center_m": [
+        0.411317,
+        -4.70128,
+        0.430578
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.418102,
+        0.418007,
+        0.344872
+      ],
+      "raw_category": "sofa chair",
+      "native_label_index": 29,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "112": {
+      "object_id": 112,
+      "region_id": 6,
+      "native_category_id": 9,
+      "obb_center_m": [
+        -0.547692,
+        -3.0654,
+        0.678363
+      ],
+      "obb_axis0": [
+        0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.360561,
+        0.256839,
+        0.155817
+      ],
+      "raw_category": "pillow",
+      "native_label_index": 10,
+      "mpcat40_id": 8,
+      "mpcat40_name": "cushion",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "113": {
+      "object_id": 113,
+      "region_id": 6,
+      "native_category_id": 16,
+      "obb_center_m": [
+        0.357607,
+        -3.34041,
+        0.572361
+      ],
+      "obb_axis0": [
+        -0.382683,
+        -0.92388,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.14082,
+        0.0906611,
+        0.052133
+      ],
+      "raw_category": "decoration",
+      "native_label_index": 17,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "114": {
+      "object_id": 114,
+      "region_id": 6,
+      "native_category_id": 16,
+      "obb_center_m": [
+        0.613982,
+        -3.35796,
+        0.632189
+      ],
+      "obb_axis0": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_axis1": [
+        0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.167692,
+        0.158302,
+        0.132456
+      ],
+      "raw_category": "decoration",
+      "native_label_index": 17,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "115": {
+      "object_id": 115,
+      "region_id": 6,
+      "native_category_id": 3,
+      "obb_center_m": [
+        0.734806,
+        -3.80969,
+        0.0386471
+      ],
+      "obb_axis0": [
+        2.22045e-16,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.34545,
+        0.94327,
+        0.0520794
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 6,
+        "native_region_code": "l",
+        "context_class": "indoor"
+      }
+    },
+    "116": {
+      "object_id": 116,
+      "region_id": 7,
+      "native_category_id": 39,
+      "obb_center_m": [
+        0.622562,
+        -1.57033,
+        1.10911
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        1.46114,
+        1.10435,
+        1.01768
+      ],
+      "raw_category": "unknown",
+      "native_label_index": 40,
+      "mpcat40_id": 40,
+      "mpcat40_name": "misc",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "117": {
+      "object_id": 117,
+      "region_id": 7,
+      "native_category_id": 19,
+      "obb_center_m": [
+        1.11663,
+        -1.04465,
+        1.48777
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.696724,
+        0.593524,
+        0.203991
+      ],
+      "raw_category": "mirror",
+      "native_label_index": 20,
+      "mpcat40_id": 21,
+      "mpcat40_name": "mirror",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "118": {
+      "object_id": 118,
+      "region_id": 7,
+      "native_category_id": 8,
+      "obb_center_m": [
+        1.43213,
+        -1.26304,
+        1.2092
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.645936,
+        0.216005,
+        0.126225
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "119": {
+      "object_id": 119,
+      "region_id": 7,
+      "native_category_id": 41,
+      "obb_center_m": [
+        -0.556635,
+        -1.53724,
+        0.419763
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.938472,
+        0.415273,
+        0.268474
+      ],
+      "raw_category": "desk",
+      "native_label_index": 42,
+      "mpcat40_id": 5,
+      "mpcat40_name": "table",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "120": {
+      "object_id": 120,
+      "region_id": 7,
+      "native_category_id": 2,
+      "obb_center_m": [
+        0.354809,
+        -1.56649,
+        2.10878
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.17274,
+        1.06933,
+        0.077855
+      ],
+      "raw_category": "ceiling",
+      "native_label_index": 3,
+      "mpcat40_id": 17,
+      "mpcat40_name": "ceiling",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "121": {
+      "object_id": 121,
+      "region_id": 7,
+      "native_category_id": 0,
+      "obb_center_m": [
+        -0.568016,
+        -1.56873,
+        1.33297
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        1.06842,
+        0.848366,
+        0.279727
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "122": {
+      "object_id": 122,
+      "region_id": 7,
+      "native_category_id": 229,
+      "obb_center_m": [
+        1.52638,
+        -2.081,
+        1.09668
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.0913,
+        0.503475,
+        0.380895
+      ],
+      "raw_category": "cabinets",
+      "native_label_index": 230,
+      "mpcat40_id": 7,
+      "mpcat40_name": "cabinet",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "123": {
+      "object_id": 123,
+      "region_id": 1,
+      "native_category_id": 0,
+      "obb_center_m": [
+        0.728128,
+        -0.636151,
+        1.08901
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        1.09106,
+        0.175402,
+        0.0632976
+      ],
+      "raw_category": "wall",
+      "native_label_index": 1,
+      "mpcat40_id": 1,
+      "mpcat40_name": "wall",
+      "region": {
+        "region_id": 1,
+        "native_region_code": "e",
+        "context_class": "indoor"
+      }
+    },
+    "124": {
+      "object_id": 124,
+      "region_id": 7,
+      "native_category_id": 37,
+      "obb_center_m": [
+        1.53362,
+        -2.08892,
+        1.14819
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.419415,
+        0.399123,
+        0.312863
+      ],
+      "raw_category": "tv",
+      "native_label_index": 38,
+      "mpcat40_id": 22,
+      "mpcat40_name": "tv monitor",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "125": {
+      "object_id": 125,
+      "region_id": 7,
+      "native_category_id": 10,
+      "obb_center_m": [
+        -0.697267,
+        -1.65593,
+        1.01877
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        2.22045e-16,
+        1.0,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.277801,
+        0.175948,
+        0.120964
+      ],
+      "raw_category": "object",
+      "native_label_index": 11,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "126": {
+      "object_id": 126,
+      "region_id": 7,
+      "native_category_id": 6,
+      "obb_center_m": [
+        -0.361423,
+        -1.99683,
+        0.436258
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        2.22045e-16,
+        1.0,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.434868,
+        0.328469,
+        0.246312
+      ],
+      "raw_category": "chair",
+      "native_label_index": 7,
+      "mpcat40_id": 3,
+      "mpcat40_name": "chair",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "127": {
+      "object_id": 127,
+      "region_id": 7,
+      "native_category_id": 102,
+      "obb_center_m": [
+        -0.390237,
+        -2.49935,
+        0.445466
+      ],
+      "obb_axis0": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_radii_m": [
+        0.448339,
+        0.436335,
+        0.137917
+      ],
+      "raw_category": "sofa",
+      "native_label_index": 103,
+      "mpcat40_id": 10,
+      "mpcat40_name": "sofa",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "128": {
+      "object_id": 128,
+      "region_id": 7,
+      "native_category_id": 22,
+      "obb_center_m": [
+        0.625635,
+        -1.10763,
+        0.427122
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.415686,
+        0.265026,
+        0.236312
+      ],
+      "raw_category": "shelf",
+      "native_label_index": 23,
+      "mpcat40_id": 31,
+      "mpcat40_name": "shelving",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "129": {
+      "object_id": 129,
+      "region_id": 7,
+      "native_category_id": 200,
+      "obb_center_m": [
+        -0.708635,
+        -1.43336,
+        0.7956
+      ],
+      "obb_axis0": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_axis1": [
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.147612,
+        0.112535,
+        0.0527031
+      ],
+      "raw_category": "phone",
+      "native_label_index": 201,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "130": {
+      "object_id": 130,
+      "region_id": 7,
+      "native_category_id": 8,
+      "obb_center_m": [
+        -0.584128,
+        -0.748573,
+        1.25574
+      ],
+      "obb_axis0": [
+        -0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_axis1": [
+        0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.150434,
+        0.10284,
+        0.0810876
+      ],
+      "raw_category": "remove",
+      "native_label_index": 9,
+      "mpcat40_id": 0,
+      "mpcat40_name": "void",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "131": {
+      "object_id": 131,
+      "region_id": 7,
+      "native_category_id": 65,
+      "obb_center_m": [
+        0.848461,
+        -1.32986,
+        1.0088
+      ],
+      "obb_axis0": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_axis1": [
+        0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.559153,
+        0.275078,
+        0.182314
+      ],
+      "raw_category": "counter",
+      "native_label_index": 66,
+      "mpcat40_id": 26,
+      "mpcat40_name": "counter",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "132": {
+      "object_id": 132,
+      "region_id": 7,
+      "native_category_id": 21,
+      "obb_center_m": [
+        0.980048,
+        -1.52864,
+        0.881921
+      ],
+      "obb_axis0": [
+        -0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_axis1": [
+        0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.15918,
+        0.15563,
+        0.0548428
+      ],
+      "raw_category": "sink",
+      "native_label_index": 22,
+      "mpcat40_id": 15,
+      "mpcat40_name": "sink",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "133": {
+      "object_id": 133,
+      "region_id": 7,
+      "native_category_id": 61,
+      "obb_center_m": [
+        1.16239,
+        -1.37366,
+        0.930714
+      ],
+      "obb_axis0": [
+        -0.382683,
+        0.92388,
+        0.0
+      ],
+      "obb_axis1": [
+        0.92388,
+        0.382683,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.0871184,
+        0.050319,
+        0.0308137
+      ],
+      "raw_category": "faucet",
+      "native_label_index": 62,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "134": {
+      "object_id": 134,
+      "region_id": 7,
+      "native_category_id": 12,
+      "obb_center_m": [
+        0.806572,
+        -1.64038,
+        0.435997
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.41758,
+        0.396745,
+        0.0179904
+      ],
+      "raw_category": "cabinet",
+      "native_label_index": 13,
+      "mpcat40_id": 7,
+      "mpcat40_name": "cabinet",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "135": {
+      "object_id": 135,
+      "region_id": 7,
+      "native_category_id": 10,
+      "obb_center_m": [
+        0.924964,
+        -1.23292,
+        1.01432
+      ],
+      "obb_axis0": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "obb_radii_m": [
+        0.110057,
+        0.107128,
+        0.080955
+      ],
+      "raw_category": "object",
+      "native_label_index": 11,
+      "mpcat40_id": 39,
+      "mpcat40_name": "objects",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "136": {
+      "object_id": 136,
+      "region_id": 7,
+      "native_category_id": 3,
+      "obb_center_m": [
+        0.473621,
+        -1.58695,
+        0.206186
+      ],
+      "obb_axis0": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "obb_axis1": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "obb_radii_m": [
+        1.22632,
+        1.03881,
+        0.210381
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    },
+    "137": {
+      "object_id": 137,
+      "region_id": 7,
+      "native_category_id": 3,
+      "obb_center_m": [
+        1.94716,
+        -2.26479,
+        0.0316301
+      ],
+      "obb_axis0": [
+        -0.707107,
+        -0.707107,
+        0.0
+      ],
+      "obb_axis1": [
+        -0.707107,
+        0.707107,
+        0.0
+      ],
+      "obb_radii_m": [
+        0.159783,
+        0.0759815,
+        0.0327212
+      ],
+      "raw_category": "floor",
+      "native_label_index": 4,
+      "mpcat40_id": 2,
+      "mpcat40_name": "floor",
+      "region": {
+        "region_id": 7,
+        "native_region_code": "k",
+        "context_class": "indoor"
+      }
+    }
+  },
+  "regions": {
+    "0": {
+      "region_id": 0,
+      "native_region_code": "c",
+      "context_class": "indoor"
+    },
+    "1": {
+      "region_id": 1,
+      "native_region_code": "e",
+      "context_class": "indoor"
+    },
+    "2": {
+      "region_id": 2,
+      "native_region_code": "b",
+      "context_class": "indoor"
+    },
+    "3": {
+      "region_id": 3,
+      "native_region_code": "a",
+      "context_class": "indoor"
+    },
+    "4": {
+      "region_id": 4,
+      "native_region_code": "t",
+      "context_class": "indoor"
+    },
+    "5": {
+      "region_id": 5,
+      "native_region_code": "p",
+      "context_class": "outdoor"
+    },
+    "6": {
+      "region_id": 6,
+      "native_region_code": "l",
+      "context_class": "indoor"
+    },
+    "7": {
+      "region_id": 7,
+      "native_region_code": "k",
+      "context_class": "indoor"
+    }
+  }
+}

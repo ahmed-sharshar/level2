@@ -1,0 +1,343 @@
+{
+  "status": "diagnostic_only_not_a_reference_exclusion_rule",
+  "interpretation": "Native mesh vs sampled original depth may differ for sparse outdoor geometry, glazing, door geometry or capture mismatch. These residuals flag review needs, not an inferred coordinate offset or automatic exclusion.",
+  "threshold_median_residual_m": 0.1,
+  "flagged_episodes": 15,
+  "flagged_frame_slots": 28,
+  "all_frame_median_residual_percentiles_m": {
+    "50": 0.01682412624359131,
+    "90": 0.049659490585327135,
+    "100": 2.4870920181274414
+  },
+  "episodes": [
+    {
+      "assembly_id": "2azQ1b91cZZ:upstairs_lounge_balcony",
+      "scan_id": "2azQ1b91cZZ",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 7,
+          "source_image": "1da343117c3a48ce9707860471a2c9aa_i1_4.jpg",
+          "valid_fraction": 0.024169921875,
+          "median_abs_m": 0.990028977394104,
+          "p90_abs_m": 1.6056595087051393,
+          "fraction_within_0_1m": 0.10101010101010101
+        },
+        {
+          "frame_1based": 12,
+          "source_image": "37cbb99f26454733992123c45ee74bca_i1_5.jpg",
+          "valid_fraction": 0.060302734375,
+          "median_abs_m": 1.2554951906204224,
+          "p90_abs_m": 1.6798763513565065,
+          "fraction_within_0_1m": 0.19271255060728745
+        }
+      ]
+    },
+    {
+      "assembly_id": "D7N2EKCX4Sj:reviewed_portal:628",
+      "scan_id": "D7N2EKCX4Sj",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 6,
+          "source_image": "7a7d3f3cbf65489d9c5336878f268ffa_i1_2.jpg",
+          "valid_fraction": 0.22099609375,
+          "median_abs_m": 0.342265248298645,
+          "p90_abs_m": 1.9034072160720825,
+          "fraction_within_0_1m": 0.33959346000883783
+        },
+        {
+          "frame_1based": 7,
+          "source_image": "417f177a50b046b7869044070c9dae28_i1_1.jpg",
+          "valid_fraction": 0.1939453125,
+          "median_abs_m": 0.12651002407073975,
+          "p90_abs_m": 1.5575544357299806,
+          "fraction_within_0_1m": 0.4619838872104733
+        },
+        {
+          "frame_1based": 8,
+          "source_image": "c9e0bc6b556b440284042049c1f7a3e7_i1_5.jpg",
+          "valid_fraction": 0.51328125,
+          "median_abs_m": 0.2825769782066345,
+          "p90_abs_m": 2.66391999721527,
+          "fraction_within_0_1m": 0.3545471841704718
+        }
+      ]
+    },
+    {
+      "assembly_id": "PX4nDJXEHrG:reviewed_portal:621,637,645",
+      "scan_id": "PX4nDJXEHrG",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 6,
+          "source_image": "34276b7c9d6e491885f36dd1d286e477_i1_5.jpg",
+          "valid_fraction": 0.487109375,
+          "median_abs_m": 1.5088930130004883,
+          "p90_abs_m": 2.817079782485962,
+          "fraction_within_0_1m": 0.34292301523656776
+        }
+      ]
+    },
+    {
+      "assembly_id": "PX4nDJXEHrG:reviewed_portal:972,995,996",
+      "scan_id": "PX4nDJXEHrG",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 1,
+          "source_image": "86d651b81a7c41c4a78b902b43fac9d0_i1_4.jpg",
+          "valid_fraction": 0.032177734375,
+          "median_abs_m": 0.19012212753295898,
+          "p90_abs_m": 0.26029767990112307,
+          "fraction_within_0_1m": 0.0409711684370258
+        }
+      ]
+    },
+    {
+      "assembly_id": "SN83YJsR3w2:library_covered_terrace",
+      "scan_id": "SN83YJsR3w2",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 6,
+          "source_image": "817592f1e67c4869b8490ff6ae8af258_i1_2.jpg",
+          "valid_fraction": 0.497802734375,
+          "median_abs_m": 2.434015989303589,
+          "p90_abs_m": 4.2827903747558596,
+          "fraction_within_0_1m": 0.22295242766061796
+        },
+        {
+          "frame_1based": 7,
+          "source_image": "4e30f38a55414abb9f740d60ad40df7c_i1_0.jpg",
+          "valid_fraction": 0.943310546875,
+          "median_abs_m": 0.14425325393676758,
+          "p90_abs_m": 3.5713393688201904,
+          "fraction_within_0_1m": 0.4775609503597495
+        }
+      ]
+    },
+    {
+      "assembly_id": "VFuaQ6m2Qom:living_pool_patio",
+      "scan_id": "VFuaQ6m2Qom",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 1,
+          "source_image": "ff4f6e50c40147aebdcf0b7c485d6924_i1_1.jpg",
+          "valid_fraction": 0.9025390625,
+          "median_abs_m": 0.10061168670654297,
+          "p90_abs_m": 0.35005240440368657,
+          "fraction_within_0_1m": 0.49843107552477817
+        },
+        {
+          "frame_1based": 12,
+          "source_image": "1e1cd1f1f6cd45689fb43615d2ee4eb0_i1_2.jpg",
+          "valid_fraction": 0.908740234375,
+          "median_abs_m": 0.12082815170288086,
+          "p90_abs_m": 0.3513336181640625,
+          "fraction_within_0_1m": 0.4114770834452743
+        }
+      ]
+    },
+    {
+      "assembly_id": "Vvot9Ly1tCj:bedroom_bbq_patio",
+      "scan_id": "Vvot9Ly1tCj",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 5,
+          "source_image": "1ee4777aa75549f5bb8d1c8371c72fc1_i1_1.jpg",
+          "valid_fraction": 0.73828125,
+          "median_abs_m": 0.23079001903533936,
+          "p90_abs_m": 5.3153234958648685,
+          "fraction_within_0_1m": 0.4622354497354497
+        }
+      ]
+    },
+    {
+      "assembly_id": "p5wJjkQkbXX:portal:597",
+      "scan_id": "p5wJjkQkbXX",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 10,
+          "source_image": "ee82e12abf7d4665b54b4301e749876a_i1_3.jpg",
+          "valid_fraction": 0.76796875,
+          "median_abs_m": 0.815230131149292,
+          "p90_abs_m": 3.1697731018066406,
+          "fraction_within_0_1m": 0.41823499491353
+        },
+        {
+          "frame_1based": 11,
+          "source_image": "49d5bf2abff24f709ca005ce3a3c9ed5_i1_3.jpg",
+          "valid_fraction": 0.6994140625,
+          "median_abs_m": 0.9379196166992188,
+          "p90_abs_m": 2.904650354385376,
+          "fraction_within_0_1m": 0.20280647863725215
+        },
+        {
+          "frame_1based": 12,
+          "source_image": "ee82e12abf7d4665b54b4301e749876a_i1_4.jpg",
+          "valid_fraction": 0.3501953125,
+          "median_abs_m": 0.25194597244262695,
+          "p90_abs_m": 1.462923049926758,
+          "fraction_within_0_1m": 0.18293363078639152
+        }
+      ]
+    },
+    {
+      "assembly_id": "rPc6DW4iMge:portal:220",
+      "scan_id": "rPc6DW4iMge",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 11,
+          "source_image": "807bb148c18b4a968d8f455a2b16bc10_i1_3.jpg",
+          "valid_fraction": 0.24345703125,
+          "median_abs_m": 2.4870920181274414,
+          "p90_abs_m": 3.7522729635238647,
+          "fraction_within_0_1m": 0.2888086642599278
+        }
+      ]
+    },
+    {
+      "assembly_id": "rPc6DW4iMge:portal:232",
+      "scan_id": "rPc6DW4iMge",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 12,
+          "source_image": "807bb148c18b4a968d8f455a2b16bc10_i1_3.jpg",
+          "valid_fraction": 0.24345703125,
+          "median_abs_m": 2.4870920181274414,
+          "p90_abs_m": 3.7522729635238647,
+          "fraction_within_0_1m": 0.2888086642599278
+        }
+      ]
+    },
+    {
+      "assembly_id": "vyrNrziPKCB:portal:1335",
+      "scan_id": "vyrNrziPKCB",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 1,
+          "source_image": "6c2c25242c9d47e28fe641a235a45acd_i1_1.jpg",
+          "valid_fraction": 0.81103515625,
+          "median_abs_m": 0.8200861215591431,
+          "p90_abs_m": 3.922724533081055,
+          "fraction_within_0_1m": 0.35009030704394944
+        },
+        {
+          "frame_1based": 9,
+          "source_image": "1b27ae30f0ec43408a18f21de3655325_i1_2.jpg",
+          "valid_fraction": 0.901708984375,
+          "median_abs_m": 0.11591577529907227,
+          "p90_abs_m": 0.4410124778747559,
+          "fraction_within_0_1m": 0.4628797314127904
+        }
+      ]
+    },
+    {
+      "assembly_id": "vyrNrziPKCB:portal:1357",
+      "scan_id": "vyrNrziPKCB",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 5,
+          "source_image": "bfe100fb6ef24661831ea5d65e4e62ce_i1_5.jpg",
+          "valid_fraction": 0.853564453125,
+          "median_abs_m": 0.12965774536132812,
+          "p90_abs_m": 0.689345121383667,
+          "fraction_within_0_1m": 0.4609004061552543
+        },
+        {
+          "frame_1based": 7,
+          "source_image": "e93d23ba6ebd41469ac71306bc57fb71_i1_5.jpg",
+          "valid_fraction": 0.897216796875,
+          "median_abs_m": 0.20308303833007812,
+          "p90_abs_m": 0.3485730171203614,
+          "fraction_within_0_1m": 0.3469387755102041
+        },
+        {
+          "frame_1based": 8,
+          "source_image": "7cb43b9d9c6e4f04bfd9e52ef67d9201_i1_0.jpg",
+          "valid_fraction": 0.878759765625,
+          "median_abs_m": 0.16336822509765625,
+          "p90_abs_m": 0.3664834976196289,
+          "fraction_within_0_1m": 0.35817080624548536
+        },
+        {
+          "frame_1based": 11,
+          "source_image": "84d55e2491ea4b97baa19a5ac87bee4b_i1_1.jpg",
+          "valid_fraction": 0.8947265625,
+          "median_abs_m": 0.17942023277282715,
+          "p90_abs_m": 0.41248683929443364,
+          "fraction_within_0_1m": 0.323401004147566
+        },
+        {
+          "frame_1based": 12,
+          "source_image": "c1582453fc8d4c3b9064e7731c23034c_i1_2.jpg",
+          "valid_fraction": 0.951513671875,
+          "median_abs_m": 0.20983266830444336,
+          "p90_abs_m": 0.45053119659423835,
+          "fraction_within_0_1m": 0.3382254836557705
+        }
+      ]
+    },
+    {
+      "assembly_id": "vyrNrziPKCB:portal:18",
+      "scan_id": "vyrNrziPKCB",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 1,
+          "source_image": "227f460a7ab143ebb0716888379db76f_i1_3.jpg",
+          "valid_fraction": 0.640771484375,
+          "median_abs_m": 0.11266756057739258,
+          "p90_abs_m": 0.45616722106933605,
+          "fraction_within_0_1m": 0.4793873352129848
+        }
+      ]
+    },
+    {
+      "assembly_id": "vyrNrziPKCB:portal:87",
+      "scan_id": "vyrNrziPKCB",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 7,
+          "source_image": "c22b939107ee4035bff16a85337942c2_i1_2.jpg",
+          "valid_fraction": 0.95419921875,
+          "median_abs_m": 0.11207747459411621,
+          "p90_abs_m": 1.8856820106506376,
+          "fraction_within_0_1m": 0.4711902568826118
+        }
+      ]
+    },
+    {
+      "assembly_id": "vyrNrziPKCB:portal:965",
+      "scan_id": "vyrNrziPKCB",
+      "warning": "One or more frame mesh/depth registration residual medians exceed 0.10m.",
+      "frames": [
+        {
+          "frame_1based": 11,
+          "source_image": "492c390c84ca4263b8f4d2d3d5818479_i1_2.jpg",
+          "valid_fraction": 0.395166015625,
+          "median_abs_m": 1.7906324863433838,
+          "p90_abs_m": 7.461611366271973,
+          "fraction_within_0_1m": 0.36179414308661806
+        },
+        {
+          "frame_1based": 12,
+          "source_image": "9c37aadc2b4f40dda342759fb90a2442_i1_4.jpg",
+          "valid_fraction": 0.347119140625,
+          "median_abs_m": 0.6119452714920044,
+          "p90_abs_m": 3.6116909027099604,
+          "fraction_within_0_1m": 0.31804754536503027
+        }
+      ]
+    }
+  ]
+}

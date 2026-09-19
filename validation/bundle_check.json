@@ -1,0 +1,35 @@
+{
+  "schema": "blockmind_l2_bundle_verification_v1",
+  "checked_at": "2026-09-19T06:49:04.625433+00:00",
+  "status": "passed",
+  "build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
+  "build_identity_recomputed": true,
+  "source_hash_check_requested": true,
+  "counts": {
+    "asset_files_checked": 2508,
+    "asset_bytes_checked": 376482185,
+    "asset_hashes_verified": 2508,
+    "source_files_checked": 1812,
+    "source_hashes_verified": 1812,
+    "frame_appearances": 672,
+    "frame_asset_references_checked": 2016,
+    "proposed_markers": 445,
+    "projected_observations": 1112,
+    "annotation_aid_references_checked": 566,
+    "episodes": 56,
+    "buildings": 29,
+    "distinct_boundary_assemblies": 56,
+    "unique_rgb_files": 656,
+    "materials": 107
+  },
+  "errors": [],
+  "warnings": [],
+  "symlinks": [],
+  "scope": "Read-only integrity and reference validation; no human quality certification or fresh raycast",
+  "limits": [
+    "The inventory itself is not externally authenticated; hashes detect accidental changes, not a forged bundle.",
+    "App code and documentation added after the data build are outside the data asset inventory.",
+    "Without --check-sources, original absolute workstation paths are provenance only; distributed bundles need not contain them.",
+    "Pixel-level instance/depth consistency was checked by the data builder; this stdlib checker verifies their shipped bytes."
+  ]
+}

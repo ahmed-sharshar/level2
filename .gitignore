@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+annotations_private/
+*.log

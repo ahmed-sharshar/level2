@@ -1,0 +1,4493 @@
+{
+  "status": "passed",
+  "expected_episodes": 56,
+  "exported_episodes": 56,
+  "missing_episodes": [],
+  "unexpected_episodes": [],
+  "error_count": 0,
+  "images_byte_checked": 672,
+  "masks_compared_to_fresh_raycast": 672,
+  "native_object_lookup_entries": 22448,
+  "per_episode": [
+    {
+      "episode_id": "scene_001_1LXtFkjw3qL_O103",
+      "assembly_id": "1LXtFkjw3qL:living_terrace_north",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 237
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 127
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 105
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 58
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 397
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 309
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_002_1LXtFkjw3qL_O107",
+      "assembly_id": "1LXtFkjw3qL:living_terrace_south",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 128
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 57
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 667
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3066
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1995
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1817
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3837
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_003_1LXtFkjw3qL_O265",
+      "assembly_id": "1LXtFkjw3qL:opaque_front_entry",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1090
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 7051
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4430
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2680
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 980
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 60
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_004_1LXtFkjw3qL_O162",
+      "assembly_id": "1LXtFkjw3qL:stair_hall_terrace",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1178
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3150
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 8935
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 6196
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5691
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1863
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 884
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_005_1pXnuDYAj8r_O746",
+      "assembly_id": "1pXnuDYAj8r:double_front_entry",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4274
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 7895
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 25
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 13
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_006_2azQ1b91cZZ_O91",
+      "assembly_id": "2azQ1b91cZZ:dining_courtyard",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 375
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 544
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 872
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1536
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3508
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 6985
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 283
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2239
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 616
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_007_2azQ1b91cZZ_O165",
+      "assembly_id": "2azQ1b91cZZ:second_dining_courtyard",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3719
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3379
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2944
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 234
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 197
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 501
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_008_2azQ1b91cZZ_O677",
+      "assembly_id": "2azQ1b91cZZ:upstairs_lounge_balcony",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2843
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5426
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 318
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_009_5ZKStnWn8Zo_O88",
+      "assembly_id": "5ZKStnWn8Zo:bedroom_balcony",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 295
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 560
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2259
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 6004
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 435
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 68
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_010_5ZKStnWn8Zo_O548",
+      "assembly_id": "5ZKStnWn8Zo:billiard_terrace",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 148
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 284
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 572
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 666
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1148
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 361
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 515
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 958
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_011_5ZKStnWn8Zo_O910",
+      "assembly_id": "5ZKStnWn8Zo:service_garage",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2964
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4634
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 9212
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3917
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2385
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3660
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_012_5ZKStnWn8Zo_O180",
+      "assembly_id": "5ZKStnWn8Zo:side_room_balcony",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 100
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 93
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 168
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 321
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_013_82sE5b5pLXE_O510",
+      "assembly_id": "82sE5b5pLXE:living_pool_courtyard",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 481
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 319
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 897
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3268
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 472
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 441
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2481
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_014_ARNzJeq3xxb_O310",
+      "assembly_id": "ARNzJeq3xxb:reviewed_portal:310",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 189
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 428
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2959
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 884
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_015_D7N2EKCX4Sj_O628",
+      "assembly_id": "D7N2EKCX4Sj:reviewed_portal:628",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 120
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 42
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 283
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 169
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 341
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2191
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1371
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1727
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_016_D7N2EKCX4Sj_O66",
+      "assembly_id": "D7N2EKCX4Sj:reviewed_portal:66,139",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 876
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1957
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_017_D7N2EKCX4Sj_O9",
+      "assembly_id": "D7N2EKCX4Sj:reviewed_portal:9,13",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 13
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 26
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 149
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 463
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1714
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1826
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 176
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_018_EDJbREhghzL_O5",
+      "assembly_id": "EDJbREhghzL:reviewed_portal:5,24",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 177
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 470
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 665
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3208
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3103
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 356
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 297
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 437
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_019_HxpKQynjfin_O103",
+      "assembly_id": "HxpKQynjfin:reviewed_portal:99,103",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 892
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3629
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2354
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3977
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1999
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4602
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1298
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1628
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 354
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 569
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 340
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_020_PX4nDJXEHrG_O121",
+      "assembly_id": "PX4nDJXEHrG:reviewed_portal:121",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1055
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 209
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2349
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 8263
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5097
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_021_PX4nDJXEHrG_O621",
+      "assembly_id": "PX4nDJXEHrG:reviewed_portal:621,637,645",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 870
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2218
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3429
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5951
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_022_PX4nDJXEHrG_O995",
+      "assembly_id": "PX4nDJXEHrG:reviewed_portal:972,995,996",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 551
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 545
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_023_SN83YJsR3w2_O1134",
+      "assembly_id": "SN83YJsR3w2:library_covered_terrace",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1838
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4061
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 971
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2460
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 13281
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 18861
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 7505
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5303
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2090
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_024_Uxmj2M2itWa_O12",
+      "assembly_id": "Uxmj2M2itWa:bedroom_courtyard",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 282
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 585
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1079
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 870
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 15
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 452
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 741
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 483
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_025_VFuaQ6m2Qom_O391",
+      "assembly_id": "VFuaQ6m2Qom:living_pool_patio",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1450
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2340
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5037
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 11199
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 17660
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 19884
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 10031
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4231
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1741
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3063
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3796
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1368
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_026_Vvot9Ly1tCj_O23",
+      "assembly_id": "Vvot9Ly1tCj:bedroom_bbq_patio",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1962
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1610
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2625
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 73
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_027_Vvot9Ly1tCj_O617",
+      "assembly_id": "Vvot9Ly1tCj:dining_patio_french_door",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 231
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 136
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 819
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 615
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 423
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 235
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_028_Vvot9Ly1tCj_O599",
+      "assembly_id": "Vvot9Ly1tCj:living_pool_sliding_door",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 176
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 415
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 378
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2831
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1099
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_029_Vvot9Ly1tCj_O608",
+      "assembly_id": "Vvot9Ly1tCj:side_hall_pool_patio",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1145
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 412
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2026
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2140
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_030_VzqfbhrpDEA_O1301",
+      "assembly_id": "VzqfbhrpDEA:upper_landing_balcony",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 417
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1342
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 571
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 308
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_031_ac26ZMwG7aT_O449",
+      "assembly_id": "ac26ZMwG7aT:portal:449",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 65
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 146
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 200
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 29
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_032_b8cTxDM8gDG_O302",
+      "assembly_id": "b8cTxDM8gDG:portal:302",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 385
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1482
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2687
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1657
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 769
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 96
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 552
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 807
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_033_cV4RVeZvu5T_O2",
+      "assembly_id": "cV4RVeZvu5T:portal:2",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5022
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 7702
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 70
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_034_e9zR4mvMWw7_O142",
+      "assembly_id": "e9zR4mvMWw7:portal:142",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 194
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 355
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 97
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2163
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2920
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2484
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_035_kEZ7cmS4wCh_O56",
+      "assembly_id": "kEZ7cmS4wCh:portal:56",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 34
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 299
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 199
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2605
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1150
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1339
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1722
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 807
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_036_p5wJjkQkbXX_O113",
+      "assembly_id": "p5wJjkQkbXX:portal:113",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 477
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1547
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 6276
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_037_p5wJjkQkbXX_O570",
+      "assembly_id": "p5wJjkQkbXX:portal:570",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 342
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 159
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 455
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 61
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1377
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2229
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_038_p5wJjkQkbXX_O597",
+      "assembly_id": "p5wJjkQkbXX:portal:597",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 17
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 241
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3299
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2783
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1297
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4096
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5056
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 931
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_039_pRbA3pwrgk9_O406",
+      "assembly_id": "pRbA3pwrgk9:portal:404",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 348
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 218
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 465
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1599
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3439
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_040_q9vSo1VnCiC_O234",
+      "assembly_id": "q9vSo1VnCiC:portal:234",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 957
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1940
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1346
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1468
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3714
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4683
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1212
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_041_qoiz87JEwZ2_O68",
+      "assembly_id": "qoiz87JEwZ2:portal:35",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 7379
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 11326
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5148
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 10132
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 60
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1419
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3688
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1402
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 65
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 914
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_042_r1Q1Z4BcV1o_O469",
+      "assembly_id": "r1Q1Z4BcV1o:portal:468",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 7
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 123
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 373
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1125
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 6375
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1427
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 338
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_043_rPc6DW4iMge_O220",
+      "assembly_id": "rPc6DW4iMge:portal:220",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4935
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2576
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4161
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 8645
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 5208
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 443
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 64
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_044_rPc6DW4iMge_O242",
+      "assembly_id": "rPc6DW4iMge:portal:232",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 510
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 6200
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3044
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 319
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 164
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2605
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 578
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 779
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_045_rPc6DW4iMge_O85",
+      "assembly_id": "rPc6DW4iMge:portal:85",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1412
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1329
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3824
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2379
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 333
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 455
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 19
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_046_sT4fr6TAbpF_O292",
+      "assembly_id": "sT4fr6TAbpF:portal:292",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 207
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 386
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 449
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 244
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 59
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 614
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 214
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_047_sT4fr6TAbpF_O322",
+      "assembly_id": "sT4fr6TAbpF:portal:322",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4542
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1462
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1494
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2239
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1038
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 554
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_048_vyrNrziPKCB_O1054",
+      "assembly_id": "vyrNrziPKCB:portal:1040",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 474
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1601
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1056
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2358
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4268
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1995
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1050
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_049_vyrNrziPKCB_O1342",
+      "assembly_id": "vyrNrziPKCB:portal:1328",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2031
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 6912
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4713
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_050_vyrNrziPKCB_O1335",
+      "assembly_id": "vyrNrziPKCB:portal:1335",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1565
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 20
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3685
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 7716
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4933
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 6283
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1658
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 805
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1534
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_051_vyrNrziPKCB_O1357",
+      "assembly_id": "vyrNrziPKCB:portal:1357",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 118
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 366
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 885
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 3251
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4464
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_052_vyrNrziPKCB_O20",
+      "assembly_id": "vyrNrziPKCB:portal:18",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 595
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1626
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1919
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2006
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4927
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 9243
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 14586
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 8808
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1740
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 735
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 300
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_053_vyrNrziPKCB_O87",
+      "assembly_id": "vyrNrziPKCB:portal:87",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 618
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1191
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 4353
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2423
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_054_vyrNrziPKCB_O927",
+      "assembly_id": "vyrNrziPKCB:portal:921",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 341
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1037
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 973
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 8
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 861
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 366
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_055_vyrNrziPKCB_O965",
+      "assembly_id": "vyrNrziPKCB:portal:965",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1680
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1446
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1896
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1693
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 7202
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2157
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    },
+    {
+      "episode_id": "scene_056_wc2JMjhGNzB_O53",
+      "assembly_id": "wc2JMjhGNzB:portal:53",
+      "valid": true,
+      "errors": [],
+      "frames": [
+        {
+          "index_1based": 1,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 1318
+        },
+        {
+          "index_1based": 2,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 2811
+        },
+        {
+          "index_1based": 3,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 4,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 5,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 6,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 7,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        },
+        {
+          "index_1based": 8,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 218
+        },
+        {
+          "index_1based": 9,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 133
+        },
+        {
+          "index_1based": 10,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 61
+        },
+        {
+          "index_1based": 11,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 26
+        },
+        {
+          "index_1based": 12,
+          "RGB_byte_identical": true,
+          "mask_equals_fresh_raycast": true,
+          "fresh_pixel_count": 0
+        }
+      ]
+    }
+  ]
+}

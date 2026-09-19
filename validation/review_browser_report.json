@@ -1,0 +1,155 @@
+{
+  "schema": "blockmind_review_browser_validation_v1",
+  "created_at": "2026-09-19T08:00:18.067212+00:00",
+  "synthetic_fixtures_only": true,
+  "source_annotations_modified": false,
+  "passed": true,
+  "checks": [
+    {
+      "name": "matcher queue loads without invented answers",
+      "passed": true
+    },
+    {
+      "name": "question and response markup rendered as text",
+      "passed": true
+    },
+    {
+      "name": "no injected element or script execution",
+      "passed": true
+    },
+    {
+      "name": "machine extraction hidden from reviewer",
+      "passed": true
+    },
+    {
+      "name": "matcher selected answer saved",
+      "passed": true
+    },
+    {
+      "name": "explicit multi-select empty set retained",
+      "passed": true
+    },
+    {
+      "name": "download has complete review schema and dataset identity",
+      "passed": true
+    },
+    {
+      "name": "matcher report exact-set accuracy and gate threshold",
+      "passed": true
+    },
+    {
+      "name": "own saved-review import restores answers",
+      "passed": true
+    },
+    {
+      "name": "same queue and reviewer resume browser draft",
+      "passed": true
+    },
+    {
+      "name": "unsaved navigation prompts and respects cancellation",
+      "passed": true,
+      "detail": {
+        "index": 0,
+        "confirmations": 2,
+        "choice_retained": true
+      }
+    },
+    {
+      "name": "foreign-reviewer restore rejected transactionally",
+      "passed": true
+    },
+    {
+      "name": "unknown GT-bearing queue field rejected",
+      "passed": true
+    },
+    {
+      "name": "model response rejected from baseline queue",
+      "passed": true
+    },
+    {
+      "name": "foreign dataset identity rejected transactionally",
+      "passed": true
+    },
+    {
+      "name": "baseline marker labels cannot leak material names",
+      "passed": true
+    },
+    {
+      "name": "human baseline uses original RGB image",
+      "passed": true
+    },
+    {
+      "name": "baseline shows numbered marker",
+      "passed": true
+    },
+    {
+      "name": "baseline contains no model answer or hidden GT",
+      "passed": true
+    },
+    {
+      "name": "uncertainty requires reason without assigning answer",
+      "passed": true
+    },
+    {
+      "name": "baseline uncertainty preserved distinctly",
+      "passed": true
+    },
+    {
+      "name": "baseline remains unscored without frozen GT",
+      "passed": true
+    },
+    {
+      "name": "all requested primary error categories present",
+      "passed": true
+    },
+    {
+      "name": "error coding answer saved",
+      "passed": true
+    },
+    {
+      "name": "error report preserves per-family/model denominator",
+      "passed": true
+    },
+    {
+      "name": "stale-tab editing locked",
+      "passed": true
+    },
+    {
+      "name": "stale tab can recover saved in-memory copy",
+      "passed": true
+    },
+    {
+      "name": "stale event preserves the unsaved form while locking edits",
+      "passed": true
+    },
+    {
+      "name": "unsaved recovery distinguishes prior saved answer from unfinished form",
+      "passed": true
+    },
+    {
+      "name": "unfinished recovery bundle is not accepted as a completed review",
+      "passed": true
+    },
+    {
+      "name": "storage failure visibly warned",
+      "passed": true
+    },
+    {
+      "name": "quota failure still permits answer backup",
+      "passed": true
+    },
+    {
+      "name": "no JavaScript runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no requests outside local server",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "count": 34,
+  "page_errors": [],
+  "external_requests": []
+}

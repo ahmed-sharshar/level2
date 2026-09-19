@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-09-19T07:56:44.789Z",
+  "status": "passed",
+  "build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
+  "task_id": "l2tasks-3f3e106fcb6cfc1fb2981a8eadd87938f9e9275d734dc491af4f0c38a162c8c3",
+  "unchanged_files": {
+    "full-core.js": {
+      "sha256": "8859ce480278a32390e250240044d06013f5da9cb17308854d4b9c74507e46e8",
+      "unchanged": true
+    },
+    "core.js": {
+      "sha256": "e61ff4187e39e344fe7d1c4328b18680b41d133f7156bec3795b100ce9ddb51d",
+      "unchanged": true
+    },
+    "collection-tasks.json": {
+      "sha256": "7d89b14102d8a9f148807ad1779303dfacd38cd11cdab7a7c04088198bc1cd26",
+      "unchanged": true
+    },
+    "dataset.json": {
+      "sha256": "a7d6d75977cf7310f629a3485f11551a42c5328ba15d885ed0ed2fa6483ee4ae",
+      "unchanged": true
+    },
+    "catalogue.json": {
+      "sha256": "c0f4d2ea2a3b64a693edb9efdc7cd9eac1b5f657696f903683d62f7b77ec490e",
+      "unchanged": true
+    },
+    "CONTRACT.md": {
+      "sha256": "07ebf351e701b3dfe289397dea3e560f11a7867fab6e41e387093e1b7661e49b",
+      "unchanged": true
+    }
+  },
+  "coverage": [
+    {
+      "profile": "l2",
+      "episodes": 56,
+      "original_required_fields": 10138,
+      "represented_fields": 10138,
+      "panels": 2125,
+      "missing_fields": 0,
+      "duplicate_fields": 0
+    },
+    {
+      "profile": "l2_l3",
+      "episodes": 56,
+      "original_required_fields": 17158,
+      "represented_fields": 17158,
+      "panels": 9145,
+      "missing_fields": 0,
+      "duplicate_fields": 0
+    }
+  ],
+  "first_scene": {
+    "points": 8,
+    "red_point_forms": 8,
+    "sun_rain_panels": 4,
+    "sun_rain_values": 64,
+    "pathway_panels": 4
+  },
+  "human_annotations_written": false,
+  "scope": "Read-only field-coverage and immutable-file checks, not physical correctness or human GT"
+}

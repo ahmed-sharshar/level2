@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
+  "counts": {
+    "rgb_appearances": 672,
+    "instance_maps_validated": 672,
+    "boundary_masks_validated": 672,
+    "proposed_markers": 445,
+    "projected_observations": 1112,
+    "episodes": 56,
+    "buildings": 29,
+    "unique_rgb_files": 656,
+    "materials_in_hierarchy": 107,
+    "native_mpcat40_codes": 42
+  },
+  "boundary_classes": {
+    "outdoor": 52,
+    "semi_outdoor": 4
+  },
+  "assistant_visual_verdicts": {
+    "pass": 46,
+    "needs_human_review": 10
+  },
+  "proposal_warnings": [
+    {
+      "episode_id": "scene_008_2azQ1b91cZZ_O677",
+      "side": "exterior",
+      "proposed_markers": 3,
+      "distinct_native_objects": 3,
+      "message": "Limited distinct labeled first-hit instances on this side. Coordinator must inspect, move/add/remove surface points; no extra distinct surfaces have been invented.",
+      "setup_blocked_until_manual_review": false
+    },
+    {
+      "episode_id": "scene_038_p5wJjkQkbXX_O597",
+      "side": "exterior",
+      "proposed_markers": 2,
+      "distinct_native_objects": 2,
+      "message": "Limited distinct labeled first-hit instances on this side. Coordinator must inspect, move/add/remove surface points; no extra distinct surfaces have been invented.",
+      "setup_blocked_until_manual_review": true
+    }
+  ],
+  "checks": {
+    "all_RGB_bytes_match_frozen_source": true,
+    "all_RGB_dimensions_and_decoding_valid": true,
+    "all_instance_PNGs_roundtrip_exactly": true,
+    "all_boundary_masks_match_fresh_first_hit_instances": true,
+    "all_source_boundary_pixel_counts_reproduced": true,
+    "all_proposed_anchor_points_have_positive_depth_and_correct_first_hit_ID": true,
+    "all_projected_observations_ID_and_depth_consistent": true,
+    "all_proposals_are_restricted_to_native_side_regions": true,
+    "all_episodes_fixed_12_with_6_per_side_and_3_positions_each_side": true,
+    "all_episodes_have_two_pre_sightings_at_least_100px": true,
+    "all_saved_adjacent_overlaps_at_least_15_percent": true,
+    "source_candidates_and_old_annotation_site_unchanged": true,
+    "human_annotations_seeded": false,
+    "new_model_API_calls": false,
+    "physical_simulation_performed": false
+  },
+  "limitations": [
+    "Source numerical certificates were copied; this builder did not rerun original mesh raycasting or re-search routes.",
+    "Mesh-derived points, labels, masks and visibility are fallible coordinator aids; glass, reflection and registration need human decisions.",
+    "Existing 10 visual-review flags and all depth-registration warnings are retained, not silently excluded.",
+    "No directions or approved VHC contrast table were supplied; coordinator/researcher decisions remain required.",
+    "Existing material suggestion provider/model metadata is preserved as unverified provenance, not independently authenticated."
+  ]
+}

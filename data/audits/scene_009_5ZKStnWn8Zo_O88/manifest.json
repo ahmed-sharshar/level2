@@ -1,0 +1,1342 @@
+{
+  "id": "scene_009_5ZKStnWn8Zo_O88",
+  "folder": "scene_009_5ZKStnWn8Zo_O88",
+  "title": "09 · Indoor → outdoor · 5ZKStnWn8Zo / O88",
+  "note": "Glazed bedroom/sitting-room door and clear outdoor balcony.",
+  "scan_id": "5ZKStnWn8Zo",
+  "assembly_id": "5ZKStnWn8Zo:bedroom_balcony",
+  "boundary_class": "outdoor",
+  "boundary_object_id": 88,
+  "variant": "reference_100px",
+  "variant_label": "Reference / 100 px",
+  "settings": {
+    "name": "reference_100px",
+    "step": 3.0,
+    "distance": 0.75,
+    "pixels": 100,
+    "overlap": 0.15,
+    "visibility_resolution": [
+      160,
+      128
+    ],
+    "minimum_pre_crossing_sightings": 2,
+    "frames_per_side": 6,
+    "minimum_capture_positions_per_side": 3
+  },
+  "source_variant": "reference",
+  "source_visibility_threshold_px": 40,
+  "crossing_frame_1based": 7,
+  "native_regions_per_side": [
+    [
+      0,
+      2
+    ],
+    [
+      3
+    ]
+  ],
+  "capture_positions_per_side": [
+    6,
+    6
+  ],
+  "sequence_sha256": "9b75bd2abf",
+  "source_review": {
+    "candidate_id": "5ZKStnWn8Zo:object:88:outdoor",
+    "scan_id": "5ZKStnWn8Zo",
+    "boundary_object_id": 88,
+    "status": "accepted",
+    "assembly_id": "5ZKStnWn8Zo:bedroom_balcony",
+    "context_class": "outdoor",
+    "profile": "reference",
+    "sheet": "/tmp/blockmind_capacity_5ojsTE/rgb_review/5ZKStnWn8Zo_object_88_outdoor_9b75bd2abf_mask.jpg",
+    "sequence_sha256": "9b75bd2abf",
+    "note": "Glazed bedroom/sitting-room door and clear outdoor balcony.",
+    "reviewer": "assistant_root_direct_RGB_review",
+    "human_certified": false,
+    "review_source_file": "rgb_review_digits.json"
+  },
+  "quality_note": "Assistant visual review: pass. Interior approach starts in the associated bathroom/bedroom suite; indoor side is not a single semantic room throughout. Not human-certified ground truth.",
+  "depth": {
+    "model_visible": false,
+    "exported": false,
+    "role": "Annotation/raycast helper only; never model input",
+    "raycast_depth_exported_in_verification_only": true
+  },
+  "annotation_aids_model_visible": false,
+  "human_annotations_complete": false,
+  "full_route_exported": false,
+  "full_route_note": "Exactly the frozen 12-frame Level 2 witness. No longer Level 3 horizon claimed.",
+  "contact_sheet": "scene_009_5ZKStnWn8Zo_O88/contact_sheet.jpg",
+  "route_map": "scene_009_5ZKStnWn8Zo_O88/route_map.svg",
+  "instance_mask_sheet": "scene_009_5ZKStnWn8Zo_O88/annotation_aids/instance_mask_audit.jpg",
+  "frames": [
+    {
+      "filename": "001.jpg",
+      "index_1based": 1,
+      "source_image": "0ed7cd08118a411f9c4a0a0a94c98ae1_i1_0.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/0ed7cd08118a411f9c4a0a0a94c98ae1_i1_0.jpg",
+      "sha256": "42e1ca521834e82265ded792a4df4823edf157f5154517c1b76bf493ffa75f50",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "indoor",
+      "capture_id": "0ed7cd08118a411f9c4a0a0a94c98ae1",
+      "region_id": 0,
+      "position_m": [
+        11.2476,
+        4.58434,
+        1.73439
+      ],
+      "native_capture_position_m": [
+        11.2474,
+        4.5904,
+        1.73434
+      ],
+      "camera_to_world": [
+        [
+          -0.878892,
+          -0.014054,
+          0.476812,
+          11.2476
+        ],
+        [
+          0.476882,
+          -0.00198899,
+          0.878964,
+          4.58434
+        ],
+        [
+          -0.0114043,
+          0.999899,
+          0.00844946,
+          1.73439
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -118.47852319003964,
+      "pitch_deg": -0.48412415782400503,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 0,
+      "boundary_visible": false,
+      "boundary_mask": {
+        "path": "annotation_aids/001_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": null,
+      "model_visible": true
+    },
+    {
+      "filename": "002.jpg",
+      "index_1based": 2,
+      "source_image": "cff968589d894c999af7cc0d0d70b00e_i1_5.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/cff968589d894c999af7cc0d0d70b00e_i1_5.jpg",
+      "sha256": "8fc83ddcc19aadc4389b5ef451436feda412f36c2254adb51f4625a638580418",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "indoor",
+      "capture_id": "cff968589d894c999af7cc0d0d70b00e",
+      "region_id": 0,
+      "position_m": [
+        9.78171,
+        4.56875,
+        1.73271
+      ],
+      "native_capture_position_m": [
+        9.77772,
+        4.5745,
+        1.73262
+      ],
+      "camera_to_world": [
+        [
+          -0.821918,
+          0.00440333,
+          -0.569587,
+          9.78171
+        ],
+        [
+          -0.569569,
+          0.00471474,
+          0.821929,
+          4.56875
+        ],
+        [
+          0.00630488,
+          0.999979,
+          -0.00136787,
+          1.73271
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -55.27850210068472,
+      "pitch_deg": 0.07837320236284244,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 0,
+      "boundary_visible": false,
+      "boundary_mask": {
+        "path": "annotation_aids/002_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "0ed7cd08118a411f9c4a0a0a94c98ae1_i1_0.jpg",
+        "b": "cff968589d894c999af7cc0d0d70b00e_i1_5.jpg",
+        "overlap": 0.1880371,
+        "ab": 0.1880371,
+        "ba": 0.2004883,
+        "a_to_b": 0.1880371,
+        "b_to_a": 0.2004883,
+        "valid_surface_overlap": 0.1898728,
+        "distance_m": 1.4697670124206765,
+        "kind": "translation",
+        "reused_previous_measurement": false
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "003.jpg",
+      "index_1based": 3,
+      "source_image": "9b6e8cf1d85c477ca6bb823d6c7b5765_i1_2.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/9b6e8cf1d85c477ca6bb823d6c7b5765_i1_2.jpg",
+      "sha256": "f94936285047bad942312abab3bc2d261ae18d0fcb16fe55487577346336f228",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "indoor",
+      "capture_id": "9b6e8cf1d85c477ca6bb823d6c7b5765",
+      "region_id": 0,
+      "position_m": [
+        9.78613,
+        3.00882,
+        1.80868
+      ],
+      "native_capture_position_m": [
+        9.78613,
+        3.00882,
+        1.80868
+      ],
+      "camera_to_world": [
+        [
+          -0.839136,
+          0.0274062,
+          -0.543229,
+          9.78613
+        ],
+        [
+          -0.54374,
+          -0.0165703,
+          0.83909,
+          3.00882
+        ],
+        [
+          0.013995,
+          0.999487,
+          0.0288059,
+          1.80868
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -57.08087760461272,
+      "pitch_deg": -1.6506848329450639,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 295,
+      "boundary_visible": true,
+      "boundary_mask": {
+        "path": "annotation_aids/003_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "9b6e8cf1d85c477ca6bb823d6c7b5765_i1_2.jpg",
+        "b": "cff968589d894c999af7cc0d0d70b00e_i1_5.jpg",
+        "overlap": 0.1691406,
+        "ab": 0.2719727,
+        "ba": 0.1691406,
+        "a_to_b": 0.2719727,
+        "b_to_a": 0.1691406,
+        "valid_surface_overlap": 0.1691406,
+        "distance_m": 1.5675489511016867,
+        "kind": "translation",
+        "reused_previous_measurement": false
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "004.jpg",
+      "index_1based": 4,
+      "source_image": "ec28148ed9c84a5e96a0fe67eced4150_i1_3.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/ec28148ed9c84a5e96a0fe67eced4150_i1_3.jpg",
+      "sha256": "8bae63fa14e333d77d19978102531173e77c010820ac584547f901c5d7634338",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "indoor",
+      "capture_id": "ec28148ed9c84a5e96a0fe67eced4150",
+      "region_id": 2,
+      "position_m": [
+        11.0069,
+        1.81219,
+        1.81177
+      ],
+      "native_capture_position_m": [
+        11.0066,
+        1.81567,
+        1.81176
+      ],
+      "camera_to_world": [
+        [
+          -0.410827,
+          0.0275033,
+          -0.911298,
+          11.0069
+        ],
+        [
+          -0.911656,
+          -0.00122819,
+          0.410952,
+          1.81219
+        ],
+        [
+          0.0101835,
+          0.999621,
+          0.0255774,
+          1.81177
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -24.273107294868375,
+      "pitch_deg": -1.4656369046542275,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 560,
+      "boundary_visible": true,
+      "boundary_mask": {
+        "path": "annotation_aids/004_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "9b6e8cf1d85c477ca6bb823d6c7b5765_i1_2.jpg",
+        "b": "ec28148ed9c84a5e96a0fe67eced4150_i1_3.jpg",
+        "overlap": 0.2216309,
+        "ab": 0.2216309,
+        "ba": 0.4821289,
+        "a_to_b": 0.2216309,
+        "b_to_a": 0.4821289,
+        "valid_surface_overlap": 0.2290573,
+        "distance_m": 1.7067991767633361,
+        "kind": "translation",
+        "reused_previous_measurement": false
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "005.jpg",
+      "index_1based": 5,
+      "source_image": "47bda52bcd8f4e5493febe43bc66e225_i1_2.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/47bda52bcd8f4e5493febe43bc66e225_i1_2.jpg",
+      "sha256": "ffd9b0523c59e25e7782fdd281d90dcfe4013db1805e42e8eb58694f1631dd32",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "indoor",
+      "capture_id": "47bda52bcd8f4e5493febe43bc66e225",
+      "region_id": 2,
+      "position_m": [
+        12.9532,
+        -0.0760844,
+        1.82351
+      ],
+      "native_capture_position_m": [
+        12.9532,
+        -0.0760844,
+        1.82351
+      ],
+      "camera_to_world": [
+        [
+          -0.348398,
+          0.0794053,
+          -0.933977,
+          12.9532
+        ],
+        [
+          -0.937119,
+          -0.051422,
+          0.345199,
+          -0.0760844
+        ],
+        [
+          -0.0206162,
+          0.995515,
+          0.0923269,
+          1.82351
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -20.28437190024864,
+      "pitch_deg": -5.297486151325719,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 2259,
+      "boundary_visible": true,
+      "boundary_mask": {
+        "path": "annotation_aids/005_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "47bda52bcd8f4e5493febe43bc66e225_i1_2.jpg",
+        "b": "ec28148ed9c84a5e96a0fe67eced4150_i1_3.jpg",
+        "overlap": 0.1567383,
+        "ab": 0.6800293,
+        "ba": 0.1567383,
+        "a_to_b": 0.6800293,
+        "b_to_a": 0.1567383,
+        "valid_surface_overlap": 0.166918,
+        "distance_m": 2.7144289146005205,
+        "kind": "translation",
+        "reused_previous_measurement": true
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "006.jpg",
+      "index_1based": 6,
+      "source_image": "befe6c85fdab4dc7bea03b2360a77a76_i1_0.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/befe6c85fdab4dc7bea03b2360a77a76_i1_0.jpg",
+      "sha256": "0949b4f19bb3b215db068f8f2de555002d14174ef45ccfcd8959996034d9e226",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "indoor",
+      "capture_id": "befe6c85fdab4dc7bea03b2360a77a76",
+      "region_id": 2,
+      "position_m": [
+        14.3698,
+        -0.294532,
+        1.73934
+      ],
+      "native_capture_position_m": [
+        14.364,
+        -0.292676,
+        1.73927
+      ],
+      "camera_to_world": [
+        [
+          -0.741032,
+          -0.00496055,
+          -0.67145,
+          14.3698
+        ],
+        [
+          -0.671422,
+          -0.00632949,
+          0.741048,
+          -0.294532
+        ],
+        [
+          -0.00792573,
+          0.999967,
+          0.00135899,
+          1.73934
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -47.82085300579327,
+      "pitch_deg": -0.07786441536786179,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 6004,
+      "boundary_visible": true,
+      "boundary_mask": {
+        "path": "annotation_aids/006_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "47bda52bcd8f4e5493febe43bc66e225_i1_2.jpg",
+        "b": "befe6c85fdab4dc7bea03b2360a77a76_i1_0.jpg",
+        "overlap": 0.1597656,
+        "ab": 0.1597656,
+        "ba": 0.6175293,
+        "a_to_b": 0.1597656,
+        "b_to_a": 0.6175293,
+        "valid_surface_overlap": 0.1974891,
+        "distance_m": 1.4298129034214793,
+        "kind": "translation",
+        "reused_previous_measurement": true
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "007.jpg",
+      "index_1based": 7,
+      "source_image": "391800cbfdfd4afe88b2f1a4bd27b532_i1_2.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/391800cbfdfd4afe88b2f1a4bd27b532_i1_2.jpg",
+      "sha256": "bb244cf55f357173b1310cfdf50aafbdbcaeab7b64da297230d12e54c7cf1960",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "outdoor",
+      "capture_id": "391800cbfdfd4afe88b2f1a4bd27b532",
+      "region_id": 3,
+      "position_m": [
+        15.7528,
+        -0.294356,
+        1.64909
+      ],
+      "native_capture_position_m": [
+        15.7528,
+        -0.294356,
+        1.64909
+      ],
+      "camera_to_world": [
+        [
+          -0.777658,
+          -0.00129586,
+          0.628686,
+          15.7528
+        ],
+        [
+          0.62868,
+          0.00310211,
+          0.777657,
+          -0.294356
+        ],
+        [
+          -0.00295777,
+          0.999994,
+          -0.00159843,
+          1.64909
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -128.95332554391126,
+      "pitch_deg": 0.0915833318460312,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 435,
+      "boundary_visible": true,
+      "boundary_mask": {
+        "path": "annotation_aids/007_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "391800cbfdfd4afe88b2f1a4bd27b532_i1_2.jpg",
+        "b": "befe6c85fdab4dc7bea03b2360a77a76_i1_0.jpg",
+        "overlap": 0.2605957,
+        "ab": 0.2605957,
+        "ba": 0.2666016,
+        "a_to_b": 0.2605957,
+        "b_to_a": 0.2666016,
+        "valid_surface_overlap": 0.2646271,
+        "distance_m": 1.3917257972747359,
+        "kind": "translation",
+        "reused_previous_measurement": true
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "008.jpg",
+      "index_1based": 8,
+      "source_image": "cc29839c645d4d0387339c57dffda76c_i1_3.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/cc29839c645d4d0387339c57dffda76c_i1_3.jpg",
+      "sha256": "1985b4e2f6b656924f95dc5f0f1789900e0efa2bb1c5ad65050c2238d87731ea",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "outdoor",
+      "capture_id": "cc29839c645d4d0387339c57dffda76c",
+      "region_id": 3,
+      "position_m": [
+        17.1032,
+        -0.347275,
+        1.60985
+      ],
+      "native_capture_position_m": [
+        17.1065,
+        -0.348436,
+        1.60985
+      ],
+      "camera_to_world": [
+        [
+          -0.651093,
+          -0.00936466,
+          0.758939,
+          17.1032
+        ],
+        [
+          0.758995,
+          -0.00612683,
+          0.651066,
+          -0.347275
+        ],
+        [
+          -0.00144692,
+          0.999937,
+          0.0110961,
+          1.60985
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -139.37491438320998,
+      "pitch_deg": -0.6357727459310142,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 68,
+      "boundary_visible": false,
+      "boundary_mask": {
+        "path": "annotation_aids/008_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "391800cbfdfd4afe88b2f1a4bd27b532_i1_2.jpg",
+        "b": "cc29839c645d4d0387339c57dffda76c_i1_3.jpg",
+        "overlap": 0.2978516,
+        "ab": 0.5418945,
+        "ba": 0.2978516,
+        "a_to_b": 0.5418945,
+        "b_to_a": 0.2978516,
+        "valid_surface_overlap": 0.3171302,
+        "distance_m": 1.3553479678665548,
+        "kind": "translation",
+        "reused_previous_measurement": true
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "009.jpg",
+      "index_1based": 9,
+      "source_image": "25be7d3ed5de4d9f95e53cef1e4b216b_i1_2.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/25be7d3ed5de4d9f95e53cef1e4b216b_i1_2.jpg",
+      "sha256": "7543977e34a09abe1a1e4ea611b1dff7a02fd01ddb1edee3ea2c36088ea5127f",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "outdoor",
+      "capture_id": "25be7d3ed5de4d9f95e53cef1e4b216b",
+      "region_id": 3,
+      "position_m": [
+        16.809,
+        -1.53801,
+        1.61315
+      ],
+      "native_capture_position_m": [
+        16.809,
+        -1.53801,
+        1.61315
+      ],
+      "camera_to_world": [
+        [
+          -0.968824,
+          -0.0109142,
+          0.247508,
+          16.809
+        ],
+        [
+          0.247448,
+          0.00650405,
+          0.968879,
+          -1.53801
+        ],
+        [
+          -0.0121841,
+          0.999919,
+          -0.00360131,
+          1.61315
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -104.33019445886902,
+      "pitch_deg": 0.20634030973939252,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 0,
+      "boundary_visible": false,
+      "boundary_mask": {
+        "path": "annotation_aids/009_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "25be7d3ed5de4d9f95e53cef1e4b216b_i1_2.jpg",
+        "b": "cc29839c645d4d0387339c57dffda76c_i1_3.jpg",
+        "overlap": 0.2045898,
+        "ab": 0.3747559,
+        "ba": 0.2045898,
+        "a_to_b": 0.3747559,
+        "b_to_a": 0.2045898,
+        "valid_surface_overlap": 0.2178321,
+        "distance_m": 1.2262150877704938,
+        "kind": "translation",
+        "reused_previous_measurement": true
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "010.jpg",
+      "index_1based": 10,
+      "source_image": "ee9fe1ab9d3c49569be2ab4d0e51bf2a_i1_2.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/ee9fe1ab9d3c49569be2ab4d0e51bf2a_i1_2.jpg",
+      "sha256": "21a1ca79257494265fe0219927180e720bea113dfed186a7563a8bbeca055d06",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "outdoor",
+      "capture_id": "ee9fe1ab9d3c49569be2ab4d0e51bf2a",
+      "region_id": 3,
+      "position_m": [
+        16.0222,
+        -2.69148,
+        1.63345
+      ],
+      "native_capture_position_m": [
+        16.0222,
+        -2.69148,
+        1.63345
+      ],
+      "camera_to_world": [
+        [
+          -0.993441,
+          -0.00379815,
+          0.114274,
+          16.0222
+        ],
+        [
+          0.114299,
+          -0.00724147,
+          0.99342,
+          -2.69148
+        ],
+        [
+          -0.00294544,
+          0.999966,
+          0.00762737,
+          1.63345
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -96.56194391467058,
+      "pitch_deg": -0.43702034726014605,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 0,
+      "boundary_visible": false,
+      "boundary_mask": {
+        "path": "annotation_aids/010_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "25be7d3ed5de4d9f95e53cef1e4b216b_i1_2.jpg",
+        "b": "ee9fe1ab9d3c49569be2ab4d0e51bf2a_i1_2.jpg",
+        "overlap": 0.3078125,
+        "ab": 0.3078125,
+        "ba": 0.715625,
+        "a_to_b": 0.3078125,
+        "b_to_a": 0.715625,
+        "valid_surface_overlap": 0.3542369,
+        "distance_m": 1.3964094567497023,
+        "kind": "translation",
+        "reused_previous_measurement": true
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "011.jpg",
+      "index_1based": 11,
+      "source_image": "b8356fcdf6ad41a2aa23bf5b13440ead_i1_3.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/b8356fcdf6ad41a2aa23bf5b13440ead_i1_3.jpg",
+      "sha256": "f86250e752c2e07cf1c4b29f1fb1ab49bdd63441996e98a1c65ebe760dfff7a4",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "outdoor",
+      "capture_id": "b8356fcdf6ad41a2aa23bf5b13440ead",
+      "region_id": 3,
+      "position_m": [
+        16.7346,
+        -5.29558,
+        1.60701
+      ],
+      "native_capture_position_m": [
+        16.7369,
+        -5.29822,
+        1.60707
+      ],
+      "camera_to_world": [
+        [
+          -0.1896,
+          -0.0165701,
+          0.981721,
+          16.7346
+        ],
+        [
+          0.981668,
+          0.0165897,
+          0.18987,
+          -5.29558
+        ],
+        [
+          -0.0194324,
+          0.999725,
+          0.0131202,
+          1.60701
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -169.0538423325371,
+      "pitch_deg": -0.7517536551878279,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 0,
+      "boundary_visible": false,
+      "boundary_mask": {
+        "path": "annotation_aids/011_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "b8356fcdf6ad41a2aa23bf5b13440ead_i1_3.jpg",
+        "b": "ee9fe1ab9d3c49569be2ab4d0e51bf2a_i1_2.jpg",
+        "overlap": 0.2073242,
+        "ab": 0.7188965,
+        "ba": 0.2073242,
+        "a_to_b": 0.7188965,
+        "b_to_a": 0.2073242,
+        "valid_surface_overlap": 0.241497,
+        "distance_m": 2.7030696295138226,
+        "kind": "translation",
+        "reused_previous_measurement": true
+      },
+      "model_visible": true
+    },
+    {
+      "filename": "012.jpg",
+      "index_1based": 12,
+      "source_image": "c4213117dcfc46d3a59a80ed3c584015_i1_3.jpg",
+      "source_path": "/data/Ahmed/mit/matterport3d/dataset/v1/scans/5ZKStnWn8Zo/undistorted_color_images/c4213117dcfc46d3a59a80ed3c584015_i1_3.jpg",
+      "sha256": "0648c8ac8ff63ebc262988e76939b77ae1cf82742c23305c6d21eee1415eab54",
+      "dimensions": [
+        1280,
+        1024
+      ],
+      "zone": "outdoor",
+      "capture_id": "c4213117dcfc46d3a59a80ed3c584015",
+      "region_id": 3,
+      "position_m": [
+        15.3844,
+        -5.48123,
+        1.62381
+      ],
+      "native_capture_position_m": [
+        15.3872,
+        -5.48333,
+        1.62383
+      ],
+      "camera_to_world": [
+        [
+          -0.393812,
+          -0.00382573,
+          0.919183,
+          15.3844
+        ],
+        [
+          0.919106,
+          0.0118975,
+          0.393829,
+          -5.48123
+        ],
+        [
+          -0.0124425,
+          0.999922,
+          -0.00116988,
+          1.62381
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "heading_deg": -156.80702187519825,
+      "pitch_deg": 0.06702920182634628,
+      "boundary_object_id": 88,
+      "boundary_visible_pixels": 0,
+      "boundary_visible": false,
+      "boundary_mask": {
+        "path": "annotation_aids/012_boundary_mask.png",
+        "model_visible": false,
+        "resolution": [
+          160,
+          128
+        ]
+      },
+      "from_previous": {
+        "a": "b8356fcdf6ad41a2aa23bf5b13440ead_i1_3.jpg",
+        "b": "c4213117dcfc46d3a59a80ed3c584015_i1_3.jpg",
+        "overlap": 0.177002,
+        "ab": 0.177002,
+        "ba": 0.8479004,
+        "a_to_b": 0.177002,
+        "b_to_a": 0.8479004,
+        "valid_surface_overlap": 0.1770365,
+        "distance_m": 1.3624377782856714,
+        "kind": "translation",
+        "reused_previous_measurement": true
+      },
+      "model_visible": true
+    }
+  ],
+  "l2_frames": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg"
+  ],
+  "pre_visible_frame_indices": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "validation": {
+    "unique_original_images": 12,
+    "frames_per_side": [
+      6,
+      6
+    ],
+    "capture_positions_per_side": [
+      6,
+      6
+    ],
+    "one_declared_context_crossing": true,
+    "all_native_translations_reciprocal": true,
+    "minimum_overlap": 0.1567383,
+    "maximum_translation_m": 2.7144289146005205,
+    "boundary_association_distance_m": 0.6152155051529944,
+    "pre_crossing_100px_sightings": 4,
+    "original_JPEG_byte_hashes_match": true,
+    "boundary_mask_counts_match": true,
+    "export_checks_passed": true
+  },
+  "preview_video": {
+    "filename": "walkthrough.webm",
+    "fps": 1,
+    "duration_seconds": 12,
+    "source_frame_count": 12,
+    "description": "Slideshow of unchanged real captures, not continuous captured video; no interpolation."
+  },
+  "visual_audit": {
+    "assembly_id": "5ZKStnWn8Zo:bedroom_balcony",
+    "scan_id": "5ZKStnWn8Zo",
+    "boundary_class": "outdoor",
+    "object_id": 88,
+    "source_sheet": "/data/Ahmed/mit/new/results/scene_capacity_expanded_20260918/review/5ZKStnWn8Zo_object_88_outdoor_9b75bd2abf_mask.jpg",
+    "source_frames_shown": [
+      "0ed7cd08118a411f9c4a0a0a94c98ae1_i1_0.jpg",
+      "cff968589d894c999af7cc0d0d70b00e_i1_5.jpg",
+      "9b6e8cf1d85c477ca6bb823d6c7b5765_i1_2.jpg",
+      "ec28148ed9c84a5e96a0fe67eced4150_i1_3.jpg",
+      "47bda52bcd8f4e5493febe43bc66e225_i1_2.jpg",
+      "befe6c85fdab4dc7bea03b2360a77a76_i1_0.jpg",
+      "391800cbfdfd4afe88b2f1a4bd27b532_i1_2.jpg",
+      "cc29839c645d4d0387339c57dffda76c_i1_3.jpg",
+      "25be7d3ed5de4d9f95e53cef1e4b216b_i1_2.jpg",
+      "ee9fe1ab9d3c49569be2ab4d0e51bf2a_i1_2.jpg",
+      "b8356fcdf6ad41a2aa23bf5b13440ead_i1_3.jpg",
+      "c4213117dcfc46d3a59a80ed3c584015_i1_3.jpg"
+    ],
+    "pre_pixels": [
+      0,
+      0,
+      295,
+      560,
+      2259,
+      6004
+    ],
+    "verdict": "pass",
+    "observed_evidence": "The boundary leaf is visible in pre frames 3-6 and the same hinge/door is visible in post frames 7-8. The bedroom becomes a roofed but open-sided balcony with rail, trees and exterior facade.",
+    "issues": [
+      "Interior approach starts in the associated bathroom/bedroom suite; indoor side is not a single semantic room throughout."
+    ],
+    "physical_context_visual_pass": true,
+    "target_surface_needs_review": false,
+    "images_actually_viewed": [
+      "/data/Ahmed/mit/new/results/scene_capacity_expanded_20260918/review/5ZKStnWn8Zo_object_88_outdoor_9b75bd2abf_mask.jpg"
+    ],
+    "canonical_RGB_frames_inspected_on_sheet": 12,
+    "mask_alignment_scope": "Visual coarse check of the existing cyan first-hit native-instance overlay; not a fresh render or pixel-perfect annotation.",
+    "human_certified": false
+  },
+  "independent_numerical_audit": {
+    "assembly_id": "5ZKStnWn8Zo:bedroom_balcony",
+    "scan_id": "5ZKStnWn8Zo",
+    "boundary_class": "outdoor",
+    "boundary_object_id": 88,
+    "valid": true,
+    "errors": [],
+    "original_sequence_sha256": "9b75bd2abf",
+    "image_count": 12,
+    "source_images": [
+      "0ed7cd08118a411f9c4a0a0a94c98ae1_i1_0.jpg",
+      "cff968589d894c999af7cc0d0d70b00e_i1_5.jpg",
+      "9b6e8cf1d85c477ca6bb823d6c7b5765_i1_2.jpg",
+      "ec28148ed9c84a5e96a0fe67eced4150_i1_3.jpg",
+      "47bda52bcd8f4e5493febe43bc66e225_i1_2.jpg",
+      "befe6c85fdab4dc7bea03b2360a77a76_i1_0.jpg",
+      "391800cbfdfd4afe88b2f1a4bd27b532_i1_2.jpg",
+      "cc29839c645d4d0387339c57dffda76c_i1_3.jpg",
+      "25be7d3ed5de4d9f95e53cef1e4b216b_i1_2.jpg",
+      "ee9fe1ab9d3c49569be2ab4d0e51bf2a_i1_2.jpg",
+      "b8356fcdf6ad41a2aa23bf5b13440ead_i1_3.jpg",
+      "c4213117dcfc46d3a59a80ed3c584015_i1_3.jpg"
+    ],
+    "capture_positions_per_side": [
+      6,
+      6
+    ],
+    "distinct_XYZ_positions_per_side": [
+      6,
+      6
+    ],
+    "native_regions_per_side": [
+      [
+        0,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "context_sequence": [
+      "indoor",
+      "indoor",
+      "indoor",
+      "indoor",
+      "indoor",
+      "indoor",
+      "outdoor",
+      "outdoor",
+      "outdoor",
+      "outdoor",
+      "outdoor",
+      "outdoor"
+    ],
+    "native_context_transitions": 1,
+    "fresh_boundary_pixels_by_frame": [
+      0,
+      0,
+      295,
+      560,
+      2259,
+      6004,
+      435,
+      68,
+      0,
+      0,
+      0,
+      0
+    ],
+    "fresh_pre_100px_indices": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "maximum_native_step_m": 2.7144289146005205,
+    "association_distance_m": 0.6152155051529944,
+    "minimum_fresh_overlap": 0.15673828125,
+    "adjacent_pairs": [
+      {
+        "from_frame": 1,
+        "to_frame": 2,
+        "native_reciprocal": true,
+        "native_translation_m": 1.4697670124206765,
+        "fresh_overlap": 0.188037109375,
+        "stored_overlap": 0.1880371,
+        "difference": 9.374999998534861e-09
+      },
+      {
+        "from_frame": 2,
+        "to_frame": 3,
+        "native_reciprocal": true,
+        "native_translation_m": 1.5675489511016867,
+        "fresh_overlap": 0.169140625,
+        "stored_overlap": 0.1691406,
+        "difference": 2.4999999986841104e-08
+      },
+      {
+        "from_frame": 3,
+        "to_frame": 4,
+        "native_reciprocal": true,
+        "native_translation_m": 1.7067991767633361,
+        "fresh_overlap": 0.221630859375,
+        "stored_overlap": 0.2216309,
+        "difference": 4.062500000290292e-08
+      },
+      {
+        "from_frame": 4,
+        "to_frame": 5,
+        "native_reciprocal": true,
+        "native_translation_m": 2.7144289146005205,
+        "fresh_overlap": 0.15673828125,
+        "stored_overlap": 0.1567383,
+        "difference": 1.8749999997069722e-08
+      },
+      {
+        "from_frame": 5,
+        "to_frame": 6,
+        "native_reciprocal": true,
+        "native_translation_m": 1.4298129034214793,
+        "fresh_overlap": 0.159765625,
+        "stored_overlap": 0.1597656,
+        "difference": 2.4999999986841104e-08
+      },
+      {
+        "from_frame": 6,
+        "to_frame": 7,
+        "native_reciprocal": true,
+        "native_translation_m": 1.3917257972747359,
+        "fresh_overlap": 0.260595703125,
+        "stored_overlap": 0.2605957,
+        "difference": 3.1250000365190544e-09
+      },
+      {
+        "from_frame": 7,
+        "to_frame": 8,
+        "native_reciprocal": true,
+        "native_translation_m": 1.3553479678665548,
+        "fresh_overlap": 0.2978515625,
+        "stored_overlap": 0.2978516,
+        "difference": 3.7499999994139444e-08
+      },
+      {
+        "from_frame": 8,
+        "to_frame": 9,
+        "native_reciprocal": true,
+        "native_translation_m": 1.2262150877704938,
+        "fresh_overlap": 0.20458984375,
+        "stored_overlap": 0.2045898,
+        "difference": 4.37500000116664e-08
+      },
+      {
+        "from_frame": 9,
+        "to_frame": 10,
+        "native_reciprocal": true,
+        "native_translation_m": 1.3964094567497023,
+        "fresh_overlap": 0.3078125,
+        "stored_overlap": 0.3078125,
+        "difference": 0.0
+      },
+      {
+        "from_frame": 10,
+        "to_frame": 11,
+        "native_reciprocal": true,
+        "native_translation_m": 2.7030696295138226,
+        "fresh_overlap": 0.20732421875,
+        "stored_overlap": 0.2073242,
+        "difference": 1.8750000024825297e-08
+      },
+      {
+        "from_frame": 11,
+        "to_frame": 12,
+        "native_reciprocal": true,
+        "native_translation_m": 1.3624377782856714,
+        "fresh_overlap": 0.177001953125,
+        "stored_overlap": 0.177002,
+        "difference": 4.6874999992674304e-08
+      }
+    ],
+    "fresh_visibility_exactly_matches_saved_certificate": true,
+    "depth_registration_by_frame": [
+      {
+        "valid_fraction": 0.770458984375,
+        "median_abs_m": 0.04468536376953125,
+        "p90_abs_m": 2.210183525085449,
+        "fraction_within_0_1m": 0.545028202040687
+      },
+      {
+        "valid_fraction": 0.775830078125,
+        "median_abs_m": 0.03753542900085449,
+        "p90_abs_m": 1.2744584560394292,
+        "fraction_within_0_1m": 0.6019258606583171
+      },
+      {
+        "valid_fraction": 0.805419921875,
+        "median_abs_m": 0.03175497055053711,
+        "p90_abs_m": 0.1466451644897461,
+        "fraction_within_0_1m": 0.7842376477720522
+      },
+      {
+        "valid_fraction": 0.78955078125,
+        "median_abs_m": 0.02346968650817871,
+        "p90_abs_m": 0.07543785572052002,
+        "fraction_within_0_1m": 0.9424242424242424
+      },
+      {
+        "valid_fraction": 0.48525390625,
+        "median_abs_m": 0.012683987617492676,
+        "p90_abs_m": 0.05159654617309583,
+        "fraction_within_0_1m": 0.9198027772187563
+      },
+      {
+        "valid_fraction": 0.681103515625,
+        "median_abs_m": 0.009892821311950684,
+        "p90_abs_m": 0.36895284652710003,
+        "fraction_within_0_1m": 0.7967596243458313
+      },
+      {
+        "valid_fraction": 0.946533203125,
+        "median_abs_m": 0.03639984130859375,
+        "p90_abs_m": 0.26350955963134787,
+        "fraction_within_0_1m": 0.7216404436419912
+      },
+      {
+        "valid_fraction": 0.840869140625,
+        "median_abs_m": 0.04294323921203613,
+        "p90_abs_m": 0.29605579376220703,
+        "fraction_within_0_1m": 0.749143487602346
+      },
+      {
+        "valid_fraction": 0.73466796875,
+        "median_abs_m": 0.03405940532684326,
+        "p90_abs_m": 0.2230396270751953,
+        "fraction_within_0_1m": 0.7992822012495016
+      },
+      {
+        "valid_fraction": 0.739013671875,
+        "median_abs_m": 0.02279829978942871,
+        "p90_abs_m": 0.09212608337402345,
+        "fraction_within_0_1m": 0.9125867195242815
+      },
+      {
+        "valid_fraction": 0.978955078125,
+        "median_abs_m": 0.007180929183959961,
+        "p90_abs_m": 0.06980504989624026,
+        "fraction_within_0_1m": 0.9520674347847773
+      },
+      {
+        "valid_fraction": 0.88916015625,
+        "median_abs_m": 0.00805315375328064,
+        "p90_abs_m": 0.0998587727546692,
+        "fraction_within_0_1m": 0.900494233937397
+      }
+    ]
+  },
+  "visual_evidence_files": [
+    "scene_009_5ZKStnWn8Zo_O88/annotation_aids/instance_mask_audit.jpg"
+  ],
+  "registration_diagnostic": {
+    "warning_frames": [],
+    "criterion": "Frame median absolute mesh-vs-observed-depth residual >0.10m; diagnostic only, not a reference exclusion rule.",
+    "not_a_guarantee_of_pixel_perfect_RGB_alignment": true
+  },
+  "annotation_aids": {
+    "model_visible": false,
+    "fresh_full_instance_maps": "../verification/fresh_render/5ZKStnWn8Zo.npz"
+  }
+}

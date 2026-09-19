@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent human annotation of BLOCKMIND indoor–outdoor episodes, shared surfaces, boundary evidence, and qualitative pathways.">
+  <title>BLOCKMIND · Level 2 annotation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="BLOCKMIND annotation home"><span class="brand-mark" aria-hidden="true">B</span><span>BLOCKMIND <small>Level 2 · human annotation</small></span></a>
+    <div class="header-meta"><span id="buildBadge" class="badge">Loading dataset…</span><span class="privacy-dot">Private · saved in this browser</span></div>
+  </header>
+  <main>
+    <section id="loading" class="loading-card" role="status"><div class="spinner"></div><h1>Opening your annotation workspace</h1><p>Loading original images and the annotation catalogue.</p></section>
+    <section id="fatal" class="notice danger hidden" role="alert"></section>
+    <section id="welcome" class="welcome hidden" aria-labelledby="welcomeTitle">
+      <div class="welcome-story"><p class="eyebrow">A shared route. Independent judgments.</p><h1 id="welcomeTitle">Understand the space,<br>one surface at a time.</h1><p class="lead">Review the indoor–outdoor transition, identify the boundary and marked surfaces, then judge light, air, and rain under clearly stated conditions.</p><div class="stats-strip" id="datasetStats"></div><div class="workflow"><div><span>1</span><p><strong>Prepare one shared layout</strong><br>A coordinator checks surface points, directions, and boundary boxes.</p></div><div><span>2</span><p><strong>Annotate independently</strong><br>Both raters import that exact layout and provide their own answers.</p></div><div><span>3</span><p><strong>Export for comparison</strong><br>Drafts are recoverable. Final exports require a complete checklist.</p></div></div><p class="small muted">No model calls, account, or annotation upload. Annotator IDs are labels, not authentication: use separate browser profiles for independent raters.</p></div>
+      <form class="card setup-card" id="setupForm">
+        <p class="eyebrow">Start or resume</p><h2>Your workspace</h2>
+        <label class="field"><span>Role</span><select id="roleSelect"><option value="annotator">Independent annotator</option><option value="coordinator">Layout coordinator</option></select></label>
+        <label class="field"><span>Your ID</span><input id="identityInput" required maxlength="80" autocomplete="off" placeholder="e.g. rater-01"></label>
+        <div id="roleHelp" class="helper">Import the frozen layout provided by your coordinator. Do not import another rater’s answers.</div>
+        <button type="button" class="secondary wide" id="welcomeImport">Import layout or my saved draft</button><p id="pendingImportLabel" class="small muted">No layout selected.</p>
+        <button type="submit" class="primary wide" id="startButton">Open workspace <span aria-hidden="true">→</span></button>
+        <p id="setupError" class="form-error" role="alert"></p><p class="small muted">Serve this folder over HTTP. Export a backup regularly; clearing browser data removes local drafts.</p>
+      </form>
+    </section>
+    <section id="workspace" class="hidden">
+      <div id="conflictBanner" class="notice danger hidden" role="alert"><div><strong>This draft changed in another tab.</strong><p>This tab is locked to protect both versions. Export this version before loading the newer saved draft.</p></div><button id="recoveryExport">Export this tab’s recovery JSON</button><button id="reloadLatest">Load latest saved draft</button></div>
+      <div id="storageWarning" class="notice warning hidden" role="alert">Browser storage is unavailable or full. Your edits remain in this tab only. Export a backup before leaving.</div>
+      <div class="workspace-toolbar"><div><span id="roleBadge" class="badge accent"></span><span id="identityLabel" class="small muted"></span><span id="saveStatus" class="save-state" role="status">Saved</span></div><div class="button-row"><button id="importButton" class="quiet">Import</button><button id="draftExport">Export draft</button><button id="finalExport" class="primary">Export final</button><button id="changeSession" class="quiet">Switch workspace</button></div></div>
+      <div class="workspace-grid">
+        <aside class="episode-sidebar card" aria-label="Episode navigation"><div class="sidebar-head"><p class="eyebrow">Collection</p><h2>Episodes <span id="totalEpisodes"></span></h2><div class="progress-track"><div id="progressBar"></div></div><p id="overallProgress" class="small muted"></p><label class="sr-only" for="searchEpisodes">Search episodes</label><input id="searchEpisodes" type="search" placeholder="Search episode or house"><label class="sr-only" for="episodeFilter">Filter episodes</label><select id="episodeFilter"><option value="all">All episodes</option><option value="incomplete">Needs work</option><option value="complete">Complete / reviewed</option><option value="flagged">Source review flags</option><option value="excluded">Excluded</option><option value="outdoor">Outdoor candidates</option><option value="semi_outdoor">Semi-outdoor candidates</option></select><button id="nextIncomplete" class="wide quiet">Next unfinished →</button></div><nav id="episodeList" aria-label="Episodes"></nav></aside>
+        <div class="work-main">
+          <div class="episode-heading"><div><p class="eyebrow" id="episodeKicker"></p><h1 id="episodeTitle"></h1><p id="episodeSubtitle" class="small muted"></p></div><div class="button-row"><button id="prevEpisode" aria-label="Previous episode">←</button><button id="nextEpisode" aria-label="Next episode">→</button><span id="episodeStatus" class="badge"></span></div></div>
+          <div id="episodeSourceWarning" class="notice warning hidden"></div>
+          <div class="annotation-columns">
+            <section class="viewer card" aria-label="Image sequence viewer">
+              <div class="viewer-heading"><div><strong id="frameTitle">Frame 01</strong><span id="frameSide" class="badge"></span></div><button id="cleanPreview" class="quiet small-button">Clean RGB preview ↗</button></div>
+              <div class="image-well"><div id="imageStage" class="image-stage" tabindex="0" aria-label="Scene image. Coordinator can click to place or move a point."><img id="sceneImage" alt="Original scene photograph" draggable="false"><img id="maskImage" class="mask-image hidden" alt="Machine-proposed boundary mask" draggable="false"><svg id="geometryOverlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" preserveAspectRatio="none" aria-label="Shared surface points and boundary boxes"></svg><div id="imageLoading" class="image-loading">Loading frame…</div></div></div>
+              <div id="placementHint" class="placement-hint hidden" role="status"></div>
+              <div class="playback"><button id="prevFrame" aria-label="Previous frame">‹</button><button id="playButton" class="play-button" aria-label="Play sequence">▶ Play</button><button id="nextFrame" aria-label="Next frame">›</button><label class="speed-label">Speed<select id="playSpeed"><option value="1000">1 fps</option><option value="500">2 fps</option><option value="2000">½ fps</option></select></label><span class="small muted">Crossing: 6 → 7</span></div>
+              <div id="filmstrip" class="filmstrip" aria-label="Choose a frame"></div>
+              <div class="viewer-options"><label><input type="checkbox" id="showMarkers" checked> Surface points</label><label><input type="checkbox" id="showBoxes" checked> Boundary boxes</label><label><input type="checkbox" id="showMask"> Machine mask</label><label><input type="checkbox" id="showHints"> Machine hints</label></div>
+              <div id="machineHints" class="helper hidden"></div><p class="viewer-footnote">Original RGB only. Masks and geometry are annotation aids, never model-visible. A red point marks a surface, not a material label.</p>
+            </section>
+            <section class="annotation-panel card" aria-label="Annotation questions"><div id="taskTabs" class="tabs" role="tablist" aria-label="Annotation sections"></div><div id="panelContent" class="panel-content" role="tabpanel"></div></section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <input type="file" id="importFile" accept="application/json,.json" class="hidden">
+  <dialog id="previewDialog" class="preview-dialog"><div class="preview-toolbar"><span id="previewFrameLabel">Frame 01</span><div class="button-row"><button id="previewPrev" aria-label="Previous preview frame">←</button><button id="previewNext" aria-label="Next preview frame">→</button><button id="closePreview" aria-label="Close preview">Close ×</button></div></div><div id="previewStage" class="preview-stage"><img id="previewImage" alt="Numbered RGB frame"><svg id="previewOverlay" xmlns="http://www.w3.org/2000/svg"></svg></div></dialog>
+  <dialog id="messageDialog" class="message-dialog"><h2 id="messageTitle"></h2><div id="messageBody"></div><button id="closeMessage" class="primary">Got it</button></dialog>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="core.js"></script><script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Complete BLOCKMIND scene annotation with one compact form per surface and four sun/rain scenarios.">
+  <title>BLOCKMIND · Scene annotation</title>
+  <link rel="stylesheet" href="full.css">
+</head>
+<body>
+  <header class="site-header"><a href="./" class="brand"><span class="brand-icon">B</span>BLOCKMIND</a><span class="header-caption">Scene annotation</span><a class="subtle-link" href="setup.html">Researcher setup</a></header>
+  <main>
+    <section id="loading" class="welcome-card" role="status">Loading scenes…</section>
+    <section id="fatal" class="notice danger hidden" role="alert"></section>
+    <section id="welcome" class="welcome-card hidden">
+      <p class="eyebrow">Fewer screens, the same complete annotation</p><h1>Look at the scene.<br>Tell us what you see.</h1>
+      <p class="intro">Watch a short walk, complete one form per red point, then check sunlight and rain in four scenarios. Related answers stay together, and your progress is saved as you go.</p>
+      <form id="startForm"><label class="field" for="identityInput">Your name or annotator ID<input id="identityInput" maxlength="80" required autocomplete="off" placeholder="e.g. Ahmed"></label><button id="startButton" class="primary" type="submit">Start annotating →</button></form>
+      <p id="welcomeError" class="error" role="alert"></p><p class="small muted">Work independently. Use your own name and do not look at another annotator’s answers.</p>
+      <button id="restoreWelcome" class="text-button" type="button">Restore my downloaded JSON</button>
+    </section>
+    <section id="workspace" class="hidden">
+      <div id="conflictBanner" class="notice danger hidden" role="alert"><strong id="conflictTitle">This draft changed in another tab.</strong><p>Edits here are paused. Download this tab’s copy or load the latest saved version. Neither copy is silently overwritten.</p><button id="recoveryDownload">Download this copy</button><button id="rawRecovery" class="hidden">Download unreadable saved copy</button><button id="reloadLatest">Load latest version</button></div>
+      <div id="storageWarning" class="notice warning hidden" role="alert">This browser could not save your draft. Your answers are still here. Download a backup before leaving.</div>
+      <div class="toolbar"><div class="scene-picker"><label for="sceneSelect">Scene</label><select id="sceneSelect" aria-label="Choose scene"></select><span id="identityLabel" class="small muted"></span></div><div class="save-tools"><span id="saveStatus" class="small muted" role="status">Saved in this browser</span><button id="downloadButton">Save draft ↓</button><button id="moreButton" aria-expanded="false" aria-controls="moreMenu" aria-label="More options">•••</button></div></div>
+      <div id="moreMenu" class="more-menu hidden"><button id="restoreButton">Restore / update my JSON</button><button id="legacyButton">Recover an older browser draft</button><label for="profileSelect">Collection scope<select id="profileSelect"><option value="l2">Level 2 — required scene facts</option><option value="l2_l3">Level 2 + Level 3 visibility</option></select></label><button id="changeName">Change annotator</button></div>
+      <div id="setupNotice" class="setup-notice hidden" role="status"></div>
+      <nav id="sections" class="steps" aria-label="Annotation sections"></nav>
+      <div class="workspace-grid">
+        <section class="viewer" aria-label="Scene photographs">
+          <div class="viewer-title"><strong id="frameLabel">Image 1 of 12</strong><span id="pointImageHint" class="small muted"></span></div>
+          <div class="image-well"><div id="imageStage"><img id="sceneImage" alt="Scene photograph" draggable="false"><svg id="pointOverlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" preserveAspectRatio="none" aria-label="Shared annotation target"></svg><div id="imageLoading" class="image-loading">Loading image…</div></div></div>
+          <div class="playback"><button id="prevFrame" aria-label="Previous image">‹</button><button id="playButton">▶ Play</button><button id="nextFrame" aria-label="Next image">›</button><input id="frameSlider" type="range" min="0" max="11" value="0" aria-label="Image in sequence"></div>
+          <div id="filmstrip" class="filmstrip" aria-label="Choose an image"></div>
+          <p class="viewer-note">The crossing is between images 6 and 7. Use any image to check your answer. Shared red points cannot be moved by annotators.</p>
+        </section>
+        <section class="question-card" aria-label="Current question"><div id="questionPanel"></div></section>
+      </div>
+      <footer class="workspace-footer"><span>“Not sure” records uncertainty. “Skip” leaves a question unanswered.</span><span id="collectionProgress"></span></footer>
+    </section>
+  </main>
+  <input id="importFile" class="hidden" type="file" accept="application/json,.json">
+  <dialog id="messageDialog"><h2 id="messageTitle"></h2><p id="messageText"></p><button id="closeMessage" class="primary">Got it</button></dialog>
+  <dialog id="migrationDialog"><h2>Review the restored answers</h2><p>Only answers whose targets and conditions still match can be retained. Nothing changes until you confirm.</p><pre id="migrationReport"></pre><div class="actions"><button id="cancelMigration">Cancel</button><button id="confirmMigration" class="primary">Use these answers</button></div></dialog>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="core.js"></script><script src="guided-core.js"></script><script src="full-core.js"></script><script src="compact-core.js"></script><script src="full.js"></script>
+</body>
+</html>

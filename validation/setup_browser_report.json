@@ -1,0 +1,257 @@
+{
+  "test": "researcher_setup_browser",
+  "created_at": "2026-09-19T07:30:33.594196+00:00",
+  "dataset_build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
+  "production_tasks_sha256": "7d89b14102d8a9f148807ad1779303dfacd38cd11cdab7a7c04088198bc1cd26",
+  "synthetic_data_only": true,
+  "checks": [
+    {
+      "name": "all_56_scenes_available",
+      "passed": true
+    },
+    {
+      "name": "source_setup_unreviewed",
+      "passed": true
+    },
+    {
+      "name": "no_automatic_protocol_approval",
+      "passed": true
+    },
+    {
+      "name": "no_invented_directions",
+      "passed": true
+    },
+    {
+      "name": "fixed_boundary_identity_visible",
+      "passed": true
+    },
+    {
+      "name": "blank_draft_can_export",
+      "passed": true
+    },
+    {
+      "name": "unreviewed_publish_blocked",
+      "passed": true
+    },
+    {
+      "name": "scene38_has_two_exterior_proposals",
+      "passed": true
+    },
+    {
+      "name": "manual_add_exterior_point",
+      "passed": true
+    },
+    {
+      "name": "new_point_normalized_coordinates",
+      "passed": true
+    },
+    {
+      "name": "manual_point_has_no_invented_native_instance",
+      "passed": true
+    },
+    {
+      "name": "delete_point_restores_count",
+      "passed": true
+    },
+    {
+      "name": "move_clears_old_instance_and_observations",
+      "passed": true
+    },
+    {
+      "name": "move_preserves_normalized_anchor",
+      "passed": true
+    },
+    {
+      "name": "same_patch_cross_frame_observation",
+      "passed": true
+    },
+    {
+      "name": "observation_coordinates_normalized",
+      "passed": true
+    },
+    {
+      "name": "observation_remove",
+      "passed": true
+    },
+    {
+      "name": "feature_relative_direction_text_preserved",
+      "passed": true
+    },
+    {
+      "name": "direction_visible_reference_anchor",
+      "passed": true
+    },
+    {
+      "name": "two_click_boundary_box",
+      "passed": true
+    },
+    {
+      "name": "postcrossing_box_drawing_rejected",
+      "passed": true
+    },
+    {
+      "name": "glass_nd_is_explicit_not_negative",
+      "passed": true
+    },
+    {
+      "name": "audit_evidence_frame_list",
+      "passed": true
+    },
+    {
+      "name": "trajectory_audit_separate_from_human_answers",
+      "passed": true
+    },
+    {
+      "name": "uncertain_does_not_pass_glass_gate",
+      "passed": true
+    },
+    {
+      "name": "glass_csv_has_all_56_rows",
+      "passed": true
+    },
+    {
+      "name": "csv_formula_injection_escaped",
+      "passed": true
+    },
+    {
+      "name": "review_csv_retains_validity",
+      "passed": true
+    },
+    {
+      "name": "later_review_link_present",
+      "passed": true
+    },
+    {
+      "name": "explicit_global_review_named",
+      "passed": true
+    },
+    {
+      "name": "clearing_reviewer_clears_approval",
+      "passed": true
+    },
+    {
+      "name": "edited_geometry_and_audits_export",
+      "passed": true
+    },
+    {
+      "name": "reload_resumes_geometry_and_audits",
+      "passed": true
+    },
+    {
+      "name": "twenty_partial_positive_selections_do_not_pass_audit_gate",
+      "passed": true
+    },
+    {
+      "name": "trajectory_summary_distinguishes_reviewed_and_pending",
+      "passed": true
+    },
+    {
+      "name": "all_answers_without_evidence_still_pending",
+      "passed": true
+    },
+    {
+      "name": "completed_uncertain_records_not_gate_positives",
+      "passed": true
+    },
+    {
+      "name": "descriptive_positive_count_not_confused_with_gate",
+      "passed": true
+    },
+    {
+      "name": "twenty_complete_determinate_positive_audits_meet_numeric_gate",
+      "passed": true
+    },
+    {
+      "name": "written_notes_can_supply_audit_evidence",
+      "passed": true
+    },
+    {
+      "name": "glass_gate_uses_completed_denominator_at_70_percent",
+      "passed": true
+    },
+    {
+      "name": "glass_gate_rejects_65_percent",
+      "passed": true
+    },
+    {
+      "name": "approved_test_fixture_import_and_exclusions",
+      "passed": true
+    },
+    {
+      "name": "publish_uses_exact_shared_filename",
+      "passed": true
+    },
+    {
+      "name": "separate_glass_audit_gate_does_not_block_annotation_publication",
+      "passed": true
+    },
+    {
+      "name": "published_layout_has_content_identity",
+      "passed": true
+    },
+    {
+      "name": "publish_explains_manual_server_copy",
+      "passed": true
+    },
+    {
+      "name": "local_setup_not_silently_frozen",
+      "passed": true
+    },
+    {
+      "name": "foreign_build_import_transactional",
+      "passed": true
+    },
+    {
+      "name": "null_import_safe",
+      "passed": true
+    },
+    {
+      "name": "direction_edit_invalidates_scene_review",
+      "passed": true
+    },
+    {
+      "name": "changed_geometry_cannot_republish_without_review",
+      "passed": true
+    },
+    {
+      "name": "stale_tab_locks",
+      "passed": true
+    },
+    {
+      "name": "stale_tab_recovery_download",
+      "passed": true
+    },
+    {
+      "name": "mobile_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "name": "quota_failure_keeps_export_and_warning",
+      "passed": true
+    },
+    {
+      "name": "production_task_file_unchanged",
+      "passed": true
+    },
+    {
+      "name": "no_browser_javascript_errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_failed_http_requests",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_external_requests",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "passed": 60,
+  "total": 60,
+  "javascript_errors": [],
+  "http_failures": [],
+  "external_requests": []
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simple scene and surface annotation, one question at a time.">
+  <title>BLOCKMIND · Annotate scenes</title>
+  <link rel="stylesheet" href="guided.css">
+</head>
+<body>
+  <header class="site-header"><a href="./" class="brand"><span class="brand-icon">B</span>BLOCKMIND</a><span class="header-caption">Scene annotation</span><a class="subtle-link" href="advanced.html">Research tools</a></header>
+  <main>
+    <section id="loading" class="welcome-card" role="status">Loading scenes…</section>
+    <section id="fatal" class="notice danger hidden" role="alert"></section>
+    <section id="welcome" class="welcome-card hidden">
+      <p class="eyebrow">Let’s keep it simple</p><h1>Look at the scene.<br>Tell us what you see.</h1>
+      <p class="intro">Watch a short sequence, label a few red points, and describe the door or opening. You can skip anything you’re unsure about.</p>
+      <form id="startForm"><label class="field" for="identityInput">Your name or annotator ID<input id="identityInput" maxlength="80" required autocomplete="off" placeholder="e.g. Ahmed"></label><button id="startButton" class="primary" type="submit">Start annotating →</button></form>
+      <p id="welcomeError" class="error" role="alert"></p><p class="small muted">No account needed. Progress stays in this browser. Download a backup before changing devices.</p>
+      <button id="restoreWelcome" class="text-button" type="button">Restore my downloaded JSON</button>
+    </section>
+    <section id="workspace" class="hidden">
+      <div id="conflictBanner" class="notice danger hidden" role="alert"><strong>This draft changed in another tab.</strong><p>Edits here are paused. Download this tab’s copy or load the latest saved version.</p><button id="recoveryDownload">Download this copy</button><button id="reloadLatest">Load latest version</button></div>
+      <div id="storageWarning" class="notice warning hidden" role="alert">This browser could not save your draft. Your answers are still here: download a JSON backup before leaving.</div>
+      <div class="toolbar"><div class="scene-picker"><label for="sceneSelect">Scene</label><select id="sceneSelect" aria-label="Choose scene"></select><span id="identityLabel" class="small muted"></span></div><div class="save-tools"><span id="saveStatus" class="small muted" role="status">Saved in this browser</span><button id="downloadButton">Download JSON</button><button id="moreButton" aria-expanded="false" aria-controls="moreMenu" aria-label="More options">•••</button></div></div>
+      <div id="moreMenu" class="more-menu hidden"><button id="restoreButton">Restore my JSON</button><button id="changeName">Change annotator</button><a href="advanced.html">Detailed research tools</a></div>
+      <nav id="steps" class="steps" aria-label="Annotation steps"><button data-step="0" aria-current="step"><span>1</span>Watch scene</button><button data-step="1"><span>2</span>Label points</button><button data-step="2"><span>3</span>Door / opening</button><button data-step="3"><span>4</span>Save</button></nav>
+      <div class="workspace-grid">
+        <section class="viewer" aria-label="Scene photographs">
+          <div class="viewer-title"><strong id="frameLabel">Image 1 of 12</strong><span id="pointImageHint" class="small muted"></span></div>
+          <div class="image-well"><div id="imageStage"><img id="sceneImage" alt="Scene photograph" draggable="false"><svg id="pointOverlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" preserveAspectRatio="none" aria-label="Selected red surface point"></svg><div id="imageLoading" class="image-loading">Loading image…</div></div></div>
+          <div class="playback"><button id="prevFrame" aria-label="Previous image">‹</button><button id="playButton">▶ Play</button><button id="nextFrame" aria-label="Next image">›</button><input id="frameSlider" type="range" min="0" max="11" value="0" aria-label="Image in sequence"></div>
+          <div id="filmstrip" class="filmstrip" aria-label="Choose an image"></div>
+          <p class="viewer-note">Original scene photographs · the move across the opening is between images 6 and 7.</p>
+        </section>
+        <section class="question-card" aria-label="Current annotation step"><div id="questionPanel"></div></section>
+      </div>
+      <footer class="workspace-footer"><span>Unanswered questions stay blank. Detailed physics checks can be completed later.</span><span id="collectionProgress"></span></footer>
+    </section>
+  </main>
+  <input id="importFile" class="hidden" type="file" accept="application/json,.json">
+  <dialog id="messageDialog"><h2 id="messageTitle"></h2><p id="messageText"></p><button id="closeMessage" class="primary">Got it</button></dialog>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="core.js"></script><script src="guided-core.js"></script><script src="guided.js"></script>
+</body>
+</html>

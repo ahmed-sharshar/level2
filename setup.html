@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BLOCKMIND · Shared research setup</title><link rel="stylesheet" href="guided.css"><link rel="stylesheet" href="setup.css"></head>
+<body>
+<header class="site-header"><a class="brand" href="./"><span class="brand-icon">B</span>BLOCKMIND</a><span class="header-caption">Researcher preparation</span><a class="subtle-link" href="./">Back to annotation</a></header>
+<main>
+  <section id="loading" class="welcome-card" role="status">Loading shared scene tasks…</section><section id="fatal" class="notice danger hidden" role="alert"></section>
+  <section id="welcome" class="welcome-card hidden"><p class="eyebrow">Prepare once · share with both raters</p><h1>Set up the shared questions.</h1><p class="intro">Review the same surface points, directions and opening locations for everyone. This page does not collect annotator answers.</p><form id="startForm"><label class="field">Researcher name / ID<input id="coordinatorInput" required maxlength="80" autocomplete="off"></label><button id="startButton" class="primary">Open setup →</button></form><p id="welcomeError" class="error" role="alert"></p><p class="small muted">Local changes stay separate from the published task file until you explicitly publish a new file.</p></section>
+  <section id="workspace" class="hidden">
+    <div id="conflictBanner" class="notice danger hidden" role="alert"><strong>This draft changed in another tab, or its saved copy could not be read.</strong><p>Editing is paused to protect your work.</p><button id="recoveryExport">Download this copy</button><button id="reloadLatest">Load saved copy</button></div>
+    <div id="storageWarning" class="notice warning hidden" role="alert">Browser storage could not save these changes. Download a draft before leaving.</div>
+    <div class="toolbar"><div class="scene-picker"><label for="sceneSelect">Scene</label><select id="sceneSelect"></select><span id="saveStatus" class="small muted" role="status"></span></div><div class="save-tools"><button id="importButton">Import task file</button><button id="draftExport">Download draft</button><button id="publishButton" class="primary">Publish reviewed tasks</button></div></div>
+    <p id="datasetIdentity" class="small muted"></p>
+    <nav id="tabs" class="steps" aria-label="Research setup sections"><button data-tab="points" aria-current="step">1 · Surface points</button><button data-tab="directions">2 · Two directions</button><button data-tab="boundary">3 · Opening boxes</button><button data-tab="review">4 · Review & audits</button></nav>
+    <div class="setup-grid">
+      <section class="viewer" aria-label="Researcher image viewer"><div class="viewer-title"><strong id="frameLabel"></strong><span id="frameSide" class="small muted"></span></div><div class="image-well"><div id="imageStage"><img id="sceneImage" alt="Original scene photograph" draggable="false"><img id="maskImage" class="mask-overlay hidden" alt="Machine-proposed boundary mask" draggable="false"><svg id="geometryOverlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" preserveAspectRatio="none" aria-label="Shared task geometry"></svg><div id="imageLoading" class="image-loading">Loading image…</div></div></div><div id="placementHint" class="placement-hint hidden" role="status"></div><div class="playback"><button id="prevFrame" aria-label="Previous frame">‹</button><button id="playButton">▶ Play</button><button id="nextFrame" aria-label="Next frame">›</button><input id="frameSlider" type="range" min="0" max="11" value="0" aria-label="Choose frame"></div><div id="filmstrip" class="filmstrip"></div><div class="viewer-toggles"><label><input id="showMask" type="checkbox"> Show machine mask</label><label><input id="showNative" type="checkbox"> Native object hints</label></div><div id="nativeHints" class="native-hints hidden"></div><p class="viewer-note">Geometry and masks are researcher aids, not human judgments or model-visible data. A red point must identify the same physical surface wherever it is shown.</p></section>
+      <section class="question-card setup-panel"><div id="panelContent"></div></section>
+    </div>
+    <footer class="workspace-footer"><span id="overallProgress"></span><span>Changes are local until the downloaded published file is copied into the site folder.</span></footer>
+  </section>
+</main>
+<input id="importFile" type="file" accept=".json,application/json" class="hidden">
+<dialog id="messageDialog"><h2 id="messageTitle"></h2><p id="messageText"></p><button id="closeMessage" class="primary">Got it</button></dialog><div id="toast" class="toast hidden" role="status"></div>
+<script src="core.js"></script><script src="full-core.js"></script><script src="setup.js"></script>
+</body>
+</html>

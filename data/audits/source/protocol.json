@@ -1,0 +1,29 @@
+{
+  "effective_settings": {
+    "name": "reference_100px",
+    "step": 3.0,
+    "distance": 0.75,
+    "pixels": 100,
+    "overlap": 0.15,
+    "visibility_resolution": [
+      160,
+      128
+    ],
+    "minimum_pre_crossing_sightings": 2,
+    "frames_per_side": 6,
+    "minimum_capture_positions_per_side": 3
+  },
+  "source_settings": {
+    "step": 3.0,
+    "distance": 0.75,
+    "pixels": 40,
+    "overlap": 0.15
+  },
+  "counting_unit": "Distinct assistant-screened physical boundary assembly; multiple boundaries may share a building.",
+  "visibility": "Same native boundary object, at least 100 first-hit pixels in at least two of frames 1–6; 160×128 render.",
+  "navigation": "Reciprocal unobstructed native R2R-style graph; not an MST.",
+  "overlap": "Symmetric occlusion-aware mesh-supported overlap >=0.15 for every adjacent pair; project setting, not asserted to be a published OST-Bench constant.",
+  "input": "Only the 12 RGB images from each model_inputs.json are model-visible. Manifests, context labels, masks, depth and audit answers are not prompts.",
+  "ground_truth_status": "Assistant-screened candidates. Material, pane transparency, door state, shelter and directional reachability are not human-annotated here.",
+  "no_padding_interpolation_or_route_reselection": true
+}

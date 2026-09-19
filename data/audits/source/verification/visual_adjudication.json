@@ -1,0 +1,22 @@
+{
+  "purpose": "Apply the same prompt-context sufficiency warning consistently across both visual-review batches; do not change numerical acceptance or canonical frames.",
+  "reviewer": "primary assistant; direct inspection of both clean canonical contact sheets",
+  "rows": [
+    {
+      "assembly_id": "2azQ1b91cZZ:dining_courtyard",
+      "original_reviewer_verdict": "pass",
+      "verdict": "needs_human_review",
+      "reason": "The physical outdoor courtyard is supported by supplementary original views, but all six canonical post-crossing images mainly show walls or interior lookbacks. Apply the same prompt-context-review flag used for similarly wall-facing episodes in the second review batch.",
+      "canonical_context_needs_human_review": true,
+      "images_actually_viewed": ["/data/Ahmed/frr_trial/scenes_reference_100px_20260919/scene_006_2azQ1b91cZZ_O91/contact_sheet.jpg"]
+    },
+    {
+      "assembly_id": "2azQ1b91cZZ:second_dining_courtyard",
+      "original_reviewer_verdict": "pass",
+      "verdict": "needs_human_review",
+      "reason": "The canonical exterior sequence looks primarily toward the covered facade and enclosed dining room; a plant at an image edge does not strongly establish open-air context. The physical courtyard remains supported by supplementary views. Apply the same prompt-context-review flag consistently.",
+      "canonical_context_needs_human_review": true,
+      "images_actually_viewed": ["/data/Ahmed/frr_trial/scenes_reference_100px_20260919/scene_007_2azQ1b91cZZ_O165/contact_sheet.jpg"]
+    }
+  ]
+}
