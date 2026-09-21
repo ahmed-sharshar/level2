@@ -1,0 +1,1718 @@
+{
+  "preparation_id": "provisional-collection-20260921-v1",
+  "source_tasks_sha256": "7d89b14102d8a9f148807ad1779303dfacd38cd11cdab7a7c04088198bc1cd26",
+  "source_task_id": "l2tasks-3f3e106fcb6cfc1fb2981a8eadd87938f9e9275d734dc491af4f0c38a162c8c3",
+  "prepared_tasks_sha256": "e4164fe8c9be7db76d9d1bc09623287c066874c7ae4886e8117dc84496b43576",
+  "prepared_task_id": "l2tasks-9e0423d9884953639fc227b72bdb38cbb6839cbc891837574e0783cff970c18b",
+  "dataset_build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
+  "collection_mode": "provisional",
+  "research_approved": false,
+  "benchmark_ready": false,
+  "summary": {
+    "episodes": 56,
+    "preserved_original_targets": 445,
+    "added_targets": 3,
+    "total_targets": 448,
+    "directions": 112,
+    "points_per_side": 4
+  },
+  "frozen_inputs_untouched": [
+    "dataset.json",
+    "catalogue.json",
+    "RGB images",
+    "instance masks",
+    "geometry"
+  ],
+  "added_targets": [
+    {
+      "scene": 8,
+      "id": "E4",
+      "frame": "f10",
+      "pixel": [
+        93,
+        111
+      ],
+      "object": 722,
+      "description": "Unobstructed floor patch on the balcony, away from the railing and door.",
+      "warning": "Native floor instance 722 is assigned to indoor region 2 although this visible patch lies on the balcony. Preserve the native assignment; annotators judge the real patch.",
+      "episode_id": "scene_008_2azQ1b91cZZ_O677",
+      "anchor_image": "data/images/2azQ1b91cZZ/37cbb99f26454733992123c45ee74bca_i1_0.jpg",
+      "anchor_image_sha256": "5f923ce116771c47a6ceebdd58164b2a17088ae6e2588e072a72ba1c97a59f49",
+      "instance_mask": "data/instances/2azQ1b91cZZ/37cbb99f26454733992123c45ee74bca_i1_0.png",
+      "mask_sha256": "f048f96828de2205d142f9a93c276ea4683808fa92e7e310284e2297ec0456f0",
+      "native_mpcat40": 2,
+      "native_region_id": 2,
+      "mask_interior_distance_px": 16.76305461424021,
+      "depth_m": 4.190395832061768,
+      "world_point_m": [
+        5.896392748708012,
+        -7.283687816010888,
+        3.2963716144500506
+      ],
+      "projection_checks": [
+        {
+          "frame_id": "f10",
+          "depth_residual_m": 0.0
+        }
+      ],
+      "rgb_inspection": "assistant_visual_review_not_human_certification",
+      "human_approved": false,
+      "material_assigned": false
+    },
+    {
+      "scene": 38,
+      "id": "E3",
+      "frame": "f09",
+      "pixel": [
+        27,
+        25
+      ],
+      "object": 544,
+      "description": "Exterior-side light-colored facade patch left of the entrance, above the intercom.",
+      "warning": "The real facade patch has native category 0 (void/remove). Keep that raw category; never replace it with the proposed visual object name.",
+      "episode_id": "scene_038_p5wJjkQkbXX_O597",
+      "anchor_image": "data/images/p5wJjkQkbXX/49d5bf2abff24f709ca005ce3a3c9ed5_i1_2.jpg",
+      "anchor_image_sha256": "6cc4324cbf2577bbcb03742129de124309dd62edf1530d0d5633b2bb44cf0a0f",
+      "instance_mask": "data/instances/p5wJjkQkbXX/49d5bf2abff24f709ca005ce3a3c9ed5_i1_2.png",
+      "mask_sha256": "9a8773ebaf1ca1355fff27e51622e383f593c67f42e45c7da31ce86a4cce37e4",
+      "native_mpcat40": 0,
+      "native_region_id": 20,
+      "mask_interior_distance_px": 7.0,
+      "depth_m": 1.670676827430725,
+      "world_point_m": [
+        -0.9091821811418637,
+        -2.2252834976999036,
+        1.9392165619554722
+      ],
+      "projection_checks": [
+        {
+          "frame_id": "f08",
+          "depth_residual_m": 0.005791934732946036
+        },
+        {
+          "frame_id": "f09",
+          "depth_residual_m": 0.0
+        }
+      ],
+      "rgb_inspection": "assistant_visual_review_not_human_certification",
+      "human_approved": false,
+      "material_assigned": false
+    },
+    {
+      "scene": 38,
+      "id": "E4",
+      "frame": "f09",
+      "pixel": [
+        143,
+        32
+      ],
+      "object": 597,
+      "description": "Visible upper panel on the exterior-facing side of the boundary door leaf, away from its handle.",
+      "warning": "This target is a patch of the designated boundary door. Scene 38 retains its existing context-sufficiency and registration warnings.",
+      "episode_id": "scene_038_p5wJjkQkbXX_O597",
+      "anchor_image": "data/images/p5wJjkQkbXX/49d5bf2abff24f709ca005ce3a3c9ed5_i1_2.jpg",
+      "anchor_image_sha256": "6cc4324cbf2577bbcb03742129de124309dd62edf1530d0d5633b2bb44cf0a0f",
+      "instance_mask": "data/instances/p5wJjkQkbXX/49d5bf2abff24f709ca005ce3a3c9ed5_i1_2.png",
+      "mask_sha256": "9a8773ebaf1ca1355fff27e51622e383f593c67f42e45c7da31ce86a4cce37e4",
+      "native_mpcat40": 4,
+      "native_region_id": 20,
+      "mask_interior_distance_px": 17.0,
+      "depth_m": 2.055408239364624,
+      "world_point_m": [
+        0.6357664690078546,
+        -1.5848566011852991,
+        1.9651242144244248
+      ],
+      "projection_checks": [
+        {
+          "frame_id": "f09",
+          "depth_residual_m": 0.0
+        },
+        {
+          "frame_id": "f10",
+          "depth_residual_m": 0.010537427310913339
+        }
+      ],
+      "rgb_inspection": "assistant_visual_review_not_human_certification",
+      "human_approved": false,
+      "material_assigned": false
+    }
+  ],
+  "direction_definitions": [
+    {
+      "episode_id": "scene_001_1LXtFkjw3qL_O103",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f01",
+      "reference_image": "data/images/1LXtFkjw3qL/649a58719cd7455ebe18675c9719dfa7_i1_0.jpg",
+      "reference_image_sha256": "06dd3f66f6f26351d69c359cc130e409b76b77026354972783d1daac679700fd",
+      "reference_pixel_160x128": [
+        145,
+        61
+      ],
+      "reference_object_id": 103,
+      "boundary_pixels": 237,
+      "reference_method": "Front-facing door view instead of an extreme-edge door sliver in f07; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.9996608905981513,
+        -0.026040426427212222,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. The near-crossing indoor frames look back into the living room, so approach is not consistently forward-looking. Glass is incompletely represented by the mesh; counts certify native object pixels, not glass material area. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_002_1LXtFkjw3qL_O107",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f12",
+      "reference_image": "data/images/1LXtFkjw3qL/7a663a2787474bc2b09a4e8b21325141_i1_2.jpg",
+      "reference_image_sha256": "e13371acf6ca891e40378124753d47e1bce3a806e33120cc942e43b4fb54fb55",
+      "reference_pixel_160x128": [
+        61,
+        117
+      ],
+      "reference_object_id": 107,
+      "boundary_pixels": 3837,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.9738825331548574,
+        0.22705244243539466,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Two >=100-pixel pre sightings are widely separated in the sequence. Post views often look back at the room; do not interpret this as an extra crossing. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_003_1LXtFkjw3qL_O265",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f05",
+      "reference_image": "data/images/1LXtFkjw3qL/6c15ae9a3fc24613b9fcedb3da80aee5_i1_5.jpg",
+      "reference_image_sha256": "96b8a965d97e392650b056d1c41779ad57813ab57437c951907ec3aefc947fec",
+      "reference_pixel_160x128": [
+        130,
+        67
+      ],
+      "reference_object_id": 265,
+      "boundary_pixels": 7051,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.19035691698067506,
+        -0.9817149505623373,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Exterior is a narrow partly sheltered entry vestibule, not an unobstructed landscape view. Final post frame pitches upward; shelter remains an annotation attribute. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_004_1LXtFkjw3qL_O162",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f07",
+      "reference_image": "data/images/1LXtFkjw3qL/3c8c9d438bdd4ebaad5a0d0e93a43c0f_i1_2.jpg",
+      "reference_image_sha256": "ac9989e4dae9aa99e3bc204588175148b0354357b938c0d902323b7ed46a060e",
+      "reference_pixel_160x128": [
+        127,
+        26
+      ],
+      "reference_object_id": 162,
+      "boundary_pixels": 8935,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.24930836440975998,
+        0.9684241526497211,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Pre frame 2 is upward-looking. Mesh over glass is patchy; geometry is visually plausible but not pixel-perfect pane segmentation. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_005_1pXnuDYAj8r_O746",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f02",
+      "reference_image": "data/images/1pXnuDYAj8r/f7ef3082a05c40659421f0a21731ae1b_i1_0.jpg",
+      "reference_image_sha256": "c6a2c5551169994a4c4fed517a25de4a6c1c3188546a24bc6ba7bd54621d34f5",
+      "reference_pixel_160x128": [
+        129,
+        30
+      ],
+      "reference_object_id": 746,
+      "boundary_pixels": 7895,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.9997954018507527,
+        -0.020227566291867515,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Several indoor frames revisit a capture with different headings. Last exterior frame is upward-looking; outdoor here includes an open-air roofed porch. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_006_2azQ1b91cZZ_O91",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f06",
+      "reference_image": "data/images/2azQ1b91cZZ/23e06a377e3a4c87ab4c2c2a47b227ce_i1_0.jpg",
+      "reference_image_sha256": "f9a1e2d7b577cf4b7197e1547e02577c170dc5afcf432e876a2337b26d2332f4",
+      "reference_pixel_160x128": [
+        47,
+        65
+      ],
+      "reference_object_id": 91,
+      "boundary_pixels": 6985,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.9912512947679507,
+        -0.13198814575885698,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Canonical exterior frames are mostly wall- or interior-facing, so the fixed 12-frame prompt alone weakly demonstrates outdoor openness. Additional 18-view context is annotation-only evidence, not an extra model input. Primary review: The physical outdoor courtyard is supported by supplementary original views, but all six canonical post-crossing images mainly show walls or interior lookbacks. Apply the same prompt-context-review flag used for similarly wall-facing episodes in the second review batch. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_007_2azQ1b91cZZ_O165",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f05",
+      "reference_image": "data/images/2azQ1b91cZZ/3542707c604c4c27835928ac9878c631_i1_2.jpg",
+      "reference_image_sha256": "95993732eecc3940f97b10c1c2610b42a5b0a3b951a7b4abbf5d4478aa591ba8",
+      "reference_pixel_160x128": [
+        48,
+        110
+      ],
+      "reference_object_id": 165,
+      "boundary_pixels": 3719,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.9974364499030753,
+        -0.07155786752517124,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Canonical views strongly favor the covered wall and indoor lookback; outdoor plants appear only at an edge. Context evidence used for audit must not be silently added to canonical L2 inputs. Primary review: The canonical exterior sequence looks primarily toward the covered facade and enclosed dining room; a plant at an image edge does not strongly establish open-air context. The physical courtyard remains supported by supplementary views. Apply the same prompt-context-review flag consistently. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_008_2azQ1b91cZZ_O677",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f05",
+      "reference_image": "data/images/2azQ1b91cZZ/2d9efbd449f54a8ca2d563f9fab3e9bc_i1_1.jpg",
+      "reference_image_sha256": "0f13b691bbff000aa6e82835dfbddecb9b8f1ff2548140e793e2342902de7906",
+      "reference_pixel_160x128": [
+        46,
+        62
+      ],
+      "reference_object_id": 677,
+      "boundary_pixels": 5426,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.7431761770384752,
+        0.6690957852822546,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Frame 6 already looks outdoors although its camera is still indoor; context labels describe camera location. Not human-certified ground truth. Depth-registration diagnostic warning in frames 7, 12."
+    },
+    {
+      "episode_id": "scene_009_5ZKStnWn8Zo_O88",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f06",
+      "reference_image": "data/images/5ZKStnWn8Zo/befe6c85fdab4dc7bea03b2360a77a76_i1_0.jpg",
+      "reference_image_sha256": "0949b4f19bb3b215db068f8f2de555002d14174ef45ccfcd8959996034d9e226",
+      "reference_pixel_160x128": [
+        79,
+        21
+      ],
+      "reference_object_id": 88,
+      "boundary_pixels": 6004,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.9999999919024998,
+        -0.00012725957959135888,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Interior approach starts in the associated bathroom/bedroom suite; indoor side is not a single semantic room throughout. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_010_5ZKStnWn8Zo_O548",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f09",
+      "reference_image": "data/images/5ZKStnWn8Zo/a6caf470e3bc4c2788faf120239ff1de_i1_2.jpg",
+      "reference_image_sha256": "d56afe3b10cbe18486000fc5fd24fe0b2446ff7785021e0a849b1e0095c46c07",
+      "reference_pixel_160x128": [
+        9,
+        98
+      ],
+      "reference_object_id": 548,
+      "boundary_pixels": 1148,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.998382802760425,
+        0.05684873923173768,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Thin frame-heavy mesh sightings and strongly interior-facing post views limit clean pane-level labels. Multiple glazed leaves belong to one wide assembly, not multiple episodes. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_011_5ZKStnWn8Zo_O910",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f03",
+      "reference_image": "data/images/5ZKStnWn8Zo/09683cec667549f1afc687826e0fa591_i1_3.jpg",
+      "reference_image_sha256": "030eb854f2ec3dede9077fc3862b44b6c970fd651682cb228764c127b5ef6bbe",
+      "reference_pixel_160x128": [
+        123,
+        85
+      ],
+      "reference_object_id": 910,
+      "boundary_pixels": 9212,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.9999961758294375,
+        -0.0027655607932146426,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Two pre frames pitch upward while looking at the same leaf. Garage is enclosed semi-outdoor by protocol, not open-air. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_012_5ZKStnWn8Zo_O180",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/5ZKStnWn8Zo/2f6eaeca947840b2af84327bc9c791ed_i1_5.jpg",
+      "reference_image_sha256": "f484adb2b5c755ebdf34057647d4cdc8233afce2b097bd56bb4085b9dab1e6d1",
+      "reference_pixel_160x128": [
+        149,
+        118
+      ],
+      "reference_object_id": 180,
+      "boundary_pixels": 321,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.7200674417571954,
+        0.6939040851020032,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Native target is edge/frame-heavy, not a clean isolated pane or moving-leaf mask. First qualifying sighting equals exactly 100 pixels; the other is 168. Material pinpoint and leaf-versus-frame assignment need annotation. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_013_82sE5b5pLXE_O510",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/82sE5b5pLXE/70f8cf3a6cee40a0b19b52c143a70b4a_i1_5.jpg",
+      "reference_image_sha256": "27452aab63c2327d684f47efe419a89953beec8c19c38038867aa9dcc794adb7",
+      "reference_pixel_160x128": [
+        75,
+        104
+      ],
+      "reference_object_id": 510,
+      "boundary_pixels": 3268,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.673953996342262,
+        -0.7387733149040335,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Several pre frames turn away from the exit before crossing. Mesh glass coverage is patchy but no gross registration shift is apparent. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_014_ARNzJeq3xxb_O310",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f07",
+      "reference_image": "data/images/ARNzJeq3xxb/95fd760525864a7a97f864d9b6dc58f5_i1_4.jpg",
+      "reference_image_sha256": "a5339836e5e402bb5f55bf30445cc2bd72f5bb0af90595968e6cb14473a42cef",
+      "reference_pixel_160x128": [
+        72,
+        59
+      ],
+      "reference_object_id": 310,
+      "boundary_pixels": 2959,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.9525255664693056,
+        -0.30445861003152547,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Two post frames look at the porch ceiling. Pre sightings are thin and distant but recognizable in the sheet. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_015_D7N2EKCX4Sj_O628",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/D7N2EKCX4Sj/c9e0bc6b556b440284042049c1f7a3e7_i1_5.jpg",
+      "reference_image_sha256": "2da46ad86a89366a932784598257bb54193675c249fab8dd174402d744ccea36",
+      "reference_pixel_160x128": [
+        18,
+        99
+      ],
+      "reference_object_id": 628,
+      "boundary_pixels": 2191,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.04595617747702166,
+        0.9989434567340139,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Native O628 spans a broad door/window assembly and its mask emphasizes trim; this is assembly-level sighting, not isolated pane GT. Certificate reports threshold_point_unavailable; numerical transition certification is outside this visual review. Not human-certified ground truth. Depth-registration diagnostic warning in frames 6, 7, 8."
+    },
+    {
+      "episode_id": "scene_016_D7N2EKCX4Sj_O66",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f02",
+      "reference_image": "data/images/D7N2EKCX4Sj/a67abce0a4444fbf93c0203954e1da6d_i1_2.jpg",
+      "reference_image_sha256": "d7d6848f9513a9e4713fb3bdb93add3b75e2419650b72c7dfcbcf6171d227bf7",
+      "reference_pixel_160x128": [
+        17,
+        43
+      ],
+      "reference_object_id": 66,
+      "boundary_pixels": 1957,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.136461125934293,
+        0.9906454265319884,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. The designated leaf is not isolated in post views, but post visibility is not required by the selected rule. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_017_D7N2EKCX4Sj_O9",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f06",
+      "reference_image": "data/images/D7N2EKCX4Sj/3c476cfa737347bda82af89dd8127ae3_i1_0.jpg",
+      "reference_image_sha256": "996e49571dd655fec727dca4d06a749d99653be4c62b869f4cecade8d17b8127",
+      "reference_pixel_160x128": [
+        132,
+        6
+      ],
+      "reference_object_id": 9,
+      "boundary_pixels": 1826,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.10742329333226132,
+        0.9942133755133508,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Post views mostly turn toward adjacent wall and outdoor furnishings rather than maintain the leaf in view. Some pane/mesh holes are expected from transparent surfaces and do not establish material labels. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_018_EDJbREhghzL_O5",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f07",
+      "reference_image": "data/images/EDJbREhghzL/42b4de3318a74ec78dcd6f80803ea859_i1_1.jpg",
+      "reference_image_sha256": "d4dc3a4ba0aaa839fe1e162c56d9a00cad450eb3b51031f57d5f45c81b63491b",
+      "reference_pixel_160x128": [
+        49,
+        98
+      ],
+      "reference_object_id": 5,
+      "boundary_pixels": 3208,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.8664519466766143,
+        -0.4992604772063432,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Patio has a canopy; outdoor classification does not imply unsheltered exposure. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_019_HxpKQynjfin_O103",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f07",
+      "reference_image": "data/images/HxpKQynjfin/96478d4e66104792b0481887c85255a8_i1_2.jpg",
+      "reference_image_sha256": "8c6f9c2bd21f5eaaf1e435d81de3f835aa9f53ae484d886a19241ed973aaf441",
+      "reference_pixel_160x128": [
+        145,
+        111
+      ],
+      "reference_object_id": 103,
+      "boundary_pixels": 4602,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.11317921002900895,
+        0.9935745902634635,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Native instance covers a broad slider/frame; mixed frame/glass material requires surface-specific annotation. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_020_PX4nDJXEHrG_O121",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f05",
+      "reference_image": "data/images/PX4nDJXEHrG/6e7a94e806f8436e8d1d70efdf3bf3d6_i1_3.jpg",
+      "reference_image_sha256": "ec8a298d239b57d84b2023581874d5f35bf71fa175dc005001571094621cb471",
+      "reference_pixel_160x128": [
+        32,
+        32
+      ],
+      "reference_object_id": 121,
+      "boundary_pixels": 8263,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.09567904476195316,
+        -0.9954122364093382,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Post frames 10-12 predominantly face a blank wall, reducing visual variety. Garage is an enclosed context tagged semi-outdoor, not proof of outdoor temperature/ventilation. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_021_PX4nDJXEHrG_O621",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f05",
+      "reference_image": "data/images/PX4nDJXEHrG/5713992a192a40a1a32c11a12873791d_i1_5.jpg",
+      "reference_image_sha256": "6a6350149e226f7ac22b67bae466ebce196c06958feb40517c560f35cee504d8",
+      "reference_pixel_160x128": [
+        23,
+        54
+      ],
+      "reference_object_id": 621,
+      "boundary_pixels": 5951,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.023218581808439675,
+        0.9997304123906628,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Designated leaf leaves the field of view after crossing; the physical route and open court remain visible. Opposite leaf and intervening frame belong to the same boundary assembly. Not human-certified ground truth. Depth-registration diagnostic warning in frames 6."
+    },
+    {
+      "episode_id": "scene_022_PX4nDJXEHrG_O995",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f01",
+      "reference_image": "data/images/PX4nDJXEHrG/86d651b81a7c41c4a78b902b43fac9d0_i1_4.jpg",
+      "reference_image_sha256": "d1029c4fcacecd61e934f46bd6040c910b8a0b9fc86396e264b39b20ab61117b",
+      "reference_pixel_160x128": [
+        46,
+        63
+      ],
+      "reference_object_id": 995,
+      "boundary_pixels": 551,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.733333124788711,
+        -0.679869493423278,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Specific target stack is off-camera post-crossing; views show another stack of the same continuous opening. This is a boundary assembly, not an independent episode for each folded panel. Not human-certified ground truth. Depth-registration diagnostic warning in frames 1."
+    },
+    {
+      "episode_id": "scene_023_SN83YJsR3w2_O1134",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f07",
+      "reference_image": "data/images/SN83YJsR3w2/4e30f38a55414abb9f740d60ad40df7c_i1_0.jpg",
+      "reference_image_sha256": "e3898e07f27abf93b0d79c6cc8f1587320e335536999865e2b766d972c2d5040",
+      "reference_pixel_160x128": [
+        55,
+        45
+      ],
+      "reference_object_id": 1134,
+      "boundary_pixels": 7505,
+      "reference_method": "Visible door leaf instead of the apparent sky covered by the f06 native mask; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.8788996753215931,
+        0.47700666737436515,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Physical context/crossing passes visual screening. Broad native mesh surface may cover an aperture or mixed wall/door assembly; raw 100-pixel count cannot be treated as independently certified visible door surface. Confirm designated object extent and material marker before using this episode for boundary-surface GT. Not human-certified ground truth. Depth-registration diagnostic warning in frames 6, 7."
+    },
+    {
+      "episode_id": "scene_024_Uxmj2M2itWa_O12",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f03",
+      "reference_image": "data/images/Uxmj2M2itWa/119f12ba94004df3b643d55195b25b21_i1_2.jpg",
+      "reference_image_sha256": "0a87f8c83b9f4fa2afa75c921598791f3406b0828327e6bb08383b249e4c4709",
+      "reference_pixel_160x128": [
+        51,
+        63
+      ],
+      "reference_object_id": 12,
+      "boundary_pixels": 1079,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.8064605456275663,
+        -0.5912879064771137,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. The neighboring kitchen opening is distinct; proximity alone must not merge the two boundaries. Several exterior views emphasize reflective glazing; do not infer intrinsic material properties from reflections alone. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_025_VFuaQ6m2Qom_O391",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f06",
+      "reference_image": "data/images/VFuaQ6m2Qom/23b907de91124aa2893d467659eac406_i1_3.jpg",
+      "reference_image_sha256": "8c8a7acc239ee6f809b3bcd8b5fcf7e795aa33881599492d67aaface3f031e06",
+      "reference_pixel_160x128": [
+        46,
+        46
+      ],
+      "reference_object_id": 391,
+      "boundary_pixels": 19884,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.04330991465310258,
+        -0.9990616854292536,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Physical context/crossing passes visual screening. Native mesh surface may preserve a closed-plane representation across an open photographic doorway; broad mask is not literal RGB-visible leaf segmentation. Validate target surface extent and door-state consistency before accepting the 100-pixel metric as surface-level visibility GT. Not human-certified ground truth. Depth-registration diagnostic warning in frames 1, 12."
+    },
+    {
+      "episode_id": "scene_026_Vvot9Ly1tCj_O23",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f05",
+      "reference_image": "data/images/Vvot9Ly1tCj/1ee4777aa75549f5bb8d1c8371c72fc1_i1_1.jpg",
+      "reference_image_sha256": "b873b5236bfaf5e439d92941a57c9eb2098c22491f4fc69f5e2ff6ab0084d311",
+      "reference_pixel_160x128": [
+        9,
+        61
+      ],
+      "reference_object_id": 23,
+      "boundary_pixels": 2625,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.14727367636444133,
+        0.9890957811304737,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Patio is strongly roofed and appears dark at night; annotate shelter separately. Native panel is mostly off-camera after crossing. Not human-certified ground truth. Depth-registration diagnostic warning in frames 5."
+    },
+    {
+      "episode_id": "scene_027_Vvot9Ly1tCj_O617",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/Vvot9Ly1tCj/c94ae8fd8ac048f1ae95082e4eea5f5a_i1_4.jpg",
+      "reference_image_sha256": "1467581d0be198496d2e796559202b76bc71b1fc3eb8ace83705b0943de5b34e",
+      "reference_pixel_160x128": [
+        153,
+        21
+      ],
+      "reference_object_id": 617,
+      "boundary_pixels": 819,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.7007549259381913,
+        0.7134020842227475,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Two pre sightings are distant and partly edge-on. Canonical post views emphasize indoor lookbacks; openness is more obvious in the other same-building audited route, not this fixed 12-frame sequence. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_028_Vvot9Ly1tCj_O599",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f09",
+      "reference_image": "data/images/Vvot9Ly1tCj/ee5e9cb296834e2cb80028e1cc9e9fe9_i1_4.jpg",
+      "reference_image_sha256": "187c03162dfe3369a7d0b1b5865e737205689fa0a8524c811b7ecea036ed9a2f",
+      "reference_pixel_160x128": [
+        12,
+        12
+      ],
+      "reference_object_id": 599,
+      "boundary_pixels": 2831,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.49877413720024066,
+        0.8667320001362333,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Thin mesh representation of glazing means material labeling still requires human surface annotation. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_029_Vvot9Ly1tCj_O608",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f10",
+      "reference_image": "data/images/Vvot9Ly1tCj/0cc50a72a6f045ea99f0f6e15e80e7eb_i1_1.jpg",
+      "reference_image_sha256": "fb10435f66688551ef0818b17e8d718f00ba5c5286a88448066127bddde4bcca",
+      "reference_pixel_160x128": [
+        53,
+        119
+      ],
+      "reference_object_id": 608,
+      "boundary_pixels": 2140,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.999483622695142,
+        -0.03213235074181235,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Edge-on sightings give limited surface information; frames 5–8 are dominated by a blank wall, so the walk is visually weak near the crossing. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_030_VzqfbhrpDEA_O1301",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f02",
+      "reference_image": "data/images/VzqfbhrpDEA/9177fe5f923242f0b1ba16c7a058e5ac_i1_1.jpg",
+      "reference_image_sha256": "e4e83c0075d3fceeca7a4272d942af99380c0687cfa5b4fbd03095e296619ef5",
+      "reference_pixel_160x128": [
+        15,
+        53
+      ],
+      "reference_object_id": 1301,
+      "boundary_pixels": 1342,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.03657555871432195,
+        -0.9993308903985382,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Canonical postframes mostly look back inside or toward the facade; outdoor openness is substantially clearer in supplementary views than in the 12 model frames. Human review of prompt-context sufficiency is needed. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_031_ac26ZMwG7aT_O449",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f04",
+      "reference_image": "data/images/ac26ZMwG7aT/3317348467784b19925a007204cb7f17_i1_3.jpg",
+      "reference_image_sha256": "6d87a51acf2b156eeb184199083b8c688e456d4c3111f1d38af61a109f01618f",
+      "reference_pixel_160x128": [
+        1,
+        114
+      ],
+      "reference_object_id": 449,
+      "boundary_pixels": 200,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.7606783762004091,
+        0.6491289609785631,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Qualifying sightings are relatively small and edge-on (146 and 200 pixels); the numerical bar does not establish a detailed material view. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_032_b8cTxDM8gDG_O302",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f06",
+      "reference_image": "data/images/b8cTxDM8gDG/cd249742c0a1455aa3a0d3ebaac4ce59_i1_3.jpg",
+      "reference_image_sha256": "650d540efb7c31fd16127dff7a8097b041354d519ff196ce281d66d39dfb2648",
+      "reference_pixel_160x128": [
+        142,
+        93
+      ],
+      "reference_object_id": 302,
+      "boundary_pixels": 2687,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.8422408322681281,
+        0.5391014565555271,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Transparent glass includes reflected or transmitted background, so segmentation is not a material label. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_033_cV4RVeZvu5T_O2",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f05",
+      "reference_image": "data/images/cV4RVeZvu5T/72a70368733b4efa8678994b32428fbb_i1_3.jpg",
+      "reference_image_sha256": "0e473be81a8ce7f454876af07b07e0ba8a497a1a75038f6cb15b2d01bcb6615b",
+      "reference_pixel_160x128": [
+        129,
+        92
+      ],
+      "reference_object_id": 2,
+      "boundary_pixels": 7702,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.002292119980231004,
+        -0.9999973730895477,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. One exterior frame looks down; roofed rock overhang should be annotated as shelter rather than confused with a fully enclosed room. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_034_e9zR4mvMWw7_O142",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/e9zR4mvMWw7/782cb05e39a14434bdd09ff295c0354a_i0_3.jpg",
+      "reference_image_sha256": "bcf0780a04d6334fab743059bcf07b9ff0e16b52738a1efca1fe6982f44a18ea",
+      "reference_pixel_160x128": [
+        145,
+        46
+      ],
+      "reference_object_id": 142,
+      "boundary_pixels": 2920,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.9914414493494937,
+        -0.13055210650071986,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Some departure views face the house; annotate glazing separately from its transmitted background. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_035_kEZ7cmS4wCh_O56",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/kEZ7cmS4wCh/789db63b2d704e95a468bf4e6332d8f9_i1_5.jpg",
+      "reference_image_sha256": "5752e30d9d2eeb51e9b4a23ceeec44e02edc4d3f47999216ce008e33aa8626ef",
+      "reference_pixel_160x128": [
+        38,
+        65
+      ],
+      "reference_object_id": 56,
+      "boundary_pixels": 2605,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.3476020653361096,
+        -0.937642151449086,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Saved certificate reports threshold_point_unavailable. The association threshold is distance to the native navigation segment, not a certified exact physical crossing point. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_036_p5wJjkQkbXX_O113",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f05",
+      "reference_image": "data/images/p5wJjkQkbXX/4f2ba3ecff5142fca6b16c2e6cdbbdd6_i1_5.jpg",
+      "reference_image_sha256": "a9fbe899465ea0d71b0bd2c5412d81b4b7ebc3ae74a83af7ac574a0371946b09",
+      "reference_pixel_160x128": [
+        132,
+        28
+      ],
+      "reference_object_id": 113,
+      "boundary_pixels": 6276,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.8564707852320377,
+        -0.5161954998292964,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Garage is protocol-defined semi_outdoor; images do not establish its conditioning or ventilation. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_037_p5wJjkQkbXX_O570",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f11",
+      "reference_image": "data/images/p5wJjkQkbXX/d99a0223c600419aa300a253164774ba_i1_4.jpg",
+      "reference_image_sha256": "40848ab966d13e11b3fc075f769af86037de8b0aaf63878195c44763d4340333",
+      "reference_pixel_160x128": [
+        114,
+        69
+      ],
+      "reference_object_id": 570,
+      "boundary_pixels": 2229,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.1345882230673777,
+        0.9909016147991513,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Multiple upward ceiling views and reused capture locations make the image sequence less like a forward-only walk. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_038_p5wJjkQkbXX_O597",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f10",
+      "reference_image": "data/images/p5wJjkQkbXX/ee82e12abf7d4665b54b4301e749876a_i1_3.jpg",
+      "reference_image_sha256": "0024a395215460ef93a2831931d71ab18d4e704de0b69f085fe2e5af5e75f61a",
+      "reference_pixel_160x128": [
+        20,
+        19
+      ],
+      "reference_object_id": 597,
+      "boundary_pixels": 5056,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.10686110718125895,
+        0.9942739581081239,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. All six canonical exterior frames look back toward the interior or facade; outdoor openness is not clearly established by the model-visible departure views alone. Human review of prompt-context sufficiency is needed. Not human-certified ground truth. Depth-registration diagnostic warning in frames 10, 11, 12."
+    },
+    {
+      "episode_id": "scene_039_pRbA3pwrgk9_O406",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f12",
+      "reference_image": "data/images/pRbA3pwrgk9/e29406c286884326a4dc183830bdb6d8_i1_0.jpg",
+      "reference_image_sha256": "e2885e9eec427e8797463004df8c1236b11383a03d5ba7333372bdc96949d5e1",
+      "reference_pixel_160x128": [
+        29,
+        18
+      ],
+      "reference_object_id": 406,
+      "boundary_pixels": 3439,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.026890142026450705,
+        0.9996383947517208,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Native object O406 is one component of assembly O404; neither native IDs nor physical leaves should be counted as extra episodes. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_040_q9vSo1VnCiC_O234",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f06",
+      "reference_image": "data/images/q9vSo1VnCiC/bc7939cb85f84a40af30167e9f7fda84_i1_0.jpg",
+      "reference_image_sha256": "84a10beb232dafc415a9808234d429a12e2bae0518a53c67b27005ee9cb5d710",
+      "reference_pixel_160x128": [
+        106,
+        10
+      ],
+      "reference_object_id": 234,
+      "boundary_pixels": 4683,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.4949647819371506,
+        0.8689130362941444,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Target instance includes the broad door assembly, not a single homogeneous material surface. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_041_qoiz87JEwZ2_O68",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f04",
+      "reference_image": "data/images/qoiz87JEwZ2/0acbbb92572f437faef8da9b991412f6_i1_2.jpg",
+      "reference_image_sha256": "085214378753cc81371ff0b86e128b4dd8a8ad0b9c367902b5c6c4173faf4de4",
+      "reference_pixel_160x128": [
+        61,
+        109
+      ],
+      "reference_object_id": 68,
+      "boundary_pixels": 11326,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.03176377106978822,
+        -0.9994954041152095,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. The photographed door appears closed. This is an ordered sequence of navigation-connected captures, not evidence that the door was physically opened during a recorded traversal. Door-state/reachability annotation remains necessary. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_042_r1Q1Z4BcV1o_O469",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f07",
+      "reference_image": "data/images/r1Q1Z4BcV1o/6e4b2abf0398452a978c13defc6b50e8_i1_4.jpg",
+      "reference_image_sha256": "0704be97d5e07dff80dc4f190c5920fcd7c307ebc18d7d1a59319d8ff39c6377",
+      "reference_pixel_160x128": [
+        104,
+        90
+      ],
+      "reference_object_id": 469,
+      "boundary_pixels": 6375,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.006055553244052299,
+        0.9999816649693675,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Several upward views focus on the porch roof; this is not continuously forward-facing video. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_043_rPc6DW4iMge_O220",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/rPc6DW4iMge/807bb148c18b4a968d8f455a2b16bc10_i1_2.jpg",
+      "reference_image_sha256": "ea5b4bad3282d89cdc8dff207c8cd92b8680d32bd6ebb461f9fb57e93262e3b8",
+      "reference_pixel_160x128": [
+        116,
+        47
+      ],
+      "reference_object_id": 220,
+      "boundary_pixels": 8645,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.71908187405091,
+        0.6949253617558013,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. A small stray target patch appears on the exterior wall in frame 12 (64 pixels, below the adopted sighting bar). Use the correct preframes for target annotation rather than assuming every rendered instance pixel is accurate. Not human-certified ground truth. Depth-registration diagnostic warning in frames 11."
+    },
+    {
+      "episode_id": "scene_044_rPc6DW4iMge_O242",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f04",
+      "reference_image": "data/images/rPc6DW4iMge/3af5307a62fc429f947ca54d9cd4245d_i1_5.jpg",
+      "reference_image_sha256": "f6e1d0d4d490de015ea12fe3b6c11d93798dd7abc3440a37464c44e4c216d174",
+      "reference_pixel_160x128": [
+        52,
+        92
+      ],
+      "reference_object_id": 242,
+      "boundary_pixels": 6200,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.14010445865238166,
+        0.9901367282682342,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Significant native-target contamination: exterior frames 9, 10 and 12 project O242 onto a plain wall away from the actual leaf; frame 9 has 2605 target pixels. Preframe 3 also gives a sliver from the adjoining lounge view. A human must certify the target surface/instance before pixel-level material or visibility GT is used. Not human-certified ground truth. Depth-registration diagnostic warning in frames 12."
+    },
+    {
+      "episode_id": "scene_045_rPc6DW4iMge_O85",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f03",
+      "reference_image": "data/images/rPc6DW4iMge/18944ac8b05a44c7b073cfb5f6959e24_i1_5.jpg",
+      "reference_image_sha256": "66747990b4e22d9be33ff94b07696214ea7b6fba4545737bcc8e4225707848ca",
+      "reference_pixel_160x128": [
+        100,
+        63
+      ],
+      "reference_object_id": 85,
+      "boundary_pixels": 3824,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.7917148337545574,
+        0.6108908429605024,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Some first exterior images face indoors; camera context must not be confused with the class of every visible pixel. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_046_sT4fr6TAbpF_O292",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/sT4fr6TAbpF/444bc5d6006244e7b609dd9d06fed1f3_i1_4.jpg",
+      "reference_image_sha256": "bbbaf8a18d32e7bf0f315f0ba036ed766585e30f41da4b24abc629db95b7256e",
+      "reference_pixel_160x128": [
+        26,
+        11
+      ],
+      "reference_object_id": 292,
+      "boundary_pixels": 614,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.8636658014476537,
+        0.5040648603203581,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Later exterior views are wall-heavy, and the crossing includes downward-looking frames. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_047_sT4fr6TAbpF_O322",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f01",
+      "reference_image": "data/images/sT4fr6TAbpF/c823eb7138474e9d9fb2026a01ef7a8c_i1_1.jpg",
+      "reference_image_sha256": "c41fc4df106fd8d50d7c5c54b5817192f33272a9e0ea4f7ec9bb85d7a5be6cf4",
+      "reference_pixel_160x128": [
+        67,
+        46
+      ],
+      "reference_object_id": 322,
+      "boundary_pixels": 4542,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.9953323905248312,
+        -0.0965061260859894,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Approach views spend substantial time on wardrobe doors or blinds; object name/material should be tied to the marked exit, not those nearby surfaces. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_048_vyrNrziPKCB_O1054",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/vyrNrziPKCB/59267d1a855e425e85e00a7cad6464b1_i1_2.jpg",
+      "reference_image_sha256": "0f751eb972eda0d89421084ce3c9a309d0f892a09b1f7457d683209d84d23458",
+      "reference_pixel_160x128": [
+        100,
+        109
+      ],
+      "reference_object_id": 1054,
+      "boundary_pixels": 4268,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.9971142270276953,
+        -0.07591586302586355,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Canonical postframes mostly face the facade; direct outdoor evidence is much clearer in supplementary views. Human review of model-visible context sufficiency is needed, despite the physically confirmed open-air location. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_049_vyrNrziPKCB_O1342",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f06",
+      "reference_image": "data/images/vyrNrziPKCB/d88c8468a85d47b7bf445cd3fae67262_i1_1.jpg",
+      "reference_image_sha256": "cc1486f1c7d8194202f82e68042ce9f2c32db40e49524606390f77cd9311a524",
+      "reference_pixel_160x128": [
+        131,
+        104
+      ],
+      "reference_object_id": 1342,
+      "boundary_pixels": 6912,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.4777141290207324,
+        -0.8785153447344919,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Frame 9 is nearly all blank wall; same-courtyard opposite door must not be confused with the target assembly. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_050_vyrNrziPKCB_O1335",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f07",
+      "reference_image": "data/images/vyrNrziPKCB/54af55e2794d41cbae1f57d9e152809d_i1_3.jpg",
+      "reference_image_sha256": "6a73015fd0f42c35d27853c576d7e445d75a098748c86db66fc37cda9bd2ffcc",
+      "reference_pixel_160x128": [
+        141,
+        108
+      ],
+      "reference_object_id": 1335,
+      "boundary_pixels": 7716,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.07762340473058643,
+        0.9969827516251382,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. The other side of this courtyard has another valid but distinct portal; preserve assembly-level identity. Not human-certified ground truth. Depth-registration diagnostic warning in frames 1, 9."
+    },
+    {
+      "episode_id": "scene_051_vyrNrziPKCB_O1357",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f06",
+      "reference_image": "data/images/vyrNrziPKCB/a1d210d6a26b45528017394d195a7019_i1_5.jpg",
+      "reference_image_sha256": "3986ecfe877632e7ccab957acbe74a4a406b3d49f0b0eb1f0eafec6ba94e0eb0",
+      "reference_pixel_160x128": [
+        17,
+        51
+      ],
+      "reference_object_id": 1357,
+      "boundary_pixels": 4464,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.06534888936513548,
+        0.9978624768267135,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Garage is enclosed but protocol-defined semi_outdoor; thermal state and ventilation cannot be inferred from the class alone. Not human-certified ground truth. Depth-registration diagnostic warning in frames 5, 7, 8, 11, 12."
+    },
+    {
+      "episode_id": "scene_052_vyrNrziPKCB_O20",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/vyrNrziPKCB/05a7eee165964cffb1a6ae6ace6a8c8a_i1_1.jpg",
+      "reference_image_sha256": "1e14fb9d71cd0e30668a882bd508f3f3c64d630cfe7d4e1c5add655481267c79",
+      "reference_pixel_160x128": [
+        56,
+        56
+      ],
+      "reference_object_id": 20,
+      "boundary_pixels": 14586,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.9942675412364259,
+        -0.1069207951881766,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Transparent glazing and frame comprise different materials; target native object is not homogeneous material GT. Not human-certified ground truth. Depth-registration diagnostic warning in frames 1."
+    },
+    {
+      "episode_id": "scene_053_vyrNrziPKCB_O87",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/vyrNrziPKCB/51ddde8be586471b8cbd18f793fbf2cb_i1_2.jpg",
+      "reference_image_sha256": "ebedb1fdd7dec86797d075eb0fe9b79a111293e2148c24b8fe5caf736f22720b",
+      "reference_pixel_160x128": [
+        142,
+        93
+      ],
+      "reference_object_id": 87,
+      "boundary_pixels": 4353,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        0.5534002208222843,
+        0.8329154792617598,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. One qualifying sighting is edge-on and one later frame looks down; retain these as original views, not simulated movement. Not human-certified ground truth. Depth-registration diagnostic warning in frames 7."
+    },
+    {
+      "episode_id": "scene_054_vyrNrziPKCB_O927",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f02",
+      "reference_image": "data/images/vyrNrziPKCB/527864a208f246dbb52fb55adcb4751f_i1_5.jpg",
+      "reference_image_sha256": "232176eb45f2464574c408f661628dae515a6c92b87737bc18635c29a9e67c8a",
+      "reference_pixel_160x128": [
+        30,
+        27
+      ],
+      "reference_object_id": 927,
+      "boundary_pixels": 1037,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.183839828780113,
+        -0.9829562133452836,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Canonical exterior frames primarily face the facade/interior, so the receiving context is weakly presented to the model despite being physically confirmed by supplemental views. Human review of prompt-context sufficiency is needed. Not human-certified ground truth."
+    },
+    {
+      "episode_id": "scene_055_vyrNrziPKCB_O965",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f08",
+      "reference_image": "data/images/vyrNrziPKCB/9c37aadc2b4f40dda342759fb90a2442_i1_2.jpg",
+      "reference_image_sha256": "54391811e00d6b1a18617ea8cc5df9546ed089b8ffd615cd7913aae8128ebd22",
+      "reference_pixel_160x128": [
+        32,
+        112
+      ],
+      "reference_object_id": 965,
+      "boundary_pixels": 7202,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.9872817515259129,
+        0.1589803230086207,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: needs human review. Significant target-mask contamination: O965 covers much of the unrelated exterior wall/window in postframes 8–9 (7209 and 2157 pixels), not just the actual exit leaf. Require target-surface certification before using masks for physics/material visibility GT. Not human-certified ground truth. Depth-registration diagnostic warning in frames 11, 12."
+    },
+    {
+      "episode_id": "scene_056_wc2JMjhGNzB_O53",
+      "status": "proposed_not_research_approved",
+      "reference_frame": "f02",
+      "reference_image": "data/images/wc2JMjhGNzB/6776a213a00b42b296782b4f569c46b9_i1_5.jpg",
+      "reference_image_sha256": "fd81cf28bc63a6f3df93b69e1975f08a3e9cbf2eb74dbfdc690308fe8a55b64e",
+      "reference_pixel_160x128": [
+        58,
+        108
+      ],
+      "reference_object_id": 53,
+      "boundary_pixels": 2811,
+      "reference_method": "maximum boundary instance-mask area; interior-distance maximum",
+      "reference_visual_check": "assistant_contact_sheet_review_not_human_certification",
+      "d1_world_travel_direction": [
+        0,
+        0,
+        -1
+      ],
+      "d2_world_travel_direction": [
+        -0.11550300937762127,
+        -0.9933071301590023,
+        0.0
+      ],
+      "d2_vector_method": "horizontal exterior f07 camera to indoor f06 camera",
+      "weather_observed_or_inferred": false,
+      "existing_quality_note": "Assistant visual review: pass. Postframe mask traces are partial or projected through the glass/opening; use clear approach views for material annotation. Not human-certified ground truth."
+    }
+  ],
+  "method_limitations": [
+    "Image review is assistant evidence, not independent human certification.",
+    "Directions are shared, anchored hypothetical collection scenarios, not approved benchmark protocol.",
+    "Raw native category and region disagreements are retained explicitly.",
+    "Existing scene quality/registration warnings remain in the frozen dataset.",
+    "No materials, exposure answers or benchmark ground truth were assigned."
+  ]
+}

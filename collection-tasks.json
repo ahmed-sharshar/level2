@@ -1,15 +1,15 @@
 {
   "schema": "blockmind_l2_tasks_v1",
   "build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
-  "task_id": "l2tasks-3f3e106fcb6cfc1fb2981a8eadd87938f9e9275d734dc491af4f0c38a162c8c3",
+  "task_id": "l2tasks-9e0423d9884953639fc227b72bdb38cbb6839cbc891837574e0783cff970c18b",
   "created_at": "2026-09-19T07:19:13.332Z",
-  "coordinator": "",
+  "coordinator": "BLOCKMIND automated provisional preparation (not human approval)",
   "layout": {
     "schema": "blockmind_l2_layout_v1",
     "build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
-    "layout_id": "",
+    "layout_id": "l2-701d85b21ad18cd1564485f7c9a672d8d73b5f8848d161659bf0bd2865af675d",
     "created_at": "2026-09-19T07:19:13.332Z",
-    "coordinator": "",
+    "coordinator": "BLOCKMIND automated provisional preparation (not human approval)",
     "conditions": {
       "version": "blockmind_l2_counterfactual_conditions_v1",
       "open": "Fully open the designated existing closure; other permanent obstructions remain unchanged.",
@@ -234,17 +234,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
+            "text": "From directly above the exterior side of the marked boundary opening in image 1, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
             "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "x": 0.909375,
+            "y": 0.48046875
           },
           {
             "id": "d2",
-            "text": "",
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 1 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
             "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "x": 0.909375,
+            "y": 0.48046875
           }
         ],
         "boundary_boxes": [
@@ -263,7 +263,7 @@
             "y1": 0.6875
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -555,17 +555,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 12, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f12",
+            "x": 0.384375,
+            "y": 0.91796875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 12 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f12",
+            "x": 0.384375,
+            "y": 0.91796875
           }
         ],
         "boundary_boxes": [
@@ -584,7 +584,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -774,17 +774,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 5, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.815625,
+            "y": 0.52734375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 5 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.815625,
+            "y": 0.52734375
           }
         ],
         "boundary_boxes": [
@@ -803,7 +803,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -1011,17 +1011,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 7, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.796875,
+            "y": 0.20703125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 7 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.796875,
+            "y": 0.20703125
           }
         ],
         "boundary_boxes": [
@@ -1040,7 +1040,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -1230,17 +1230,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 2, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.809375,
+            "y": 0.23828125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 2 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.809375,
+            "y": 0.23828125
           }
         ],
         "boundary_boxes": [
@@ -1259,7 +1259,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -1497,17 +1497,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 6, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.296875,
+            "y": 0.51171875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 6 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.296875,
+            "y": 0.51171875
           }
         ],
         "boundary_boxes": [
@@ -1526,7 +1526,7 @@
             "y1": 0.65625
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -1782,17 +1782,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 5, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.303125,
+            "y": 0.86328125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 5 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.303125,
+            "y": 0.86328125
           }
         ],
         "boundary_boxes": [
@@ -1811,7 +1811,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -1979,22 +1979,39 @@
                 "source": "mesh_projection"
               }
             ]
+          },
+          {
+            "id": "E4",
+            "side": "exterior",
+            "anchor_frame": "f10",
+            "x": 0.584375,
+            "y": 0.87109375,
+            "object_id": 722,
+            "mpcat40": 2,
+            "observations": [
+              {
+                "frame_id": "f10",
+                "x": 0.584375,
+                "y": 0.87109375,
+                "source": "mesh_projection"
+              }
+            ]
           }
         ],
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 5, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.290625,
+            "y": 0.48828125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 5 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.290625,
+            "y": 0.48828125
           }
         ],
         "boundary_boxes": [
@@ -2013,7 +2030,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.\nNative floor instance 722 is assigned to indoor region 2 although this visible patch lies on the balcony. Preserve the native assignment; annotators judge the real patch.",
         "setup_reviewed": false
       },
       {
@@ -2239,17 +2256,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 6, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.496875,
+            "y": 0.16796875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 6 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.496875,
+            "y": 0.16796875
           }
         ],
         "boundary_boxes": [
@@ -2268,7 +2285,7 @@
             "y1": 0.828125
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -2530,17 +2547,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 9, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f09",
+            "x": 0.059375,
+            "y": 0.76953125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 9 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f09",
+            "x": 0.059375,
+            "y": 0.76953125
           }
         ],
         "boundary_boxes": [
@@ -2559,7 +2576,7 @@
             "y1": 0.8125
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -2761,17 +2778,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 3, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f03",
+            "x": 0.771875,
+            "y": 0.66796875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 3 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f03",
+            "x": 0.771875,
+            "y": 0.66796875
           }
         ],
         "boundary_boxes": [
@@ -2790,7 +2807,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -3034,17 +3051,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.934375,
+            "y": 0.92578125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.934375,
+            "y": 0.92578125
           }
         ],
         "boundary_boxes": [
@@ -3063,7 +3080,7 @@
             "y1": 0.984375
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -3373,17 +3390,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.471875,
+            "y": 0.81640625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.471875,
+            "y": 0.81640625
           }
         ],
         "boundary_boxes": [
@@ -3402,7 +3419,7 @@
             "y1": 0.7265625
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -3634,17 +3651,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 7, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.453125,
+            "y": 0.46484375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 7 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.453125,
+            "y": 0.46484375
           }
         ],
         "boundary_boxes": [
@@ -3663,7 +3680,7 @@
             "y1": 0.9296875
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -3865,17 +3882,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.115625,
+            "y": 0.77734375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.115625,
+            "y": 0.77734375
           }
         ],
         "boundary_boxes": [
@@ -3894,7 +3911,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -4084,17 +4101,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 2, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.109375,
+            "y": 0.33984375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 2 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.109375,
+            "y": 0.33984375
           }
         ],
         "boundary_boxes": [
@@ -4113,7 +4130,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -4321,17 +4338,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 6, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.828125,
+            "y": 0.05078125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 6 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.828125,
+            "y": 0.05078125
           }
         ],
         "boundary_boxes": [
@@ -4350,7 +4367,7 @@
             "y1": 0.9609375
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -4552,17 +4569,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 7, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.309375,
+            "y": 0.76953125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 7 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.309375,
+            "y": 0.76953125
           }
         ],
         "boundary_boxes": [
@@ -4581,7 +4598,7 @@
             "y1": 0.90625
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -4825,17 +4842,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 7, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.909375,
+            "y": 0.87109375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 7 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.909375,
+            "y": 0.87109375
           }
         ],
         "boundary_boxes": [
@@ -4854,7 +4871,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -5038,17 +5055,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 5, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.203125,
+            "y": 0.25390625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 5 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.203125,
+            "y": 0.25390625
           }
         ],
         "boundary_boxes": [
@@ -5067,7 +5084,7 @@
             "y1": 0.6484375
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -5269,17 +5286,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 5, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.146875,
+            "y": 0.42578125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 5 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.146875,
+            "y": 0.42578125
           }
         ],
         "boundary_boxes": [
@@ -5298,7 +5315,7 @@
             "y1": 0.8984375
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -5488,17 +5505,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
+            "text": "From directly above the exterior side of the marked boundary opening in image 1, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
             "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "x": 0.290625,
+            "y": 0.49609375
           },
           {
             "id": "d2",
-            "text": "",
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 1 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
             "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "x": 0.290625,
+            "y": 0.49609375
           }
         ],
         "boundary_boxes": [
@@ -5517,7 +5534,7 @@
             "y1": 0.8046875
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -5713,17 +5730,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 7, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.346875,
+            "y": 0.35546875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 7 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.346875,
+            "y": 0.35546875
           }
         ],
         "boundary_boxes": [
@@ -5742,7 +5759,7 @@
             "y1": 0.8203125
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -5938,17 +5955,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 3, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f03",
+            "x": 0.321875,
+            "y": 0.49609375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 3 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f03",
+            "x": 0.321875,
+            "y": 0.49609375
           }
         ],
         "boundary_boxes": [
@@ -5967,7 +5984,7 @@
             "y1": 0.984375
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -6169,17 +6186,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 6, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.290625,
+            "y": 0.36328125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 6 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.290625,
+            "y": 0.36328125
           }
         ],
         "boundary_boxes": [
@@ -6198,7 +6215,7 @@
             "y1": 0.8203125
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -6442,17 +6459,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 5, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.059375,
+            "y": 0.48046875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 5 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.059375,
+            "y": 0.48046875
           }
         ],
         "boundary_boxes": [
@@ -6471,7 +6488,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -6691,17 +6708,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.959375,
+            "y": 0.16796875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.959375,
+            "y": 0.16796875
           }
         ],
         "boundary_boxes": [
@@ -6720,7 +6737,7 @@
             "y1": 0.8046875
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -6958,17 +6975,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 9, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f09",
+            "x": 0.078125,
+            "y": 0.09765625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 9 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f09",
+            "x": 0.078125,
+            "y": 0.09765625
           }
         ],
         "boundary_boxes": [
@@ -6987,7 +7004,7 @@
             "y1": 0.921875
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -7171,17 +7188,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 10, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f10",
+            "x": 0.334375,
+            "y": 0.93359375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 10 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f10",
+            "x": 0.334375,
+            "y": 0.93359375
           }
         ],
         "boundary_boxes": [
@@ -7200,7 +7217,7 @@
             "y1": 0.8828125
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -7432,17 +7449,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 2, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.096875,
+            "y": 0.41796875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 2 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.096875,
+            "y": 0.41796875
           }
         ],
         "boundary_boxes": [
@@ -7461,7 +7478,7 @@
             "y1": 0.8828125
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -7681,17 +7698,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 4, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f04",
+            "x": 0.009375,
+            "y": 0.89453125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 4 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f04",
+            "x": 0.009375,
+            "y": 0.89453125
           }
         ],
         "boundary_boxes": [
@@ -7710,7 +7727,7 @@
             "y1": 0.9609375
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -7942,17 +7959,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 6, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.890625,
+            "y": 0.73046875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 6 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.890625,
+            "y": 0.73046875
           }
         ],
         "boundary_boxes": [
@@ -7971,7 +7988,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -8173,17 +8190,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 5, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.809375,
+            "y": 0.72265625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 5 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.809375,
+            "y": 0.72265625
           }
         ],
         "boundary_boxes": [
@@ -8202,7 +8219,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -8428,17 +8445,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.909375,
+            "y": 0.36328125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.909375,
+            "y": 0.36328125
           }
         ],
         "boundary_boxes": [
@@ -8457,7 +8474,7 @@
             "y1": 0.8515625
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -8731,17 +8748,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.240625,
+            "y": 0.51171875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.240625,
+            "y": 0.51171875
           }
         ],
         "boundary_boxes": [
@@ -8760,7 +8777,7 @@
             "y1": 0.9609375
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -8986,17 +9003,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 5, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.828125,
+            "y": 0.22265625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 5 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f05",
+            "x": 0.828125,
+            "y": 0.22265625
           }
         ],
         "boundary_boxes": [
@@ -9015,7 +9032,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -9283,17 +9300,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 11, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f11",
+            "x": 0.715625,
+            "y": 0.54296875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 11 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f11",
+            "x": 0.715625,
+            "y": 0.54296875
           }
         ],
         "boundary_boxes": [
@@ -9312,7 +9329,7 @@
             "y1": 0.7890625
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -9445,22 +9462,68 @@
                 "source": "mesh_projection"
               }
             ]
+          },
+          {
+            "id": "E3",
+            "side": "exterior",
+            "anchor_frame": "f09",
+            "x": 0.171875,
+            "y": 0.19921875,
+            "object_id": 544,
+            "mpcat40": 0,
+            "observations": [
+              {
+                "frame_id": "f08",
+                "x": 0.16731316696180376,
+                "y": 0.15008275150213213,
+                "source": "mesh_projection"
+              },
+              {
+                "frame_id": "f09",
+                "x": 0.171875,
+                "y": 0.19921875,
+                "source": "mesh_projection"
+              }
+            ]
+          },
+          {
+            "id": "E4",
+            "side": "exterior",
+            "anchor_frame": "f09",
+            "x": 0.896875,
+            "y": 0.25390625,
+            "object_id": 597,
+            "mpcat40": 4,
+            "observations": [
+              {
+                "frame_id": "f09",
+                "x": 0.896875,
+                "y": 0.2539062500000002,
+                "source": "mesh_projection"
+              },
+              {
+                "frame_id": "f10",
+                "x": 0.1065090324478541,
+                "y": 0.20549628435726275,
+                "source": "mesh_projection"
+              }
+            ]
           }
         ],
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 10, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f10",
+            "x": 0.128125,
+            "y": 0.15234375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 10 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f10",
+            "x": 0.128125,
+            "y": 0.15234375
           }
         ],
         "boundary_boxes": [
@@ -9479,7 +9542,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.\nThe real facade patch has native category 0 (void/remove). Keep that raw category; never replace it with the proposed visual object name.\nThis target is a patch of the designated boundary door. Scene 38 retains its existing context-sufficiency and registration warnings.",
         "setup_reviewed": false
       },
       {
@@ -9747,17 +9810,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 12, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f12",
+            "x": 0.184375,
+            "y": 0.14453125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 12 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f12",
+            "x": 0.184375,
+            "y": 0.14453125
           }
         ],
         "boundary_boxes": [
@@ -9776,7 +9839,7 @@
             "y1": 0.875
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -9996,17 +10059,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 6, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.665625,
+            "y": 0.08203125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 6 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.665625,
+            "y": 0.08203125
           }
         ],
         "boundary_boxes": [
@@ -10025,7 +10088,7 @@
             "y1": 0.8046875
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -10239,17 +10302,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 4, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f04",
+            "x": 0.384375,
+            "y": 0.85546875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 4 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f04",
+            "x": 0.384375,
+            "y": 0.85546875
           }
         ],
         "boundary_boxes": [
@@ -10268,7 +10331,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -10464,17 +10527,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 7, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.653125,
+            "y": 0.70703125
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 7 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.653125,
+            "y": 0.70703125
           }
         ],
         "boundary_boxes": [
@@ -10493,7 +10556,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -10665,17 +10728,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.728125,
+            "y": 0.37109375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.728125,
+            "y": 0.37109375
           }
         ],
         "boundary_boxes": [
@@ -10694,7 +10757,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -10908,17 +10971,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 4, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f04",
+            "x": 0.328125,
+            "y": 0.72265625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 4 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f04",
+            "x": 0.328125,
+            "y": 0.72265625
           }
         ],
         "boundary_boxes": [
@@ -10937,7 +11000,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -11133,17 +11196,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 3, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f03",
+            "x": 0.628125,
+            "y": 0.49609375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 3 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f03",
+            "x": 0.628125,
+            "y": 0.49609375
           }
         ],
         "boundary_boxes": [
@@ -11162,7 +11225,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -11400,17 +11463,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.165625,
+            "y": 0.08984375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.165625,
+            "y": 0.08984375
           }
         ],
         "boundary_boxes": [
@@ -11429,7 +11492,7 @@
             "y1": 0.953125
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -11619,17 +11682,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
+            "text": "From directly above the exterior side of the marked boundary opening in image 1, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
             "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "x": 0.421875,
+            "y": 0.36328125
           },
           {
             "id": "d2",
-            "text": "",
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 1 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
             "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "x": 0.421875,
+            "y": 0.36328125
           }
         ],
         "boundary_boxes": [
@@ -11648,7 +11711,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -11832,17 +11895,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.628125,
+            "y": 0.85546875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.628125,
+            "y": 0.85546875
           }
         ],
         "boundary_boxes": [
@@ -11861,7 +11924,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -12081,17 +12144,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 6, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.821875,
+            "y": 0.81640625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 6 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.821875,
+            "y": 0.81640625
           }
         ],
         "boundary_boxes": [
@@ -12110,7 +12173,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -12336,17 +12399,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 7, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.884375,
+            "y": 0.84765625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 7 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f07",
+            "x": 0.884375,
+            "y": 0.84765625
           }
         ],
         "boundary_boxes": [
@@ -12365,7 +12428,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -12609,17 +12672,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 6, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.109375,
+            "y": 0.40234375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 6 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f06",
+            "x": 0.109375,
+            "y": 0.40234375
           }
         ],
         "boundary_boxes": [
@@ -12638,7 +12701,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -12906,17 +12969,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.353125,
+            "y": 0.44140625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.353125,
+            "y": 0.44140625
           }
         ],
         "boundary_boxes": [
@@ -12935,7 +12998,7 @@
             "y1": 0.96875
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -13125,17 +13188,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.890625,
+            "y": 0.73046875
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.890625,
+            "y": 0.73046875
           }
         ],
         "boundary_boxes": [
@@ -13154,7 +13217,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -13380,17 +13443,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 2, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.190625,
+            "y": 0.21484375
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 2 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.190625,
+            "y": 0.21484375
           }
         ],
         "boundary_boxes": [
@@ -13409,7 +13472,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -13611,17 +13674,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 8, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.203125,
+            "y": 0.87890625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 8 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f08",
+            "x": 0.203125,
+            "y": 0.87890625
           }
         ],
         "boundary_boxes": [
@@ -13640,7 +13703,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       },
       {
@@ -13848,17 +13911,17 @@
         "directions": [
           {
             "id": "d1",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From directly above the exterior side of the marked boundary opening in image 2, vertically downward. Imagine overhead sunlight or vertically falling rain. Keep the real roof, walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.365625,
+            "y": 0.84765625
           },
           {
             "id": "d2",
-            "text": "",
-            "reference_frame": "f01",
-            "x": null,
-            "y": null
+            "text": "From the exterior side horizontally toward the marked boundary opening in image 2 and into the indoor room (opposite to the walk across the threshold). Imagine sunlight or wind-driven rain arriving sideways along that exterior-to-interior direction. Keep all other walls and covers in place. The arrow marks the opening reference, not a ray. This is a hypothetical scenario, not observed weather.",
+            "reference_frame": "f02",
+            "x": 0.365625,
+            "y": 0.84765625
           }
         ],
         "boundary_boxes": [
@@ -13877,7 +13940,7 @@
             "y1": 1
           }
         ],
-        "setup_notes": "",
+        "setup_notes": "Collection inputs prepared from frozen RGB/masks/geometry. Directions are proposed hypothetical scenarios, not observed weather or approved research settings. Human scene/target validation and protocol approval remain pending.",
         "setup_reviewed": false
       }
     ]
@@ -13890,7 +13953,9 @@
     "protocol_reviewed": false,
     "protocol_reviewer": "",
     "protocol_notes": "",
-    "vhc_allowed_pairs_status": "not_supplied"
+    "vhc_allowed_pairs_status": "not_supplied",
+    "collection_mode": "provisional",
+    "points_per_side": 4
   },
   "audits": {
     "scene_001_1LXtFkjw3qL_O103": {

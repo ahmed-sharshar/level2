@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import zipfile
 from build_boundary_measurements import build as build_boundary_measurements
+from verify_redpoint_sources import verify as verify_redpoint_sources
 
 SITE = Path(__file__).resolve().parents[1]
 ROOT_FILES = {
@@ -27,8 +28,10 @@ ROOT_FILES = {
     "redpoint-core.js", "instance-labels.js", "RED_POINTS.md",
     "SUN_RAIN.md",
     "COLLECTION_CHECKS.md",
+    "COLLECTION_RELEASE.md", "data/provisional_collection_preparation.json",
 }
 VALIDATION_FILES = {
+    "collection_release_summary.json",
     "browser_test_report.json", "scientific_review.md", "bundle_check.json",
     "welcome-desktop.png", "coordinator-desktop.png", "annotator-surfaces-desktop.png",
     "annotator-mobile.png",
@@ -66,7 +69,9 @@ def main():
         parser.error("Archive manifest already exists; choose a new archive path.")
     if json.loads((SITE / "boundary-measurements.json").read_text()) != build_boundary_measurements(SITE):
         parser.error("Boundary measurement supplement differs from the frozen mesh-instance source.")
-    source_audit = json.loads((SITE / "validation/redpoint_source_audit.json").read_text())
+    # Earlier delivery reports remain historical evidence. Re-check the actual
+    # currently packaged targets instead of requiring an old task-file hash.
+    source_audit = verify_redpoint_sources(SITE)
     if source_audit.get("passed") is not True or any(
             source_audit.get("input_sha256", {}).get(name) != sha(SITE / name)
             for name in ("dataset.json", "catalogue.json", "collection-tasks.json")):

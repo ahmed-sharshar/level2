@@ -8,9 +8,21 @@ Annotators use the homepage. This page is only for the researcher preparing cons
 4. **Opening boxes:** inspect or redraw boxes around the same designated boundary in at least two pre-crossing frames. Mesh masks/native IDs remain proposals.
 5. **Review & audits:** approve that scene's geometry or explicitly exclude it with a reason. Review the installed-surface hierarchy and open/sealed protocol interpretation, retaining reviewer names/notes.
 6. **Publish reviewed tasks**, back up the previous shared file, then copy the downloaded `collection-tasks.json` into this website folder. Static browser code cannot write to the server. Local setup edits/draft downloads never silently become published tasks.
-7. Give both raters the same updated website. Use separate browser profiles and own identities; pilot a few scenes before full collection.
+7. Give both raters the same updated website. Use different annotator IDs; separate browser profiles are optional. Pilot a few scenes before full collection.
 
-All included scenes must pass setup checks before publication. Reasoned exclusions allow a pilot subset, but do not exclude difficult scenes to inflate agreement. Scene 8 has three exterior proposals and scene 38 has two: review and add one or two legitimate exterior targets respectively, or exclude with a reason if suitable targets cannot be found. Never invent a target to satisfy the count. Ten earlier visual-review flags remain. None of the candidates is automatically human-certified. Opening setup stamps `settings.points_per_side: 4` on the local draft and versions its task identity; it does not overwrite the published task package or old annotations.
+All included scenes must pass research setup checks before publication as reviewed
+benchmark tasks. Reasoned exclusions allow a pilot subset, but do not exclude
+difficult scenes to inflate agreement. The current provisional collection revision
+adds one exterior target in Scene 8 and two in Scene 38, preserving the earlier
+points. All 56 scenes now have four per side, but these are physical-patch
+proposals, not human-certified targets. Ten earlier visual-review flags remain.
+Opening setup stamps `settings.points_per_side: 4` on the local draft and versions
+its task identity; it does not overwrite published tasks or old annotations.
+
+`settings.collection_mode: "provisional"` permits annotation against complete
+shared proposals while research approval remains pending. The annotator can
+finish answering without certifying the protocol, hierarchy, or directions.
+The strict research publication checks and benchmark eligibility are unchanged.
 
 ## Researcher audits
 

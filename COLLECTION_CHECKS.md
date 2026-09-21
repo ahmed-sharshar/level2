@@ -82,13 +82,13 @@ and annotator ID. No answer is uploaded, shared between devices, or shown in a
 collaborative answer panel. Imports reject a different annotator ID. The later
 `review.html` tool audits model outputs; it does not adjudicate human disagreements.
 
-**Use separate browser profiles or devices for the two annotators.** IDs are
-self-entered labels, not authenticated accounts. Someone sharing the same browser
-profile can enter another person's ID or inspect its storage. GitHub Pages alone
-cannot enforce secure account-level separation. Return exports privately to the
-researcher; do not exchange them between annotators or commit them to the repository.
-Enforced multi-user access control would require a separately designed login/storage
-service; it is not implemented or implied here.
+**Use a different unique annotator ID for each person.** Separate browser profiles
+are not required by this workflow: switching IDs saves and resumes separate local
+drafts. IDs are self-entered labels, not authenticated accounts. Someone entering
+another person's ID in the same browser can access that local draft, so annotators
+must use only their own ID. Return exports privately to the researcher; do not
+exchange them between annotators or commit them to the repository. Enforced
+multi-user access control is not implemented or implied here.
 
 ## Existing annotations and upgrades
 
@@ -100,5 +100,7 @@ Source hashes/statuses are retained in `migration_log`. No mask, earlier pathway
 vote or optional Level 3 visibility field is silently converted into a new answer.
 
 Both annotators must finish the same scope and shared task version. Mixed-scope
-consensus is rejected. Dataset assets, shared point coordinates, directions and
-the published `collection-tasks.json` are unchanged.
+consensus is rejected. The collection-readiness revision preserves dataset assets
+and existing point coordinates, adds three new exterior targets, and versions
+the shared provisional directions. See `COLLECTION_RELEASE.md`. A completed
+provisional annotation is valid collection data, not approved benchmark GT.

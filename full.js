@@ -30,6 +30,7 @@
   const basePath = encodeURIComponent(new URL('.',location.href).pathname);
   const scopeKey = (identity,taskId=state.tasks.task_id) => 'blockmind-l2-full:'+basePath+':'+state.dataset.build_id+':'+taskId+':'+encodeURIComponent(identity);
   const allQuestions = () => F.questions(state.doc,state.episode,state.dataset,state.catalogue);
+  const collectionReady = () => F.episodeCollectionReady(state.doc.tasks,state.episode,state.dataset,state.catalogue);
   const sectionQuestions = () => allQuestions().filter(q=>q.section===state.section);
   const allPanels = () => G.panels(state.doc,state.episode,state.dataset,state.catalogue);
   const sectionPanels = () => allPanels().filter(p=>p.section===state.section);
@@ -135,9 +136,9 @@
   function renderNavigation() {
     if(!state.doc)return;
     $('sections').innerHTML=order.map(s=>{const part=sectionProgress(s);return '<button data-section="'+s+'"'+(s===state.section?' aria-current="step"':'')+'>'+names[s]+(s!=='review'?'<span class="step-count">'+part.answered+' / '+part.total+' '+unitName(s)+'</span>':'<span class="step-count">Save or finish</span>')+'</button>';}).join('');
-    const ready=F.episodeReady(state.doc.tasks,state.episode,state.dataset,state.catalogue);
-    $('setupNotice').classList.toggle('hidden',ready.ready||record().status==='excluded');
-    $('setupNotice').textContent='Researcher preparation is pending for this scene. You can save the basic facts now; direction-based questions and final completion unlock after shared points, directions and research settings are reviewed.';
+    const ready=collectionReady(),provisional=ready.ready&&state.doc.tasks.settings.collection_mode==='provisional'&&!F.episodeReady(state.doc.tasks,state.episode,state.dataset,state.catalogue).ready;
+    $('setupNotice').classList.toggle('hidden',record().status==='excluded'||ready.ready&&!provisional);
+    $('setupNotice').textContent=provisional?'Shared provisional directions · You can answer, save and finish. Research approval is still pending; completed labels are not benchmark ground truth.':'Shared scene preparation is incomplete. You can save basic facts now; the researcher must supply usable shared points and directions before these scenarios can be completed.';
     $('sceneSelect').value=String(state.episode);
   }
   function updateProgress() {
@@ -289,12 +290,12 @@
   }
   function groupedActions(p) {return '<div class="actions"><button id="previousQuestion">← Back</button><button id="skipQuestion" class="text-button">Save & skip for now</button><button id="nextQuestion" class="primary"'+(!panelComplete(p)?' disabled':'')+'>Next '+(p.kind==='surface'?'point':['single','boundary'].includes(p.kind)?'check':'scenario')+' →</button></div>'+notesHTML();}
   function renderReview() {
-    const p=F.progress(state.doc,state.episode,state.dataset,state.catalogue),ready=F.episodeReady(state.doc.tasks,state.episode,state.dataset,state.catalogue),missing=allQuestions().filter(q=>!answered(get(record(),q.path))),hasND=allQuestions().some(q=>uncertain(get(record(),q.path))),describeBlockers=['multiple','other'].includes(record().checks.boundary?.blockage),needNote=(hasND||describeBlockers)&&!record().answers.notes.trim();
+    const p=F.progress(state.doc,state.episode,state.dataset,state.catalogue),ready=collectionReady(),missing=allQuestions().filter(q=>!answered(get(record(),q.path))),hasND=allQuestions().some(q=>uncertain(get(record(),q.path))),describeBlockers=['multiple','other'].includes(record().checks.boundary?.blockage),needNote=(hasND||describeBlockers)&&!record().answers.notes.trim();
     const missingPanels=allPanels().filter(p=>p.questions.some(q=>!answered(get(record(),q.path))));
     const status=record().status,locked=['complete','excluded'].includes(status),canComplete=!missing.length&&!needNote&&ready.ready&&!state.conflict&&!locked;
     let html='<p class="eyebrow">Review this scene</p><h2>'+(status==='complete'?'Scene complete':status==='excluded'?'Scene excluded':'Save now, finish when ready')+'</h2><p class="question-help">Drafts can be saved at any time. A point or scenario is finished when all its required fields are answered or explicitly marked Not sure.</p>';
     if(locked)html+='<div class="locked-notice">'+(status==='excluded'?'Reason: '+esc(record().exclusion_reason):'These answers are locked to protect your completed work.')+' <button id="reopenScene" class="text-button">Reopen to edit</button></div>';
-    if(!ready.ready&&status!=='excluded')html+='<div class="blocked-section"><strong>Waiting for researcher preparation</strong><p>Your basic answers are safe. Shared targets, both directions and research settings must be reviewed before this scene can be finished.</p></div>';
+    if(!ready.ready&&status!=='excluded')html+='<div class="blocked-section"><strong>Waiting for shared scene preparation</strong><p>Your basic answers are safe. This task needs usable shared targets and both directions, plus any approvals required by its collection mode, before it can be finished.</p></div>';
     html+='<ul class="summary-list">'+order.filter(s=>s!=='review'&&p.sections[s]).map(s=>{const part=sectionProgress(s);return '<li><button data-section="'+s+'">'+names[s]+'</button><small>'+part.answered+' / '+part.total+' '+unitName(s)+'</small></li>';}).join('')+'</ul><p class="compact-help">Counts above are compact forms, not individual fields. Every original benchmark fact, point, direction and boundary condition is still saved and checked.</p>';
     if(missingPanels.length&&!locked)html+='<p class="small"><strong>'+missingPanels.length+' forms still need attention</strong></p><div class="missing-links">'+missingPanels.slice(0,5).map(p=>{const q=p.questions.find(q=>!answered(get(record(),q.path)));return '<button data-missing="'+esc(q.path)+'" data-missing-section="'+q.section+'">'+esc(p.kind==='surface'?markerName(layout().markers.find(m=>m.id===p.marker_id)):p.title||q.title)+'</button>';}).join('')+(missingPanels.length>5?'<span class="quiet-note">Use the sections above for the remaining forms.</span>':'')+'</div>';
     if((hasND||describeBlockers)&&!locked)html+='<p id="requiredNoteWarning" class="error'+(needNote?'':' hidden')+'">Please add one short note'+(hasND?' explaining your Not sure answers':'')+(hasND&&describeBlockers?' and':'')+(describeBlockers?' naming the multiple or other blockers':'')+'.</p>';
@@ -360,7 +361,7 @@
   }
   function completeScene() {
     if(readOnly())return;const errors=F.validateEpisode(state.doc,state.episode,state.dataset,state.catalogue,true);
-    if(errors.length){showMessage('This scene is not complete yet','Please answer the remaining questions and add an uncertainty note if needed. The shared research setup must also be approved.\n\n'+errors.slice(0,3).join('\n'));goSection('review');return;}
+    if(errors.length){showMessage('This scene is not complete yet','Please answer the remaining questions and add an uncertainty note if needed. The shared task must also be ready for collection.\n\n'+errors.slice(0,3).join('\n'));goSection('review');return;}
     record().status='complete';record().completed_at=new Date().toISOString();save();renderAll();toast('Scene complete. You can reopen it if a correction is needed.');
   }
   function reopenScene() {
@@ -381,7 +382,7 @@
   async function prepareImport(source) {
     if(!source||typeof source!=='object'||!safeIdentity(source.annotator)){showMessage('This is not an annotation backup','Choose your own simple, detailed, or full annotation JSON—not a task or layout file.');return;}
     const identity=state.doc?state.identity:$('identityInput').value.trim()||source.annotator;
-    if(source.annotator!==identity){showMessage('This belongs to another annotator','Use your own backup. No answers have been changed. To resume a different person’s workspace, change annotator first; do not combine their labels with yours.');return;}
+    if(source.annotator!==identity){showMessage('This belongs to another annotator','Use the backup saved under your own annotator ID. No answers have been changed. Do not import or combine another person’s labels with yours.');return;}
     if(state.conflict){showMessage('This tab is paused','Download this copy or recover the latest draft before importing.');return;}
     let migrated;
     try {
@@ -455,7 +456,7 @@
     if(target.matches('input[data-material-search]')){filterMaterialChoices(target.dataset.materialSearch,target.value);return;}
     if(target.matches('input[data-field]')){updateField(target.dataset.field,target.value.trim()||null,false);return;}
     if(target.hasAttribute('data-input')){updateAnswer(target.value.trim()||null,false);return;}
-    if(target.hasAttribute('data-notes')&&!readOnly()){record().answers.notes=target.value;changed();if(state.section==='review'){const p=F.progress(state.doc,state.episode,state.dataset,state.catalogue),hasND=allQuestions().some(q=>uncertain(get(record(),q.path))),describeBlockers=['multiple','other'].includes(record().checks.boundary?.blockage),needsNote=(hasND||describeBlockers)&&!target.value.trim(),ready=F.episodeReady(state.doc.tasks,state.episode,state.catalogue);$('completeScene').disabled=p.answered!==p.total||!ready.ready||needsNote||state.conflict;if($('requiredNoteWarning'))$('requiredNoteWarning').classList.toggle('hidden',!needsNote);}}
+    if(target.hasAttribute('data-notes')&&!readOnly()){record().answers.notes=target.value;changed();if(state.section==='review'){const p=F.progress(state.doc,state.episode,state.dataset,state.catalogue),hasND=allQuestions().some(q=>uncertain(get(record(),q.path))),describeBlockers=['multiple','other'].includes(record().checks.boundary?.blockage),needsNote=(hasND||describeBlockers)&&!target.value.trim(),ready=collectionReady();$('completeScene').disabled=p.answered!==p.total||!ready.ready||needsNote||state.conflict;if($('requiredNoteWarning'))$('requiredNoteWarning').classList.toggle('hidden',!needsNote);}}
   });
   $('questionPanel').addEventListener('change',event=>{
     const target=event.target;
@@ -473,7 +474,7 @@
   $('rawRecovery').addEventListener('click',()=>{const current=storageRead(state.key);if(current.raw)downloadRaw(current.raw,'blockmind_unreadable_browser_draft.json');});
   $('reloadLatest').addEventListener('click',()=>{const current=storageRead(state.key);if(!current.env){showMessage('Latest draft cannot be loaded','Download this tab’s copy first. The saved draft is missing or unreadable and has not been overwritten.');return;}const errors=F.validate(current.env.data,state.dataset,state.catalogue);if(errors.length){showMessage('Saved draft needs recovery',errors.slice(0,3).join('\n'));return;}if(!confirm('Load the latest saved draft? Download this tab’s copy first if you need it.'))return;acceptDoc(current.env.data,current);});
   $('moreButton').addEventListener('click',()=>{const hidden=$('moreMenu').classList.toggle('hidden');$('moreButton').setAttribute('aria-expanded',String(!hidden));});$('legacyButton').addEventListener('click',legacyDraft);$('profileSelect').addEventListener('change',event=>changeProfile(event.target.value));
-  $('changeName').addEventListener('click',()=>{stopPlay();save();state.doc=null;state.pending=null;$('workspace').classList.add('hidden');$('welcome').classList.remove('hidden');$('identityInput').value='';$('welcomeError').textContent='';});
+  $('changeName').addEventListener('click',()=>{stopPlay();if(!save()){showMessage('Save your current draft before switching','Your current answers are still open. Download a backup, or resolve the saved-draft warning, before changing annotator ID.');return;}state.doc=null;state.pending=null;state.identity='';state.materialSearches={};$('moreMenu').classList.add('hidden');$('moreButton').setAttribute('aria-expanded','false');$('workspace').classList.add('hidden');$('welcome').classList.remove('hidden');$('identityInput').value='';$('welcomeError').textContent='Enter your own ID to start or resume its separate draft.';$('identityInput').focus();});
   window.addEventListener('storage',event=>{if(state.doc&&event.key===state.key){const current=storageRead(state.key);if(current.invalid)lock(true);else if(!current.env||current.env.owner!==owner&&current.env.revision!==state.revision)lock();}});
   window.addEventListener('beforeunload',event=>{if(state.doc&&(!$('storageWarning').classList.contains('hidden')||state.conflict)){event.preventDefault();event.returnValue='Download your draft before leaving.';}});
   window.L2Collection=Object.freeze({getSnapshot:()=>clone({identity:state.identity,episode:state.episode,section:state.section,question:state.question,frame:state.frame,doc:state.doc,tasks:state.tasks,storageKey:state.key,revision:state.revision,conflict:state.conflict,imageReady:state.imageReady,focusMarker:state.focusMarker,panel:state.doc&&state.section!=='review'?panel():null}),getDataset:()=>clone(state.dataset)});

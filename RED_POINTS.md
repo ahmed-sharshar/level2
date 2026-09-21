@@ -66,19 +66,17 @@ answers remain readable; task changes must be explicit, not an invisible update.
 
 Mask-based candidates are already pre-placed, using structural/category diversity
 and then mask-interior distance and area. These are candidate suggestions, not
-certified biggest surfaces or human-approved targets. No new points are invented
-by this website update. All **445 existing targets remain unchanged**:
+certified biggest surfaces or human-approved targets. All **445 earlier targets
+remain unchanged**. The collection-readiness revision adds three mask-backed,
+RGB-inspected exterior patch proposals: one in Scene 008 and two in Scene 038.
+All 56 scenes now contain four indoor and four exterior points (**448 total**).
+Unknown native categories remain unknown; an identifiable physical surface does
+not imply that its machine object category or human material is known.
 
-- 54 scenes have four points on each side.
-- Scene 008 (`scene_008_2azQ1b91cZZ_O677`) has four indoor and three exterior points.
-- Scene 038 (`scene_038_p5wJjkQkbXX_O597`) has four indoor and two exterior points.
-
-The researcher must inspect these two scenes and add one and two legitimate
-exterior targets respectively before publishing them under the exact-four rule,
-or explicitly exclude a scene when suitable targets cannot be established.
-Do not duplicate points or invent additional distinct native objects merely to
-meet the count. This update neither moves the existing points nor collects new
-human annotations, approves research settings, or applies the separate route filter.
+Annotators must still check each proposed target and correspondence. The update
+does not assign human labels, approve research settings, or change routes.
+The separate preparation provenance records additions and hypothetical direction
+definitions; see `COLLECTION_RELEASE.md`.
 
 ## Reproduce the source audit
 
@@ -95,8 +93,8 @@ python3 scripts/verify_redpoint_sources.py \
 ```
 
 Requires Pillow. Inputs are read-only; only an explicit `--out` writes a report.
-`validation/redpoint_source_audit.json` records the shipped audit: all 445 anchors
-match their native instance/category metadata and all 107 material entries match
-the full reference. Top-level `passed` concerns source integrity. The separate
-`four_per_side_readiness.passed` is false until the two shortages are corrected
-in an explicitly reviewed shared-task revision; source integrity is not readiness.
+`validation/redpoint_source_audit.json` is the historical 445-point delivery audit.
+Run the command above to verify the current 448-point revision. Top-level `passed`
+concerns source integrity; `four_per_side_readiness` checks counts, not research
+approval or physical correctness. A native category-0 label is preserved honestly,
+not changed into a human category by this verifier.

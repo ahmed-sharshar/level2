@@ -22,7 +22,7 @@ Serve the whole folder. Project-subdirectory hosting is supported. Check permiss
 ## For annotators
 
 1. Enter your name and click **Start annotating**. Work independently.
-2. Play the scene and check the scene/opening questions.
+2. Play the scene and check the scene/opening questions. Use your own unique annotator ID each time; different IDs have separate drafts in the same browser.
 3. Complete one compact form per red point. Choosing an installed-material entry can provide its name and class together. Keep visible finish separate from any known underlying material.
 4. In each of four sun/rain scenarios, show each point as needed and record sunlight/rain side by side. Boundary pathways are also grouped by scenario. Choose **Not sure** when evidence is insufficient; unselected cells stay unanswered.
 5. Use **Review** to see what remains. **Save draft** works anytime; **Finish this scene** checks completeness. Download backups regularly.
@@ -39,30 +39,43 @@ are preserved when upgrading; see [BOUNDARY_QUESTIONS.md](BOUNDARY_QUESTIONS.md)
 by name, family, ID or appearance. Exports pair the actual anchor-mask mpcat40
 label with your separate object/material choices; machine labels never fill your
 answers. Shelter distinguishes solid roof, slats/lattice, open sky and other partial
-cover. Points stay locked for annotators. New researcher preparation requires four
-per side; scenes 8 and 38 still need legitimate exterior targets reviewed, without
-altering existing points or answers. See [RED_POINTS.md](RED_POINTS.md).
+cover. Points stay locked for annotators. The current shared collection revision
+supplies four physical-patch targets per side in all 56 scenes; the earlier 445
+targets are preserved and three exterior targets are added. Targets remain
+proposals for annotators to verify, not automatic human labels. See [RED_POINTS.md](RED_POINTS.md).
 
 **Sun & rain:** each point has separate **Hit directly / Not hit / Not sure**
 choices for sunlight and rain in every scenario. Glass and slats/lattice rules
-sit above the table. Reviewed feature-relative direction words and an image
-reference arrow help locate the incoming side; the arrow is not a simulated
-travel vector. Existing answers are preserved. Real directions still need
-researcher preparation; see [SUN_RAIN.md](SUN_RAIN.md).
+sit above the table. Shared hypothetical, feature-relative direction words and
+an image reference arrow help locate the incoming side; the arrow is not a
+simulated travel vector. The current directions are explicitly provisional,
+not observations of the weather or approved benchmark conditions. See [SUN_RAIN.md](SUN_RAIN.md).
 
 **Through the opening** now uses four multi-select checklists, saved only as
 consistency checks—not GT. **Visibility** keeps the door checks and adds one
 images 7–12 checklist per indoor point. Old answers remain preserved. See
 [COLLECTION_CHECKS.md](COLLECTION_CHECKS.md) for fields, upgrades and rule status.
 
-Annotate independently in **separate browser profiles or devices**. Drafts are
-local, but IDs are not passwords: a shared browser profile is not secure account
-isolation. There is no adjudication feature; disagreements exclude dependent
-items. The full opening-rule table still needs review before generating GT.
+Annotate independently using **different annotator IDs**. Separate browser
+profiles are not required: local drafts are namespaced by ID. IDs are not
+passwords; do not enter another annotator's ID or exchange raw answers. There
+is no adjudication feature; disagreements exclude dependent items. The full
+opening-rule table still needs review before generating GT.
 
 For an eight-point scene, the old 80 red-point question screens are now eight point forms; the 64 sun/rain question screens are four scenario panels. The underlying facts and all existing targets remain—not automatically filled or dropped. See [COMPACT_WORKFLOW.md](COMPACT_WORKFLOW.md).
 
-Research settings ship explicitly pending. Basic facts can be collected now; directional questions and final completion unlock after the researcher publishes reviewed shared tasks. Missing approval is never treated as ground truth.
+All annotation sections are available under the explicit **provisional collection**
+mode when their structural checks pass. Annotators can answer and complete scenes
+without impersonating a research reviewer. Scene/protocol/hierarchy approval and
+the final benchmark rules remain separate pending research work: complete
+annotations still have `benchmark_ready: false`, and consensus cannot promote
+unapproved scene tasks to eligible benchmark GT. Earlier task versions without
+this opt-in keep their original approval gates.
+
+Existing browser drafts are not overwritten by the task revision. Returning with
+the same ID offers an explicit migration preview: unchanged target labels may be
+retained, while new targets and changed directions need new answers. Keep old
+downloads as backups. See [COLLECTION_RELEASE.md](COLLECTION_RELEASE.md).
 
 ## Prepare once, separately
 

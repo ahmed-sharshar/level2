@@ -76,7 +76,7 @@
       else missing.push(panel);
     }
     return {answered,total:grouped.length,missing,sections,fields_answered:fieldsAnswered,
-      fields_total:fieldsTotal,setup_ready:F.episodeReady(doc.tasks,index,dataset,catalogue).ready};
+      fields_total:fieldsTotal,setup_ready:F.episodeCollectionReady(doc.tasks,index,dataset,catalogue).ready};
   }
 
   function canonicalMaterial(material) {

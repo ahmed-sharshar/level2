@@ -133,10 +133,15 @@ def run(entry='index.html'):
             temporary = Path(td)
             browser = pw.chromium.launch()
             unapproved = browser.new_context(viewport={'width': 1440, 'height': 1100}, accept_downloads=True)
+            # Keep the legacy blank-direction safety regression independent of
+            # the newer, explicitly provisional published collection package.
+            legacy_script = "const F=require('./full-core.js'),D=require('./dataset.json'),K=require('./catalogue.json');process.stdout.write(JSON.stringify(F.createTasks(D,K,'SYNTHETIC LEGACY TEST')));"
+            legacy_tasks = json.loads(subprocess.check_output([NODE, '-e', legacy_script], cwd=SITE, text=True))
+            unapproved.route('**/collection-tasks.json', lambda route: route.fulfill(json=legacy_tasks))
             blocked = start(unapproved, identity='sunrain-unapproved-test')
             section(blocked, 'exposure')
             before = human_state(blocked)
-            check('Unreviewed published directions still block sun/rain answers', blocked.locator('#questionPanel select:not([disabled])').count() == 0 and blocked.locator('#questionPanel .blocked-section').is_visible())
+            check('Legacy blank directions still block sun/rain answers', blocked.locator('#questionPanel select:not([disabled])').count() == 0 and blocked.locator('#questionPanel .blocked-section').is_visible())
             check('Unreviewed direction cannot display a fabricated reference arrow', blocked.locator('#showReference').is_disabled() and blocked.locator('#pointOverlay [data-direction-reference]').count() == 0)
             check('Viewing blocked scenarios does not fill human judgments', human_state(blocked) == before)
             unapproved.close()

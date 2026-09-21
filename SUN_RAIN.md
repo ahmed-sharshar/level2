@@ -41,15 +41,21 @@ only on that reference image. **Show point** returns to the selected surface.
 Drawing a physically meaningful incident-ray arrow would require additional
 researcher-authored geometry and a new shared task version.
 
-The distributed collection tasks still contain 112 blank direction definitions
-across 56 unreviewed scenes. These facts are not fabricated by a UI update.
-The researcher must supply and approve both feature-relative directions and
-anchors before the corresponding scenario questions unlock for annotators.
+The current collection revision supplies 112 **provisional hypothetical direction
+definitions** across 56 scenes, each tied to a saved visible reference anchor.
+These are shared scenario inputs, not observed weather, human annotations, or
+Norhan's research approval. The explicit provisional collection mode unlocks
+answering after structural checks; the scene and research approval fields stay
+false. Researchers must review the definitions before freezing benchmark GT.
+Earlier task packages without provisional mode retain their approval gate.
 
 ## Compatibility
 
-No required answer fields, point geometry, task identities, research approvals,
-human labels or frozen dataset assets change. Existing exports retain their values.
+The earlier UI-only clarification did not change task identities. The later
+collection-readiness revision deliberately versions the shared directions and
+adds three exterior targets while preserving all existing point coordinates,
+human labels and frozen dataset assets. Migration retains compatible labels
+only with explicit user confirmation; changed directions require new judgments.
 The direct-hit option wording is scoped to point exposure. The later opening
 update replaces passage questions with multi-select consistency-only checks;
 see `COLLECTION_CHECKS.md`. Other Yes/No questions retain their choices. Tests

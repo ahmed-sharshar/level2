@@ -1,0 +1,45 @@
+{
+  "release": "provisional-collection-20260921-v1",
+  "scope": "Software and source verification; no human annotations or approved benchmark GT",
+  "passed": true,
+  "task_id": "l2tasks-9e0423d9884953639fc227b72bdb38cbb6839cbc891837574e0783cff970c18b",
+  "task_sha256": "e4164fe8c9be7db76d9d1bc09623287c066874c7ae4886e8117dc84496b43576",
+  "build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
+  "counts": {
+    "episodes": 56,
+    "collection_ready_episodes": 56,
+    "research_approved_episodes": 0,
+    "targets": 448,
+    "original_targets_unchanged": 445,
+    "added_exterior_targets": 3,
+    "directions": 112,
+    "reference_materials": 107,
+    "verified_anchor_pixels": 448,
+    "frozen_asset_hashes_verified": 2508,
+    "sun_rain_answer_cells": 3584,
+    "opening_checklists": 224,
+    "indoor_visibility_checklists": 224
+  },
+  "tests": {
+    "javascript_checks": 223,
+    "python_tests": 43,
+    "browser_checks": 375,
+    "browser_suites": {
+      "collection_release": 19,
+      "researcher_setup": 69,
+      "compact": 66,
+      "opening": 53,
+      "collection_checks": 79,
+      "sunrain": 51,
+      "redpoint": 38
+    },
+    "javascript_errors": [],
+    "unexpected_failed_asset_requests": []
+  },
+  "limits": [
+    "Directions are provisional shared hypothetical conditions, not approved protocol or observed weather.",
+    "Machine categories, raw region conflicts, and existing scene-quality warnings remain fallible annotation aids.",
+    "Annotator IDs separate local drafts but are not authenticated accounts.",
+    "Completion does not produce benchmark GT; research approval, reviewed rules, and VHC pairs remain separate."
+  ]
+}

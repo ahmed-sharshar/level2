@@ -133,7 +133,7 @@ def main() -> int:
             check("opening_setup_preserves_every_published_point", [e["markers"] for e in initial["tasks"]["layout"]["episodes"]] == [e["markers"] for e in json.loads(source_task_bytes)["layout"]["episodes"]])
             check("four_point_side_cannot_add_fifth", page.locator("#addPoint").is_disabled())
             check("no_automatic_protocol_approval", not initial["tasks"]["settings"]["protocol_reviewed"] and not initial["tasks"]["settings"]["hierarchy_reviewed"])
-            check("no_invented_directions", all(not d["text"] for e in initial["tasks"]["layout"]["episodes"] for d in e["directions"]))
+            check("opening_setup_preserves_published_direction_definitions", [e["directions"] for e in initial["tasks"]["layout"]["episodes"]] == [e["directions"] for e in json.loads(source_task_bytes)["layout"]["episodes"]])
             check("fixed_boundary_identity_visible", str(dataset["episodes"][0]["boundary_object_id"]) in page.locator("#datasetIdentity").inner_text())
             _, blank_path = download("#draftExport", "initial.json")
             check("blank_draft_can_export", json.loads(blank_path.read_text())["schema"] == "blockmind_l2_tasks_v1")
@@ -141,7 +141,17 @@ def main() -> int:
             check("unreviewed_publish_blocked", page.locator("#messageDialog").is_visible() and "not ready" in page.locator("#messageTitle").inner_text())
             page.click("#closeMessage")
 
-            # Shortages remain visible: no synthetic point fills either scene.
+            # Exercise old short layouts without removing the new published
+            # proposals. This fixture exists only in the disposable browser.
+            shortage_fixture = json.loads(json.dumps(initial["tasks"]))
+            for index, exterior_limit in ((7, 3), (37, 2)):
+                episode = shortage_fixture["layout"]["episodes"][index]
+                episode["markers"] = ([m for m in episode["markers"] if m["side"] == "indoor"] +
+                                      [m for m in episode["markers"] if m["side"] == "exterior"][:exterior_limit])
+            resign = "const fs=require('fs'),C=require('./core.js'),F=require('./full-core.js'),t=JSON.parse(fs.readFileSync(0,'utf8'));t.layout.layout_id=C.layoutId(t.layout);t.task_id=F.taskId(t);process.stdout.write(JSON.stringify(t));"
+            shortage_fixture = json.loads(subprocess.check_output([node_path(), '-e', resign], cwd=site, input=json.dumps(shortage_fixture), text=True))
+            import_tasks(shortage_fixture)
+            ready()
             page.select_option("#sceneSelect", "7")
             page.click('[data-tab="review"]')
             page.click("#setupReviewed")

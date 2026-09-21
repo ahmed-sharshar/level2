@@ -25,10 +25,10 @@ const options = [
 let passed = 0;
 function test(name, fn) { fn(); passed++; console.log('PASS ' + name); }
 
-test('current 56 scenes retain 445 targets and all 3560 independent exposure cells', () => {
+test('current 56 scenes contain 448 targets and all 3584 independent exposure cells', () => {
   assert.strictEqual(dataset.episodes.length, 56);
-  assert.strictEqual(tasks.layout.episodes.reduce((n, ep) => n + ep.markers.length, 0), 445);
-  assert.strictEqual(questions.reduce((n, qs) => n + qs.length, 0), 3560);
+  assert.strictEqual(tasks.layout.episodes.reduce((n, ep) => n + ep.markers.length, 0), 448);
+  assert.strictEqual(questions.reduce((n, qs) => n + qs.length, 0), 3584);
   for (const [index, ep] of tasks.layout.episodes.entries()) {
     const expected = ep.markers.flatMap(m => C.DIRECTIONS.flatMap(direction => C.STATES.flatMap(condition =>
       ['sun', 'rain'].map(channel => 'answers.surfaces.' + m.id + '.reachable.' + direction + '.' + condition + '.' + channel))));
@@ -84,7 +84,7 @@ test('unrelated yes/no judgments retain labels while opening checks use separate
   }
 });
 
-test('all 3560 newly created exposure answers remain genuinely unanswered', () => {
+test('all 3584 newly created exposure answers remain genuinely unanswered', () => {
   for (const [index, qs] of questions.entries()) for (const q of qs) assert.strictEqual(F.get(draft.episodes[index], q.path), null);
 });
 
@@ -128,14 +128,24 @@ test('old mixed yes/no/ND/blank judgments survive JSON restore and question rend
   assert.deepStrictEqual(F.validate(restored, dataset, catalogue), []);
 });
 
-test('every pending production direction remains blocked and no research approval is invented', () => {
+test('shared provisional directions unlock collection but never invent research approval', () => {
+  assert.strictEqual(tasks.settings.collection_mode, 'provisional');
   assert.strictEqual(tasks.settings.protocol_reviewed, false);
   for (const [index, ep] of tasks.layout.episodes.entries()) {
     assert.strictEqual(ep.setup_reviewed, false);
-    assert(ep.directions.every(d => d.text === '' && d.x === null && d.y === null));
-    assert(questions[index].every(q => q.blocked && q.block_reason));
-    assert(K.panels(draft, index, dataset, catalogue, 'exposure').every(p => p.blocked));
+    assert(ep.directions.every(d => d.text.trim() && Number.isFinite(d.x) && Number.isFinite(d.y)));
+    assert.strictEqual(F.episodeCollectionReady(tasks, index, dataset, catalogue).ready, true);
+    assert.strictEqual(F.episodeReady(tasks, index, dataset, catalogue).ready, false);
+    assert(questions[index].every(q => !q.blocked));
+    assert(K.panels(draft, index, dataset, catalogue, 'exposure').every(p => !p.blocked));
   }
+});
+
+test('legacy blank directions remain blocked unless explicitly prepared for collection', () => {
+  const legacyTasks = F.createTasks(dataset, catalogue, 'SYNTHETIC LEGACY TEST');
+  const legacy = F.create(dataset, catalogue, legacyTasks, 'SYNTHETIC LEGACY TEST');
+  assert(F.questions(legacy, 0, dataset, catalogue).filter(q => q.section === 'exposure').every(q => q.blocked));
+  assert.strictEqual(F.episodeCollectionReady(legacyTasks, 0, dataset, catalogue).ready, false);
 });
 
 let fixture;

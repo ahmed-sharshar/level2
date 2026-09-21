@@ -60,8 +60,9 @@
   }
   function settingsErrors(tasks,catalogue,ready){
     const errors=[],s=tasks.settings;
-    if(!keys(s,['version','hierarchy_sha256','hierarchy_reviewed','hierarchy_reviewer','protocol_reviewed','protocol_reviewer','protocol_notes','vhc_allowed_pairs_status'],['points_per_side'],'tasks.settings',errors))return errors;
+    if(!keys(s,['version','hierarchy_sha256','hierarchy_reviewed','hierarchy_reviewer','protocol_reviewed','protocol_reviewer','protocol_notes','vhc_allowed_pairs_status'],['points_per_side','collection_mode'],'tasks.settings',errors))return errors;
     if(own(s,'points_per_side')&&s.points_per_side!==4)errors.push('tasks.settings.points_per_side: expected exactly 4');
+    if(own(s,'collection_mode'))enumCheck(s.collection_mode,['reviewed','provisional'],'tasks.settings.collection_mode',errors,false);
     if(s.version!=='blockmind_l2_collection_v1')errors.push('tasks.settings.version: unsupported');
     if(s.hierarchy_sha256!==hierarchyHash(catalogue))errors.push('tasks.settings.hierarchy_sha256: reference catalogue hash mismatch');
     for(const key of ['hierarchy','protocol']){
@@ -113,6 +114,46 @@
       errors.push(...Core.validateLayout(layout,{...dataset,episodes:[source]},false));
       if(tasks.settings.points_per_side===4&&ep.disposition==='include')for(const side of ['indoor','exterior'])if(ep.markers.filter(m=>m.side===side).length!==4)errors.push('Researcher pending: exactly 4 red points are required on the '+side+' side.');
       if(ep.disposition==='include'&&ep.directions.some(d=>!usableDirection(d)))errors.push('Researcher pending: replace unapproved draft direction placeholders with reviewed feature-relative wording.');
+      return {ready:errors.length===0,errors};
+    }catch(e){return {ready:false,errors:['Researcher pending: malformed task setup.']};}
+  }
+  const collectionValidationCache=new WeakMap();
+  function collectionTaskErrors(tasks,dataset,catalogue){
+    // Object identity or task_id alone cannot be trusted: setup edits may leave
+    // a stale ID. Inspect every input and fingerprint every field the validator
+    // reads, including mutable source frame/category metadata and the catalogue.
+    const invalid=[];inspect(tasks,invalid);if(invalid.length)return invalid;
+    // These are private cache fingerprints, not content identities. JSON key
+    // order changes merely cause a safe cache miss, so canonical sorting is
+    // unnecessary. Compact tuples avoid repeatedly serializing RGB metadata.
+    const content=JSON.stringify(tasks),context=JSON.stringify([
+      dataset.build_id,dataset.episodes.map(ep=>[ep.id,ep.frames.map(f=>[f.id,f.side,(f.objects||[]).map(o=>[o.object_id,o.mpcat40])])]),
+      catalogue.build_id,hierarchyHash(catalogue)
+    ]);
+    const cached=collectionValidationCache.get(tasks);
+    if(cached?.content===content&&cached.context===context)return cached.errors.slice();
+    const errors=validateTasks(tasks,dataset,catalogue,false);
+    collectionValidationCache.set(tasks,{content,context,errors:errors.slice()});
+    return errors;
+  }
+  // Collection may precede protocol approval, but only when the shared task
+  // explicitly opts in. This NEVER changes episodeReady or approves any GT.
+  function episodeCollectionReady(tasks,index,dataset,catalogue){
+    if(tasks?.settings?.collection_mode!=='provisional')return episodeReady(tasks,index,dataset,catalogue);
+    try{
+      const errors=collectionTaskErrors(tasks,dataset,catalogue),ep=tasks.layout.episodes[index],source=dataset.episodes[index];
+      if(!ep||!source||ep.episode_id!==source.id)return {ready:false,errors:['Researcher pending: episode setup is unavailable.']};
+      if(!filled(tasks.coordinator)||!filled(tasks.layout.coordinator))errors.push('Researcher pending: setup coordinator name is missing.');
+      if(ep.disposition==='exclude'){
+        if(!filled(ep.exclusion_reason))errors.push('Researcher pending: give a reason for excluding this scene.');
+      }else{
+        for(const side of ['indoor','exterior'])if(ep.markers.filter(m=>m.side===side).length!==4)errors.push('Researcher pending: exactly 4 red points are required on the '+side+' side.');
+        const points=ep.markers.map(m=>m.anchor_frame+':'+m.x+':'+m.y);
+        if(new Set(points).size!==points.length)errors.push('Researcher pending: duplicate red-point locations are not separate targets.');
+        if(ep.directions.length!==2||!ep.directions.every(usableDirection))errors.push('Researcher pending: two usable feature-relative directions and reference points are required.');
+        const pre=ep.boundary_boxes.filter(b=>source.frames.some(f=>f.id===b.frame_id&&f.side==='indoor'));
+        if(pre.length<2)errors.push('Researcher pending: boundary boxes are required in at least two pre-crossing frames.');
+      }
       return {ready:errors.length===0,errors};
     }catch(e){return {ready:false,errors:['Researcher pending: malformed task setup.']};}
   }
@@ -188,8 +229,9 @@
       add('checks.surfaces.'+m.id+'.same_surface_across_frames','surfaces','Do the marked views refer to the same physical surface?','Compare the frames with this point. Choose Not sure if correspondence cannot be verified; an absent projection does not mean the surface is invisible.',meta);
       add('checks.surfaces.'+m.id+'.obstruction','surfaces','What fixed obstructions protect or block this point?','Include roofs/overhangs and side walls. Direction-specific rain and sunlight come next.',meta);
     }
-    const directionalReady=doc.tasks.settings.protocol_reviewed===true&&filled(doc.tasks.settings.protocol_reviewer)&&ep.setup_reviewed===true&&ep.directions.length===2&&ep.directions.every(usableDirection);
-    const directionMeta=(d,condition)=>({direction:clone(d),condition,condition_text:doc.tasks.layout.conditions[condition],blocked:!directionalReady,block_reason:directionalReady?'':'The researcher must approve these two directions and their reference points before you can answer this scenario.'});
+    const provisional=doc.tasks.settings.collection_mode==='provisional';
+    const directionalReady=provisional?episodeCollectionReady(doc.tasks,index,dataset,catalogue).ready:doc.tasks.settings.protocol_reviewed===true&&filled(doc.tasks.settings.protocol_reviewer)&&ep.setup_reviewed===true&&ep.directions.length===2&&ep.directions.every(usableDirection);
+    const directionMeta=(d,condition)=>({direction:clone(d),condition,condition_text:doc.tasks.layout.conditions[condition],provisional,blocked:!directionalReady,block_reason:directionalReady?'':provisional?'The shared targets and direction reference points must be structurally complete before you can answer this scenario.':'The researcher must approve these two directions and their reference points before you can answer this scenario.'});
     for(const m of ep.markers)for(const d of ep.directions)for(const condition of Core.STATES)for(const channel of ['sun','rain']){
       add('answers.surfaces.'+m.id+'.reachable.'+d.id+'.'+condition+'.'+channel,'exposure',channel==='sun'?'Does sunlight hit this red point directly?':'Does rain hit this red point directly?',EXPOSURE_HELP,{marker_id:m.id,frame_id:m.anchor_frame,options:[{value:'yes',label:'Hit directly'},{value:'no',label:'Not hit'},{value:ND,label:'Not sure'}],...directionMeta(d,condition)});
     }
@@ -210,7 +252,8 @@
   function progress(doc,index,dataset,catalogue){
     const qs=questions(doc,index,dataset,catalogue),r=doc.episodes[index],missing=qs.filter(q=>!filled(get(r,q.path))),sections={};
     for(const section of SECTIONS){const selected=qs.filter(q=>q.section===section);sections[section]={answered:selected.filter(q=>filled(get(r,q.path))).length,total:selected.length};}
-    return {answered:qs.length-missing.length,total:qs.length,missing,sections,setup_ready:episodeReady(doc.tasks,index,dataset,catalogue).ready};
+    const collection=episodeCollectionReady(doc.tasks,index,dataset,catalogue),research=episodeReady(doc.tasks,index,dataset,catalogue);
+    return {answered:qs.length-missing.length,total:qs.length,missing,sections,setup_ready:collection.ready,collection_ready:collection.ready,research_ready:research.ready};
   }
   function validateEpisodeUnsafe(doc,index,dataset,catalogue,requireComplete=true){
     const r=doc.episodes[index],ep=doc.tasks.layout.episodes[index],errors=[];
@@ -231,7 +274,7 @@
       }
     }
     if(requireComplete&&r.status!=='excluded'){
-      const ready=episodeReady(doc.tasks,index,dataset,catalogue);if(!ready.ready)errors.push('Researcher pending: shared targets, directions and research settings must be reviewed before completing this scene.');
+      const ready=episodeCollectionReady(doc.tasks,index,dataset,catalogue);if(!ready.ready)errors.push(doc.tasks.settings.collection_mode==='provisional'?'Researcher pending: shared targets and directions must be complete before completing this provisional collection scene.':'Researcher pending: shared targets, directions and research settings must be reviewed before completing this scene.');
       const qs=questions(doc,index,dataset,catalogue);for(const q of qs)if(!filled(get(r,q.path)))errors.push(q.path+': '+q.title);
       if(qs.some(q=>{const v=get(r,q.path);return v===ND||(Array.isArray(v)&&v.includes(ND));})&&!filled(r.answers.notes))errors.push('answers.notes: add one short explanation for the Not sure answers in this scene.');
       if(boundaryScope&&['multiple','other'].includes(r.checks.boundary?.blockage)&&!filled(r.answers.notes))errors.push('answers.notes: name the multiple or other opening blockers in the scene note.');
@@ -250,7 +293,7 @@
     if(!stamp(doc.created_at)||!stamp(doc.updated_at))errors.push('export: invalid timestamps');
     enumCheck(doc.profile,['l2','l2_l3'],'export.profile',errors,false);enumCheck(doc.annotation_status,['draft','complete'],'export.annotation_status',errors,false);
     if(doc.benchmark_ready!==false)errors.push('export.benchmark_ready: individual annotation is not benchmark ground truth');
-    errors.push(...validateTasks(doc.tasks,dataset,catalogue,requireComplete||doc.annotation_status==='complete'));
+    errors.push(...validateTasks(doc.tasks,dataset,catalogue,(requireComplete||doc.annotation_status==='complete')&&doc.tasks?.settings?.collection_mode!=='provisional'));
     if(!obj(doc.tasks)||!obj(doc.tasks.layout)||!Array.isArray(doc.tasks.layout.episodes))return errors;
     if(doc.task_id!==doc.tasks.task_id||doc.task_id!==taskId(doc.tasks))errors.push('export.task_id: task identity mismatch');
     if(!Array.isArray(doc.episodes)||doc.episodes.length!==doc.tasks.layout.episodes.length)errors.push('export.episodes: one record per task is required');
@@ -338,7 +381,8 @@
       report.copied_fields+=Object.values(old.answers.scene).filter(filled).length+Object.entries(old.answers.boundary).filter(([k,v])=>k!=='notes'&&filled(v)).length;
       if(old.checks){r.checks.indoor_region_correct=old.checks.indoor_region_correct;r.checks.exterior_region_correct=old.checks.exterior_region_correct;}
       if(boundaryBoxesSame&&old.checks?.boundary)r.checks.boundary=clone(old.checks.boundary);
-      const directionSame=ep.setup_reviewed===true&&tasks.settings.protocol_reviewed===true&&ep.directions.length===2&&ep.directions.every(usableDirection)&&signature(oldEp.directions)===signature(ep.directions)&&signature(oldLayout.conditions)===signature(tasks.layout.conditions)&&(!source.tasks||source.tasks.settings.protocol_notes===tasks.settings.protocol_notes);
+      const sourceDirectionsReady=!source.tasks||episodeCollectionReady(source.tasks,source.tasks.layout.episodes.findIndex(x=>x.episode_id===r.episode_id),dataset,catalogue).ready;
+      const directionSame=sourceDirectionsReady&&episodeCollectionReady(tasks,i,dataset,catalogue).ready&&signature(oldEp.directions)===signature(ep.directions)&&signature(oldLayout.conditions)===signature(tasks.layout.conditions)&&(!source.tasks||source.tasks.settings.protocol_notes===tasks.settings.protocol_notes);
       if(directionSame&&boundaryBoxesSame){r.answers.pathways=clone(old.answers.pathways);if(old.checks?.opening_passage)r.checks.opening_passage=clone(old.checks.opening_passage);row.direction_answers_preserved=true;}
       else report.warnings.push(r.episode_id+': directional answers need review because direction/condition definitions changed.');
       for(const b of ep.boundary_boxes){const oldBox=oldEp.boundary_boxes.find(x=>x.frame_id===b.frame_id);if(oldBox&&signature(oldBox)===signature(b))r.answers.boundary_visibility[b.frame_id]=clone(old.answers.boundary_visibility[b.frame_id]);}
@@ -425,6 +469,7 @@
     const statistics={},episodes=[];
     for(let i=0;i<first.episodes.length;i++){
       const a=first.episodes[i],b=second.episodes[i],layout=first.tasks.layout.episodes[i],excluded=a.status==='excluded'||b.status==='excluded';
+      const research=episodeReady(first.tasks,i,dataset,catalogue),researchReady=research.ready;
       const left={...flatten(a.answers),...flatten(a.checks,'checks')},right={...flatten(b.answers),...flatten(b.checks,'checks')};
       const requiredA=new Set(questions(first,i,dataset,catalogue).map(q=>q.path.replace(/^answers\./,''))),requiredB=new Set(questions(second,i,dataset,catalogue).map(q=>q.path.replace(/^answers\./,'')));
       const fields={},disagreements=[];
@@ -437,19 +482,19 @@
         else if(x===null||y===null){state='unanswered';stat.n_unanswered++;}
         else if(xt===yt){state=xt===ND?'agreed_not_determinable':'agreed';value=clone(x);stat.pairs.push([xt,yt]);}
         else{state='disagreement';stat.pairs.push([xt,yt]);disagreements.push({path,rater_a:clone(x),rater_b:clone(y)});}
-        fields[path]={state,value,rater_a:clone(x),rater_b:clone(y),consistency_only:consistencyOnly,eligible_consistency_check:consistencyOnly&&state==='agreed',eligible_known_gt:!consistencyOnly&&state==='agreed',eligible_nd_gt:!consistencyOnly&&state==='agreed_not_determinable',drop_known_gt:consistencyOnly||state!=='agreed'};
+        fields[path]={state,value,rater_a:clone(x),rater_b:clone(y),consistency_only:consistencyOnly,eligible_consistency_check:consistencyOnly&&state==='agreed',eligible_known_gt:researchReady&&!consistencyOnly&&state==='agreed',eligible_nd_gt:researchReady&&!consistencyOnly&&state==='agreed_not_determinable',drop_known_gt:!researchReady||consistencyOnly||state!=='agreed'};
       }
       const matches=(p,v)=>fields[p]?.state==='agreed'&&fields[p].value===v;
       const known=paths=>paths.length>0&&paths.every(p=>fields[p]?.eligible_known_gt);
-      const sceneValid=!excluded&&matches('scene.crossing_valid','yes')&&matches('scene.canonical_context_clear','yes')&&matches('boundary.object_identity_correct','yes')&&matches('checks.indoor_region_correct','yes')&&matches('checks.exterior_region_correct','yes')&&known(['scene.boundary_class']);
+      const sceneValid=researchReady&&!excluded&&matches('scene.crossing_valid','yes')&&matches('scene.canonical_context_clear','yes')&&matches('boundary.object_identity_correct','yes')&&matches('checks.indoor_region_correct','yes')&&matches('checks.exterior_region_correct','yes')&&known(['scene.boundary_class']);
       const witnesses=layout.boundary_boxes.filter(box=>dataset.episodes[i].frames.some(f=>f.id===box.frame_id&&f.side==='indoor')).map(box=>box.frame_id).filter(f=>['direct','through_glass'].some(v=>matches('boundary_visibility.'+f+'.visibility',v))&&matches('boundary_visibility.'+f+'.object_match','yes')&&matches('boundary_visibility.'+f+'.box_correct','yes'));
       const closure=known(['boundary.kind','boundary.observed_state','boundary.material'])&&!matches('boundary.kind','open_passage')&&!matches('boundary.observed_state','no_closure');
       const markers=layout.markers.map(m=>m.id),markerReadiness={};
-      for(const id of markers){const identity=matches('checks.surfaces.'+id+'.anchor_correct','yes')&&matches('checks.surfaces.'+id+'.same_surface_across_frames','yes');markerReadiness[id]={identity_certified:identity,identity_material_fields_agreed_known:identity&&known(['object_name','material','hierarchy_id','reflectance','finish','substrate_known','shelter'].map(k=>'surfaces.'+id+'.'+k)),substrate_known_agreed:matches('surfaces.'+id+'.substrate_known','yes'),substrate_fields_agreed_known:known(['substrate_material','substrate_hierarchy_id'].map(k=>'surfaces.'+id+'.'+k))};}
+      for(const id of markers){const identity=researchReady&&matches('checks.surfaces.'+id+'.anchor_correct','yes')&&matches('checks.surfaces.'+id+'.same_surface_across_frames','yes');markerReadiness[id]={identity_certified:identity,identity_material_fields_agreed_known:identity&&known(['object_name','material','hierarchy_id','reflectance','finish','substrate_known','shelter'].map(k=>'surfaces.'+id+'.'+k)),substrate_known_agreed:matches('surfaces.'+id+'.substrate_known','yes'),substrate_fields_agreed_known:known(['substrate_material','substrate_hierarchy_id'].map(k=>'surfaces.'+id+'.'+k))};}
       const aCoverage={};for(const d of Core.DIRECTIONS)for(const condition of Core.STATES)for(const channel of ['sun','rain']){const paths=markers.map(m=>'surfaces.'+m+'.reachable.'+d+'.'+condition+'.'+channel),ready=sceneValid&&known(paths)&&markers.every(m=>markerReadiness[m].identity_certified)&&(condition==='open'||closure);aCoverage[d+'.'+condition+'.'+channel]={exact_set_labels_available:ready,reachable_marker_ids:ready?markers.filter((m,j)=>matches(paths[j],'yes')):null,blocked_fields:paths.filter(p=>!fields[p].eligible_known_gt)};}
       const bFields=['boundary.pane_transparency','boundary.glazing','boundary.material','boundary.kind','boundary.observed_state','boundary.air_gap','checks.boundary.blockage'];
       const drop=Object.keys(fields).filter(p=>fields[p].state!=='not_applicable'&&(fields[p].consistency_only?fields[p].state!=='agreed':fields[p].drop_known_gt));
-      const warnings=[];if(!closure)warnings.push('No agreed existing closure/material: sealed-condition known GT is not certified.');
+      const warnings=[];if(!researchReady)warnings.push('Provisional collection only: shared research settings are not approved. Raw agreement is retained, but no fields or benchmark items are eligible ground truth.');if(!closure)warnings.push('No agreed existing closure/material: sealed-condition known GT is not certified.');
       const paneConflict=matches('boundary.glazing','absent')&&['clear','obscured'].some(v=>matches('boundary.pane_transparency',v));
       if(paneConflict)warnings.push('Pane transparency and absent glazing conflict. Review, never auto-correct.');
       const sealedConflict=Core.DIRECTIONS.some(d=>['air','rain'].some(c=>matches('pathways.'+d+'.sealed.'+c,'yes')));
@@ -467,11 +512,11 @@
       const openingScope=first.boundary_questions_version===BOUNDARY_QUESTIONS_VERSION;
       const boundaryCoverage={question_version:first.boundary_questions_version||0,all_five_questions_collected:!excluded&&openingScope,all_five_labels_agreed_known:!excluded&&openingScope&&known(openingPaths),blocked_fields:openingPaths.filter(p=>!fields[p]?.eligible_known_gt)};
       if(!openingScope)warnings.push('Legacy annotation scope: opening width category and blockage were not collected. Upgrade both annotators before using these attributes as ground truth.');
-      episodes.push({episode_id:a.episode_id,rater_status:[a.status,b.status],excluded,exclusion_reasons:[a.exclusion_reason,b.exclusion_reason],all_fields_agreed_known:!excluded&&!drop.length,drop_episode_known_gt:!sceneValid,consistency_warnings:warnings,boundary_annotation_coverage:boundaryCoverage,boundary_certification:{certified:witnesses.length>=2,agreed_pre_crossing_witness_frames:witnesses,minimum_witnesses:2,rule:'Two-rater direct/through-glass visibility, object match and box correctness; mesh pixels are not human GT.'},drop_fields:drop,fields,disagreements,marker_readiness:markerReadiness,indoor_visibility_coverage:indoorVisibility,family_annotation_coverage:{A:{exposure_sets:aCoverage,porous_not_exposed_items_require_reviewed_class_mapping:true},B:{pathway_labels_available:false,answer_source:'Approved rule applied to independently agreed boundary facts, never passage-check votes',human_passage_votes_are_gt:false,boundary_visibility_certified:witnesses.length>=2,sealed_counterfactual_defined:closure,consistency_review_required:paneConflict||sealedConflict||ruleCheckConflict,blocked_fields:bFields.filter(p=>!fields[p]?.eligible_known_gt),rule_derivation:passageRules},C:{enabled:false,reason:'A status checkbox is not a versioned, SHA-pinned VHC allowed-pairs table. No table or generator is implemented here.'},D:{material_inputs_available:sceneValid&&markers.every(m=>markerReadiness[m].identity_material_fields_agreed_known),class_comparison_gt_ready:false,reason:'Requires approved intrinsic class mapping and reviewed question templates.'},benchmark_items_generated:false},rater_notes:[{annotator:first.annotator,answers:a.answers,checks:a.checks},{annotator:second.annotator,answers:b.answers,checks:b.checks}]});
+      episodes.push({episode_id:a.episode_id,rater_status:[a.status,b.status],excluded,research_ready:researchReady,research_setup_errors:clone(research.errors),exclusion_reasons:[a.exclusion_reason,b.exclusion_reason],all_fields_agreed_known:!excluded&&!drop.length,drop_episode_known_gt:!sceneValid,consistency_warnings:warnings,boundary_annotation_coverage:boundaryCoverage,boundary_certification:{certified:researchReady&&witnesses.length>=2,agreed_pre_crossing_witness_frames:witnesses,minimum_witnesses:2,rule:'Two-rater direct/through-glass visibility, object match and box correctness; mesh pixels are not human GT.'},drop_fields:drop,fields,disagreements,marker_readiness:markerReadiness,indoor_visibility_coverage:indoorVisibility,family_annotation_coverage:{A:{exposure_sets:aCoverage,porous_not_exposed_items_require_reviewed_class_mapping:true},B:{pathway_labels_available:false,answer_source:'Approved rule applied to independently agreed boundary facts, never passage-check votes',human_passage_votes_are_gt:false,boundary_visibility_certified:researchReady&&witnesses.length>=2,sealed_counterfactual_defined:closure,consistency_review_required:paneConflict||sealedConflict||ruleCheckConflict,blocked_fields:bFields.filter(p=>!fields[p]?.eligible_known_gt),rule_derivation:passageRules},C:{enabled:false,reason:'A status checkbox is not a versioned, SHA-pinned VHC allowed-pairs table. No table or generator is implemented here.'},D:{material_inputs_available:sceneValid&&markers.every(m=>markerReadiness[m].identity_material_fields_agreed_known),class_comparison_gt_ready:false,reason:'Requires approved intrinsic class mapping and reviewed question templates.'},benchmark_items_generated:false},rater_notes:[{annotator:first.annotator,answers:a.answers,checks:a.checks},{annotator:second.annotator,answers:b.answers,checks:b.checks}]});
     }
     const agreement={};for(const [key,stat]of Object.entries(statistics)){const p=stat.pairs,known=p.filter(([a,b])=>a!==ND&&b!==ND),agreed=p.filter(([a,b])=>a===b).length;agreement[key]={cohen_kappa:kappa(p),cohen_kappa_excluding_nd:kappa(known),n_compared:p.length,n_agreed:agreed,n_disagreement:p.length-agreed,n_unanswered:stat.n_unanswered,n_excluded:stat.n_excluded,n_not_applicable:stat.n_not_applicable,n_known_compared:known.length,n_with_nd:p.length-known.length,n_agreed_nd:p.filter(([a,b])=>a===ND&&b===ND).length,observed_agreement:p.length?agreed/p.length:null,rater_a_counts:counts(p.map(x=>x[0])),rater_b_counts:counts(p.map(x=>x[1]))};}
     return {schema:'blockmind_l2_consensus_v1',source_schema:SCHEMA,boundary_questions_version:first.boundary_questions_version||0,collection_checks_version:first.collection_checks_version||0,build_id:first.build_id,layout_id:Core.layoutId(first.tasks.layout),task_id:first.task_id,profile:first.profile,created_at:new Date().toISOString(),annotators:[first.annotator,second.annotator],policy:'Exact independent agreement only; no adjudication. Disagreements drop affected items, not unrelated agreed items. Passage votes are consistency checks, never benchmark answers. ND is uncertainty, not no. Optional L3/audit fields are not required L2 votes.',benchmark_ready:false,completeness:{episodes_total:episodes.length,episodes_excluded:episodes.filter(e=>e.excluded).length,episodes_all_fields_agreed_known:episodes.filter(e=>e.all_fields_agreed_known).length,episodes_with_disagreements:episodes.filter(e=>e.disagreements.length).length},agreement_by_attribute:agreement,episodes};
   }
-  const api={SCHEMA,TASK_SCHEMA,BOUNDARY_QUESTIONS_VERSION,COLLECTION_CHECKS_VERSION,WIDTH_CLASS,BOUNDARY_BLOCKAGE,PASSAGE_OPTIONS,ND,SECTIONS,OBSTRUCTION,createTasks,taskId,validateTasks,episodeReady,create,validate,validateEpisode,questions,progress,needsBoundaryUpgrade,upgradeBoundary,needsCollectionUpgrade,upgradeCollection,canonicalSelections,migrate,consensus,get,set,hierarchyHash};
+  const api={SCHEMA,TASK_SCHEMA,BOUNDARY_QUESTIONS_VERSION,COLLECTION_CHECKS_VERSION,WIDTH_CLASS,BOUNDARY_BLOCKAGE,PASSAGE_OPTIONS,ND,SECTIONS,OBSTRUCTION,createTasks,taskId,validateTasks,episodeReady,episodeCollectionReady,create,validate,validateEpisode,questions,progress,needsBoundaryUpgrade,upgradeBoundary,needsCollectionUpgrade,upgradeCollection,canonicalSelections,migrate,consensus,get,set,hierarchyHash};
   root.L2Full=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

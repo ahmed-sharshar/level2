@@ -2,7 +2,7 @@
 
 Source: `/data/Ahmed/mit/BLOCKMIND_Level2_Workplan_Sharshar.docx`.
 
-The default interface is the **compact complete v2 collector**: one form per point and grouped direction/condition scenarios, preserving every required field and all shared targets. See `COMPACT_WORKFLOW.md` for the UI-to-export conservation rules. Shared researcher preparation is separate at `setup.html`; later model-output/human-baseline review is at `review.html`. Earlier v1 interfaces remain intact. The user explicitly elected to build now and review the research settings separately; all shipped approvals remain pending.
+The default interface is the **compact complete v2 collector**: one form per point and grouped direction/condition scenarios, preserving every required field and all existing shared targets. See `COMPACT_WORKFLOW.md` for the UI-to-export conservation rules. Shared researcher preparation is separate at `setup.html`; later model-output/human-baseline review is at `review.html`. Earlier v1 interfaces remain intact. Current tasks provide four points per side and feature-relative hypothetical directions in explicitly provisional collection mode; all research approvals remain pending. Collection completion does not certify benchmark readiness.
 
 | Requirement | Implementation / stored evidence | What is not claimed |
 |---|---|---|

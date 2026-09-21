@@ -14,8 +14,15 @@ The new default is a complete guided Level 2 collector, not another basic-only p
 Schema blockmind_l2_tasks_v1. Use {schema,build_id,task_id,created_at,coordinator,layout,settings,audits}.
 layout uses the existing Core.makeLayout / layout_v1 fields, including setup_reviewed, 3–5 markers per side, two feature-relative directions with visible anchors, and two pre-crossing boundary boxes. Its layout_id may remain empty in a draft. task_id is a deterministic content identity, excluding volatile created_at/coordinator display names; include all label-bearing geometry, directions, canonical open/sealed conditions and settings. Confirm source frames and boundary object identity via immutable dataset, never new mesh-derived GT.
 settings: {version:'blockmind_l2_collection_v1',hierarchy_sha256:string,hierarchy_reviewed:false,hierarchy_reviewer:'',protocol_reviewed:false,protocol_reviewer:'',protocol_notes:'',vhc_allowed_pairs_status:'not_supplied'}.
+Optional `points_per_side: 4` enforces the exact shared target count. Optional
+`collection_mode: 'provisional'|'reviewed'` distinguishes collection readiness
+from research approval; absence preserves the original strict gates.
 audits keyed episode ID: {trajectory:{selected:false,valid:null,notes:''},glass:{selected:false,pane_present:null,phantom_geometry:null,separate_leaf:null,evidence_frames:[],notes:''}}. The yes/no values accept not_determinable. Research audits are not rater votes or model-visible data.
-collection-tasks.json ships as explicitly unreviewed draft with blank directions and no human audit answers. A researcher publishes a reviewed version by saving the exported file as collection-tasks.json. The annotator page loads it automatically: no role or import prerequisite to start. Local researcher drafts may be resumed/exported but must not silently become the shared published task file.
+collection-tasks.json now supplies complete, explicitly provisional shared
+directions and four targets per side, while preserving false research approvals
+and blank human audits. A researcher can later publish a reviewed version by
+saving the exported file as collection-tasks.json. The annotator page loads it
+automatically. Local setup drafts do not silently become published tasks.
 
 ## Full annotation export
 
@@ -37,8 +44,14 @@ ui:{episode:0,section:'scene',question:0,frame:0}. migration_log is a list of ex
 
 Level 2: all five legacy scene fields; two region correctness checks; all legacy boundary facts except pane_in_mesh,phantom_geometry,isolated_leaf,mask_matches_rgb (those are researcher audit tasks); all marked-surface object/material/hierarchy/reflectance/finish/substrate-known/shelter facts; substrate material/hierarchy only if known=yes; each surface's three checks; each surface×two directions×open/sealed×sun/rain; four opening-passage consistency checklists. Require visibility/object_match/box_correct for the two designated pre-crossing boundary-box frames and one after-crossing visibility frame-set per indoor point. Do not force full 12-frame Level 3 visibility to complete Level 2.
 Level 2+3 adds all 12 boundary visibility/correctness cells and all 12 visibility cells per surface. Distinguish direct/through_glass/reflection/occluded/out_of_frame/not_determinable. No missing observations imply invisibility.
-Not sure is explicit ND; Skip leaves unanswered. A short episode-level uncertainty note is required when completing a record with ND, not one note for each field. Explicit exclusion with a reason is allowed. Save partial work any time; completed records lock until reopened; final export requires each episode complete or excluded and reviewed task setup. Show readable next-missing links, not raw validator walls.
-Task setup and protocol/hierarchy approval can remain pending while basic facts are saved. Direction-dependent questions must not be presented as answerable without approved nonempty directions and reference anchors. Completion fails with a concise researcher-pending explanation, never auto-labels missing settings.
+Not sure is explicit ND; Skip leaves unanswered. A short episode-level uncertainty note is required when completing a record with ND, not one note for each field. Explicit exclusion with a reason is allowed. Save partial work any time; completed records lock until reopened; final export requires each episode complete or excluded and collection-ready shared tasks. Show readable next-missing links, not raw validator walls.
+In explicit provisional mode, structural validation requires complete directions,
+reference anchors, four targets on each side and valid opening witnesses before
+directional questions and completion unlock. This collects human answers to
+defined hypothetical scenarios without asserting research approval. Blank or
+malformed setup still blocks collection. The strict `episodeReady` research gate
+remains separate and prevents unapproved tasks from supplying eligible benchmark
+GT, even if both raters agree. No human answers are auto-filled.
 
 ## Shared JS API: window.L2Full and CommonJS
 
@@ -55,11 +68,12 @@ tasks remain unchanged until a researcher explicitly replaces them.
 createTasks(dataset,catalogue,coordinator='') -> task package with valid content ID.
 taskId(tasks) -> content ID; validateTasks(tasks,dataset,catalogue,requireReady=false)-> string[];
 episodeReady(tasks,episodeIndex,dataset,catalogue)-> {ready,errors}.
+episodeCollectionReady(tasks,episodeIndex,dataset,catalogue)-> {ready,errors}; permits structurally valid provisional collection, otherwise uses the strict research gate.
 create(dataset,catalogue,tasks,annotator,profile='l2')-> full draft.
 validate(doc,dataset,catalogue,requireComplete=false)-> string[].
 validateEpisode(doc,episodeIndex,dataset,catalogue,requireComplete=true)-> string[].
 questions(doc,episodeIndex,dataset,catalogue)-> list {id,path,section,title,help,kind:'choice'|'text'|'hierarchy',options:[{value,label}],marker_id?,frame_id?,direction?,condition?}. Paths are record-relative (answers.scene...,checks...). Sections: scene,boundary,surfaces,exposure,pathways,visibility. Dependencies/conditional substrate fields reflected dynamically. Surface questions and exposure show exact target anchor; each scenario shows direction text/reference and open/sealed description. Questions remain machine definitions, not model answer options.
-progress(doc,episodeIndex,dataset,catalogue)-> {answered,total,missing,sections,setup_ready}.
+progress(doc,episodeIndex,dataset,catalogue)-> {answered,total,missing,sections,setup_ready,collection_ready,research_ready}.
 migrate(source,tasks,dataset,catalogue,annotator,profile='l2')-> {doc,report}. Accept guided_v1, annotations_v1, or annotations_v2 belonging to the SAME annotator/build. Copy surface labels only on uniquely identical anchor frame/coordinates/side, and compatible native instance when known. Never match solely by point ID. Copy direction-dependent answers only when source/target direction+condition definitions match. Changed targets require new answers; invalidate completion. Return precise copied/cleared warnings and require UI confirmation. Preserve source file externally; record source content hash in migration_log. Old source is never modified.
 consensus(first,second,dataset,catalogue) -> exact two-rater report compatible with existing agreement report fields. Validate complete full exports, distinct annotators, matching task identities/profile. No adjudication, uncertainty distinct from no, disagreements retained/drop flags. No MCQs or C/D physics GT invented. Existing validate_export.py and consensus.py dispatch full v2 exports through these exact JS rules while retaining v1 behavior.
 

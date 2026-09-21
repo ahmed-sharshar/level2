@@ -273,7 +273,7 @@ def run(entry='index.html'):
             page.locator('#moreButton').click()
             page.locator('#changeName').click()
             welcome_text = page.locator('#welcome').inner_text().lower()
-            check('Welcome explains separate browser profiles rather than claiming password isolation', 'browser profile' in welcome_text and ('not' in welcome_text or 'no password' in welcome_text))
+            check('Welcome distinguishes unique-ID drafts from password authentication', 'unique annotator id' in welcome_text and 'separate saved draft' in welcome_text and 'not passwords' in welcome_text and 'no disagreement-resolution' in welcome_text)
             page.locator('#identityInput').fill('collection-checks-rater-a')
             page.locator('#startButton').click()
             image_ready(page)

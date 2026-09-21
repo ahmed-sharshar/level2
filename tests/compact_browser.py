@@ -133,7 +133,7 @@ def run(entry='index.html'):
             page.locator('[data-value="yes"]').click()
             check('Basic facts remain editable with pending settings', answer(page, 'answers.scene.crossing_valid') == 'yes')
             section(page, 'exposure')
-            check('Unapproved directional scenarios cannot be answered', page.locator('#questionPanel select:not([disabled])').count() == 0 and page.locator('#questionPanel [data-value]').count() == 0)
+            check('Published provisional scenarios allow 16 separate answers without claiming GT', page.locator('#questionPanel select[data-field]:not([disabled])').count() == 16 and 'provisional directions' in page.locator('#setupNotice').inner_text().lower() and 'not benchmark ground truth' in page.locator('#setupNotice').inner_text().lower())
             section(page, 'surfaces')
             image_ready(page)
             point = snap(page)['doc']['tasks']['layout']['episodes'][0]['markers'][0]

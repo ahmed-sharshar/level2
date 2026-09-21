@@ -2,6 +2,41 @@
 
 This is software and data-delivery validation, **not a completed human annotation exercise or model benchmark**.
 
+## Provisional collection-ready release — current delivery
+
+The current release has 56 scenes with four indoor and four exterior targets
+each (448 total), preserving every original 445 target value and adding three
+RGB-inspected, mask-backed patches. There are 112 explicit feature-relative
+hypothetical direction definitions. All 56 scenes pass structural collection
+readiness; all 56 still correctly fail ungranted research approval. Native
+category/region conflicts remain documented, not relabelled as human facts.
+
+- **223 JavaScript checks** and **43 Python tests** passed.
+- **375 Chromium checks** passed: new collection release/ID/migration (19),
+  researcher setup (69), compact workflow (66), opening (53), collection checks
+  (79), sun/rain (51), and red points (38). No JavaScript exceptions or unexpected
+  failed asset requests were recorded. The final 19-check release test also ran
+  after adding cache-versioned HTML script references.
+- Every **448/448 anchor** matches its sampled native instance/category metadata;
+  the complete **107-entry** hierarchy is retained. All **2,508 frozen data asset
+  hashes** match, and the original dataset build identity is unchanged.
+- Annotation completion and draft migration work in explicit provisional mode,
+  without setting human/research approvals or `benchmark_ready`. Unanimous
+  synthetic provisional answers still yield zero eligible benchmark GT fields.
+- Different annotator IDs isolate local drafts in the same browser; IDs are not
+  passwords. Switching away preserves the previous ID's draft, and foreign-ID
+  imports cannot merge votes. No adjudication feature is introduced.
+- Changed task inputs get a new task identity. Old browser data remain available,
+  migration requires confirmation, original unchanged labels are retained, and
+  new/changed targets or scenarios require their own answers.
+
+Current task: `l2tasks-9e0423d9884953639fc227b72bdb38cbb6839cbc891837574e0783cff970c18b`.
+Task SHA256: `e4164fe8c9be7db76d9d1bc09623287c066874c7ae4886e8117dc84496b43576`.
+See `COLLECTION_RELEASE.md`, `data/provisional_collection_preparation.json`,
+`tests/collection_readiness_core.test.js`, `tests/collection_release_browser.py`
+and `validation/collection_release_summary.json`. Preparation reruns produce
+byte-identical tasks. Earlier reports below are historical release snapshots.
+
 ## Passage checks, indoor visibility and independence — current delivery
 
 Four multi-select passage checklists are consistency-only; they never supply GT,

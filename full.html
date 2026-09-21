@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Complete BLOCKMIND scene annotation with one compact form per surface and four sun/rain scenarios.">
   <title>BLOCKMIND · Scene annotation</title>
-  <link rel="stylesheet" href="full.css">
+  <link rel="stylesheet" href="full.css?v=l2-collection-20260921">
 </head>
 <body>
   <header class="site-header"><a href="./" class="brand"><span class="brand-icon">B</span>BLOCKMIND</a><span class="header-caption">Scene annotation</span><a class="subtle-link" href="setup.html">Researcher setup</a></header>
@@ -16,7 +16,7 @@
       <p class="eyebrow">Fewer screens, the same complete annotation</p><h1>Look at the scene.<br>Tell us what you see.</h1>
       <p class="intro">Watch a short walk, complete one form per red point, then check sunlight and rain in four scenarios. Related answers stay together, and your progress is saved as you go.</p>
       <form id="startForm"><label class="field" for="identityInput">Your name or annotator ID<input id="identityInput" maxlength="80" required autocomplete="off" placeholder="e.g. Ahmed"></label><button id="startButton" class="primary" type="submit">Start annotating →</button></form>
-      <p id="welcomeError" class="error" role="alert"></p><p class="small muted">Work independently using separate browser profiles or devices. Drafts stay in your browser; annotator IDs are labels, not passwords. A shared browser profile does not securely isolate drafts. Send your JSON privately to the researcher, not to the other annotator. There is no disagreement-resolution step.</p>
+      <p id="welcomeError" class="error" role="alert"></p><p class="small muted">Use your own unique annotator ID every time. Each ID has a separate saved draft in this browser; use More → Change annotator before someone else starts. IDs are labels, not passwords: do not use another person's ID. Work independently and send your JSON privately to the researcher. There is no disagreement-resolution step.</p>
       <button id="restoreWelcome" class="text-button" type="button">Restore my downloaded JSON</button>
     </section>
     <section id="workspace" class="hidden">
@@ -43,6 +43,6 @@
   <dialog id="messageDialog"><h2 id="messageTitle"></h2><p id="messageText"></p><button id="closeMessage" class="primary">Got it</button></dialog>
   <dialog id="migrationDialog"><h2>Review the restored answers</h2><p>Only answers whose targets and conditions still match can be retained. Nothing changes until you confirm.</p><pre id="migrationReport"></pre><div class="actions"><button id="cancelMigration">Cancel</button><button id="confirmMigration" class="primary">Use these answers</button></div></dialog>
   <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
-  <script src="core.js"></script><script src="guided-core.js"></script><script src="redpoint-core.js"></script><script src="instance-labels.js"></script><script src="full-core.js"></script><script src="compact-core.js"></script><script src="full.js"></script>
+  <script src="core.js?v=l2-collection-20260921"></script><script src="guided-core.js?v=l2-collection-20260921"></script><script src="redpoint-core.js?v=l2-collection-20260921"></script><script src="instance-labels.js?v=l2-collection-20260921"></script><script src="full-core.js?v=l2-collection-20260921"></script><script src="compact-core.js?v=l2-collection-20260921"></script><script src="full.js?v=l2-collection-20260921"></script>
 </body>
 </html>
