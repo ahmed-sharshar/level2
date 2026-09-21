@@ -1,7 +1,7 @@
 /* Complete, independent annotation through a shared, immutable task package. */
 (function () {
   'use strict';
-  const $ = id => document.getElementById(id), C = window.L2Core, F = window.L2Full, G = window.L2Compact;
+  const $ = id => document.getElementById(id), C = window.L2Core, F = window.L2Full, G = window.L2Compact, R=window.L2Redpoints;
   const ND = C.ND;
   const names = {scene:'Scene',boundary:'Opening',surfaces:'Red points',exposure:'Sun & rain',pathways:'Through the opening',visibility:'Visibility',review:'Review & finish'};
   const order = Object.keys(names);
@@ -10,11 +10,12 @@
     boundary:'Judge the single outlined door or opening used by this walk.',
     surfaces:'One short form per point. Select a reference material once to fill its name and category together; check the surface, finish and shelter here.',
     exposure:'Four scenarios, not a separate page for every answer. In each scenario, check sunlight and rain for the marked surfaces. Show each point before judging it.',
-    pathways:'Imagine the stated direction and opening condition. Judge what can pass through this opening.',
-    visibility:'Check what is actually visible in this photograph. A reflection is different from a direct view.'
+    pathways:'For each scenario, tick everything you think can pass. This is a consistency check, not the benchmark answer.',
+    visibility:'Check the door sightings, then select the after-crossing images where each indoor surface is still visible. A reflection is different from a direct view.'
   };
-  const state = {dataset:null,catalogue:null,tasks:null,doc:null,identity:'',episode:0,section:'scene',question:0,frame:0,
-    key:'',revision:0,conflict:false,imageReady:false,loadingToken:0,player:null,pending:null,migration:null,reference:false,focusMarker:null};
+  const state = {dataset:null,catalogue:null,tasks:null,measurements:null,doc:null,identity:'',episode:0,section:'scene',question:0,frame:0,
+    key:'',revision:0,conflict:false,imageReady:false,loadingToken:0,player:null,pending:null,migration:null,reference:false,focusMarker:null,materialSearches:{}};
+  const automaticJobs=new WeakMap();
   const owner = typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : String(Date.now())+Math.random();
   const esc = value => String(value == null ? '' : value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const clone = value => JSON.parse(JSON.stringify(value));
@@ -24,7 +25,8 @@
   const frame = () => ep().frames[state.frame];
   const get = (object,path) => path.split('.').reduce((v,k)=>v==null?null:v[k],object);
   const set = (object,path,value) => {const p=path.split('.'),last=p.pop();let o=object;p.forEach(k=>{o=o[k];});o[last]=value;};
-  const answered = value => value !== null && value !== undefined && value !== '';
+  const answered = value => value !== null && value !== undefined && value !== '' && (!Array.isArray(value)||value.length>0);
+  const uncertain = value => value===ND || Array.isArray(value)&&value.includes(ND);
   const basePath = encodeURIComponent(new URL('.',location.href).pathname);
   const scopeKey = (identity,taskId=state.tasks.task_id) => 'blockmind-l2-full:'+basePath+':'+state.dataset.build_id+':'+taskId+':'+encodeURIComponent(identity);
   const allQuestions = () => F.questions(state.doc,state.episode,state.dataset,state.catalogue);
@@ -55,6 +57,7 @@
   }
   function save() {
     if(!state.doc||state.conflict)return false;
+    if(state.doc.automatic_surface_labels)state.doc.surface_label_audit=R.buildSurfaceLabelAudit(state.doc,state.dataset,state.catalogue);
     state.doc.ui=savedCursor();
     state.doc.updated_at=new Date().toISOString();
     const current=storageRead(state.key);
@@ -67,12 +70,52 @@
   function changed() {
     record().status='in_progress';record().completed_at=null;state.doc.annotation_status='draft';state.doc.benchmark_ready=false;save();renderNavigation();updateProgress();
   }
+  function primeAutomaticLabels(doc) {
+    if(!automaticJobs.has(doc))automaticJobs.set(doc,window.L2InstanceLabels.collect(doc.tasks,state.dataset,state.catalogue).then(labels=>{
+      doc.automatic_surface_labels=labels;doc.surface_label_audit=R.buildSurfaceLabelAudit(doc,state.dataset,state.catalogue);
+      if(state.doc===doc){save();refreshAutomaticLabel();}
+      return labels;
+    }));
+    return automaticJobs.get(doc);
+  }
+  function automaticLabelHTML(markerId) {
+    const row=state.doc.automatic_surface_labels?.find(row=>row.episode_id===ep().id&&row.marker_id===markerId);
+    return row?.status==='sampled'?esc(row.mpcat40_name||'Unknown category')+' (mpcat40 '+esc(row.mpcat40_id)+', instance '+esc(row.object_id)+')':row?'Unavailable: '+esc(row.status.replace(/_/g,' ')):'Reading the anchor instance mask…';
+  }
+  function refreshAutomaticLabel() {
+    const target=$('automaticPointLabel');if(target)target.innerHTML=automaticLabelHTML(target.dataset.markerId);
+  }
   function acceptDoc(doc,stored) {
+    let upgraded=false,collectionUpgraded=false;
+    if(F.needsBoundaryUpgrade(doc)) {
+      const oldQuestion=F.questions(doc,doc.ui.episode,state.dataset,state.catalogue).filter(q=>q.section===doc.ui.section)[doc.ui.question];
+      // Preserve the exact old browser document before an additive upgrade.
+      // If storage is full/unavailable, stop instead of overwriting its only copy.
+      if(stored&&stored.env) {
+        try {
+          const raw=stored.raw||JSON.stringify(stored.env),archiveKey=scopeKey(doc.annotator,doc.task_id)+':before-boundary-v1:'+C.sha256(raw);
+          if(localStorage.getItem(archiveKey)===null)localStorage.setItem(archiveKey,raw);
+        } catch(_) {showMessage('Download your existing draft first','There is not enough browser storage to preserve the original before adding the new opening questions. Export or back up the existing draft before continuing. No saved answers were changed.');return;}
+      }
+      doc=F.upgradeBoundary(doc,state.dataset,state.catalogue).doc;upgraded=true;
+      if(oldQuestion){const at=F.questions(doc,doc.ui.episode,state.dataset,state.catalogue).filter(q=>q.section===doc.ui.section).findIndex(q=>q.path===oldQuestion.path);if(at>=0)doc.ui.question=at;}
+    }
+    if(F.needsCollectionUpgrade(doc)){
+      const oldQuestion=F.questions(doc,doc.ui.episode,state.dataset,state.catalogue).filter(q=>q.section===doc.ui.section)[doc.ui.question];
+      if(stored&&stored.env){try{
+        const raw=stored.raw||JSON.stringify(stored.env),archiveKey=scopeKey(doc.annotator,doc.task_id)+':before-collection-checks-v1:'+C.sha256(raw);
+        if(localStorage.getItem(archiveKey)===null)localStorage.setItem(archiveKey,raw);
+      }catch(_){showMessage('Download your existing draft first','The original could not be backed up in browser storage. Download it before upgrading the opening checks and indoor-point visibility questions. No saved answers were overwritten.');return;}}
+      doc=F.upgradeCollection(doc,state.dataset,state.catalogue).doc;collectionUpgraded=true;
+      if(oldQuestion){const at=F.questions(doc,doc.ui.episode,state.dataset,state.catalogue).filter(q=>q.section===doc.ui.section).findIndex(q=>q.path===oldQuestion.path);doc.ui.question=Math.max(0,at);}
+    }
     state.doc=doc;state.identity=doc.annotator;state.key=scopeKey(doc.annotator,doc.task_id);state.revision=stored&&stored.env?stored.env.revision:0;
     state.conflict=false;state.episode=Math.min(Math.max(0,doc.ui.episode||0),doc.episodes.length-1);state.section=order.includes(doc.ui.section)?doc.ui.section:'scene';state.question=Math.max(0,doc.ui.question||0);state.frame=Math.min(11,Math.max(0,doc.ui.frame||0));
     const legacyQuestion=sectionQuestions()[state.question];state.question=Math.max(0,sectionPanels().findIndex(p=>p.questions.some(q=>q.path===legacyQuestion?.path)));
     state.reference=false;state.focusMarker=legacyQuestion?.marker_id||null;$('conflictBanner').classList.add('hidden');$('workspace').classList.remove('locked');$('welcome').classList.add('hidden');$('workspace').classList.remove('hidden');$('identityLabel').textContent=doc.annotator;$('profileSelect').value=doc.profile;
-    renderScenes();renderAll();save();
+    renderScenes();renderAll();save();primeAutomaticLabels(doc);
+    if(collectionUpgraded)toast('Previous answers preserved. New opening consistency checks and indoor visibility questions need your own selections.');
+    else if(upgraded)toast('Previous answers preserved. Width and blockage are new blank questions; completed scenes need these two checks.');
   }
   function start(event) {
     event.preventDefault();$('welcomeError').textContent='';const identity=$('identityInput').value.trim();
@@ -115,7 +158,13 @@
   function renderOverlay() {
     $('pointOverlay').innerHTML='';$('pointImageHint').textContent='';if(!state.imageReady)return;const q=question();if(!q)return;
     const m=layout().markers.find(v=>v.id===q.marker_id);
-    if(state.reference&&q.direction){const d=q.direction;if(d.reference_frame===frame().id&&Number.isFinite(d.x)&&Number.isFinite(d.y)){$('pointOverlay').innerHTML='<circle cx="'+d.x*1000+'" cy="'+d.y*800+'" r="18" fill="none" stroke="#ffdb56" stroke-width="5"/><text x="'+(d.x*1000+25)+'" y="'+(d.y*800-16)+'" fill="#ffdb56" stroke="#26343a" paint-order="stroke" stroke-width="3" font-size="25">Direction reference</text>';$('pointImageHint').textContent='Direction reference';}return;}
+    if(state.reference&&q.direction){const d=q.direction;if(d.reference_frame===frame().id&&Number.isFinite(d.x)&&Number.isFinite(d.y)){
+      // One stored feature anchor is not a physical travel vector. The arrow is
+      // only a callout to that anchor; the reviewed words define incoming direction.
+      const x=d.x*1000,y=d.y*800,tx=x+(x>500?-190:190),ty=y+(y>400?-100:100);
+      $('pointOverlay').innerHTML='<defs><marker id="directionReferenceArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ffdb56"/></marker></defs><g data-direction-reference="'+esc(d.id)+'"><line x1="'+tx+'" y1="'+ty+'" x2="'+x+'" y2="'+y+'" stroke="#ffdb56" stroke-width="5" marker-end="url(#directionReferenceArrow)"/><circle cx="'+x+'" cy="'+y+'" r="18" fill="none" stroke="#ffdb56" stroke-width="5"/><text x="'+tx+'" y="'+(ty+(y>400?-16:32))+'" text-anchor="'+(x>500?'end':'start')+'" fill="#ffdb56" stroke="#26343a" paint-order="stroke" stroke-width="3" font-size="24">Reference feature</text></g>';
+      $('pointImageHint').textContent='Direction reference feature — not a travel vector';
+    }return;}
     if(m){const p=m.anchor_frame===frame().id?m:(m.observations||[]).find(v=>v.frame_id===frame().id);if(p){$('pointOverlay').innerHTML='<circle cx="'+p.x*1000+'" cy="'+p.y*800+'" r="15" fill="none" stroke="white" stroke-width="3"/><circle cx="'+p.x*1000+'" cy="'+p.y*800+'" r="9" fill="#f02f35" stroke="white" stroke-width="2"/>';$('pointImageHint').textContent=markerName(m)+(m.anchor_frame===frame().id?'':' · check correspondence');}else $('pointImageHint').textContent='No point location supplied in this view';}
     else if(['boundary','pathways','visibility'].includes(q.section)){const b=layout().boundary_boxes.find(v=>v.frame_id===frame().id);if(b){$('pointOverlay').innerHTML='<rect x="'+b.x0*1000+'" y="'+b.y0*800+'" width="'+(b.x1-b.x0)*1000+'" height="'+(b.y1-b.y0)*800+'" fill="none" stroke="#ffdd63" stroke-width="4"/>';$('pointImageHint').textContent='Shared door / opening';}else $('pointImageHint').textContent='Opening has no shared outline in this view';}
   }
@@ -140,7 +189,10 @@
   function notesHTML() {return '<details class="optional"><summary>Add a note / explain uncertainty</summary><label class="field" for="sceneNotes">A short note for this scene<textarea id="sceneNotes" data-notes maxlength="8000"'+(readOnly()?' disabled':'')+' placeholder="For example: the point is hidden by glare; the panel material is unclear.">'+esc(record().answers.notes)+'</textarea></label><p class="quiet-note">One scene-level explanation is enough for “Not sure” answers. Flag an incorrect target here; shared points are corrected by the researcher, not moved independently.</p></details>';}
   function scenarioHTML(q) {
     if(!q.direction)return '';const d=q.direction,number=d.id==='d2'?2:1;
-    return '<div class="scenario"><span class="scenario-condition">'+(q.condition==='sealed'?'Imagine: tightly closed / sealed':'Imagine: fully open')+'</span><p><strong>Direction '+number+':</strong> '+esc(d.text||'Awaiting researcher definition')+'</p><p>'+esc(q.condition_text||'')+'</p><button id="showReference" class="text-button"'+(q.blocked?' disabled':'')+'>Show the direction reference</button></div>';
+    return '<div class="scenario"><span class="scenario-condition">'+(q.condition==='sealed'?'Imagine: tightly closed / sealed':'Imagine: fully open')+'</span><p><strong>'+(q.section==='exposure'?'Incoming sun / rain — direction ':'Direction ')+number+':</strong> '+esc(d.text||'Awaiting researcher definition')+'</p><p>'+esc(q.condition_text||'')+'</p><button id="showReference" class="text-button"'+(q.blocked?' disabled':'')+'>Show the direction reference</button><p class="direction-reference-help">The arrow identifies the visible reference feature, not a simulated travel vector. Use the written direction above.'+(q.section==='exposure'?' Show point returns to the surface.':'')+'</p></div>';
+  }
+  function physicsRulesHTML(includeSlats=true) {
+    return '<aside class="physics-rule" aria-label="Sun and rain rules"><p><strong>Clear glass:</strong> direct sunlight can pass through clear glass; rain cannot pass through intact closed glass.</p>'+(includeSlats?'<p><strong>Slats or lattice:</strong> for a point under this cover, choose <strong>Not sure for rain</strong> unless the stated scenario brings rain in <strong>sideways</strong>. For sideways rain, judge whether the path reaches the point—do not automatically choose Hit directly.</p>':'')+'<p>Use the stated scenario, not today’s weather. For an absent or unknown closure, choose Not sure in the sealed scenario.</p></aside>';
   }
   function suggestionList(q) {
     if(q.path.endsWith('.object_name'))return [...new Set(ep().frames.flatMap(f=>(f.objects||[]).map(o=>o.name)))].filter(v=>v&&!['unknown','void','misc'].includes(v)).sort();
@@ -148,6 +200,13 @@
     return object?(state.catalogue.suggestions_by_mpcat40[String(object.id)]||state.catalogue.all_material_suggestions):state.catalogue.all_material_suggestions;
   }
   function choicesHTML(q,value) {return '<div class="choices" role="group" aria-label="'+esc(q.title)+'">'+(q.options||[]).map(o=>'<button class="choice'+(o.value===value?' selected':'')+(o.value===ND?' uncertain':'')+'" data-value="'+esc(o.value)+'" aria-pressed="'+(o.value===value)+'"'+(readOnly()?' disabled':'')+'>'+esc(o.label)+'</button>').join('')+'</div>';}
+  function multiSelectHTML(q){
+    const value=get(record(),q.path),chosen=Array.isArray(value)?value:[],disabled=readOnly()||q.blocked?' disabled':'',visibility=q.path.startsWith('checks.indoor_visibility.');
+    return '<fieldset class="multi-select"'+disabled+'><legend>'+esc(visibility?'Select every image where you can still see this surface':'Select everything that can pass')+'</legend>'+q.options.map(o=>{
+      const preview=visibility&&ep().frames.some(f=>f.id===o.value)?'<button type="button" class="text-button" data-preview-frame="'+esc(o.value)+'">View image '+(ep().frames.findIndex(f=>f.id===o.value)+1)+'</button>':'';
+      return '<div class="multi-select-option"><label><input type="checkbox" data-multiselect-path="'+esc(q.path)+'" value="'+esc(o.value)+'"'+(chosen.includes(o.value)?' checked':'')+disabled+'><span>'+esc(o.label)+'</span></label>'+preview+'</div>';
+    }).join('')+'</fieldset><p class="compact-help">You can select several '+(visibility?'images':'channels')+'. '+(visibility?'None':'Nothing')+' and Not sure are exclusive. Clearing every selection leaves this unanswered.</p>';
+  }
   function textHTML(q,value) {
     const suggestions=suggestionList(q)||[];
     return '<label class="field" for="answerText">Your answer<input id="answerText" data-input list="answerSuggestions" maxlength="250" value="'+esc(value===ND?'':value)+'" placeholder="Choose a suggestion or type another answer"'+(readOnly()?' disabled':'')+'></label><datalist id="answerSuggestions">'+suggestions.map(v=>'<option value="'+esc(v)+'">').join('')+'</datalist><p class="suggestion-note">Suggestions are choices, not labels. You can type any other material or object.</p><button class="choice uncertain'+(value===ND?' selected':'')+'" data-value="'+ND+'" aria-pressed="'+(value===ND)+'"'+(readOnly()?' disabled':'')+'>Not sure</button>';
@@ -158,11 +217,11 @@
   }
   function renderHierarchy(search='') {
     const root=$('hierarchyResults'),q=question();if(!root||!q)return;const value=get(record(),q.path),needle=search.trim().toLowerCase();
-    const matches=state.catalogue.materials.filter(m=>(materialLabel(m)+' '+String(m.family||'').replace(/_/g,' ')).toLowerCase().includes(needle));
+    const matches=G.searchMaterials(state.catalogue.materials,needle);
     root.innerHTML=matches.length?matches.map(m=>'<button data-hierarchy="'+esc(m.id)+'"'+(m.id===value?' class="selected"':'')+(readOnly()?' disabled':'')+'><span>'+esc(materialLabel(m))+'</span><small>'+esc(String(m.family||'').replace(/_/g,' '))+'</small></button>').join(''):'<p class="quiet-note">No matching category. Try a broader name, or choose Other.</p>';
   }
   function pointNavigation(q) {
-    if(!q.marker_id)return '';return '<div class="point-picker" aria-label="Choose surface">'+layout().markers.map(m=>'<button data-marker="'+esc(m.id)+'"'+(q.marker_id===m.id?' class="active"':'')+'>'+esc(markerName(m))+'</button>').join('')+'</div>';
+    if(!q.marker_id)return '';const available=new Set(sectionPanels().map(p=>p.marker_id).filter(Boolean));return '<div class="point-picker" aria-label="Choose surface">'+layout().markers.filter(m=>available.has(m.id)).map(m=>'<button data-marker="'+esc(m.id)+'"'+(q.marker_id===m.id?' class="active"':'')+'>'+esc(markerName(m))+'</button>').join('')+'</div>';
   }
   function compactControl(q,label,extra='') {
     if(!q)return '';const value=get(record(),q.path),disabled=readOnly()||q.blocked?' disabled':'',id='field-'+q.path.replace(/[^a-zA-Z0-9_-]/g,'-');
@@ -173,14 +232,46 @@
   function materialPairHTML(p,hierarchy,title) {
     if(!hierarchy)return '';const textPath=hierarchy.path.replace(/hierarchy_id$/,'material'),textQ=p.questions.find(q=>q.path===textPath),value=get(record(),hierarchy.path),disabled=readOnly()?' disabled':'',id='material-'+hierarchy.path.replace(/[^a-zA-Z0-9_-]/g,'-');
     const reference=state.catalogue.materials.find(m=>String(m.id)===value);
-    return '<div class="material-group"><label class="compact-field" for="'+id+'"><span>'+esc(title)+'</span><select id="'+id+'" data-material-pair="'+esc(hierarchy.path)+'"'+disabled+'><option value=""'+(!answered(value)?' selected':'')+'>Choose a reference material…</option>'+state.catalogue.materials.map(m=>'<option value="'+esc(m.id)+'"'+(String(m.id)===value?' selected':'')+'>'+esc(materialLabel(m))+' · '+esc(String(m.family||'').replace(/_/g,' '))+'</option>').join('')+'<option value="__other__"'+(value==='__other__'?' selected':'')+'>Other / no matching category</option><option value="'+ND+'"'+(value===ND?' selected':'')+'>Category not sure</option></select></label><p class="compact-help">An explicit reference choice fills its name and category together. Other/custom names remain editable; no physics is guessed from an image.</p>'+compactControl(textQ,'Material name')+'<div class="material-footnote"><span>Category: '+esc(reference?materialLabel(reference):value==='__other__'?'Other / no matching category':value===ND?'Not sure':'Not chosen')+'</span><button class="text-button" data-material-unknown="'+esc(hierarchy.path)+'"'+disabled+'>Material and category both unknown</button></div></div>';
+    const query=state.materialSearches[ep().id+'|'+hierarchy.path]||'',choices=materialOptions(hierarchy.path,query);
+    return '<div class="material-group"><label class="compact-field" for="'+id+'-search"><span>Search the full reference hierarchy</span><input id="'+id+'-search" type="search" data-material-search="'+esc(hierarchy.path)+'" value="'+esc(query)+'" placeholder="Search name, family, ID or appearance"'+disabled+'></label><p class="compact-help" data-material-count="'+esc(hierarchy.path)+'" aria-live="polite">'+choices.count+'</p><label class="compact-field" for="'+id+'"><span>'+esc(title)+'</span><select id="'+id+'" data-material-pair="'+esc(hierarchy.path)+'"'+disabled+'>'+choices.html+'</select></label><p class="compact-help">An explicit reference choice fills its name and category together. Other/custom names remain editable; no physics is guessed from an image.</p>'+compactControl(textQ,'Material name')+'<div class="material-footnote"><span>Category: '+esc(reference?materialLabel(reference):value==='__other__'?'Other / no matching category':value===ND?'Not sure':'Not chosen')+'</span><button class="text-button" data-material-unknown="'+esc(hierarchy.path)+'"'+disabled+'>Material and category both unknown</button></div></div>';
+  }
+  function materialOptions(path,query) {
+    const value=get(record(),path),matches=G.searchMaterials(state.catalogue.materials,query),selected=state.catalogue.materials.find(m=>String(m.id)===value),kept=selected&&!matches.includes(selected);
+    const shown=kept?[selected,...matches]:matches;
+    return {count:matches.length+' of '+state.catalogue.materials.length+' reference materials'+(kept?' · current choice also kept':''),
+      html:'<option value=""'+(!answered(value)?' selected':'')+'>Choose a reference material…</option>'+shown.map(m=>'<option value="'+esc(m.id)+'"'+(String(m.id)===value?' selected':'')+'>'+esc(materialLabel(m))+' · '+esc(String(m.family||'').replace(/_/g,' '))+' ['+esc(m.id)+']</option>').join('')+'<option value="__other__"'+(value==='__other__'?' selected':'')+'>Other / no matching category</option><option value="'+ND+'"'+(value===ND?' selected':'')+'>Category not sure</option>'};
+  }
+  function filterMaterialChoices(path,query) {
+    state.materialSearches[ep().id+'|'+path]=query;const choices=materialOptions(path,query);
+    for(const select of document.querySelectorAll('[data-material-pair]'))if(select.dataset.materialPair===path)select.innerHTML=choices.html;
+    for(const count of document.querySelectorAll('[data-material-count]'))if(count.dataset.materialCount===path)count.textContent=choices.count;
+  }
+  function boundaryMeasurementHTML() {
+    const data=state.measurements,measurement=data&&data.episodes&&data.episodes[ep().id];
+    const valid=data&&data.schema==='blockmind_boundary_measurements_v1'&&data.dataset_build_id===state.dataset.build_id&&
+      measurement&&measurement.boundary_object_id===ep().boundary_object_id&&measurement.scan_id===ep().scan_id&&
+      measurement.status==='available'&&measurement.method==='native_instance_obb_horizontal_major_extent'&&
+      Number.isFinite(measurement.width_m)&&measurement.width_m>0&&
+      measurement.measurement_scope==='native_boundary_object_obb_not_clear_opening';
+    if(!valid)return '<div class="boundary-measurement unavailable"><strong>Mesh width estimate unavailable</strong><p>No verified measurement is available for this exact boundary. Do not guess a number; confirm the category from the images or choose Not sure.</p></div>';
+    return '<div class="boundary-measurement"><strong>Mesh object span: approximately '+esc(measurement.width_m.toFixed(2))+' m</strong><p>Automatic estimate for outlined object '+esc(ep().boundary_object_id)+'. This is its horizontal mesh-bounding-box span, <strong>not a verified clear opening width</strong>. It may cover one door leaf or several joined panels. Confirm the category from the images; nothing is selected automatically.</p></div>';
+  }
+  function boundaryHTML(p) {
+    const find=suffix=>p.questions.find(q=>q.path.endsWith('.'+suffix));
+    return '<div class="boundary-form"><h2>Describe the opening</h2><p class="question-help">Five quick checks about the same outlined boundary. Look across the images as needed.</p>'+boundaryMeasurementHTML()+
+      '<div class="compact-grid">'+compactControl(find('kind'),'1. What is it?')+
+      compactControl(find('width_class'),'2. How wide is it?','<small>Confirm the opening category yourself. Choose Not sure if these categories do not fit.</small>')+
+      compactControl(find('pane_transparency'),'3. Can you see through it?','<small>Judge the pane or panel, not just an open space beside it. Use Not sure if there is no pane to judge.</small>')+
+      compactControl(find('blockage'),'4. Is anything blocking it?','<small>Include curtains, blinds, a screen or furniture. For multiple blockers or Other, describe them in the scene note.</small>')+
+      compactControl(find('observed_state'),'5. Is it open or closed in the images?','<small>Report what the images show, not the later hypothetical conditions. Choose No door / closure exists for an open gap.</small>')+
+      '</div><p class="compact-help">Existing material, reflectance and other boundary checks remain on the following cards. These five answers do not fill any physical-property labels automatically.</p></div>';
   }
   function surfaceHTML(p) {
     const m=layout().markers.find(v=>v.id===p.marker_id),find=suffix=>p.questions.find(q=>q.path.endsWith('.'+suffix)),a=find('anchor_correct'),same=find('same_surface_across_frames'),valid=get(record(),a.path)==='yes'&&get(record(),same.path)==='yes',different=[get(record(),a.path),get(record(),same.path)].some(v=>answered(v)&&v!=='yes'),disabled=readOnly()?' disabled':'';
     const views=[...new Set([m.anchor_frame,...(m.observations||[]).map(o=>o.frame_id)])];
     let html='<div class="surface-form" data-marker-id="'+esc(m.id)+'">'+pointNavigation(p.questions[0])+'<div class="target-heading"><span class="red-dot"></span>'+esc(markerName(m))+'<button id="showTarget" class="text-button">Show point</button></div><div class="point-views"><span>Compare marked views:</span>'+views.map(id=>'<button data-point-view="'+esc(id)+'">Image '+(ep().frames.findIndex(f=>f.id===id)+1)+'</button>').join('')+'</div>';
     html+='<div class="point-quality"><p>Check both: the red point is on a usable surface, and its marked views show the same physical surface.</p><button data-confirm-point="'+esc(m.id)+'" class="'+(valid?'confirmed':'')+'"'+disabled+'>'+(valid?'✓ Both checks confirmed':'I confirm both checks')+'</button><details id="pointQualityDetails"'+(different?' open':'')+'><summary>Problem, uncertainty, or answer checks separately</summary><div class="compact-grid">'+compactControl(a,'Point on a real surface?')+compactControl(same,'Same surface across marked views?')+'</div></details></div>';
-    html+=compactControl(find('object_name'),'Object / surface name')+materialPairHTML(p,find('hierarchy_id'),'Visible material / installed surface');
+    html+=compactControl(find('object_name'),'Object / surface name')+'<details class="optional"><summary>Automatic mask label (not your answer)</summary><p id="automaticPointLabel" data-marker-id="'+esc(m.id)+'">'+automaticLabelHTML(m.id)+'</p><p class="quiet-note">Saved separately beside your choices for later comparison. It never fills or overrides your answer.</p></details>'+materialPairHTML(p,find('hierarchy_id'),'Visible material / installed surface');
     html+='<div class="compact-grid">'+compactControl(find('reflectance'),'Visible reflectance')+compactControl(find('finish'),'Finish / coating')+'</div>';
     html+='<div class="substrate-group">'+compactControl(find('substrate_known'),'Can you identify the material underneath?','<small>Do not infer a hidden wall material from paint colour.</small>')+(find('substrate_material')?materialPairHTML(p,find('substrate_hierarchy_id'),'Underlying material'):'')+'</div>';
     html+='<fieldset class="compact-fieldset"><legend>Shelter at this point</legend><div class="compact-grid">'+compactControl(find('shelter'),'Overhead shelter')+compactControl(find('obstruction'),'Fixed obstructions')+'</div><p class="compact-help">These are separate facts: shelter describes cover; obstructions also include side walls.</p></fieldset></div>';return html;
@@ -189,15 +280,16 @@
     const q=p.questions[0];let html=scenarioHTML(q);
     if(p.blocked||q.blocked)return html+'<div class="blocked-section"><strong>This scenario needs shared research settings first.</strong><p>You do not need to define directions yourself. The researcher will publish reviewed directions for everyone.</p><button id="continueBasics">Continue with basic facts →</button></div>';
     if(p.kind==='exposure') {
-      html+='<h2>Which points can sun and rain reach?</h2><p class="question-help">Use Show point to inspect each surface, then choose Yes, No or Not sure in both columns. Blank means not yet answered. No answers are copied between points or scenarios.</p><table class="scenario-table"><thead><tr><th scope="col">Surface</th><th scope="col">Direct sun</th><th scope="col">Rain</th></tr></thead><tbody>';
+      html+='<h2>Which points do sun and rain hit directly?</h2><p class="question-help">Use Show point to inspect each surface. Answer sun and rain separately: Hit directly, Not hit, or Not sure. Blank means not yet answered. No answers are copied between points or scenarios.</p>'+physicsRulesHTML()+'<table class="scenario-table"><thead><tr><th scope="col">Surface</th><th scope="col">Direct sun</th><th scope="col">Direct rain</th></tr></thead><tbody>';
       for(const m of layout().markers){const qs=p.questions.filter(v=>v.marker_id===m.id);if(!qs.length)continue;html+='<tr data-point-row="'+esc(m.id)+'"'+((state.focusMarker||p.questions[0].marker_id)===m.id?' class="focused"':'')+'><th scope="row"><span>'+esc(markerName(m))+'</span><button data-focus-marker="'+esc(m.id)+'" class="text-button">Show point</button></th>'+['sun','rain'].map(channel=>'<td>'+compactControl(qs.find(v=>v.path.endsWith('.'+channel)),markerName(m)+' — '+(channel==='sun'?'direct sun':'rain'))+'</td>').join('')+'</tr>';}
       html+='</tbody></table><p class="compact-help">All marked points are retained. A row is a separate surface; the viewer shows only the focused point.</p>';
-    } else html+='<h2>What can pass through this opening?</h2><div class="pathway-form">'+p.questions.map(q=>compactControl(q,q.path.endsWith('.direct_sun')?'Direct sunlight':q.path.endsWith('.diffuse_light')?'Diffuse daylight':q.path.endsWith('.air')?'Air':'Rain')).join('')+'</div>';
-    return html+'<p class="physics-rule">Clear glass can let direct sunlight through, but intact closed glass blocks rain. Judge the stated scenario—not today’s weather or an exact temperature. If the closure is absent or unknown, use Not sure for the sealed scenario.</p>';
+    } else if(q.kind==='multiselect')html+='<h2>What can pass through this opening?</h2><p class="question-help">Tick any of sunlight, rain, air and visible light, or choose Nothing / Not sure.</p><p class="consistency-note"><strong>Consistency check only.</strong> These selections are not benchmark answers. Benchmark answers must come from agreed opening facts and a reviewed rule; your check never overrides those facts.</p>'+physicsRulesHTML(false)+multiSelectHTML(q);
+    else html+='<h2>What can pass through this opening?</h2>'+physicsRulesHTML(false)+'<div class="pathway-form">'+p.questions.map(q=>compactControl(q,q.path.endsWith('.direct_sun')?'Direct sunlight':q.path.endsWith('.diffuse_light')?'Diffuse daylight':q.path.endsWith('.air')?'Air':'Rain')).join('')+'</div>';
+    return html;
   }
-  function groupedActions(p) {return '<div class="actions"><button id="previousQuestion">← Back</button><button id="skipQuestion" class="text-button">Save & skip for now</button><button id="nextQuestion" class="primary"'+(!panelComplete(p)?' disabled':'')+'>Next '+(p.kind==='surface'?'point':p.kind==='single'?'check':'scenario')+' →</button></div>'+notesHTML();}
+  function groupedActions(p) {return '<div class="actions"><button id="previousQuestion">← Back</button><button id="skipQuestion" class="text-button">Save & skip for now</button><button id="nextQuestion" class="primary"'+(!panelComplete(p)?' disabled':'')+'>Next '+(p.kind==='surface'?'point':['single','boundary'].includes(p.kind)?'check':'scenario')+' →</button></div>'+notesHTML();}
   function renderReview() {
-    const p=F.progress(state.doc,state.episode,state.dataset,state.catalogue),ready=F.episodeReady(state.doc.tasks,state.episode,state.dataset,state.catalogue),missing=allQuestions().filter(q=>!answered(get(record(),q.path))),hasND=allQuestions().some(q=>get(record(),q.path)===ND),needNote=hasND&&!record().answers.notes.trim();
+    const p=F.progress(state.doc,state.episode,state.dataset,state.catalogue),ready=F.episodeReady(state.doc.tasks,state.episode,state.dataset,state.catalogue),missing=allQuestions().filter(q=>!answered(get(record(),q.path))),hasND=allQuestions().some(q=>uncertain(get(record(),q.path))),describeBlockers=['multiple','other'].includes(record().checks.boundary?.blockage),needNote=(hasND||describeBlockers)&&!record().answers.notes.trim();
     const missingPanels=allPanels().filter(p=>p.questions.some(q=>!answered(get(record(),q.path))));
     const status=record().status,locked=['complete','excluded'].includes(status),canComplete=!missing.length&&!needNote&&ready.ready&&!state.conflict&&!locked;
     let html='<p class="eyebrow">Review this scene</p><h2>'+(status==='complete'?'Scene complete':status==='excluded'?'Scene excluded':'Save now, finish when ready')+'</h2><p class="question-help">Drafts can be saved at any time. A point or scenario is finished when all its required fields are answered or explicitly marked Not sure.</p>';
@@ -205,8 +297,8 @@
     if(!ready.ready&&status!=='excluded')html+='<div class="blocked-section"><strong>Waiting for researcher preparation</strong><p>Your basic answers are safe. Shared targets, both directions and research settings must be reviewed before this scene can be finished.</p></div>';
     html+='<ul class="summary-list">'+order.filter(s=>s!=='review'&&p.sections[s]).map(s=>{const part=sectionProgress(s);return '<li><button data-section="'+s+'">'+names[s]+'</button><small>'+part.answered+' / '+part.total+' '+unitName(s)+'</small></li>';}).join('')+'</ul><p class="compact-help">Counts above are compact forms, not individual fields. Every original benchmark fact, point, direction and boundary condition is still saved and checked.</p>';
     if(missingPanels.length&&!locked)html+='<p class="small"><strong>'+missingPanels.length+' forms still need attention</strong></p><div class="missing-links">'+missingPanels.slice(0,5).map(p=>{const q=p.questions.find(q=>!answered(get(record(),q.path)));return '<button data-missing="'+esc(q.path)+'" data-missing-section="'+q.section+'">'+esc(p.kind==='surface'?markerName(layout().markers.find(m=>m.id===p.marker_id)):p.title||q.title)+'</button>';}).join('')+(missingPanels.length>5?'<span class="quiet-note">Use the sections above for the remaining forms.</span>':'')+'</div>';
-    if(needNote&&!locked)html+='<p class="error">Please add one short note explaining your Not sure answers.</p>';
-    html+='<label class="field" for="reviewNotes">Scene note'+(hasND?' — needed for uncertainty':' — optional')+'<textarea id="reviewNotes" data-notes maxlength="8000"'+(locked||state.conflict?' disabled':'')+' placeholder="Explain any uncertain answer or target problem.">'+esc(record().answers.notes)+'</textarea></label>';
+    if((hasND||describeBlockers)&&!locked)html+='<p id="requiredNoteWarning" class="error'+(needNote?'':' hidden')+'">Please add one short note'+(hasND?' explaining your Not sure answers':'')+(hasND&&describeBlockers?' and':'')+(describeBlockers?' naming the multiple or other blockers':'')+'.</p>';
+    html+='<label class="field" for="reviewNotes">Scene note'+(hasND||describeBlockers?' — needed for uncertainty or blocker details':' — optional')+'<textarea id="reviewNotes" data-notes maxlength="8000"'+(locked||state.conflict?' disabled':'')+' placeholder="Explain uncertain answers, name multiple/other blockers, or flag a target problem.">'+esc(record().answers.notes)+'</textarea></label>';
     html+='<div class="save-card-buttons"><button id="completeScene" class="primary"'+(!canComplete?' disabled':'')+'>Finish this scene</button><button id="downloadHere">Save all progress (JSON)</button><button id="nextScene">'+(state.episode===state.doc.episodes.length-1?'Back to first scene':'Next scene')+' →</button></div>';
     if(!locked)html+='<details class="optional"><summary>This scene cannot be annotated</summary><p class="quiet-note">Exclude only with a clear reason. This is not the same as skipping difficult questions.</p><button id="excludeScene"'+(state.conflict?' disabled':'')+'>Exclude with a reason</button></details>';
     const allDone=state.doc.episodes.every(e=>['complete','excluded'].includes(e.status));
@@ -218,20 +310,21 @@
     const list=sectionPanels();state.question=Math.min(state.question,Math.max(0,list.length-1));const current=list[state.question],q=current?.questions[0];
     if(!q){$('questionPanel').innerHTML='<h2>'+names[state.section]+'</h2><p>No questions in this section for the selected collection scope.</p><button id="continueSection" class="primary">Continue →</button>';renderOverlay();return;}
     const value=get(record(),q.path),m=layout().markers.find(v=>v.id===q.marker_id);
-    let html='<div data-panel-kind="'+esc(current.kind)+'" data-panel-id="'+esc(current.id)+'"><div class="question-counter"><strong>'+names[state.section]+'</strong><span>'+(current.kind==='surface'?'Point':current.kind==='single'?'Check':'Scenario')+' '+(state.question+1)+' of '+list.length+'</span></div><div class="progress-line"><span style="width:'+Math.round(list.filter(panelComplete).length/list.length*100)+'%"></span></div>';
+    let html='<div data-panel-kind="'+esc(current.kind)+'" data-panel-id="'+esc(current.id)+'"><div class="question-counter"><strong>'+names[state.section]+'</strong><span>'+(current.kind==='surface'?'Point':['single','boundary'].includes(current.kind)?'Check':'Scenario')+' '+(state.question+1)+' of '+list.length+'</span></div><div class="progress-line"><span style="width:'+Math.round(list.filter(panelComplete).length/list.length*100)+'%"></span></div>';
     if(readOnly())html+='<div class="locked-notice">'+(state.conflict?'Edits paused because another copy changed.':'This scene is '+record().status+'. Reopen it in Review to change answers.')+'</div>';
     if(state.question===0)html+='<p class="question-help">'+sectionHelp[state.section]+'</p>';
     if(current.kind!=='single'){
-      html+=current.kind==='surface'?surfaceHTML(current):scenarioPanelHTML(current);
+      html+=current.kind==='boundary'?boundaryHTML(current):current.kind==='surface'?surfaceHTML(current):scenarioPanelHTML(current);
       html+=groupedActions(current)+'</div>';$('questionPanel').innerHTML=html;renderOverlay();return;
     }
     html+=pointNavigation(q)+(m?'<div class="target-heading"><span class="red-dot"></span>'+esc(markerName(m))+'<button id="showTarget" class="text-button">Show point</button></div>':'')+scenarioHTML(q);
     html+='<h2>'+esc(q.title)+'</h2>'+(q.help?'<p class="question-help">'+esc(q.help)+'</p>':'');
     if(q.blocked){html+='<div class="blocked-section"><strong>This question needs shared research settings first.</strong><p>You do not need to define directions yourself. Continue with the scene, opening and point labels; the researcher will publish reviewed directions for everyone.</p><button id="continueBasics">Continue with basic facts →</button></div>';}
     else if(q.kind==='choice')html+=choicesHTML(q,value);
+    else if(q.kind==='multiselect')html+=multiSelectHTML(q);
     else if(q.kind==='hierarchy')html+=hierarchyHTML(q,value);
     else html+=textHTML(q,value);
-    if(q.direction&&!q.blocked)html+='<p class="physics-rule">Clear glass can let direct sunlight through, but intact closed glass blocks rain. Judge the stated scenario—not today’s weather or an exact temperature. If the closure is absent or unknown, use Not sure for the sealed scenario.</p>';
+    if(q.direction&&!q.blocked)html+=physicsRulesHTML(q.section==='exposure');
     html+='<div class="actions"><button id="previousQuestion">← Back</button><button id="skipQuestion" class="text-button">Skip for now</button><button id="nextQuestion" class="primary"'+(!answered(value)||q.blocked?' disabled':'')+'>Next →</button></div>'+notesHTML()+'</div>';
     $('questionPanel').innerHTML=html;if(q.kind==='hierarchy'&&!q.blocked)renderHierarchy();renderOverlay();
   }
@@ -248,6 +341,16 @@
     changed();if(rerender){renderPanel();return;}const next=$('nextQuestion');if(next)next.disabled=!panelComplete(panel());
     if(path.endsWith('.object_name'))for(const input of $('questionPanel').querySelectorAll('input[data-field]')){const materialQuestion=panel().questions.find(q=>q.path===input.dataset.field&&q.path.endsWith('.material'));const listId=input.getAttribute('list');if(materialQuestion&&listId&&$(listId))$(listId).innerHTML=(suggestionList(materialQuestion)||[]).map(value=>'<option value="'+esc(value)+'">').join('');}
     $('questionPanel').querySelectorAll('[data-unknown-field]').forEach(b=>{const uncertain=get(record(),b.dataset.unknownField)===ND;b.classList.toggle('active',uncertain);b.textContent=uncertain?'✓ Not sure':'Not sure';});
+  }
+  function updateSelections(input){
+    const path=input.dataset.multiselectPath,q=panel()?.questions.find(q=>q.path===path);
+    if(!q||q.kind!=='multiselect'||q.blocked||readOnly())return;
+    const old=get(record(),path),selected=new Set(Array.isArray(old)?old:[]),value=input.value;
+    if(!q.options.some(option=>option.value===value))return;
+    if(input.checked){if(value==='none'||value===ND)selected.clear();else{selected.delete('none');selected.delete(ND);}selected.add(value);}else selected.delete(value);
+    const next=selected.size?F.canonicalSelections([...selected],q.options):null;
+    updateField(path,next,false);
+    for(const checkbox of document.querySelectorAll('[data-multiselect-path]'))if(checkbox.dataset.multiselectPath===path)checkbox.checked=Array.isArray(next)&&next.includes(checkbox.value);
   }
   function selectMaterial(path,value) {
     const p=panel(),q=p?.questions.find(q=>q.path===path);if(!q||q.blocked||readOnly())return;
@@ -266,8 +369,10 @@
   }
   function excludeScene() {if(readOnly())return;const reason=prompt('Why can this scene not be annotated? Your reason will be saved for research review.');if(!reason||!reason.trim())return;record().status='excluded';record().exclusion_reason=reason.trim().slice(0,8000);record().completed_at=null;state.doc.annotation_status='draft';save();renderAll();}
   function downloadRaw(value,name) {const url=URL.createObjectURL(new Blob([typeof value==='string'?value:JSON.stringify(value,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);}
-  function download(final=false) {
-    if(!state.doc)return;const copy=clone(state.doc);copy.ui=savedCursor();if(final)copy.annotation_status='complete';
+  async function download(final=false) {
+    if(!state.doc)return;const current=state.doc;await primeAutomaticLabels(current);if(state.doc!==current)return;
+    current.surface_label_audit=R.buildSurfaceLabelAudit(current,state.dataset,state.catalogue);
+    const copy=clone(current);copy.ui=savedCursor();if(final)copy.annotation_status='complete';
     const errors=F.validate(copy,state.dataset,state.catalogue,final);
     if(errors.length){showMessage(final?'Collection is not complete yet':'Could not export safely',final?'Finish or exclude each scene, then check the shared research preparation. Your draft is still available.\n\n'+errors.slice(0,3).join('\n'):errors.slice(0,4).join('\n'));return;}
     if(final){state.doc.annotation_status='complete';save();}
@@ -280,8 +385,9 @@
     if(state.conflict){showMessage('This tab is paused','Download this copy or recover the latest draft before importing.');return;}
     let migrated;
     try {
-      if(source.schema==='blockmind_l2_annotations_v2'&&source.task_id===state.tasks.task_id){const errors=F.validate(source,state.dataset,state.catalogue);if(errors.length)throw new Error(errors.slice(0,4).join('\n'));migrated={doc:clone(source),report:{restored:'Exact same shared task package. All answers are preserved.',warning:'This replaces the active browser draft only after you confirm.'}};}
+      if(source.schema==='blockmind_l2_annotations_v2'&&source.task_id===state.tasks.task_id){const errors=F.validate(source,state.dataset,state.catalogue);if(errors.length)throw new Error(errors.slice(0,4).join('\n'));migrated=F.needsBoundaryUpgrade(source)?F.upgradeBoundary(source,state.dataset,state.catalogue):{doc:clone(source),report:{restored:'Exact same shared task package. All answers are preserved.',warning:'This replaces the active browser draft only after you confirm.'}};}
       else migrated=F.migrate(source,state.tasks,state.dataset,state.catalogue,identity,state.doc?state.doc.profile:'l2');
+      if(F.needsCollectionUpgrade(migrated.doc)){const previousReport=migrated.report,next=F.upgradeCollection(migrated.doc,state.dataset,state.catalogue);migrated={doc:next.doc,report:{previous:previousReport,collection_checks:next.report}};}
       const errors=F.validate(migrated.doc,state.dataset,state.catalogue);if(errors.length)throw new Error(errors.slice(0,4).join('\n'));
     } catch(error){showMessage('This backup cannot be restored safely',String(error.message||error));return;}
     state.migration=migrated;$('migrationReport').textContent=typeof migrated.report==='string'?migrated.report:JSON.stringify(migrated.report,null,2);$('migrationDialog').showModal();
@@ -300,7 +406,7 @@
   function findOlderDrafts(identity) {
     const candidates=[];
     try {
-      const keys=Object.keys(localStorage).filter(k=>k.includes(basePath)&&k.includes(state.dataset.build_id)&&k!==state.key);
+      const keys=Object.keys(localStorage).filter(k=>k.includes(basePath)&&k.includes(state.dataset.build_id)&&k!==state.key&&!k.includes(':before-'));
       for(const key of keys){try{const parsed=JSON.parse(localStorage.getItem(key));const doc=parsed&&parsed.data;if(doc&&doc.annotator===identity&&['blockmind_l2_guided_v1','blockmind_l2_annotations_v1','blockmind_l2_annotations_v2'].includes(doc.schema))candidates.push(doc);}catch(_){/* Preserve corrupt entries untouched. */}}
     }catch(_){return [];}
     candidates.sort((a,b)=>String(b.updated_at||'').localeCompare(String(a.updated_at||'')));return candidates;
@@ -324,6 +430,7 @@
   $('frameSlider').addEventListener('input',event=>{stopPlay();state.reference=false;changeFrame(+event.target.value);});$('filmstrip').addEventListener('click',event=>{const b=event.target.closest('[data-frame]');if(b){stopPlay();state.reference=false;changeFrame(+b.dataset.frame);}});
   $('questionPanel').addEventListener('click',event=>{
     const b=event.target.closest('button');if(!b)return;
+    if(b.dataset.previewFrame){const index=ep().frames.findIndex(f=>f.id===b.dataset.previewFrame);if(index>=0){stopPlay();state.reference=false;changeFrame(index);revealViewer();}return;}
     if(b.dataset.focusMarker){focusPoint(b.dataset.focusMarker);revealViewer();return;}
     if(b.dataset.pointView){const index=ep().frames.findIndex(f=>f.id===b.dataset.pointView);if(index>=0){stopPlay();state.reference=false;changeFrame(index);revealViewer();}return;}
     if(b.dataset.unknownField){updateField(b.dataset.unknownField,ND,true);return;}
@@ -345,12 +452,14 @@
   });
   $('questionPanel').addEventListener('input',event=>{
     const target=event.target;if(target.id==='hierarchySearch'){renderHierarchy(target.value);return;}
+    if(target.matches('input[data-material-search]')){filterMaterialChoices(target.dataset.materialSearch,target.value);return;}
     if(target.matches('input[data-field]')){updateField(target.dataset.field,target.value.trim()||null,false);return;}
     if(target.hasAttribute('data-input')){updateAnswer(target.value.trim()||null,false);return;}
-    if(target.hasAttribute('data-notes')&&!readOnly()){record().answers.notes=target.value;changed();if(state.section==='review'){const p=F.progress(state.doc,state.episode,state.dataset,state.catalogue),hasND=allQuestions().some(q=>get(record(),q.path)===ND),ready=F.episodeReady(state.doc.tasks,state.episode,state.dataset,state.catalogue);$('completeScene').disabled=p.answered!==p.total||!ready.ready||(hasND&&!target.value.trim())||state.conflict;}}
+    if(target.hasAttribute('data-notes')&&!readOnly()){record().answers.notes=target.value;changed();if(state.section==='review'){const p=F.progress(state.doc,state.episode,state.dataset,state.catalogue),hasND=allQuestions().some(q=>uncertain(get(record(),q.path))),describeBlockers=['multiple','other'].includes(record().checks.boundary?.blockage),needsNote=(hasND||describeBlockers)&&!target.value.trim(),ready=F.episodeReady(state.doc.tasks,state.episode,state.catalogue);$('completeScene').disabled=p.answered!==p.total||!ready.ready||needsNote||state.conflict;if($('requiredNoteWarning'))$('requiredNoteWarning').classList.toggle('hidden',!needsNote);}}
   });
   $('questionPanel').addEventListener('change',event=>{
     const target=event.target;
+    if(target.matches('input[data-multiselect-path]')){updateSelections(target);return;}
     if(target.matches('select[data-material-pair]')){selectMaterial(target.dataset.materialPair,target.value);return;}
     if(target.matches('select[data-field]'))updateField(target.dataset.field,target.value||null,target.dataset.field.endsWith('.substrate_known'));
   });
@@ -370,9 +479,12 @@
   window.L2Collection=Object.freeze({getSnapshot:()=>clone({identity:state.identity,episode:state.episode,section:state.section,question:state.question,frame:state.frame,doc:state.doc,tasks:state.tasks,storageKey:state.key,revision:state.revision,conflict:state.conflict,imageReady:state.imageReady,focusMarker:state.focusMarker,panel:state.doc&&state.section!=='review'?panel():null}),getDataset:()=>clone(state.dataset)});
   async function init() {
     try {
-      if(!F||!G)throw new Error('The annotation logic could not load. Refresh the site or check that full-core.js and compact-core.js are present.');
+      if(!F||!G||!R||!window.L2InstanceLabels)throw new Error('The annotation logic could not load. Refresh the site and check the complete JavaScript bundle is present.');
       const loaded=await Promise.all(['dataset.json','catalogue.json','collection-tasks.json'].map(async file=>{const response=await fetch(file,{cache:'no-store'});if(!response.ok)throw new Error('Could not load '+file+'. Serve the complete site folder over HTTP.');return response.json();}));
       [state.dataset,state.catalogue,state.tasks]=loaded;const errors=F.validateTasks(state.tasks,state.dataset,state.catalogue,false);if(errors.length)throw new Error('Shared annotation setup is invalid: '+errors.slice(0,3).join('; '));
+      // A missing/stale machine estimate must never block saving human answers
+      // or fall back to a different boundary's width.
+      try {const response=await fetch('boundary-measurements.json',{cache:'no-store'});if(response.ok)state.measurements=await response.json();} catch(_) {state.measurements=null;}
       $('loading').classList.add('hidden');$('welcome').classList.remove('hidden');
     }catch(error){$('loading').classList.add('hidden');$('fatal').textContent=String(error.message||error);$('fatal').classList.remove('hidden');}
   }

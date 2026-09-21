@@ -1,8 +1,135 @@
-# Delivery validation — 2026-09-19
+# Delivery validation — 2026-09-21
 
 This is software and data-delivery validation, **not a completed human annotation exercise or model benchmark**.
 
-## Compact complete v2 — current delivery
+## Passage checks, indoor visibility and independence — current delivery
+
+Four multi-select passage checklists are consistency-only; they never supply GT,
+including agreed legacy votes. Each indoor point has one after-crossing image-set
+question in Level 2. The six boundary checks and optional detailed L3 visibility
+remain. Disputed facts/sets preserve raw votes but exclude dependent items.
+
+- **79 focused Chromium checks passed**: channel and frame choices, exclusive
+  Nothing/None/Not sure, unanswered versus empty sets, image preview, locked
+  targets, exports/imports/reloads, original-envelope archive, completed legacy
+  upgrade, separate profiles/IDs, foreign-file rejection, no adjudication,
+  explicit shared-profile security warning, consensus exclusions and non-GT
+  checklists, mobile and project-subdirectory hosting.
+- **197 JavaScript checks passed**, including 26 new schema/consensus tests and
+  two strict multi-select editing tests. **43 Python tests passed**, including
+  three legacy-v1 consistency-only policy/report tests.
+- **66 compact-workflow and 53 opening browser regressions passed** on the
+  updated collector. No browser JS exceptions, unexpected failed HTTP responses
+  or external requests were recorded. The local test server may log harmless
+  broken pipes when disposable pages close during background mask loads.
+- Current collection-path coverage: 9,802 Level 2 fields and 16,822 Level 2 + L3
+  fields, each represented exactly once. Includes 224 passage checklists and
+  224 indoor visibility sets. All 2,508 frozen asset hashes still match.
+
+The 2026-09-19 `compact_conservation.json` is historical, not a claim that the
+current JavaScript is unchanged. Current tests verify the versioned checklist
+scope and preservation of all raw historical answers. The published task file,
+dataset, catalogue and point coordinates are unchanged.
+
+Evidence: `validation/collection_checks_browser_report.json`,
+`tests/collection_checks_core.test.js`, `COLLECTION_CHECKS.md`. Screenshots use
+synthetic answers. Authenticated access control and a reviewed complete opening
+rule table are **not** implemented; candidate rule outputs remain explicitly
+unapproved/non-GT, and separate profiles/devices remain required for independence.
+
+## Sun/rain clarification — earlier same-day delivery
+
+Every point keeps two independent answers in each of four scenarios. Display
+labels are Hit directly / Not hit / Not sure; stored yes/no/ND values are unchanged.
+Clear-glass and slats/lattice rules appear immediately above the exposure table.
+The direction arrow is a reference-feature callout, not a simulated incident ray;
+unreviewed directions remain gated and none were invented for production.
+
+- **15 focused schema tests passed**, checking all 56 scenes, 445 points and
+  3,560 independent exposure judgments, unchanged values, no shelter-driven
+  autofill, preserved unrelated choices and pending-direction safeguards.
+- **51 focused Chromium checks passed**, covering separate point/channel/scenario
+  choices, adjacent rules, direction wording/escaping, exact arrow endpoints and
+  reference-frame binding, point-view return, mobile/subdirectory hosting, all
+  64 answers in a synthetic eight-point scene, export/import/reload and offline
+  validation. No JavaScript errors, HTTP failures or external requests occurred.
+- The full JavaScript regression passes **169 checks** and Python regression
+  passes **40 tests**. All 2,508 frozen dataset hashes still match.
+
+See `validation/sunrain_browser_report.json` and `SUN_RAIN.md`. Screenshots and
+fixture directions/answers are synthetic tests, not approvals or human ground truth.
+No new required annotation fields, task identities or production direction
+definitions were added. Existing saved answers remain unchanged.
+
+## Red-point refinement — earlier same-day delivery
+
+All 107 entries from the original hierarchy remain available, searchable by ID,
+name, family and visual description; no reference values are converted into human
+answers. Slats/lattice is a distinct shelter code; earlier `partial` answers remain
+other partial cover. New exports carry the separately sampled native instance /
+mpcat40 label beside human answers, with an explicit object-only comparison.
+
+- **38 focused Chromium checks passed**, including all 445 anchors independently
+  checked against actual instance-map pixels, moved/new targets, missing masks,
+  full-list search, preserved selections/answers, export/import, locked points,
+  subdirectory hosting and desktop/mobile layouts. No JavaScript exceptions,
+  unexpected failed requests or external requests; intentional mask failure is
+  recorded separately. See `validation/redpoint_browser_report.json`.
+- **69 researcher-setup Chromium checks passed**, including four-per-side
+  enforcement in new drafts and unchanged published tasks/point coordinates.
+- **16 focused schema checks passed**, covering legacy compatibility, provenance
+  binding, stale audit snapshots, exact object-only comparisons, consensus
+  independence and new four-per-side task policy.
+- `validation/redpoint_source_audit.json` reproduces all 107 reference entries
+  and all 445 anchor pixels with zero mismatches. This is source consistency,
+  not human certification of a meaningful surface. **54 scenes have 4+4 points;
+  scene 8 has 4+3 and scene 38 has 4+2.** Their published points were not invented
+  or replaced; new researcher approval waits for legitimate targets or exclusion.
+
+No new human annotation fields are required. Frozen dataset, catalogue and shared
+task package remain unchanged. See `RED_POINTS.md` for the additive export fields.
+
+The current complete regression run passed **154 JavaScript checks**, **40 Python
+tests**, and **226 Chromium checks** across red-point (38), researcher setup (69),
+compact workflow (66) and opening (53) suites. All **2,508 frozen asset hashes**
+still match; `git diff --check` is clean. Browser-test servers can log an expected
+broken pipe when a disposable page is closed during background mask loading;
+the browser reports contain no unexpected failed HTTP responses or JS errors.
+
+## Five-question opening overview — earlier same-day delivery
+
+The current homepage adds human width category and blockage, groups them with
+type/transparency/state, and shows a separately labelled approximate native
+mesh-object span. No dataset, catalogue, shared tasks, approvals, prior human
+answers, images or route selections were changed.
+
+- **53 focused Chromium checks passed:** five controls, no defaults, exact
+  export values, desktop/mobile layout, legacy JSON imports, archived browser
+  drafts, open-gap semantics, blocker-note completion, project-subdirectory
+  hosting, and missing/wrong-build/wrong-object width fallbacks.
+  `validation/boundary_browser_report.json` records no JavaScript errors,
+  unexpected failed requests or external requests. The intentional optional
+  measurement-file 404 is recorded separately as an expected test case.
+- **66 compact-workflow Chromium regression checks passed.**
+- **136 JavaScript checks passed**, including 21 new boundary schema/upgrade/
+  consensus cases. **40 Python tests passed**, including 13 geometry/provenance
+  tests for the deterministic measurement supplement.
+- All 56 measurements reproduce from hash-checked native-instance OBB metadata.
+  They are mesh-object spans, not measured clear apertures; human categories
+  remain blank until explicitly chosen.
+- Per-field conservation across all 56 scenes: Level 2 grows from 10,138 to
+  **10,250** required fields; Level 2 + Level 3 from 17,158 to **17,270**.
+  Exactly two fields per scene were added; no prior fields are missing or
+  duplicated. The shared task hash remains unchanged.
+- All **2,508 frozen dataset asset hashes** and the recomputed dataset build
+  identity still match. The independently versioned width supplement is outside
+  that original immutable inventory and is rechecked by the package builder.
+
+See [BOUNDARY_QUESTIONS.md](BOUNDARY_QUESTIONS.md) for the stored fields,
+scope-version compatibility, and measurement caveats. Browser screenshots are
+synthetic test sessions, not human annotation ground truth.
+
+## Compact complete v2 — 2026-09-19 baseline
 
 The homepage now groups surfaces and scenarios rather than presenting each field as its own screen. The eight-point example has eight point forms, four sun/rain panels retaining all 64 values, and four pathway panels retaining all 16 values. No target, direction, boundary state, required field or completion gate was removed.
 
@@ -84,7 +211,7 @@ The full-workflow release rechecked the same 2,508 asset hashes and 1,812 source
 
 ## What still needs human/research approval
 
-All 56 episodes require coordinator setup approval before independent rating. The previous 10 visual-review flags remain visible. Episode 38 has only two useful exterior instance proposals: supply a legitimate third surface manually or exclude it. Never invent a point to satisfy the count.
+All 56 episodes require coordinator setup approval before final independent rating. The previous 10 visual-review flags remain visible. Under the current four-per-side policy, scene 8 needs one more legitimate exterior target and scene 38 needs two, or a reasoned exclusion if suitable targets cannot be found. Never invent a point to satisfy the count.
 
 Approve the two direction statements and boundary interpretation; confirm the separately referenced full Protocol if supplied later; provide the frozen VHC allowed-pairs table before Family C. Actual independent judgments, agreement values, benchmark questions and model scores have **not** been produced by these synthetic tests.
 

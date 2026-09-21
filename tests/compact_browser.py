@@ -146,7 +146,7 @@ def run(entry='index.html'):
             check('Sun and rain have four scenario panels', len([p for p in plan if p['section'] == 'exposure']) == 4)
             check('Opening transfer retains four scenario panels', len([p for p in plan if p['section'] == 'pathways']) == 4)
             check('All 64 surface-direction-condition-channel facts remain represented', sum(len(p['questions']) for p in plan if p['section'] == 'exposure') == 64)
-            check('All 16 opening-transfer facts remain represented', sum(len(p['questions']) for p in plan if p['section'] == 'pathways') == 16)
+            check('Opening transfer has four consistency-only multi-select scenarios', len([q for p in plan if p['section'] == 'pathways' for q in p['questions'] if q['kind'] == 'multiselect' and q['consistency_only']]) == 4)
             fill(page, base + 'object_name', 'SYNTHETIC wall')
             pair = page.locator(f'[data-material-pair="{base}hierarchy_id"]')
             check('Material name and category are paired only through explicit selection', pair.is_visible() and answer(page, base + 'material') is None and answer(page, base + 'hierarchy_id') is None)
@@ -251,10 +251,12 @@ def run(entry='index.html'):
             section(p, 'pathways')
             represented = set()
             for scenario in range(4):
-                represented.update(p.locator('select[data-field]').evaluate_all('xs=>xs.map(x=>x.dataset.field)'))
+                scenario_choices = p.locator('input[data-multiselect-path]')
+                assert set(scenario_choices.evaluate_all('xs=>xs.map(x=>x.value)')) == {'sunlight', 'rain', 'air', 'visible_light', 'none', ND}
+                represented.update(scenario_choices.evaluate_all('xs=>xs.map(x=>x.dataset.multiselectPath)'))
                 if scenario < 3:
                     p.locator('#skipQuestion').click()
-            check('All 16 open/sealed light, air and rain pathway judgments remain reachable', len(represented) == 16)
+            check('All four open/sealed passage consistency checklists and six options remain reachable', len(represented) == 4)
 
             legacy = copy.deepcopy(fixture['complete'])
             legacy['annotation_status'] = 'draft'

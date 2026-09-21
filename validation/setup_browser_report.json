@@ -1,6 +1,6 @@
 {
   "test": "researcher_setup_browser",
-  "created_at": "2026-09-19T07:30:33.594196+00:00",
+  "created_at": "2026-09-21T14:01:15.208466+00:00",
   "dataset_build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
   "production_tasks_sha256": "7d89b14102d8a9f148807ad1779303dfacd38cd11cdab7a7c04088198bc1cd26",
   "synthetic_data_only": true,
@@ -11,6 +11,18 @@
     },
     {
       "name": "source_setup_unreviewed",
+      "passed": true
+    },
+    {
+      "name": "local_draft_requires_exactly_four_per_side",
+      "passed": true
+    },
+    {
+      "name": "opening_setup_preserves_every_published_point",
+      "passed": true
+    },
+    {
+      "name": "four_point_side_cannot_add_fifth",
       "passed": true
     },
     {
@@ -34,6 +46,10 @@
       "passed": true
     },
     {
+      "name": "scene8_three_exterior_points_cannot_be_approved",
+      "passed": true
+    },
+    {
       "name": "scene38_has_two_exterior_proposals",
       "passed": true
     },
@@ -50,7 +66,19 @@
       "passed": true
     },
     {
+      "name": "scene38_three_exterior_points_still_cannot_be_approved",
+      "passed": true
+    },
+    {
       "name": "delete_point_restores_count",
+      "passed": true
+    },
+    {
+      "name": "researcher_can_fill_missing_points_but_not_add_a_fifth",
+      "passed": true
+    },
+    {
+      "name": "placing_four_points_does_not_auto_approve",
       "passed": true
     },
     {
@@ -198,6 +226,14 @@
       "passed": true
     },
     {
+      "name": "imported_legacy_shortage_loses_only_local_approval",
+      "passed": true
+    },
+    {
+      "name": "otherwise_approved_shortage_cannot_publish",
+      "passed": true
+    },
+    {
       "name": "foreign_build_import_transactional",
       "passed": true
     },
@@ -249,8 +285,8 @@
       "detail": []
     }
   ],
-  "passed": 60,
-  "total": 60,
+  "passed": 69,
+  "total": 69,
   "javascript_errors": [],
   "http_failures": [],
   "external_requests": []

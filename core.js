@@ -15,8 +15,9 @@
     yes_no: yes,
     boundary_class: ['outdoor', 'semi_outdoor', ND],
     exterior_enclosure: ['open_air', 'roofed_open_sides', 'enclosed_porch', 'sunroom', 'garage', 'glazed_lobby', 'other', ND],
-    shelter: ['overhead', 'partial', 'none', ND],
-    kind: ['hinged_door', 'sliding_door', 'folding_door', 'garage_door', 'gate', 'open_passage', 'window', 'other', ND],
+    // Keep historical generic partial cover distinct from explicit slats/lattice.
+    shelter: ['overhead', 'slats_lattice', 'none', 'partial', ND],
+    kind: ['door', 'hinged_door', 'sliding_door', 'folding_door', 'garage_door', 'gate', 'open_passage', 'window', 'other', ND],
     pane_transparency: ['clear', 'obscured', 'opaque', ND],
     glazing: ['present', 'absent', ND],
     observed_state: ['open', 'closed', 'ajar', 'no_closure', ND],

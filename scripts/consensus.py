@@ -80,6 +80,7 @@ def calculate(first, second, dataset, catalogue, node=None):
         fields, disagreements = {}, []
         for path in sorted(left_flat):
             a, b = left_flat[path], right_flat[path]
+            consistency_only = path.startswith("pathways.")
             stat = statistics[category(path)]
             pieces = path.split(".")
             optional_substrate = (pieces[0] == "surfaces" and pieces[-1] in ("substrate_material", "substrate_hierarchy_id")
@@ -101,9 +102,15 @@ def calculate(first, second, dataset, catalogue, node=None):
                 state, value = "disagreement", None
                 stat["pairs"].append((a, b))
                 disagreements.append({"path": path, "rater_a": a, "rater_b": b})
-            fields[path] = {"state": state, "value": value, "eligible_known_gt": state == "agreed",
-                            "eligible_nd_gt": state == "agreed_not_determinable",
-                            "drop_known_gt": state != "agreed"}
+            # Historic yes/no passage votes are audit evidence, not a rule-derived
+            # benchmark answer. Preserve raw votes and agreement accounting without
+            # allowing old exports to bypass the current consistency-only policy.
+            fields[path] = {"state": state, "value": value, "rater_a": a, "rater_b": b,
+                            "consistency_only": consistency_only,
+                            "eligible_consistency_check": consistency_only and state == "agreed",
+                            "eligible_known_gt": not consistency_only and state == "agreed",
+                            "eligible_nd_gt": not consistency_only and state == "agreed_not_determinable",
+                            "drop_known_gt": consistency_only or state != "agreed"}
 
         def known(paths):
             return bool(paths) and all(fields[p]["eligible_known_gt"] for p in paths)
@@ -155,10 +162,11 @@ def calculate(first, second, dataset, catalogue, node=None):
                         "exact_set_labels_available": ready,
                         "reachable_marker_ids": [m for m, p in zip(surface_ids, paths) if matches(p, "yes")] if ready else None,
                         "blocked_fields": [p for p in paths if fields[p]["drop_known_gt"]]}
-        b_fields = [p for p in fields if p.startswith("pathways.")] + ["boundary.pane_transparency", "boundary.glazing", "boundary.object_identity_correct", "boundary.observed_state", "boundary.kind", "boundary.material"]
+        b_fields = ["boundary.pane_transparency", "boundary.glazing", "boundary.object_identity_correct", "boundary.observed_state", "boundary.kind", "boundary.material"]
         d_fields = [f"surfaces.{m}.{key}" for m in surface_ids for key in ("material", "hierarchy_id", "finish", "substrate_known")]
         substrate_fields = [f"surfaces.{m}.{key}" for m in surface_ids for key in ("substrate_material", "substrate_hierarchy_id")]
-        blocked = [p for p in fields if fields[p]["drop_known_gt"]]
+        blocked = [p for p in fields if (fields[p]["state"] != "agreed" if fields[p]["consistency_only"] else fields[p]["drop_known_gt"])]
+        consistency_warnings.append("Legacy passage votes are consistency checks only, never benchmark answers. Upgrade both raters to collect current opening facts and checklists; approved rule templates are still required.")
         episodes.append({"episode_id": left["episode_id"], "rater_status": [left["status"], right["status"]],
                          "excluded": excluded, "exclusion_reasons": [left["exclusion_reason"], right["exclusion_reason"]],
                          "all_fields_agreed_known": not blocked and not excluded,
@@ -172,10 +180,12 @@ def calculate(first, second, dataset, catalogue, node=None):
                          "marker_readiness": per_marker,
                          "family_annotation_coverage": {
                              "A": {"exposure_sets": family_a, "porous_not_exposed_items_require_reviewed_class_mapping": True},
-                             "B": {"pathway_labels_available": scene_valid and boundary_certified and closure_defined and known(b_fields), "boundary_visibility_certified": boundary_certified,
+                             "B": {"pathway_labels_available": False, "boundary_visibility_certified": boundary_certified,
+                                   "answer_source": "Approved rule applied to independently agreed boundary facts, never passage-check votes",
+                                   "human_passage_votes_are_gt": False, "rule_status": "pending_review", "upgrade_required": True,
                                    "sealed_counterfactual_defined": closure_defined,
                                    "blocked_fields": [p for p in b_fields if fields[p]["drop_known_gt"]],
-                                   "blocking_notes": [] if boundary_certified else ["Need two agreed visible pre-crossing boundary witnesses with certified boxes"]},
+                                   "blocking_notes": ["Legacy scope lacks the current opening checks, including blockage. Upgrade both raters; no approved rule or item generator is available."] + ([] if boundary_certified else ["Need two agreed visible pre-crossing boundary witnesses with certified boxes"])},
                              "C": {"enabled": False, "reason": "No reviewed, versioned and SHA-pinned VHC allowed-pairs table supplied"},
                              "D": {"material_inputs_available": scene_valid and known(d_fields), "class_comparison_gt_ready": False,
                                    "substrate_inputs_available": scene_valid and known(substrate_fields) and all(matches(f"surfaces.{m}.substrate_known", "yes") for m in surface_ids),
@@ -200,6 +210,7 @@ def calculate(first, second, dataset, catalogue, node=None):
             "created_at": datetime.now(timezone.utc).isoformat(), "annotators": raters,
             "layout": first["layout"], "independence_note": "Distinct IDs do not prove blinding; collection procedure must ensure independence.",
             "policy": {"adjudication": False, "exact_match_only": True, "unknown_is_negative": False,
+                       "human_passage_votes_are_gt": False, "passage_votes_consistency_only": True,
                        "nd_consensus_retained": True, "kappa_nd_policy": "ND is a category; second kappa excludes either-rater ND",
                        "kappa_null_meaning": "No comparisons or expected agreement equals one; not evidence of disagreement",
                        "material_text_normalization": "None; exact strings only", "family_c_enabled": False,

@@ -11,6 +11,7 @@ import hashlib
 import json
 from pathlib import Path
 import zipfile
+from build_boundary_measurements import build as build_boundary_measurements
 
 SITE = Path(__file__).resolve().parents[1]
 ROOT_FILES = {
@@ -22,7 +23,10 @@ ROOT_FILES = {
     "full.html", "full.js", "full.css", "full-core.js", "collection-tasks.json",
     "setup.html", "setup.js", "setup.css", "FULL_WORKFLOW.md", "RESEARCH_SETUP.md",
     "review.html", "review.js", "review-core.js", "RESEARCH_REVIEW.md",
-    "compact-core.js", "COMPACT_WORKFLOW.md",
+    "compact-core.js", "COMPACT_WORKFLOW.md", "boundary-measurements.json", "BOUNDARY_QUESTIONS.md",
+    "redpoint-core.js", "instance-labels.js", "RED_POINTS.md",
+    "SUN_RAIN.md",
+    "COLLECTION_CHECKS.md",
 }
 VALIDATION_FILES = {
     "browser_test_report.json", "scientific_review.md", "bundle_check.json",
@@ -35,6 +39,10 @@ VALIDATION_FILES = {
     "full_bundle_check.json",
     "compact_browser_report.json", "compact_conservation.json",
     "compact-desktop.png", "compact-mobile.png", "compact-exposure.png", "compact-exposure-mobile.png",
+    "boundary_browser_report.json", "boundary-desktop.png", "boundary-mobile.png",
+    "redpoint_browser_report.json", "redpoint-desktop.png", "redpoint-mobile.png", "redpoint_source_audit.json",
+    "sunrain_browser_report.json", "sunrain-desktop.png", "sunrain-mobile.png",
+    "collection_checks_browser_report.json", "checks-desktop.png", "checks-mobile.png",
 }
 
 
@@ -56,7 +64,14 @@ def main():
     manifest = target.with_suffix(target.suffix + ".manifest.json")
     if manifest.exists():
         parser.error("Archive manifest already exists; choose a new archive path.")
-    for name in ("compact_browser_report.json", "full_browser_report.json", "setup_browser_report.json", "review_browser_report.json",
+    if json.loads((SITE / "boundary-measurements.json").read_text()) != build_boundary_measurements(SITE):
+        parser.error("Boundary measurement supplement differs from the frozen mesh-instance source.")
+    source_audit = json.loads((SITE / "validation/redpoint_source_audit.json").read_text())
+    if source_audit.get("passed") is not True or any(
+            source_audit.get("input_sha256", {}).get(name) != sha(SITE / name)
+            for name in ("dataset.json", "catalogue.json", "collection-tasks.json")):
+        parser.error("Red-point source audit failed or belongs to a different dataset/task package.")
+    for name in ("collection_checks_browser_report.json", "sunrain_browser_report.json", "redpoint_browser_report.json", "boundary_browser_report.json", "compact_browser_report.json", "full_browser_report.json", "setup_browser_report.json", "review_browser_report.json",
                  "guided_browser_report.json", "browser_test_report.json"):
         evidence = json.loads((SITE / "validation" / name).read_text())
         checks = evidence.get("checks", [])

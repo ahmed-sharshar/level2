@@ -66,6 +66,39 @@ class CoreConsensusTests(unittest.TestCase):
         self.assertTrue(episode["drop_episode_known_gt"])
         self.assertFalse(episode["family_annotation_coverage"]["B"]["pathway_labels_available"])
 
+    def test_legacy_agreed_passage_votes_are_preserved_only_as_consistency_checks(self):
+        for value in ("yes", "no", "not_determinable"):
+            first, second = self.inputs()
+            for document in (first, second):
+                document["episodes"][0]["answers"]["pathways"]["d1"]["open"]["rain"] = value
+            originals = copy.deepcopy((first, second))
+            result = self.run_consensus(first, second)
+            field = result["episodes"][0]["fields"]["pathways.d1.open.rain"]
+            self.assertEqual((first, second), originals)
+            self.assertEqual((field["value"], field["rater_a"], field["rater_b"]), (value, value, value))
+            self.assertTrue(field["consistency_only"])
+            self.assertEqual(field["eligible_consistency_check"], value != "not_determinable")
+            self.assertFalse(field["eligible_known_gt"])
+            self.assertFalse(field["eligible_nd_gt"])
+            self.assertTrue(field["drop_known_gt"])
+            self.assertEqual(result["agreement_by_attribute"]["pathways.d1.open.rain"]["n_agreed"], 1)
+            self.assertFalse(result["episodes"][0]["family_annotation_coverage"]["B"]["pathway_labels_available"])
+
+    def test_legacy_passage_disagreement_keeps_both_votes_and_drops_the_item(self):
+        first, second = self.inputs()
+        first["episodes"][0]["answers"]["pathways"]["d1"]["open"]["rain"] = "yes"
+        second["episodes"][0]["answers"]["pathways"]["d1"]["open"]["rain"] = "no"
+        result = self.run_consensus(first, second)
+        episode = result["episodes"][0]
+        field = episode["fields"]["pathways.d1.open.rain"]
+        self.assertEqual(field["state"], "disagreement")
+        self.assertIsNone(field["value"])
+        self.assertEqual((field["rater_a"], field["rater_b"]), ("yes", "no"))
+        self.assertFalse(field["eligible_consistency_check"])
+        self.assertFalse(field["eligible_known_gt"])
+        self.assertIn("pathways.d1.open.rain", episode["drop_fields"])
+        self.assertEqual(result["agreement_by_attribute"]["pathways.d1.open.rain"]["n_disagreement"], 1)
+
     def test_excluded_rater_drops_episode_not_silent_agreement(self):
         first, second = self.inputs()
         second["episodes"][0]["status"] = "excluded"
@@ -107,12 +140,17 @@ class CoreConsensusTests(unittest.TestCase):
                 a["boundary_visibility"][frame].update(visibility="reflection", object_match="yes", box_correct="yes")
         ep = self.run_consensus(first, second)["episodes"][0]
         self.assertFalse(ep["family_annotation_coverage"]["B"]["pathway_labels_available"])
+        self.assertFalse(ep["boundary_certification"]["certified"])
         self.assertEqual(ep["boundary_certification"]["agreed_seen_in_rgb_frames_including_reflection"], ["f01", "f02"])
         for document in (first, second):
             for frame in ("f01", "f02"):
                 document["episodes"][0]["answers"]["boundary_visibility"][frame]["visibility"] = "direct"
         ep = self.run_consensus(first, second)["episodes"][0]
-        self.assertTrue(ep["family_annotation_coverage"]["B"]["pathway_labels_available"])
+        self.assertTrue(ep["boundary_certification"]["certified"])
+        self.assertTrue(ep["family_annotation_coverage"]["B"]["boundary_visibility_certified"])
+        self.assertFalse(ep["family_annotation_coverage"]["B"]["pathway_labels_available"])
+        self.assertTrue(ep["family_annotation_coverage"]["B"]["upgrade_required"])
+        self.assertEqual(ep["family_annotation_coverage"]["B"]["rule_status"], "pending_review")
         self.assertEqual(ep["boundary_certification"]["agreed_pre_crossing_witness_frames"], ["f01", "f02"])
 
     def test_open_passage_does_not_invent_sealed_closure(self):

@@ -1,0 +1,3711 @@
+{
+  "schema": "blockmind_boundary_measurements_v1",
+  "dataset_build_id": "086c77833a83310fa34a6d286c4c3d9c5f51bf12231d22f0f0143c9aac717bce",
+  "dataset_sha256": "a7d6d75977cf7310f629a3485f11551a42c5328ba15d885ed0ed2fa6483ee4ae",
+  "method": "native_instance_obb_horizontal_major_extent",
+  "method_definition": "For the same native boundary object as the visibility mask, read the mesh-instance OBB from the .house O record in the frozen instance lookup. Reconstruct axis2 = axis0 cross axis1; require one vertical and two horizontal axes in native Z-up coordinates. Object span = twice the larger horizontal OBB radius. These are full extents, not radii or an XY axis-aligned diagonal.",
+  "model_visible": false,
+  "human_annotation": false,
+  "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+  "episode_count": 56,
+  "available_count": 56,
+  "episodes": {
+    "scene_001_1LXtFkjw3qL_O103": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.90625,
+      "thickness_m": 0.253564,
+      "height_m": 2.45848,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -3.7028,
+          -10.3003,
+          1.26161
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.22924,
+          0.953125,
+          0.126782
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_001_1LXtFkjw3qL_O103",
+      "scan_id": "1LXtFkjw3qL",
+      "boundary_object_id": 103,
+      "source": {
+        "asset": "data/geometry/1LXtFkjw3qL.json",
+        "sha256": "95369bd423ef88b31805ed5ce70db453ac347a979a209e3e1d028028657b968c",
+        "record": "objects.103",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 5,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_002_1LXtFkjw3qL_O107": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.854026,
+      "thickness_m": 0.169485,
+      "height_m": 2.45582,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -3.67798,
+          -12.2327,
+          1.26106
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.22791,
+          0.927013,
+          0.0847425
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_002_1LXtFkjw3qL_O107",
+      "scan_id": "1LXtFkjw3qL",
+      "boundary_object_id": 107,
+      "source": {
+        "asset": "data/geometry/1LXtFkjw3qL.json",
+        "sha256": "95369bd423ef88b31805ed5ce70db453ac347a979a209e3e1d028028657b968c",
+        "record": "objects.107",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 5,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_003_1LXtFkjw3qL_O265": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.184948,
+      "thickness_m": 0.1569116,
+      "height_m": 2.8611,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          2.84135,
+          -1.6905,
+          1.4591
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.43055,
+          0.592474,
+          0.0784558
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_003_1LXtFkjw3qL_O265",
+      "scan_id": "1LXtFkjw3qL",
+      "boundary_object_id": 265,
+      "source": {
+        "asset": "data/geometry/1LXtFkjw3qL.json",
+        "sha256": "95369bd423ef88b31805ed5ce70db453ac347a979a209e3e1d028028657b968c",
+        "record": "objects.265",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 12,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_004_1LXtFkjw3qL_O162": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.841984,
+      "thickness_m": 0.974732,
+      "height_m": 2.53254,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -4.48587,
+          -6.75926,
+          1.30437
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.9238797538373538,
+            0.38268289803626016,
+            -0.0
+          ],
+          [
+            -0.38268289803626016,
+            0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.26627,
+          0.920992,
+          0.487366
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.9238797538373538,
+        0.38268289803626016,
+        -0.0
+      ],
+      "episode_id": "scene_004_1LXtFkjw3qL_O162",
+      "scan_id": "1LXtFkjw3qL",
+      "boundary_object_id": 162,
+      "source": {
+        "asset": "data/geometry/1LXtFkjw3qL.json",
+        "sha256": "95369bd423ef88b31805ed5ce70db453ac347a979a209e3e1d028028657b968c",
+        "record": "objects.162",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 7,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_005_1pXnuDYAj8r_O746": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.0888,
+      "thickness_m": 1.012668,
+      "height_m": 2.65926,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          4.65332,
+          -0.91776,
+          1.26645
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.38268289803626016,
+            0.9238797538373538,
+            0.0
+          ],
+          [
+            -0.9238797538373538,
+            -0.38268289803626016,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.32963,
+          1.0444,
+          0.506334
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.38268289803626016,
+        0.9238797538373538,
+        0.0
+      ],
+      "episode_id": "scene_005_1pXnuDYAj8r_O746",
+      "scan_id": "1pXnuDYAj8r",
+      "boundary_object_id": 746,
+      "source": {
+        "asset": "data/geometry/1pXnuDYAj8r.json",
+        "sha256": "2b642c52b9b778e4c804c5e97a9802a99ef5884d76fc18b8f872dee469f69617",
+        "record": "objects.746",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 20,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_006_2azQ1b91cZZ_O91": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.16136,
+      "thickness_m": 0.750394,
+      "height_m": 2.48462,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          7.61146,
+          -6.87265,
+          1.21755
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.24231,
+          1.08068,
+          0.375197
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_006_2azQ1b91cZZ_O91",
+      "scan_id": "2azQ1b91cZZ",
+      "boundary_object_id": 91,
+      "source": {
+        "asset": "data/geometry/2azQ1b91cZZ.json",
+        "sha256": "c0b94491e61120bf3bd8fda9549dc1297d939884fa507a1cdcabe19441f4f408",
+        "record": "objects.91",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 2,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_007_2azQ1b91cZZ_O165": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.3908,
+      "thickness_m": 0.73047,
+      "height_m": 2.5821,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          3.49071,
+          -7.02714,
+          1.26955
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.29105,
+          1.1954,
+          0.365235
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_007_2azQ1b91cZZ_O165",
+      "scan_id": "2azQ1b91cZZ",
+      "boundary_object_id": 165,
+      "source": {
+        "asset": "data/geometry/2azQ1b91cZZ.json",
+        "sha256": "c0b94491e61120bf3bd8fda9549dc1297d939884fa507a1cdcabe19441f4f408",
+        "record": "objects.165",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 4,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_008_2azQ1b91cZZ_O677": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.768792,
+      "thickness_m": 0.206144,
+      "height_m": 2.13564,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          5.25663,
+          -5.25911,
+          4.46177
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.7071067811865475,
+            -0.7071067811865475,
+            0.0
+          ],
+          [
+            0.7071067811865476,
+            -0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.06782,
+          0.384396,
+          0.103072
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.7071067811865475,
+        -0.7071067811865475,
+        0.0
+      ],
+      "episode_id": "scene_008_2azQ1b91cZZ_O677",
+      "scan_id": "2azQ1b91cZZ",
+      "boundary_object_id": 677,
+      "source": {
+        "asset": "data/geometry/2azQ1b91cZZ.json",
+        "sha256": "c0b94491e61120bf3bd8fda9549dc1297d939884fa507a1cdcabe19441f4f408",
+        "record": "objects.677",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 21,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_009_5ZKStnWn8Zo_O88": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.76973,
+      "thickness_m": 0.397876,
+      "height_m": 2.05226,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          14.9743,
+          -1.3216,
+          1.1465
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.7071067811865475,
+            -0.7071067811865475,
+            0.0
+          ],
+          [
+            0.7071067811865476,
+            -0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.02613,
+          0.384865,
+          0.198938
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.7071067811865475,
+        -0.7071067811865475,
+        0.0
+      ],
+      "episode_id": "scene_009_5ZKStnWn8Zo_O88",
+      "scan_id": "5ZKStnWn8Zo",
+      "boundary_object_id": 88,
+      "source": {
+        "asset": "data/geometry/5ZKStnWn8Zo.json",
+        "sha256": "2e58ebe236961e285689f2159546f6204a9648647cc8f28cd1a7888fcda23dab",
+        "record": "objects.88",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 2,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_010_5ZKStnWn8Zo_O548": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.054156,
+      "thickness_m": 0.334414,
+      "height_m": 2.17454,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          15.0734,
+          -6.41861,
+          -2.00463
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.08727,
+          0.527078,
+          0.167207
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.9238797538373538,
+        0.38268289803626016,
+        0.0
+      ],
+      "episode_id": "scene_010_5ZKStnWn8Zo_O548",
+      "scan_id": "5ZKStnWn8Zo",
+      "boundary_object_id": 548,
+      "source": {
+        "asset": "data/geometry/5ZKStnWn8Zo.json",
+        "sha256": "2e58ebe236961e285689f2159546f6204a9648647cc8f28cd1a7888fcda23dab",
+        "record": "objects.548",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 14,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_011_5ZKStnWn8Zo_O910": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.898758,
+      "thickness_m": 0.299082,
+      "height_m": 2.09858,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -1.89949,
+          -3.46599,
+          -1.94055
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.04929,
+          0.449379,
+          0.149541
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_011_5ZKStnWn8Zo_O910",
+      "scan_id": "5ZKStnWn8Zo",
+      "boundary_object_id": 910,
+      "source": {
+        "asset": "data/geometry/5ZKStnWn8Zo.json",
+        "sha256": "2e58ebe236961e285689f2159546f6204a9648647cc8f28cd1a7888fcda23dab",
+        "record": "objects.910",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 23,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_012_5ZKStnWn8Zo_O180": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.729092,
+      "thickness_m": 0.225334,
+      "height_m": 2.06426,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          14.4513,
+          -5.55247,
+          1.12366
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.03213,
+          0.364546,
+          0.112667
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_012_5ZKStnWn8Zo_O180",
+      "scan_id": "5ZKStnWn8Zo",
+      "boundary_object_id": 180,
+      "source": {
+        "asset": "data/geometry/5ZKStnWn8Zo.json",
+        "sha256": "2e58ebe236961e285689f2159546f6204a9648647cc8f28cd1a7888fcda23dab",
+        "record": "objects.180",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 4,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_013_82sE5b5pLXE_O510": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.770032,
+      "thickness_m": 0.1695368,
+      "height_m": 1.889902,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -16.9148,
+          20.2203,
+          1.03685
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.7071067811865475,
+            0.7071067811865475,
+            -0.0
+          ],
+          [
+            -0.7071067811865476,
+            0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          0.944951,
+          0.385016,
+          0.0847684
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.7071067811865475,
+        0.7071067811865475,
+        -0.0
+      ],
+      "episode_id": "scene_013_82sE5b5pLXE_O510",
+      "scan_id": "82sE5b5pLXE",
+      "boundary_object_id": 510,
+      "source": {
+        "asset": "data/geometry/82sE5b5pLXE.json",
+        "sha256": "988075ce07e41d8bb4a8ad61fe4c2982277afa62c27321533d7ef9fcaf1e8783",
+        "record": "objects.510",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 14,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_014_ARNzJeq3xxb_O310": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.899168,
+      "thickness_m": 0.288878,
+      "height_m": 2.13356,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -0.0118444,
+          2.87029,
+          1.29824
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.06678,
+          0.449584,
+          0.144439
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_014_ARNzJeq3xxb_O310",
+      "scan_id": "ARNzJeq3xxb",
+      "boundary_object_id": 310,
+      "source": {
+        "asset": "data/geometry/ARNzJeq3xxb.json",
+        "sha256": "5a974dca0151426c5dd8f60fe060fb8de1cbf680ce1d9a03fbb41c6313289e74",
+        "record": "objects.310",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 12,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_015_D7N2EKCX4Sj_O628": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.9232,
+      "thickness_m": 0.58009,
+      "height_m": 2.43838,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          8.3015,
+          -4.8991,
+          1.14089
+        ],
+        "axes_world": [
+          [
+            -1.0,
+            2.22045e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            2.22045e-16,
+            1.0,
+            -0.0
+          ]
+        ],
+        "radii_m": [
+          1.4616,
+          1.21919,
+          0.290045
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 0,
+      "width_axis_world": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "episode_id": "scene_015_D7N2EKCX4Sj_O628",
+      "scan_id": "D7N2EKCX4Sj",
+      "boundary_object_id": 628,
+      "source": {
+        "asset": "data/geometry/D7N2EKCX4Sj.json",
+        "sha256": "b504da74a6b52dbae3f8248d69fb651e2f69e7927c7ca9ff4760ca5a2e21f0fe",
+        "record": "objects.628",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "tarrace door",
+        "mpcat40_id": 40,
+        "mpcat40_name": "misc",
+        "region_id": 11,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_016_D7N2EKCX4Sj_O66": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.000506,
+      "thickness_m": 0.554972,
+      "height_m": 2.12766,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          8.83592,
+          -5.05466,
+          -2.26862
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.06383,
+          0.500253,
+          0.277486
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_016_D7N2EKCX4Sj_O66",
+      "scan_id": "D7N2EKCX4Sj",
+      "boundary_object_id": 66,
+      "source": {
+        "asset": "data/geometry/D7N2EKCX4Sj.json",
+        "sha256": "b504da74a6b52dbae3f8248d69fb651e2f69e7927c7ca9ff4760ca5a2e21f0fe",
+        "record": "objects.66",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 1,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_017_D7N2EKCX4Sj_O9": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.945456,
+      "thickness_m": 0.30252,
+      "height_m": 2.08766,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -1.13794,
+          -6.17506,
+          -2.25623
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.38268289803626016,
+            0.9238797538373538,
+            -0.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.04383,
+          0.472728,
+          0.15126
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.38268289803626016,
+        0.9238797538373538,
+        -0.0
+      ],
+      "episode_id": "scene_017_D7N2EKCX4Sj_O9",
+      "scan_id": "D7N2EKCX4Sj",
+      "boundary_object_id": 9,
+      "source": {
+        "asset": "data/geometry/D7N2EKCX4Sj.json",
+        "sha256": "b504da74a6b52dbae3f8248d69fb651e2f69e7927c7ca9ff4760ca5a2e21f0fe",
+        "record": "objects.9",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 0,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_018_EDJbREhghzL_O5": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.063376,
+      "thickness_m": 0.254008,
+      "height_m": 2.13028,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -7.93396,
+          -5.39382,
+          4.19108
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.7071067811865475,
+            0.7071067811865475,
+            -0.0
+          ],
+          [
+            -0.7071067811865476,
+            0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.06514,
+          0.531688,
+          0.127004
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.7071067811865475,
+        0.7071067811865475,
+        -0.0
+      ],
+      "episode_id": "scene_018_EDJbREhghzL_O5",
+      "scan_id": "EDJbREhghzL",
+      "boundary_object_id": 5,
+      "source": {
+        "asset": "data/geometry/EDJbREhghzL.json",
+        "sha256": "6f99d7b0b82c9844618c91208ea38f4f0c30eccc22e573b975d90544dfc2adf3",
+        "record": "objects.5",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 0,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_019_HxpKQynjfin_O103": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.737398,
+      "thickness_m": 0.35592,
+      "height_m": 2.16582,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          0.521649,
+          -5.10378,
+          1.10341
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -1.0,
+            2.22045e-16,
+            0.0
+          ],
+          [
+            -2.22045e-16,
+            -1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.08291,
+          0.868699,
+          0.17796
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "episode_id": "scene_019_HxpKQynjfin_O103",
+      "scan_id": "HxpKQynjfin",
+      "boundary_object_id": 103,
+      "source": {
+        "asset": "data/geometry/HxpKQynjfin.json",
+        "sha256": "395887998f900055678adb411d9c9d4d41cb351da26d48588a602ebb06f6a0de",
+        "record": "objects.103",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "doors",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 6,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_020_PX4nDJXEHrG_O121": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.868982,
+      "thickness_m": 0.1256018,
+      "height_m": 2.22038,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -13.442,
+          4.7028,
+          -1.96641
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.11019,
+          0.434491,
+          0.0628009
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_020_PX4nDJXEHrG_O121",
+      "scan_id": "PX4nDJXEHrG",
+      "boundary_object_id": 121,
+      "source": {
+        "asset": "data/geometry/PX4nDJXEHrG.json",
+        "sha256": "23d25577f33f4fa042f91056510b4a722b0cdee66b4a306fed2a36f031d6fe8c",
+        "record": "objects.121",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 7,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_021_PX4nDJXEHrG_O621": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.077904,
+      "thickness_m": 0.370848,
+      "height_m": 2.45078,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -10.1863,
+          -0.977474,
+          1.23063
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.22539,
+          0.538952,
+          0.185424
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_021_PX4nDJXEHrG_O621",
+      "scan_id": "PX4nDJXEHrG",
+      "boundary_object_id": 621,
+      "source": {
+        "asset": "data/geometry/PX4nDJXEHrG.json",
+        "sha256": "23d25577f33f4fa042f91056510b4a722b0cdee66b4a306fed2a36f031d6fe8c",
+        "record": "objects.621",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 29,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_022_PX4nDJXEHrG_O995": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.996646,
+      "thickness_m": 0.36675,
+      "height_m": 1.989648,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -12.585,
+          16.1136,
+          3.51522
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            2.22045e-16,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            2.22045e-16,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          0.994824,
+          0.498323,
+          0.183375
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        2.22045e-16,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_022_PX4nDJXEHrG_O995",
+      "scan_id": "PX4nDJXEHrG",
+      "boundary_object_id": 995,
+      "source": {
+        "asset": "data/geometry/PX4nDJXEHrG.json",
+        "sha256": "23d25577f33f4fa042f91056510b4a722b0cdee66b4a306fed2a36f031d6fe8c",
+        "record": "objects.995",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 43,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_023_SN83YJsR3w2_O1134": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.2876,
+      "thickness_m": 1.245232,
+      "height_m": 2.58412,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -3.88434,
+          9.19974,
+          1.30804
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.7071067811865475,
+            0.7071067811865475,
+            -0.0
+          ],
+          [
+            -0.7071067811865476,
+            0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.29206,
+          1.1438,
+          0.622616
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.7071067811865475,
+        0.7071067811865475,
+        -0.0
+      ],
+      "episode_id": "scene_023_SN83YJsR3w2_O1134",
+      "scan_id": "SN83YJsR3w2",
+      "boundary_object_id": 1134,
+      "source": {
+        "asset": "data/geometry/SN83YJsR3w2.json",
+        "sha256": "932009bfd4cd6dd5e8254a9bc476f4f94a0d58a8a9f19e2a7f46351adc06d340",
+        "record": "objects.1134",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 48,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_024_Uxmj2M2itWa_O12": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.942048,
+      "thickness_m": 0.266206,
+      "height_m": 2.2021,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          10.5608,
+          1.4534,
+          1.83201
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.7071067811865475,
+            0.7071067811865475,
+            -0.0
+          ],
+          [
+            -0.7071067811865476,
+            0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.10105,
+          0.471024,
+          0.133103
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.7071067811865475,
+        0.7071067811865475,
+        -0.0
+      ],
+      "episode_id": "scene_024_Uxmj2M2itWa_O12",
+      "scan_id": "Uxmj2M2itWa",
+      "boundary_object_id": 12,
+      "source": {
+        "asset": "data/geometry/Uxmj2M2itWa.json",
+        "sha256": "f5df973d20704281c49fefa303d4e5d5a5566284b62661afb92a9486a62d3659",
+        "record": "objects.12",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 0,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_025_VFuaQ6m2Qom_O391": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.08414,
+      "thickness_m": 0.818028,
+      "height_m": 2.97992,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -12.6495,
+          13.4765,
+          1.50915
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.48996,
+          1.04207,
+          0.409014
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.9238797538373538,
+        0.38268289803626016,
+        0.0
+      ],
+      "episode_id": "scene_025_VFuaQ6m2Qom_O391",
+      "scan_id": "VFuaQ6m2Qom",
+      "boundary_object_id": 391,
+      "source": {
+        "asset": "data/geometry/VFuaQ6m2Qom.json",
+        "sha256": "70d60805120fc6be5ca97fe491ca5a3761c8e0b5c7e95f70ab36c12fdaef747f",
+        "record": "objects.391",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 19,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_026_Vvot9Ly1tCj_O23": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.157994,
+      "thickness_m": 0.18155,
+      "height_m": 2.3667,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -8.41104,
+          -12.7594,
+          1.21757
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.18335,
+          0.578997,
+          0.090775
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_026_Vvot9Ly1tCj_O23",
+      "scan_id": "Vvot9Ly1tCj",
+      "boundary_object_id": 23,
+      "source": {
+        "asset": "data/geometry/Vvot9Ly1tCj.json",
+        "sha256": "2a2e8a47061655bee2d8b2b772cdd9706c929ea79f90363bc09c7197d0fe9a2d",
+        "record": "objects.23",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 0,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_027_Vvot9Ly1tCj_O617": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.024636,
+      "thickness_m": 0.29726,
+      "height_m": 2.63456,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -4.19778,
+          -6.04863,
+          1.234
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.7071067811865475,
+            0.7071067811865475,
+            0.0
+          ],
+          [
+            -0.7071067811865476,
+            -0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.31728,
+          0.512318,
+          0.14863
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.7071067811865475,
+        0.7071067811865475,
+        0.0
+      ],
+      "episode_id": "scene_027_Vvot9Ly1tCj_O617",
+      "scan_id": "Vvot9Ly1tCj",
+      "boundary_object_id": 617,
+      "source": {
+        "asset": "data/geometry/Vvot9Ly1tCj.json",
+        "sha256": "2a2e8a47061655bee2d8b2b772cdd9706c929ea79f90363bc09c7197d0fe9a2d",
+        "record": "objects.617",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 25,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_028_Vvot9Ly1tCj_O599": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.518334,
+      "thickness_m": 0.410616,
+      "height_m": 3.05094,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -1.51537,
+          -5.81738,
+          1.48544
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.52547,
+          0.759167,
+          0.205308
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_028_Vvot9Ly1tCj_O599",
+      "scan_id": "Vvot9Ly1tCj",
+      "boundary_object_id": 599,
+      "source": {
+        "asset": "data/geometry/Vvot9Ly1tCj.json",
+        "sha256": "2a2e8a47061655bee2d8b2b772cdd9706c929ea79f90363bc09c7197d0fe9a2d",
+        "record": "objects.599",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 25,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_029_Vvot9Ly1tCj_O608": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.057686,
+      "thickness_m": 0.354616,
+      "height_m": 2.54834,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          6.05093,
+          -9.37695,
+          1.19073
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.27417,
+          0.528843,
+          0.177308
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.9238797538373538,
+        0.38268289803626016,
+        0.0
+      ],
+      "episode_id": "scene_029_Vvot9Ly1tCj_O608",
+      "scan_id": "Vvot9Ly1tCj",
+      "boundary_object_id": 608,
+      "source": {
+        "asset": "data/geometry/Vvot9Ly1tCj.json",
+        "sha256": "2a2e8a47061655bee2d8b2b772cdd9706c929ea79f90363bc09c7197d0fe9a2d",
+        "record": "objects.608",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 25,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_030_VzqfbhrpDEA_O1301": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.017722,
+      "thickness_m": 0.243502,
+      "height_m": 2.4825,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -21.2931,
+          11.7122,
+          4.70818
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.24125,
+          0.508861,
+          0.121751
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_030_VzqfbhrpDEA_O1301",
+      "scan_id": "VzqfbhrpDEA",
+      "boundary_object_id": 1301,
+      "source": {
+        "asset": "data/geometry/VzqfbhrpDEA.json",
+        "sha256": "5784e5db65f810047eec12fc2223611f087c374c189d1129ff1b5359d3997ef8",
+        "record": "objects.1301",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 31,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_031_ac26ZMwG7aT_O449": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.634994,
+      "thickness_m": 0.242192,
+      "height_m": 2.33648,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          5.25008,
+          -5.4456,
+          0.986137
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.7071067811865475,
+            0.7071067811865475,
+            -0.0
+          ],
+          [
+            -0.7071067811865476,
+            0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.16824,
+          0.817497,
+          0.121096
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.7071067811865475,
+        0.7071067811865475,
+        -0.0
+      ],
+      "episode_id": "scene_031_ac26ZMwG7aT_O449",
+      "scan_id": "ac26ZMwG7aT",
+      "boundary_object_id": 449,
+      "source": {
+        "asset": "data/geometry/ac26ZMwG7aT.json",
+        "sha256": "eec5569c70b12032e4f8043bbc18f574285aa47561270cb9977cad71c8705abb",
+        "record": "objects.449",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 10,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_032_b8cTxDM8gDG_O302": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.1604,
+      "thickness_m": 0.394848,
+      "height_m": 2.69316,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -23.101,
+          0.083861,
+          -1.74021
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.34658,
+          1.0802,
+          0.197424
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_032_b8cTxDM8gDG_O302",
+      "scan_id": "b8cTxDM8gDG",
+      "boundary_object_id": 302,
+      "source": {
+        "asset": "data/geometry/b8cTxDM8gDG.json",
+        "sha256": "353dfde14f54f028de475e908f9ba3ec8796059fb1c5eec27d7af550752d6ac6",
+        "record": "objects.302",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 8,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_033_cV4RVeZvu5T_O2": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.970526,
+      "thickness_m": 0.454502,
+      "height_m": 2.13832,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          1.97959,
+          0.893968,
+          4.32498
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.7071067811865475,
+            0.7071067811865475,
+            0.0
+          ],
+          [
+            -0.7071067811865476,
+            -0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.06916,
+          0.485263,
+          0.227251
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.7071067811865475,
+        0.7071067811865475,
+        0.0
+      ],
+      "episode_id": "scene_033_cV4RVeZvu5T_O2",
+      "scan_id": "cV4RVeZvu5T",
+      "boundary_object_id": 2,
+      "source": {
+        "asset": "data/geometry/cV4RVeZvu5T.json",
+        "sha256": "a8531a5af5d21f1a5cc5ee588b9a7a19b786c8260a2e0636184a0e4cc18cb37a",
+        "record": "objects.2",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 0,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_034_e9zR4mvMWw7_O142": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.0303,
+      "thickness_m": 0.285214,
+      "height_m": 2.27068,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          15.9424,
+          5.36803,
+          0.990674
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.13534,
+          1.01515,
+          0.142607
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_034_e9zR4mvMWw7_O142",
+      "scan_id": "e9zR4mvMWw7",
+      "boundary_object_id": 142,
+      "source": {
+        "asset": "data/geometry/e9zR4mvMWw7.json",
+        "sha256": "3da6077750438c0c37e52deb5a7ed366b4ce4ff1560d90400c68554198b077af",
+        "record": "objects.142",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 7,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_035_kEZ7cmS4wCh_O56": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.40937,
+      "thickness_m": 0.261382,
+      "height_m": 3.02858,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          3.94631,
+          12.0121,
+          1.08285
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.51429,
+          0.704685,
+          0.130691
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.9238797538373538,
+        0.38268289803626016,
+        0.0
+      ],
+      "episode_id": "scene_035_kEZ7cmS4wCh_O56",
+      "scan_id": "kEZ7cmS4wCh",
+      "boundary_object_id": 56,
+      "source": {
+        "asset": "data/geometry/kEZ7cmS4wCh.json",
+        "sha256": "3a1c5ee62434be3dbab30030426dcf415a733ac3f8901ff0e186d072a7be0073",
+        "record": "objects.56",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 3,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_036_p5wJjkQkbXX_O113": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.863304,
+      "thickness_m": 0.176686,
+      "height_m": 2.08408,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -1.85598,
+          6.09782,
+          -1.69489
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.04204,
+          0.431652,
+          0.088343
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.9238797538373538,
+        0.38268289803626016,
+        0.0
+      ],
+      "episode_id": "scene_036_p5wJjkQkbXX_O113",
+      "scan_id": "p5wJjkQkbXX",
+      "boundary_object_id": 113,
+      "source": {
+        "asset": "data/geometry/p5wJjkQkbXX.json",
+        "sha256": "feeb2a2b42802210774e4e36c50c6825d64f9e54338fbc429d20f050edc4ed58",
+        "record": "objects.113",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 5,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_037_p5wJjkQkbXX_O570": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.16084,
+      "thickness_m": 0.613104,
+      "height_m": 2.4904,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -10.2244,
+          1.95743,
+          1.18865
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ],
+          [
+            0.9238797538373538,
+            -0.38268289803626016,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.2452,
+          0.58042,
+          0.306552
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.38268289803626016,
+        -0.9238797538373538,
+        0.0
+      ],
+      "episode_id": "scene_037_p5wJjkQkbXX_O570",
+      "scan_id": "p5wJjkQkbXX",
+      "boundary_object_id": 570,
+      "source": {
+        "asset": "data/geometry/p5wJjkQkbXX.json",
+        "sha256": "feeb2a2b42802210774e4e36c50c6825d64f9e54338fbc429d20f050edc4ed58",
+        "record": "objects.570",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 28,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_038_p5wJjkQkbXX_O597": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.79422,
+      "thickness_m": 0.440424,
+      "height_m": 2.6265,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          0.760037,
+          -1.29227,
+          1.24467
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.31325,
+          0.89711,
+          0.220212
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_038_p5wJjkQkbXX_O597",
+      "scan_id": "p5wJjkQkbXX",
+      "boundary_object_id": 597,
+      "source": {
+        "asset": "data/geometry/p5wJjkQkbXX.json",
+        "sha256": "feeb2a2b42802210774e4e36c50c6825d64f9e54338fbc429d20f050edc4ed58",
+        "record": "objects.597",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 20,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_039_pRbA3pwrgk9_O406": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.903282,
+      "thickness_m": 0.549392,
+      "height_m": 2.75536,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -1.58472,
+          -7.52728,
+          3.3966
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.38268289803626016,
+            0.9238797538373538,
+            -0.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.37768,
+          0.451641,
+          0.274696
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.38268289803626016,
+        0.9238797538373538,
+        -0.0
+      ],
+      "episode_id": "scene_039_pRbA3pwrgk9_O406",
+      "scan_id": "pRbA3pwrgk9",
+      "boundary_object_id": 406,
+      "source": {
+        "asset": "data/geometry/pRbA3pwrgk9.json",
+        "sha256": "5be61405b136013a17151898d252260b7af5e2e59e318745af441b6dcc11debe",
+        "record": "objects.406",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 20,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_040_q9vSo1VnCiC_O234": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 6.89616,
+      "thickness_m": 0.579698,
+      "height_m": 2.49998,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -0.124605,
+          -5.77568,
+          1.26744
+        ],
+        "axes_world": [
+          [
+            -1.0,
+            2.22045e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            2.22045e-16,
+            1.0,
+            -0.0
+          ]
+        ],
+        "radii_m": [
+          3.44808,
+          1.24999,
+          0.289849
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 0,
+      "width_axis_world": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "episode_id": "scene_040_q9vSo1VnCiC_O234",
+      "scan_id": "q9vSo1VnCiC",
+      "boundary_object_id": 234,
+      "source": {
+        "asset": "data/geometry/q9vSo1VnCiC.json",
+        "sha256": "bb344de4d48cce1da3f525a758bc4818195d26f33dc0df15cfe5b37be55a0eb7",
+        "record": "objects.234",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 10,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_041_qoiz87JEwZ2_O68": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.651216,
+      "thickness_m": 0.215282,
+      "height_m": 2.41568,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -2.88911,
+          12.2671,
+          -2.02121
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -1.0,
+            2.22045e-16,
+            0.0
+          ],
+          [
+            -2.22045e-16,
+            -1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.20784,
+          0.825608,
+          0.107641
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "episode_id": "scene_041_qoiz87JEwZ2_O68",
+      "scan_id": "qoiz87JEwZ2",
+      "boundary_object_id": 68,
+      "source": {
+        "asset": "data/geometry/qoiz87JEwZ2.json",
+        "sha256": "b03e8b9dd7d8a22eae81b99cc8a58cf9f7c601f8a272f28132188b7efacfac45",
+        "record": "objects.68",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 1,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_042_r1Q1Z4BcV1o_O469": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.065102,
+      "thickness_m": 0.421922,
+      "height_m": 2.2298,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -6.06712,
+          -12.0327,
+          1.0849
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.38268289803626016,
+            0.9238797538373538,
+            0.0
+          ],
+          [
+            -0.9238797538373538,
+            -0.38268289803626016,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.1149,
+          0.532551,
+          0.210961
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.38268289803626016,
+        0.9238797538373538,
+        0.0
+      ],
+      "episode_id": "scene_042_r1Q1Z4BcV1o_O469",
+      "scan_id": "r1Q1Z4BcV1o",
+      "boundary_object_id": 469,
+      "source": {
+        "asset": "data/geometry/r1Q1Z4BcV1o.json",
+        "sha256": "704d8e498918fe8b6c4e8f6e07829f68be4b4b8cbb306ed5ab3af221e8249a22",
+        "record": "objects.469",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 12,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_043_rPc6DW4iMge_O220": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 3.53566,
+      "thickness_m": 0.327574,
+      "height_m": 2.63254,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -4.11452,
+          -15.3648,
+          1.33142
+        ],
+        "axes_world": [
+          [
+            -1.0,
+            2.22045e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            2.22045e-16,
+            1.0,
+            -0.0
+          ]
+        ],
+        "radii_m": [
+          1.76783,
+          1.31627,
+          0.163787
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 0,
+      "width_axis_world": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "episode_id": "scene_043_rPc6DW4iMge_O220",
+      "scan_id": "rPc6DW4iMge",
+      "boundary_object_id": 220,
+      "source": {
+        "asset": "data/geometry/rPc6DW4iMge.json",
+        "sha256": "9887ac075ed71083543de6655b1c18ae76f5781fda0e3891f5f20ffc3bf7cd5c",
+        "record": "objects.220",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 11,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_044_rPc6DW4iMge_O242": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.835136,
+      "thickness_m": 0.404984,
+      "height_m": 2.4753,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -1.00902,
+          -14.4897,
+          1.26126
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -1.0,
+            2.22045e-16,
+            0.0
+          ],
+          [
+            -2.22045e-16,
+            -1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.23765,
+          0.417568,
+          0.202492
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -1.0,
+        2.22045e-16,
+        0.0
+      ],
+      "episode_id": "scene_044_rPc6DW4iMge_O242",
+      "scan_id": "rPc6DW4iMge",
+      "boundary_object_id": 242,
+      "source": {
+        "asset": "data/geometry/rPc6DW4iMge.json",
+        "sha256": "9887ac075ed71083543de6655b1c18ae76f5781fda0e3891f5f20ffc3bf7cd5c",
+        "record": "objects.242",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 12,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_045_rPc6DW4iMge_O85": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.9728,
+      "thickness_m": 0.1699334,
+      "height_m": 2.41148,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          0.337431,
+          -14.1608,
+          -2.13678
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.20574,
+          0.9864,
+          0.0849667
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_045_rPc6DW4iMge_O85",
+      "scan_id": "rPc6DW4iMge",
+      "boundary_object_id": 85,
+      "source": {
+        "asset": "data/geometry/rPc6DW4iMge.json",
+        "sha256": "9887ac075ed71083543de6655b1c18ae76f5781fda0e3891f5f20ffc3bf7cd5c",
+        "record": "objects.85",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 3,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_046_sT4fr6TAbpF_O292": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.009442,
+      "thickness_m": 0.254608,
+      "height_m": 2.22586,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          2.07209,
+          3.80466,
+          1.2917
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.7071067811865475,
+            0.7071067811865475,
+            -0.0
+          ],
+          [
+            -0.7071067811865476,
+            0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.11293,
+          0.504721,
+          0.127304
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.7071067811865475,
+        0.7071067811865475,
+        -0.0
+      ],
+      "episode_id": "scene_046_sT4fr6TAbpF_O292",
+      "scan_id": "sT4fr6TAbpF",
+      "boundary_object_id": 292,
+      "source": {
+        "asset": "data/geometry/sT4fr6TAbpF.json",
+        "sha256": "8c670648d3761866309b78430c3001a0442d6e08caaf3ff7c61ae5a365e6d20b",
+        "record": "objects.292",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 15,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_047_sT4fr6TAbpF_O322": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.956856,
+      "thickness_m": 0.1812528,
+      "height_m": 2.47698,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          8.40161,
+          0.674741,
+          1.2277
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.23849,
+          0.478428,
+          0.0906264
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.9238797538373538,
+        0.38268289803626016,
+        0.0
+      ],
+      "episode_id": "scene_047_sT4fr6TAbpF_O322",
+      "scan_id": "sT4fr6TAbpF",
+      "boundary_object_id": 322,
+      "source": {
+        "asset": "data/geometry/sT4fr6TAbpF.json",
+        "sha256": "8c670648d3761866309b78430c3001a0442d6e08caaf3ff7c61ae5a365e6d20b",
+        "record": "objects.322",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 17,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_048_vyrNrziPKCB_O1054": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.668372,
+      "thickness_m": 0.62668,
+      "height_m": 2.8721,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          8.71582,
+          -5.55407,
+          1.44738
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.43605,
+          0.334186,
+          0.31334
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.9238797538373538,
+        0.38268289803626016,
+        0.0
+      ],
+      "episode_id": "scene_048_vyrNrziPKCB_O1054",
+      "scan_id": "vyrNrziPKCB",
+      "boundary_object_id": 1054,
+      "source": {
+        "asset": "data/geometry/vyrNrziPKCB.json",
+        "sha256": "eb5cc409fcf7564a84e62ceacaed9c35cee63509df40b74aaf8bc068aafc1ffb",
+        "record": "objects.1054",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 36,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_049_vyrNrziPKCB_O1342": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.216776,
+      "thickness_m": 0.342804,
+      "height_m": 2.24792,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          3.52543,
+          -22.7205,
+          0.787191
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ],
+          [
+            0.9238797538373538,
+            -0.38268289803626016,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.12396,
+          0.608388,
+          0.171402
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.38268289803626016,
+        -0.9238797538373538,
+        0.0
+      ],
+      "episode_id": "scene_049_vyrNrziPKCB_O1342",
+      "scan_id": "vyrNrziPKCB",
+      "boundary_object_id": 1342,
+      "source": {
+        "asset": "data/geometry/vyrNrziPKCB.json",
+        "sha256": "eb5cc409fcf7564a84e62ceacaed9c35cee63509df40b74aaf8bc068aafc1ffb",
+        "record": "objects.1342",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 46,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_050_vyrNrziPKCB_O1335": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.90817,
+      "thickness_m": 0.394722,
+      "height_m": 2.33392,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          4.53718,
+          -19.5591,
+          1.09762
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.38268289803626016,
+            0.9238797538373538,
+            0.0
+          ],
+          [
+            -0.9238797538373538,
+            -0.38268289803626016,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.16696,
+          0.454085,
+          0.197361
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.38268289803626016,
+        0.9238797538373538,
+        0.0
+      ],
+      "episode_id": "scene_050_vyrNrziPKCB_O1335",
+      "scan_id": "vyrNrziPKCB",
+      "boundary_object_id": 1335,
+      "source": {
+        "asset": "data/geometry/vyrNrziPKCB.json",
+        "sha256": "eb5cc409fcf7564a84e62ceacaed9c35cee63509df40b74aaf8bc068aafc1ffb",
+        "record": "objects.1335",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 46,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_051_vyrNrziPKCB_O1357": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.003504,
+      "thickness_m": 0.383308,
+      "height_m": 2.52248,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -2.83083,
+          -18.3516,
+          1.28287
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.26124,
+          0.501752,
+          0.191654
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_051_vyrNrziPKCB_O1357",
+      "scan_id": "vyrNrziPKCB",
+      "boundary_object_id": 1357,
+      "source": {
+        "asset": "data/geometry/vyrNrziPKCB.json",
+        "sha256": "eb5cc409fcf7564a84e62ceacaed9c35cee63509df40b74aaf8bc068aafc1ffb",
+        "record": "objects.1357",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 47,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_052_vyrNrziPKCB_O20": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.81867,
+      "thickness_m": 0.616712,
+      "height_m": 2.40596,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          12.9021,
+          -14.433,
+          4.71036
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.7071067811865475,
+            0.7071067811865475,
+            0.0
+          ],
+          [
+            -0.7071067811865476,
+            -0.7071067811865476,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.20298,
+          0.409335,
+          0.308356
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.7071067811865475,
+        0.7071067811865475,
+        0.0
+      ],
+      "episode_id": "scene_052_vyrNrziPKCB_O20",
+      "scan_id": "vyrNrziPKCB",
+      "boundary_object_id": 20,
+      "source": {
+        "asset": "data/geometry/vyrNrziPKCB.json",
+        "sha256": "eb5cc409fcf7564a84e62ceacaed9c35cee63509df40b74aaf8bc068aafc1ffb",
+        "record": "objects.20",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 1,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_053_vyrNrziPKCB_O87": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.950688,
+      "thickness_m": 0.321472,
+      "height_m": 2.42354,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          14.9699,
+          -26.0201,
+          4.67419
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.21177,
+          0.475344,
+          0.160736
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        0.0,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_053_vyrNrziPKCB_O87",
+      "scan_id": "vyrNrziPKCB",
+      "boundary_object_id": 87,
+      "source": {
+        "asset": "data/geometry/vyrNrziPKCB.json",
+        "sha256": "eb5cc409fcf7564a84e62ceacaed9c35cee63509df40b74aaf8bc068aafc1ffb",
+        "record": "objects.87",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 3,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_054_vyrNrziPKCB_O927": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 0.978178,
+      "thickness_m": 0.204922,
+      "height_m": 2.43828,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          19.9415,
+          -16.7128,
+          1.18241
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            2.22045e-16,
+            1.0,
+            -0.0
+          ],
+          [
+            -1.0,
+            2.22045e-16,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.21914,
+          0.489089,
+          0.102461
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        2.22045e-16,
+        1.0,
+        -0.0
+      ],
+      "episode_id": "scene_054_vyrNrziPKCB_O927",
+      "scan_id": "vyrNrziPKCB",
+      "boundary_object_id": 927,
+      "source": {
+        "asset": "data/geometry/vyrNrziPKCB.json",
+        "sha256": "eb5cc409fcf7564a84e62ceacaed9c35cee63509df40b74aaf8bc068aafc1ffb",
+        "record": "objects.927",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 33,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_055_vyrNrziPKCB_O965": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 2.77042,
+      "thickness_m": 0.689956,
+      "height_m": 3.11788,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          22.6347,
+          -24.3259,
+          1.4507
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.55894,
+          1.38521,
+          0.344978
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "episode_id": "scene_055_vyrNrziPKCB_O965",
+      "scan_id": "vyrNrziPKCB",
+      "boundary_object_id": 965,
+      "source": {
+        "asset": "data/geometry/vyrNrziPKCB.json",
+        "sha256": "eb5cc409fcf7564a84e62ceacaed9c35cee63509df40b74aaf8bc068aafc1ffb",
+        "record": "objects.965",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 34,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    },
+    "scene_056_wc2JMjhGNzB_O53": {
+      "method": "native_instance_obb_horizontal_major_extent",
+      "measurement_scope": "native_boundary_object_obb_not_clear_opening",
+      "units": "metres",
+      "width_m": 1.57333,
+      "thickness_m": 0.568378,
+      "height_m": 2.46774,
+      "human_verified": false,
+      "clear_opening_width_m": null,
+      "estimated_error_m": null,
+      "uncertainty_note": "Approximate native mesh-object span, not the clear opening width. The instance may include one open leaf, multiple panels, frame/wall geometry, or incomplete glass. Confirm the size/type from the images; no category is inferred from this number. Measurement error has not been calibrated.",
+      "native_obb": {
+        "center_m": [
+          -13.2187,
+          10.7559,
+          1.21137
+        ],
+        "axes_world": [
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -0.9238797538373538,
+            0.38268289803626016,
+            0.0
+          ],
+          [
+            -0.38268289803626016,
+            -0.9238797538373538,
+            0.0
+          ]
+        ],
+        "radii_m": [
+          1.23387,
+          0.786665,
+          0.284189
+        ]
+      },
+      "status": "available",
+      "width_axis_index": 1,
+      "width_axis_world": [
+        -0.9238797538373538,
+        0.38268289803626016,
+        0.0
+      ],
+      "episode_id": "scene_056_wc2JMjhGNzB_O53",
+      "scan_id": "wc2JMjhGNzB",
+      "boundary_object_id": 53,
+      "source": {
+        "asset": "data/geometry/wc2JMjhGNzB.json",
+        "sha256": "c71e80935be0acdb083d3b82c0e9a3f80463cde7579609c6330f32ecc2761ed9",
+        "record": "objects.53",
+        "native_record_type": "Matterport3D .house O oriented bounding box",
+        "raw_category": "door",
+        "mpcat40_id": 4,
+        "mpcat40_name": "door",
+        "region_id": 1,
+        "visibility_map_resolution_px": [
+          160,
+          128
+        ],
+        "width_derived_from_pixels": false
+      }
+    }
+  },
+  "measurement_id": "cbfc4dec94e0b1ca21988bad5848fe91626008b1038182fc175fac0926c7b4bc"
+}

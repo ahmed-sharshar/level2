@@ -19,19 +19,38 @@ collection-tasks.json ships as explicitly unreviewed draft with blank directions
 
 ## Full annotation export
 
-Schema blockmind_l2_annotations_v2: {schema,build_id,task_id,tasks,annotator,profile:'l2'|'l2_l3',created_at,updated_at,annotation_status:'draft'|'complete',benchmark_ready:false,episodes,ui,migration_log}.
-episodes retains Core.createEpisode records plus checks:{indoor_region_correct:null,exterior_region_correct:null,surfaces:{markerId:{anchor_correct:null,same_surface_across_frames:null,obstruction:null}}}.
+Current documents also carry `collection_checks_version: 1`. This extends
+`checks` with `opening_passage:{d1:{open:null,sealed:null},d2:{open:null,sealed:null}}`
+and `indoor_visibility:{indoorMarkerId:null}`. Both use canonical nonempty arrays
+or null; exclusive Nothing/None and ND are singleton arrays. Questions declare
+`kind:'multiselect'`. `needsCollectionUpgrade`/`upgradeCollection` preserve old
+answers and reopen completion for new blank checks; mixed collection scopes
+cannot be combined. See `COLLECTION_CHECKS.md` for exact values and storage.
+
+Schema blockmind_l2_annotations_v2: {schema,boundary_questions_version:1,build_id,task_id,tasks,annotator,profile:'l2'|'l2_l3',created_at,updated_at,annotation_status:'draft'|'complete',benchmark_ready:false,episodes,ui,migration_log}.
+episodes retains Core.createEpisode records plus checks:{indoor_region_correct:null,exterior_region_correct:null,boundary:{width_class:null,blockage:null},surfaces:{markerId:{anchor_correct:null,same_surface_across_frames:null,obstruction:null}}}.
+The 2026-09-21 additive boundary scope requires human width category and blockage. Old exports without the version marker retain their original validation scope and are safely upgraded before editing on the current homepage. Mixed-scope consensus is rejected. See BOUNDARY_QUESTIONS.md for enums, machine-span provenance and preservation behavior.
 Obstruction: none/overhead/side/overhead_and_side/other/not_determinable. Other check fields yes/no/not_determinable. All human judgments start null.
 ui:{episode:0,section:'scene',question:0,frame:0}. migration_log is a list of explicit non-answer provenance records from supported imports. Always expose benchmark_ready:false: completing one rater's annotation does not establish benchmark GT.
 
 ## Required collection
 
-Level 2: all five legacy scene fields; two region correctness checks; all legacy boundary facts except pane_in_mesh,phantom_geometry,isolated_leaf,mask_matches_rgb (those are researcher audit tasks); all marked-surface object/material/hierarchy/reflectance/finish/substrate-known/shelter facts; substrate material/hierarchy only if known=yes; each surface's three checks; each surface×two directions×open/sealed×sun/rain; boundary two directions×open/sealed×direct_sun/diffuse_light/air/rain. Require visibility/object_match/box_correct for the two designated pre-crossing boundary-box frames. Do not force 12-frame Level 3 visibility to complete Level 2.
+Level 2: all five legacy scene fields; two region correctness checks; all legacy boundary facts except pane_in_mesh,phantom_geometry,isolated_leaf,mask_matches_rgb (those are researcher audit tasks); all marked-surface object/material/hierarchy/reflectance/finish/substrate-known/shelter facts; substrate material/hierarchy only if known=yes; each surface's three checks; each surface×two directions×open/sealed×sun/rain; four opening-passage consistency checklists. Require visibility/object_match/box_correct for the two designated pre-crossing boundary-box frames and one after-crossing visibility frame-set per indoor point. Do not force full 12-frame Level 3 visibility to complete Level 2.
 Level 2+3 adds all 12 boundary visibility/correctness cells and all 12 visibility cells per surface. Distinguish direct/through_glass/reflection/occluded/out_of_frame/not_determinable. No missing observations imply invisibility.
 Not sure is explicit ND; Skip leaves unanswered. A short episode-level uncertainty note is required when completing a record with ND, not one note for each field. Explicit exclusion with a reason is allowed. Save partial work any time; completed records lock until reopened; final export requires each episode complete or excluded and reviewed task setup. Show readable next-missing links, not raw validator walls.
 Task setup and protocol/hierarchy approval can remain pending while basic facts are saved. Direction-dependent questions must not be presented as answerable without approved nonempty directions and reference anchors. Completion fails with a concise researcher-pending explanation, never auto-labels missing settings.
 
 ## Shared JS API: window.L2Full and CommonJS
+
+Current red-point exports also contain paired `automatic_surface_labels` and
+`surface_label_audit` arrays. Actual instance-mask pixels at shared anchors supply
+the machine object class; human object/material/hierarchy answers remain separate.
+The latter array is refreshed on save and export. Exact object-category agreement
+is not material agreement, and uncomparable/free-text responses are explicitly
+excluded from that comparison. Legacy exports without these arrays still validate.
+See `RED_POINTS.md` for fields and provenance limits. New researcher preparation
+uses the optional versioned `settings.points_per_side: 4` policy; old published
+tasks remain unchanged until a researcher explicitly replaces them.
 
 createTasks(dataset,catalogue,coordinator='') -> task package with valid content ID.
 taskId(tasks) -> content ID; validateTasks(tasks,dataset,catalogue,requireReady=false)-> string[];
@@ -46,7 +65,7 @@ consensus(first,second,dataset,catalogue) -> exact two-rater report compatible w
 
 ## Interface principles
 
-The later compact presentation supersedes the one-question-per-screen instruction below for surfaces, exposure and pathways: see `COMPACT_WORKFLOW.md`. It uses the same complete schema and question definitions, not reduced requirements. The original schema/API, scientific safeguards and compatibility guarantees in this document remain unchanged.
+The later compact presentation supersedes the one-question-per-screen instruction below for surfaces, exposure, pathways and the five-question opening overview: see `COMPACT_WORKFLOW.md`. Required facts are retained; the versioned boundary extension adds width category and blockage without rewriting prior answers or research settings.
 
 Name then Start; no researcher-role dropdown on ordinary entry. Section buttons and one short question card, Back/Next/Skip, image always visible, autojump to target anchor. Searchable descriptive hierarchy picker, not raw IDs or a huge initial form. Contextual direction/reference and open/sealed status always visible while answering physics questions. Show direct-sun-passes-clear-glass/rain-does-not rule in exposure/pathways. Shared target geometry cannot be edited by independent raters; allow target issue flags/notes. Researcher setup supplies add/move/delete/cross-frame locations and boxes once for both raters. Keep machine masks/hints in researcher view, not the ordinary prompt.
 

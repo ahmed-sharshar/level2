@@ -7,8 +7,11 @@
   if (!F) throw new Error('Load full-core.js before compact-core.js');
   const filled = value => value !== null && value !== undefined &&
     (typeof value !== 'string' || value.trim() !== '');
+  const boundaryOverview = new Set(['answers.boundary.kind', 'answers.boundary.pane_transparency',
+    'answers.boundary.observed_state', 'checks.boundary.width_class', 'checks.boundary.blockage']);
 
   function groupKey(q) {
+    if (q.section === 'boundary' && boundaryOverview.has(q.path)) return 'boundary:overview';
     if (q.section === 'surfaces') return 'surface:' + q.marker_id;
     if (q.section === 'exposure' || q.section === 'pathways')
       return q.section + ':' + q.direction.id + ':' + q.condition;
@@ -22,9 +25,9 @@
       if (section && q.section !== section) continue;
       const id = groupKey(q);
       if (!grouped.has(id)) {
-        const kind = q.section === 'surfaces' ? 'surface' :
+        const kind = id === 'boundary:overview' ? 'boundary' : q.section === 'surfaces' ? 'surface' :
           ['exposure', 'pathways'].includes(q.section) ? q.section : 'single';
-        const title = kind === 'surface' ? 'Describe red point ' + q.marker_id :
+        const title = kind === 'boundary' ? 'Describe the opening' : kind === 'surface' ? 'Describe red point ' + q.marker_id :
           kind === 'exposure' ? 'Sun and rain: ' + q.direction.id.toUpperCase() + ', ' + q.condition :
           kind === 'pathways' ? 'Through the opening: ' + q.direction.id.toUpperCase() + ', ' + q.condition : q.title;
         const panel = {id, section:q.section, kind, title, help:q.help, questions:[], blocked:false, block_reason:''};
@@ -82,11 +85,25 @@
     return String(material.label || material.name || material.description || material.id).replace(/_/g, ' ');
   }
 
+  function searchMaterials(materials, query='') {
+    const words=String(query).trim().toLowerCase().replace(/_/g,' ').split(/\s+/).filter(Boolean);
+    return materials.filter(material=>{
+      const text=[material.id,canonicalMaterial(material),material.family,material.description,
+        JSON.stringify(material.reference?.visual_descriptors||'')].join(' ').toLowerCase().replace(/_/g,' ');
+      return words.every(word=>text.includes(word));
+    });
+  }
+
   function mappedFieldEdit(panel, path, value, catalogue) {
     const question = panel.questions.find(q => q.path === path);
     if (!question) throw new Error('This field is not part of the displayed panel.');
     if (value !== null) {
-      if (question.kind === 'choice' || question.kind === 'hierarchy') {
+      if (question.kind === 'multiselect') {
+        const allowed=question.options.map(option=>option.value);
+        if(!Array.isArray(value)||!value.length||new Set(value).size!==value.length||value.some(v=>!allowed.includes(v))||
+          (value.length>1&&value.some(v=>v==='none'||v===F.ND)))throw new Error('Choose valid options; Nothing/None and Not sure are exclusive.');
+        value=F.canonicalSelections(value,question.options);
+      } else if (question.kind === 'choice' || question.kind === 'hierarchy') {
         if (!question.options.some(option => option.value === value)) throw new Error('Choose a listed answer.');
       } else if (typeof value !== 'string') throw new Error('Enter a text answer.');
     }
@@ -113,7 +130,7 @@
     return record;
   }
 
-  const api = {panels,panelProgress,progress,mappedFieldEdit,applyEdits,canonicalMaterial};
+  const api = {panels,panelProgress,progress,mappedFieldEdit,applyEdits,canonicalMaterial,searchMaterials};
   root.L2Compact = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
 })(typeof window !== 'undefined' ? window : globalThis);

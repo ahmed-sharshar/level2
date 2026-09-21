@@ -48,14 +48,19 @@ test('eight red point forms and four sun/rain scenarios keep every cell',()=>{
   for(const panel of exposure)for(const marker of tasks.layout.episodes[0].markers)
     assert.deepStrictEqual(panel.questions.filter(q=>q.marker_id===marker.id).map(q=>q.path.split('.').at(-1)),['sun','rain']);
 });
-test('pathway groups retain all four distinct channels',()=>{
+test('pathway groups retain four scenario checks with all channels and exclusive non-answers',()=>{
   const panels=K.panels(doc,0,dataset,catalogue,'pathways');assert.strictEqual(panels.length,4);
-  for(const p of panels)assert.deepStrictEqual(p.questions.map(q=>q.path.split('.').at(-1)),['direct_sun','diffuse_light','air','rain']);
+  for(const p of panels){assert.strictEqual(p.questions.length,1);assert.strictEqual(p.questions[0].kind,'multiselect');assert.deepStrictEqual(p.questions[0].options.map(o=>o.value),['sunlight','rain','air','visible_light','none',C.ND]);}
 });
-test('section order and individual scene/boundary/visibility questions retained',()=>{
+test('section order preserved with one five-field boundary overview',()=>{
   const panels=K.panels(doc,0,dataset,catalogue);
   assert.deepStrictEqual([...new Set(panels.map(p=>p.section))],F.SECTIONS);
-  assert(panels.filter(p=>['scene','boundary','visibility'].includes(p.section)).every(p=>p.kind==='single'&&p.questions.length===1));
+  assert(panels.filter(p=>['scene','visibility'].includes(p.section)).every(p=>p.questions.length===1));
+  const boundary=panels.filter(p=>p.kind==='boundary');assert.strictEqual(boundary.length,1);
+  assert.deepStrictEqual(boundary[0].questions.map(q=>q.path).sort(),[
+    'answers.boundary.kind','answers.boundary.pane_transparency','answers.boundary.observed_state',
+    'checks.boundary.width_class','checks.boundary.blockage'].sort());
+  assert(panels.filter(p=>p.section==='boundary'&&p.kind!=='boundary').every(p=>p.kind==='single'&&p.questions.length===1));
 });
 test('grouping and progress do not mutate annotations/tasks/reference data',()=>{
   const before=JSON.stringify({doc,dataset,catalogue});K.panels(doc,0,dataset,catalogue);K.progress(doc,0,dataset,catalogue);
@@ -128,6 +133,20 @@ test('helper rejects foreign fields, unknown reference and invalid categorical v
   assert.throws(()=>K.mappedFieldEdit(p,'answers.surfaces.I1.hierarchy_id','fake',catalogue));
   assert.throws(()=>K.mappedFieldEdit(p,'answers.surfaces.I1.reflectance','very shiny',catalogue));
 });
+test('multiselect field editing canonicalizes the explicit set without inferring other answers',()=>{
+  const d=clone(doc),r=d.episodes[0],p=K.panels(d,0,dataset,catalogue,'pathways')[0],path=p.questions[0].path;
+  const source=['visible_light','sunlight','air'],before=clone(r);
+  const edits=K.mappedFieldEdit(p,path,source,catalogue);
+  assert.deepStrictEqual(edits,[{path,value:['sunlight','air','visible_light']}]);
+  assert.deepStrictEqual(source,['visible_light','sunlight','air']);assert.deepStrictEqual(r,before);
+  K.applyEdits(r,edits);assert.deepStrictEqual(F.get(r,path),['sunlight','air','visible_light']);
+  assert.deepStrictEqual(r.answers,before.answers);assert.deepStrictEqual(r.checks.indoor_visibility,before.checks.indoor_visibility);
+});
+test('multiselect rejects malformed or contradictory sets and preserves null versus explicit non-answers',()=>{
+  const p=K.panels(doc,0,dataset,catalogue,'pathways')[0],path=p.questions[0].path;
+  for(const value of [[],{},'air',['air','air'],['invented'],['none','air'],[C.ND,'sunlight'],['none',C.ND]])assert.throws(()=>K.mappedFieldEdit(p,path,value,catalogue));
+  for(const value of [null,['none'],[C.ND]])assert.deepStrictEqual(K.mappedFieldEdit(p,path,value,catalogue),[{path,value}]);
+});
 test('compound application is atomic for invalid or unsafe paths',()=>{
   const r=clone(doc.episodes[0]),before=JSON.stringify(r);
   for(const path of ['answers.missing','answers.__proto__.polluted']){
@@ -137,17 +156,17 @@ test('compound application is atomic for invalid or unsafe paths',()=>{
 });
 test('optional Level 3 visibility remains covered, never silently removed',()=>{
   const d=clone(doc);d.profile='l2_l3';assertCoverage(d);
-  assert.strictEqual(K.panels(d,0,dataset,catalogue,'visibility').length,12*3+8*12);
+  assert.strictEqual(K.panels(d,0,dataset,catalogue,'visibility').length,12*3+8*12+4);
 });
-test('existing labels and completed v2 exports need no migration',()=>{
-  const d=clone(doc);for(const q of F.questions(d,0,dataset,catalogue))F.set(d.episodes[0],q.path,C.ND);
+test('completed current-scope v2 exports need no presentation migration',()=>{
+  const d=clone(doc);for(const q of F.questions(d,0,dataset,catalogue))F.set(d.episodes[0],q.path,q.kind==='multiselect'?[C.ND]:C.ND);
   d.episodes[0].answers.notes='Synthetic test uncertainty only.';d.episodes[0].status='complete';d.episodes[0].completed_at=new Date().toISOString();d.annotation_status='complete';
   assert.deepStrictEqual(F.validate(d,dataset,catalogue,true),[]);const before=JSON.stringify(d);
   assert.strictEqual(K.progress(d,0,dataset,catalogue).answered,K.progress(d,0,dataset,catalogue).total);
   assert.strictEqual(JSON.stringify(d),before);assert.deepStrictEqual(F.validate(d,dataset,catalogue,true),[]);
 });
 test('grouped presentation leaves consensus and agreement reports exactly unchanged',()=>{
-  const first=clone(doc);for(const q of F.questions(first,0,dataset,catalogue))F.set(first.episodes[0],q.path,C.ND);
+  const first=clone(doc);for(const q of F.questions(first,0,dataset,catalogue))F.set(first.episodes[0],q.path,q.kind==='multiselect'?[C.ND]:C.ND);
   first.episodes[0].answers.notes='Synthetic test uncertainty only.';first.episodes[0].status='complete';first.episodes[0].completed_at=new Date().toISOString();first.annotation_status='complete';
   const second=clone(first);second.annotator='Synthetic second rater';second.episodes[0].answers.scene.crossing_valid='yes';
   const before=F.consensus(first,second,dataset,catalogue);delete before.created_at;
@@ -167,5 +186,17 @@ test('production scenes preserve every required field and immutable build/task i
     assert.strictEqual(ps.filter(p=>p.section==='exposure').length,4);
   }
   assert.strictEqual(C.stableStringify({ds,cat,t,d}),before);assert.strictEqual(F.taskId(t),t.task_id);
+});
+test('full reference search returns every entry with no query and does not mutate source',()=>{
+  const cat=JSON.parse(fs.readFileSync(path.join(__dirname,'../catalogue.json'),'utf8'));
+  const before=JSON.stringify(cat);assert.strictEqual(cat.materials.length,107);
+  assert.deepStrictEqual(K.searchMaterials(cat.materials,''),cat.materials);
+  assert.deepStrictEqual(K.searchMaterials(cat.materials,'   '),cat.materials);
+  assert.strictEqual(JSON.stringify(cat),before);
+});
+test('reference search covers IDs, families, appearance and multiple case-insensitive terms',()=>{
+  const entries=[{id:'sample_17',label:'Painted panel',family:'timber_wood',reference:{visual_descriptors:['grain','smooth surface']}},{id:'other',label:'Metal',family:'steel'}];
+  for(const query of ['SAMPLE 17','Timber Wood','smooth grain','panel grain'])assert.deepStrictEqual(K.searchMaterials(entries,query),[entries[0]]);
+  assert.deepStrictEqual(K.searchMaterials(entries,'no-such-material'),[]);
 });
 console.log(JSON.stringify({passed}));

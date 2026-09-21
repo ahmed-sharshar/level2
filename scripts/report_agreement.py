@@ -49,6 +49,8 @@ def drop_summary(data):
     return {
         'annotation_field_cells_total': len(fields),
         'annotation_field_cells_dropped_from_known_gt': sum(field['drop_known_gt'] for field in fields),
+        'consistency_only_field_cells': sum(field.get('consistency_only', False) for field in fields),
+        'consistency_check_disagreements': sum(field.get('consistency_only', False) and field['state'] == 'disagreement' for field in fields),
         'field_cells_with_disagreement': sum(field['state'] == 'disagreement' for field in fields),
         'field_cells_agreed_not_determinable': sum(field['state'] == 'agreed_not_determinable' for field in fields),
         'field_cells_conditionally_not_applicable': sum(field['state'] == 'not_applicable' for field in fields),
@@ -91,6 +93,8 @@ def main():
         '- Targets are from the supplied workplan: 0.8 for transparency/state/shelter and 0.6 for reachability. They are study targets, not universal certification standards.',
         '- The reachability target is applied to marked-surface sun/rain fields. No additional numeric target is assumed for boundary pathway channels. Both ND-inclusive and known-only target results are shown; passing a descriptive threshold does not establish correctness or replace the episode/field eligibility gates.',
         '- Only exact agreements are retained. There is no adjudication or automatic spelling/material synonym resolution. Disagreement remains visible in the consensus JSON.',
+        '- Opening passage selections are consistency checks only, even when both annotators agree. They are not benchmark answers. Answer derivation requires an approved rule applied to agreed boundary facts; disputed inputs/checks exclude dependent items.',
+        '- Indoor-point after-crossing visibility uses exact set agreement. A frame-set disagreement excludes that point visibility item, not unrelated agreed material facts. None is an explicit empty visible set; Not sure remains uncertainty.',
         '- Repeated frames/markers from the same episode are correlated. These descriptive κ values and counts are not confidence intervals or independent-scene sample counts.',
         '- Agreed uncertainty is available for reviewed cannot-determine items, not treated as a negative pathway or known material.',
         '- Family annotation coverage is not MCQ ground truth. Family C still requires the reviewed frozen VHC/allowed-pairs table; class comparisons require reviewed mappings and rules.',

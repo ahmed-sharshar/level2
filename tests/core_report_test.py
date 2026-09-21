@@ -71,6 +71,14 @@ class CompletePipelineTest(unittest.TestCase):
         self.assertIsNone(summary['benchmark_mcq_items_dropped'])
         self.assertFalse(summary['benchmark_mcq_items_generated'])
 
+    def test_legacy_passage_consistency_cells_are_counted_without_becoming_gt(self):
+        summary = drop_summary(self.consensus)
+        pathways = [field for ep in self.consensus['episodes'] for path, field in ep['fields'].items() if path.startswith('pathways.')]
+        self.assertEqual(len(pathways), 56 * 2 * 2 * 4)
+        self.assertEqual(summary['consistency_only_field_cells'], len(pathways))
+        self.assertTrue(all(field['consistency_only'] and not field['eligible_known_gt'] and not field['eligible_nd_gt'] for field in pathways))
+        self.assertEqual(summary['consistency_check_disagreements'], sum(field['state'] == 'disagreement' for field in pathways))
+
     def test_conditional_not_applicable_count_preserved(self):
         data = json.loads(json.dumps(self.consensus))
         attribute = 'surfaces.*.substrate_material'

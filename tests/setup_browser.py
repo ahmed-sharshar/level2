@@ -44,12 +44,13 @@ def approved_fixture(site: Path) -> dict:
 const fs=require('fs'),p=process.argv[1],C=require(p+'/core.js'),F=require(p+'/full-core.js');
 const d=JSON.parse(fs.readFileSync(p+'/dataset.json')),c=JSON.parse(fs.readFileSync(p+'/catalogue.json'));
 const t=F.createTasks(d,c,'setup-browser-test');
+t.settings.points_per_side=4;
 t.settings.protocol_reviewed=true;t.settings.protocol_reviewer='synthetic-test-only';
 t.settings.hierarchy_reviewed=true;t.settings.hierarchy_reviewer='synthetic-test-only';
 t.settings.protocol_notes='AUTOMATED TEST FIXTURE. These are not real researcher approvals.';
 t.layout.episodes.forEach((e,i)=>{
  if(i){e.disposition='exclude';e.exclusion_reason='Synthetic automated test exclusion, not a real data judgment.';return;}
- e.markers=['indoor','exterior'].flatMap(side=>e.markers.filter(m=>m.side===side).slice(0,3));
+ e.markers=['indoor','exterior'].flatMap(side=>e.markers.filter(m=>m.side===side).slice(0,4));
  e.directions=[{id:'d1',text:'Synthetic test direction toward the visible opening.',reference_frame:'f01',x:.4,y:.5},{id:'d2',text:'Synthetic test direction downward from the upper reference feature.',reference_frame:'f02',x:.6,y:.3}];
  e.setup_reviewed=true;e.setup_notes='SYNTHETIC TEST ONLY';
 });
@@ -128,6 +129,9 @@ def main() -> int:
             initial = snapshot()
             check("all_56_scenes_available", page.locator("#sceneSelect option").count() == 56)
             check("source_setup_unreviewed", all(not e["setup_reviewed"] for e in initial["tasks"]["layout"]["episodes"]))
+            check("local_draft_requires_exactly_four_per_side", initial["tasks"]["settings"].get("points_per_side") == 4)
+            check("opening_setup_preserves_every_published_point", [e["markers"] for e in initial["tasks"]["layout"]["episodes"]] == [e["markers"] for e in json.loads(source_task_bytes)["layout"]["episodes"]])
+            check("four_point_side_cannot_add_fifth", page.locator("#addPoint").is_disabled())
             check("no_automatic_protocol_approval", not initial["tasks"]["settings"]["protocol_reviewed"] and not initial["tasks"]["settings"]["hierarchy_reviewed"])
             check("no_invented_directions", all(not d["text"] for e in initial["tasks"]["layout"]["episodes"] for d in e["directions"]))
             check("fixed_boundary_identity_visible", str(dataset["episodes"][0]["boundary_object_id"]) in page.locator("#datasetIdentity").inner_text())
@@ -137,6 +141,13 @@ def main() -> int:
             check("unreviewed_publish_blocked", page.locator("#messageDialog").is_visible() and "not ready" in page.locator("#messageTitle").inner_text())
             page.click("#closeMessage")
 
+            # Shortages remain visible: no synthetic point fills either scene.
+            page.select_option("#sceneSelect", "7")
+            page.click('[data-tab="review"]')
+            page.click("#setupReviewed")
+            check("scene8_three_exterior_points_cannot_be_approved", not snapshot()["tasks"]["layout"]["episodes"][7]["setup_reviewed"] and "Exactly four" in page.locator("#messageTitle").inner_text())
+            page.click("#closeMessage")
+            page.click('[data-tab="points"]')
             # One source episode intentionally has only two exterior suggestions.
             page.select_option("#sceneSelect", "37")
             ready()
@@ -152,8 +163,18 @@ def main() -> int:
             check("manual_add_exterior_point", added["side"] == "exterior" and added["anchor_frame"] == "f07")
             check("new_point_normalized_coordinates", abs(added["x"] - .42) < .003 and abs(added["y"] - .58) < .003)
             check("manual_point_has_no_invented_native_instance", added["object_id"] is None and added["mpcat40"] is None and added["observations"] == [])
+            page.click('[data-tab="review"]')
+            page.click("#setupReviewed")
+            check("scene38_three_exterior_points_still_cannot_be_approved", not snapshot()["tasks"]["layout"]["episodes"][37]["setup_reviewed"] and "Exactly four" in page.locator("#messageTitle").inner_text())
+            page.click("#closeMessage")
+            page.click('[data-tab="points"]')
             page.click("#deletePoint")
             check("delete_point_restores_count", sum(m["side"] == "exterior" for m in snapshot()["tasks"]["layout"]["episodes"][37]["markers"]) == 2)
+            for x in (.42, .62):
+                page.click("#addPoint")
+                point(x, .58)
+            check("researcher_can_fill_missing_points_but_not_add_a_fifth", sum(m["side"] == "exterior" for m in snapshot()["tasks"]["layout"]["episodes"][37]["markers"]) == 4 and page.locator("#addPoint").is_disabled())
+            check("placing_four_points_does_not_auto_approve", not snapshot()["tasks"]["layout"]["episodes"][37]["setup_reviewed"])
 
             page.select_option("#sceneSelect", "0")
             page.click('[data-select-marker="0"]')
@@ -314,6 +335,19 @@ def main() -> int:
             check("publish_explains_manual_server_copy", "cannot update the server file" in page.locator("#messageText").inner_text())
             page.click("#closeMessage")
             check("local_setup_not_silently_frozen", snapshot()["tasks"]["layout"]["layout_id"] == "")
+
+            # A legacy approved package is preserved as geometry, but its local
+            # draft must satisfy the newly explicit four-per-side requirement.
+            shortage = json.loads(json.dumps(fixture))
+            shortage["layout"]["episodes"][0]["markers"].pop()
+            shortage["settings"].pop("points_per_side")
+            shortage = page.evaluate("t=>{t.layout.layout_id='';t.task_id=L2Full.taskId(t);return t;}", shortage)
+            import_tasks(shortage)
+            check("imported_legacy_shortage_loses_only_local_approval", not snapshot()["tasks"]["layout"]["episodes"][0]["setup_reviewed"] and len(snapshot()["tasks"]["layout"]["episodes"][0]["markers"]) == 7)
+            page.click("#publishButton")
+            check("otherwise_approved_shortage_cannot_publish", "not ready" in page.locator("#messageTitle").inner_text() and "exactly 4" in page.locator("#messageText").inner_text())
+            page.click("#closeMessage")
+            import_tasks(fixture)
 
             before_bad = snapshot()["tasks"]
             foreign = json.loads(json.dumps(fixture))
