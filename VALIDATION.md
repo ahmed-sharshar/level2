@@ -1,8 +1,21 @@
-# Delivery validation — 2026-09-21
+# Direction provenance and timing — 2026-09-22
+
+The direction-version release passed 260 JavaScript checks, 49 Python tests,
+and 413 browser checks. The new browser suite exercises published-task changes,
+legacy upgrades, explicit redo/history, active timing, ID isolation, conflicts,
+two complete 56-scene drafts with mask audits, and storage-exhaustion recovery.
+All 2,508 frozen dataset asset hashes still match. Research settings and human
+annotation files were not modified.
+
+See `validation/direction_version_release_summary.json` and
+[DIRECTION_VERSIONS.md](DIRECTION_VERSIONS.md). Earlier reports below remain
+historical delivery evidence, not claims of current research approval.
+
+# Previous delivery validation — 2026-09-21
 
 This is software and data-delivery validation, **not a completed human annotation exercise or model benchmark**.
 
-## Provisional collection-ready release — current delivery
+## Provisional collection-ready release — previous delivery
 
 The current release has 56 scenes with four indoor and four exterior targets
 each (448 total), preserving every original 445 target value and adding three

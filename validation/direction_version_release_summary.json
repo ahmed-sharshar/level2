@@ -1,0 +1,52 @@
+{
+  "release": "direction-provenance-20260922-v1",
+  "scope": "Software and synthetic-answer verification; no real human labels or research approvals were changed",
+  "passed": true,
+  "task_id": "l2tasks-9e0423d9884953639fc227b72bdb38cbb6839cbc891837574e0783cff970c18b",
+  "task_sha256": "e4164fe8c9be7db76d9d1bc09623287c066874c7ae4886e8117dc84496b43576",
+  "source_sha256": {
+    "full-core.js": "add0017a88ff9be8b8978e96fbef2a595a9177139f5194d835abae8f25515c59",
+    "full.js": "4efcaa15f58afdd747a096ce4c82c6063c63299075872500aac32eeb290b3b29",
+    "compact-core.js": "610b4fed5203deb9c66fb50c4ca2dabdf85e579dd6f6d196a2b1717a08826c93",
+    "index.html": "f2fbc7e04bfd817c06ea8c299a924f1d7d09fdff78993e0d532d11231a43cf32"
+  },
+  "counts": {
+    "episodes_with_verified_default_direction_pair": 56,
+    "frozen_asset_hashes_verified": 2508,
+    "independently_versioned_directional_answers_per_complete_scene": 68,
+    "directional_answers_across_all_scenes": 3808
+  },
+  "tests": {
+    "javascript_checks": 260,
+    "python_tests": 49,
+    "browser_checks": 413,
+    "browser_suites": {
+      "direction_provenance_and_timing": 38,
+      "collection_release": 19,
+      "compact": 66,
+      "opening": 53,
+      "redpoint": 38,
+      "sunrain": 51,
+      "collection_checks": 79,
+      "researcher_setup": 69
+    },
+    "two_fully_answered_56_scene_drafts_with_mask_audits": "Stored and subsequently edited/saved using separate IDs in Chromium localStorage",
+    "characters_per_full_synthetic_draft": 1864007,
+    "quota_exhaustion": "Original legacy draft preserved; upgrade requests a backup instead of overwriting",
+    "javascript_errors": [],
+    "unexpected_failed_asset_requests": []
+  },
+  "timing": {
+    "field": "episodes[i].time_tracking.active_ms",
+    "idle_pause_ms": 60000,
+    "excludes": ["hidden or unfocused tab", "offline time", "finished or excluded scene", "locked draft"],
+    "historical_untracked_time": "Unavailable, never inferred from completion timestamps"
+  },
+  "limits": [
+    "Directions remain provisional; no research approval or benchmark GT is created.",
+    "IDs isolate local drafts but are not authenticated accounts.",
+    "Task migration reopens included scene completion marks for review; only affected answers require new judgments.",
+    "Active time is an idle-capped interaction estimate, not a measurement of attention.",
+    "The four baseline opening/redpoint/sunrain/setup browser suites preceded the final import-validator hardening; final core, dedicated browser, compact and collection-check suites cover the hardened implementation."
+  ]
+}

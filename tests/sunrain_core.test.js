@@ -90,14 +90,14 @@ test('all 3584 newly created exposure answers remain genuinely unanswered', () =
 
 test('answering one sun cell leaves rain, every other point and all other scenarios unchanged', () => {
   const doc = C.clone(draft), record = doc.episodes[0], chosen = questions[0][0];
-  F.set(record, chosen.path, 'yes');
+  F.setAnswer(doc, 0, chosen.path, 'yes');
   for (const [index, qs] of questions.entries()) for (const q of qs)
     assert.strictEqual(F.get(doc.episodes[index], q.path), index === 0 && q.path === chosen.path ? 'yes' : null);
 });
 
 test('Not sure is explicit and does not turn unanswered adjacent rain into No or uncertainty', () => {
   const doc = C.clone(draft), record = doc.episodes[0], chosen = questions[0][0];
-  F.set(record, chosen.path, C.ND);
+  F.setAnswer(doc, 0, chosen.path, C.ND);
   assert.strictEqual(F.get(record, chosen.path), C.ND);
   assert.strictEqual(F.get(record, chosen.path.replace(/\.sun$/, '.rain')), null);
   const panel = K.panels(doc, 0, dataset, catalogue, 'exposure')[0];
@@ -121,7 +121,7 @@ test('selecting slats/lattice never fills blank rain or coerces any existing rai
 
 test('old mixed yes/no/ND/blank judgments survive JSON restore and question rendering unchanged', () => {
   const doc = C.clone(draft), values = ['yes', 'no', C.ND, null];
-  for (const [index, qs] of questions.entries()) for (const [j, q] of qs.entries()) F.set(doc.episodes[index], q.path, values[(index + j) % values.length]);
+  for (const [index, qs] of questions.entries()) for (const [j, q] of qs.entries()) F.setAnswer(doc,index, q.path, values[(index + j) % values.length]);
   const encoded = JSON.stringify(doc), restored = JSON.parse(encoded);
   for (const index of restored.episodes.keys()) K.panels(restored, index, dataset, catalogue, 'exposure');
   assert.strictEqual(JSON.stringify(restored), encoded);

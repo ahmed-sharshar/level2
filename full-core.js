@@ -8,6 +8,7 @@
   const SCHEMA='blockmind_l2_annotations_v2', TASK_SCHEMA='blockmind_l2_tasks_v1', ND=Core.ND;
   const BOUNDARY_QUESTIONS_VERSION=1;
   const COLLECTION_CHECKS_VERSION=1;
+  const ANSWER_PROVENANCE_VERSION=1;
   const PASSAGE_OPTIONS=['sunlight','rain','air','visible_light','none',ND];
   const WIDTH_CLASS=['single_door','double_door','wide_glass_wall',ND];
   const BOUNDARY_BLOCKAGE=['none','curtains','blinds','screen','furniture','multiple','other',ND];
@@ -158,11 +159,132 @@
     }catch(e){return {ready:false,errors:['Researcher pending: malformed task setup.']};}
   }
   function createRecord(ep){
-    return {...Core.createEpisode(ep),checks:{indoor_region_correct:null,exterior_region_correct:null,boundary:{width_class:null,blockage:null},surfaces:Object.fromEntries(ep.markers.map(m=>[m.id,{anchor_correct:null,same_surface_across_frames:null,obstruction:null}])),...collectionChecks(ep)}};
+    return {...Core.createEpisode(ep),answer_provenance:{},direction_versions:{},time_tracking:{version:1,active_ms:0,first_started_at:null,last_active_at:null,tracking_started_at:null,prior_time_unavailable:false},checks:{indoor_region_correct:null,exterior_region_correct:null,boundary:{width_class:null,blockage:null},surfaces:Object.fromEntries(ep.markers.map(m=>[m.id,{anchor_correct:null,same_surface_across_frames:null,obstruction:null}])),...collectionChecks(ep)}};
   }
   function create(dataset,catalogue,tasks,annotator,profile='l2'){
     const errors=validateTasks(tasks,dataset,catalogue);if(errors.length)throw new Error(errors.slice(0,5).join('; '));
-    const now=new Date().toISOString();return {schema:SCHEMA,boundary_questions_version:BOUNDARY_QUESTIONS_VERSION,collection_checks_version:COLLECTION_CHECKS_VERSION,build_id:dataset.build_id,task_id:tasks.task_id,tasks:clone(tasks),annotator:annotator||'',profile,created_at:now,updated_at:now,annotation_status:'draft',benchmark_ready:false,episodes:tasks.layout.episodes.map(createRecord),ui:{episode:0,section:'scene',question:0,frame:0},migration_log:[]};
+    const now=new Date().toISOString();return {schema:SCHEMA,boundary_questions_version:BOUNDARY_QUESTIONS_VERSION,collection_checks_version:COLLECTION_CHECKS_VERSION,answer_provenance_version:ANSWER_PROVENANCE_VERSION,build_id:dataset.build_id,task_id:tasks.task_id,tasks:clone(tasks),annotator:annotator||'',profile,created_at:now,updated_at:now,annotation_status:'draft',benchmark_ready:false,episodes:tasks.layout.episodes.map(createRecord),ui:{episode:0,section:'scene',question:0,frame:0},migration_log:[]};
+  }
+  // Bind every directional vote to the exact scenario shown when it was made.
+  // Global task identity is retained for audit, but only dependent scene inputs
+  // invalidate a vote: changing D1 must not discard an unchanged D2 answer.
+  function directionalPath(path){
+    let m=/^answers\.surfaces\.([^.]+)\.reachable\.(d[12])\.(open|sealed)\.(sun|rain)$/.exec(path);
+    if(m)return {kind:'exposure',marker_id:m[1],direction_id:m[2],condition:m[3],channel:m[4]};
+    m=/^checks\.opening_passage\.(d[12])\.(open|sealed)$/.exec(path);
+    if(m)return {kind:'opening_passage',direction_id:m[1],condition:m[2]};
+    m=/^answers\.pathways\.(d[12])\.(open|sealed)\.(direct_sun|diffuse_light|air|rain)$/.exec(path);
+    return m?{kind:'legacy_pathway',direction_id:m[1],condition:m[2],channel:m[3]}:null;
+  }
+  function directionalPaths(record,index){
+    if(record?.episodes)record=record.episodes[index];
+    const out=[];
+    for(const [id,surface]of Object.entries(record.answers?.surfaces||{}))for(const d of Core.DIRECTIONS)for(const state of Core.STATES)for(const c of ['sun','rain'])if(own(surface.reachable?.[d]?.[state]||{},c))out.push('answers.surfaces.'+id+'.reachable.'+d+'.'+state+'.'+c);
+    for(const d of Core.DIRECTIONS)for(const state of Core.STATES){
+      if(own(record.checks?.opening_passage?.[d]||{},state))out.push('checks.opening_passage.'+d+'.'+state);
+      for(const c of ['direct_sun','diffuse_light','air','rain'])if(own(record.answers?.pathways?.[d]?.[state]||{},c))out.push('answers.pathways.'+d+'.'+state+'.'+c);
+    }
+    return out;
+  }
+  const dependencyHash=context=>Core.sha256(stable(context));
+  const directionSnapshotCache=new WeakMap();
+  function directionSnapshot(tasks,episodeId){
+    const ep=tasks?.layout?.episodes?.find(e=>e.episode_id===episodeId);if(!ep)return null;
+    const protocol={version:tasks.settings.version,notes:tasks.settings.protocol_notes};
+    const signature=JSON.stringify([tasks.build_id,ep.episode_id,ep.directions,tasks.layout.conditions,protocol,ep.boundary_boxes,ep.markers]);
+    const old=directionSnapshotCache.get(ep);if(old?.signature===signature)return old.snapshot;
+    // Exact wording and reference coordinates are saved once per scene/revision.
+    // Geometry is hash-pinned, avoiding thousands of duplicated masks/targets in
+    // browser storage. The current task also embeds the complete geometry.
+    const snapshot={version:1,build_id:tasks.build_id,episode_id:ep.episode_id,directions:clone(ep.directions),conditions:clone(tasks.layout.conditions),protocol,boundary_sha256:dependencyHash(ep.boundary_boxes),targets:Object.fromEntries(ep.markers.map(m=>[m.id,dependencyHash(m)]))};
+    directionSnapshotCache.set(ep,{signature,snapshot});return snapshot;
+  }
+  function contextFromSnapshot(snapshot,path){
+    const parsed=directionalPath(path),direction=Array.isArray(snapshot?.directions)?snapshot.directions.find(d=>d?.id===parsed?.direction_id):null;if(!parsed||!direction||!obj(snapshot.conditions)||!obj(snapshot.protocol)||!obj(snapshot.targets))return null;
+    if(parsed.marker_id&&!own(snapshot.targets,parsed.marker_id))return null;
+    return {version:1,build_id:snapshot.build_id,episode_id:snapshot.episode_id,kind:parsed.kind,direction_id:parsed.direction_id,direction:clone(direction),condition_id:parsed.condition,condition:{version:snapshot.conditions.version,text:snapshot.conditions[parsed.condition],no_closure_policy:snapshot.conditions.no_closure_policy},protocol:clone(snapshot.protocol),boundary_sha256:snapshot.boundary_sha256,target_sha256:parsed.marker_id?snapshot.targets[parsed.marker_id]:null};
+  }
+  function directionContext(doc,index,path,tasks=doc.tasks){return contextFromSnapshot(directionSnapshot(tasks,doc.episodes[index]?.episode_id),path);}
+  function savedAnswerContext(record,path,entry=record.answer_provenance?.[path]){return contextFromSnapshot(record.direction_versions?.[entry?.revision]?.snapshot,path);}
+  function ensureDirectionVersion(doc,index){
+    const r=doc.episodes[index],snapshot=directionSnapshot(doc.tasks,r.episode_id);if(!snapshot)throw new Error('The current direction definitions are unavailable.');
+    r.direction_versions=r.direction_versions||{};
+    const hash=dependencyHash(snapshot),existing=Object.entries(r.direction_versions).find(([,v])=>v.task_id===doc.task_id&&v.snapshot_sha256===hash);
+    if(existing)return existing[0];
+    let n=Object.keys(r.direction_versions).length+1;while(own(r.direction_versions,'r'+n))n++;
+    const revision='r'+n;r.direction_versions[revision]={task_id:doc.task_id,snapshot_sha256:hash,snapshot:clone(snapshot)};return revision;
+  }
+  function makeAnswerProvenance(doc,index,path,value,origin='recorded',recordedAt=new Date().toISOString()){
+    const context=directionContext(doc,index,path);if(!context)throw new Error('The current scenario is unavailable for '+path);
+    const entry={revision:ensureDirectionVersion(doc,index),value:clone(value),recorded_at:recordedAt};
+    if(origin!=='recorded')entry.origin=origin;
+    return entry;
+  }
+  function answerStatus(doc,index,path,publishedTasks=doc.tasks){
+    const r=doc.episodes[index],value=get(r,path);
+    if(!directionalPath(path))return {state:'not_directional',reason:'',provenance:null,current_context:null};
+    const context=directionContext(doc,index,path,publishedTasks),entry=r.answer_provenance?.[path],version=r.direction_versions?.[entry?.revision];let saved=savedAnswerContext(r,path,entry);
+    if(!filled(value))return {state:'unanswered',reason:'',provenance:entry||null,current_context:context};
+    let reason='';
+    if(!entry){
+      // Historical exports embed their exact task definitions. They can be
+      // inspected without mutation; upgradeProvenance records this inference.
+      if(!own(doc,'answer_provenance_version')){
+        const original=directionContext(doc,index,path);saved=original;
+        if(original&&context&&dependencyHash(original)===dependencyHash(context))return {state:'current',reason:'Historical direction inferred from the embedded task, not a recorded answer timestamp.',provenance:null,current_context:context,saved_context:original,task_id:doc.task_id,dependency_sha256:dependencyHash(original),legacy_inferred:true};
+        reason='The published direction or its dependent scenario inputs differ from this historical answer.';
+      }else reason='This answer has no recorded direction version. Please answer it again.';
+    }else if(!context)reason='This answer no longer has a matching published direction or target.';
+    else if(!saved||!version||version.snapshot_sha256!==dependencyHash(version.snapshot))reason='The saved direction provenance failed its integrity check.';
+    else if(stable(entry.value)!==stable(value))reason='The answer changed without a recorded direction version. Please answer it again.';
+    else if(dependencyHash(saved)!==dependencyHash(context))reason='The direction or its dependent scenario inputs changed. Please answer again.';
+    else if(entry.state==='needs_reanswer')reason=entry.reason||'This answer was invalidated and needs to be answered again.';
+    return {state:reason?'needs_reanswer':'current',reason,provenance:entry||null,current_context:context,saved_context:saved,task_id:version?.task_id||(!own(doc,'answer_provenance_version')?doc.task_id:null),dependency_sha256:saved?dependencyHash(saved):null,...(!own(doc,'answer_provenance_version')&&!entry?{legacy_inferred:true}:{})};
+  }
+  function setAnswer(doc,index,path,value){
+    const record=doc.episodes[index];if(!record)throw new Error('Unknown episode');
+    const previous=record.answer_provenance?.[path],before=get(record,path);
+    // Validate the target path before changing any metadata.
+    set(record,path,clone(value));
+    if(directionalPath(path)){
+      if(doc.answer_provenance_version!==ANSWER_PROVENANCE_VERSION){set(record,path,before);throw new Error('Upgrade direction provenance before entering new directional answers.');}
+      try{
+        const next=makeAnswerProvenance(doc,index,path,value);
+        if(previous){next.history=clone(previous.history||[]);const old=clone(previous);delete old.history;next.history.push({...old,replaced_at:next.recorded_at});}
+        record.answer_provenance=record.answer_provenance||{};record.answer_provenance[path]=next;
+      }catch(error){set(record,path,before);throw error;}
+    }
+  }
+  function reconcileProvenance(doc){
+    const report={needs_reanswer:0,affected_episodes:[],reopened_episodes:[]};
+    for(let i=0;i<doc.episodes.length;i++){
+      const r=doc.episodes[i];let affected=false;
+      for(const path of directionalPaths(r)){
+        const status=answerStatus(doc,i,path);if(status.state!=='needs_reanswer')continue;
+        report.needs_reanswer++;affected=true;
+        const entry=r.answer_provenance?.[path];if(entry){entry.state='needs_reanswer';entry.reason=status.reason;}
+      }
+      if(affected){report.affected_episodes.push(r.episode_id);if(r.status==='complete'){r.status='in_progress';r.completed_at=null;report.reopened_episodes.push(r.episode_id);}doc.annotation_status='draft';}
+    }
+    return report;
+  }
+  function needsProvenanceUpgrade(doc){return doc?.schema===SCHEMA&&!own(doc,'answer_provenance_version');}
+  function upgradeProvenance(source,dataset,catalogue,annotator=source?.annotator){
+    const errors=validate(source,dataset,catalogue);if(errors.length)throw new Error(errors.slice(0,8).join('; '));
+    if(typeof annotator!=='string'||source.annotator.trim()!==annotator.trim())throw new Error('Only your own annotation file can be imported. Use the same annotator name.');
+    const doc=clone(source),report={upgraded:false,inferred_answers:0,warnings:[]};
+    if(!needsProvenanceUpgrade(source))return {doc,report};
+    doc.answer_provenance_version=ANSWER_PROVENANCE_VERSION;
+    for(let i=0;i<doc.episodes.length;i++){
+      const record=doc.episodes[i];record.answer_provenance={};record.direction_versions={};
+      if(!record.time_tracking)record.time_tracking={version:1,active_ms:0,first_started_at:null,last_active_at:null,tracking_started_at:null,prior_time_unavailable:true};
+      for(const path of directionalPaths(record)){const value=get(record,path);if(!filled(value))continue;record.answer_provenance[path]=makeAnswerProvenance(doc,i,path,value,'inferred_from_embedded_task',null);report.inferred_answers++;}
+    }
+    doc.updated_at=new Date().toISOString();report.upgraded=true;
+    report.warnings.push('Historical direction versions were inferred only from this file\'s embedded task definitions. The original answer times are unknown; no timestamp or human answer was invented.');
+    doc.migration_log.push({at:doc.updated_at,source_schema:source.schema,source_sha256:Core.sha256(stable(source)),source_task_id:source.task_id,target_task_id:source.task_id,kind:'direction_provenance_upgrade',inferred_answers:report.inferred_answers,warnings:clone(report.warnings)});
+    const finalErrors=validate(doc,dataset,catalogue);if(finalErrors.length)throw new Error('Direction provenance upgrade produced invalid output: '+finalErrors.slice(0,5).join('; '));
+    return {doc,report};
   }
   const LABELS={yes:'Yes',no:'No',[ND]:'Not sure',outdoor:'Outdoor / open-air',semi_outdoor:'Semi-outdoor / partly enclosed',open_air:'Open air',roofed_open_sides:'Roof with open sides',enclosed_porch:'Enclosed porch',sunroom:'Sunroom',garage:'Garage',glazed_lobby:'Glazed lobby',other:'Other',overhead:'Overhead cover',partial:'Partial cover',none:'No cover',hinged_door:'Hinged door',sliding_door:'Sliding door',folding_door:'Folding door',garage_door:'Garage door',gate:'Gate',open_passage:'Open passage (no door)',window:'Window',clear:'Clear / see-through',obscured:'Frosted, translucent or obscured',opaque:'Opaque / cannot see through',present:'Glass is present',absent:'No glass',open:'Open',closed:'Closed',ajar:'Partly open',no_closure:'No door / closure exists',reflective:'Reflective',non_reflective:'Non-reflective',untreated:'Bare / untreated',painted:'Painted',coated_sealed:'Coated or sealed',glazed:'Glazed',polished:'Polished',fabric:'Fabric covering',composite:'Composite finish',direct:'Directly visible',through_glass:'Visible through glass',reflection:'Only seen in a reflection',occluded:'Hidden behind something',out_of_frame:'Outside this frame',side:'Side obstruction',overhead_and_side:'Overhead and side obstruction',__other__:'Other / no matching reference'};
   const options=values=>values.map(value=>({value,label:LABELS[value]||String(value).replaceAll('_',' ')}));
@@ -250,16 +372,75 @@
     return out;
   }
   function progress(doc,index,dataset,catalogue){
-    const qs=questions(doc,index,dataset,catalogue),r=doc.episodes[index],missing=qs.filter(q=>!filled(get(r,q.path))),sections={};
-    for(const section of SECTIONS){const selected=qs.filter(q=>q.section===section);sections[section]={answered:selected.filter(q=>filled(get(r,q.path))).length,total:selected.length};}
+    const qs=questions(doc,index,dataset,catalogue),r=doc.episodes[index],answered=q=>filled(get(r,q.path))&&answerStatus(doc,index,q.path).state!=='needs_reanswer',missing=qs.filter(q=>!answered(q)),sections={};
+    for(const section of SECTIONS){const selected=qs.filter(q=>q.section===section);sections[section]={answered:selected.filter(answered).length,total:selected.length};}
     const collection=episodeCollectionReady(doc.tasks,index,dataset,catalogue),research=episodeReady(doc.tasks,index,dataset,catalogue);
-    return {answered:qs.length-missing.length,total:qs.length,missing,sections,setup_ready:collection.ready,collection_ready:collection.ready,research_ready:research.ready};
+    return {answered:qs.length-missing.length,total:qs.length,missing,needs_reanswer:qs.filter(q=>answerStatus(doc,index,q.path).state==='needs_reanswer').length,sections,setup_ready:collection.ready,collection_ready:collection.ready,research_ready:research.ready};
+  }
+  function provenanceErrors(doc,index){
+    const r=doc.episodes[index],errors=[],prefix='episode '+(index+1),hash=v=>typeof v==='string'&&/^[a-f0-9]{64}$/.test(v);
+    if(!own(doc,'answer_provenance_version')&&(own(r,'answer_provenance')||own(r,'direction_versions')))errors.push(prefix+': direction provenance metadata requires its document version; do not remove the version from a modern export.');
+    if(doc.answer_provenance_version===ANSWER_PROVENANCE_VERSION&&!obj(r.answer_provenance))errors.push(prefix+'.answer_provenance: expected object');
+    if(doc.answer_provenance_version===ANSWER_PROVENANCE_VERSION&&!obj(r.direction_versions))errors.push(prefix+'.direction_versions: expected object');
+    if(own(r,'direction_versions')){
+      if(!obj(r.direction_versions))errors.push(prefix+'.direction_versions: expected object');
+      else for(const [revision,version]of Object.entries(r.direction_versions)){
+        const p=prefix+'.direction_versions.'+revision;
+        if(!/^r[1-9][0-9]*$/.test(revision))errors.push(p+': invalid revision name');
+        if(!keys(version,['task_id','snapshot_sha256','snapshot'],[],p,errors))continue;
+        if(typeof version.task_id!=='string'||!version.task_id.length)errors.push(p+': original task identity missing');
+        if(!obj(version.snapshot)||!hash(version.snapshot_sha256)||version.snapshot_sha256!==dependencyHash(version.snapshot))errors.push(p+': saved direction snapshot hash mismatch');
+        else{
+          const s=version.snapshot;
+          if(!keys(s,['version','build_id','episode_id','directions','conditions','protocol','boundary_sha256','targets'],[],p+'.snapshot',errors))continue;
+          if(s.version!==1||s.build_id!==doc.build_id||s.episode_id!==r.episode_id||!Array.isArray(s.directions)||!obj(s.conditions)||!obj(s.protocol)||!hash(s.boundary_sha256)||!obj(s.targets)||Object.values(s.targets).some(v=>!hash(v)))errors.push(p+': invalid direction snapshot');
+          if(Array.isArray(s.directions)){
+            if(s.directions.length!==2||new Set(s.directions.map(d=>d?.id)).size!==2)errors.push(p+': snapshot needs both distinct direction definitions');
+            for(const d of s.directions)if(keys(d,['id','text','reference_frame','x','y'],[],p+'.snapshot.direction',errors)){
+              if(!Core.DIRECTIONS.includes(d.id)||typeof d.text!=='string'||!Core.FRAMES.includes(d.reference_frame)||[d.x,d.y].some(v=>v!==null&&(!Number.isFinite(v)||v<0||v>1)))errors.push(p+': malformed saved direction definition');
+            }
+          }
+          if(keys(s.conditions,['version','open','sealed','no_closure_policy'],[],p+'.snapshot.conditions',errors)&&Object.values(s.conditions).some(v=>typeof v!=='string'))errors.push(p+': malformed saved condition definitions');
+          if(keys(s.protocol,['version','notes'],[],p+'.snapshot.protocol',errors)&&Object.values(s.protocol).some(v=>typeof v!=='string'))errors.push(p+': malformed saved protocol definitions');
+        }
+      }
+    }
+    if(own(r,'answer_provenance')){
+      if(!obj(r.answer_provenance))errors.push(prefix+'.answer_provenance: expected object');
+      else for(const [path,entry]of Object.entries(r.answer_provenance)){
+        const p=prefix+'.answer_provenance.'+path;
+        if(!directionalPath(path)||get(r,path)===undefined)errors.push(p+': unknown directional answer path');
+        const check=(value,label,history=false)=>{
+          if(!keys(value,['revision','value','recorded_at'],['origin','state','reason',...(history?['replaced_at']:['history'])],label,errors))return;
+          if(typeof value.revision!=='string'||!own(r.direction_versions||{},value.revision))errors.push(label+'.revision: saved direction version unavailable');
+          if(directionalPath(path)?.kind==='opening_passage')selectionCheck(value.value,PASSAGE_OPTIONS,label+'.value',errors);else enumCheck(value.value,YES,label+'.value',errors);
+          if(own(value,'origin'))enumCheck(value.origin,['recorded','inferred_from_embedded_task'],'provenance.origin',errors,false);
+          if((value.origin||'recorded')==='recorded'&&!stamp(value.recorded_at))errors.push(label+'.recorded_at: recorded answers require a timestamp');
+          if(value.origin==='inferred_from_embedded_task'&&value.recorded_at!==null)errors.push(label+'.recorded_at: inferred historical answers must not invent timestamps');
+          if(own(value,'state'))enumCheck(value.state,['current','needs_reanswer'],label+'.state',errors,false);
+          if(own(value,'reason')&&typeof value.reason!=='string')errors.push(label+'.reason: expected text');
+          if(history&&own(value,'replaced_at')&&!stamp(value.replaced_at))errors.push(label+'.replaced_at: invalid timestamp');
+        };
+        check(entry,p);
+        if(entry&&own(entry,'history')){if(!Array.isArray(entry.history))errors.push(p+'.history: expected list');else entry.history.forEach((past,j)=>check(past,p+'.history.'+j,true));}
+      }
+    }
+    if(own(r,'time_tracking')){
+      const timing=r.time_tracking,p=prefix+'.time_tracking';
+      if(keys(timing,['version','active_ms','first_started_at','last_active_at','tracking_started_at','prior_time_unavailable'],[],p,errors)){
+        if(timing.version!==1||!Number.isFinite(timing.active_ms)||timing.active_ms<0||typeof timing.prior_time_unavailable!=='boolean')errors.push(p+': invalid timing metadata');
+        for(const key of ['first_started_at','last_active_at','tracking_started_at'])if(timing[key]!==null&&!stamp(timing[key]))errors.push(p+'.'+key+': invalid timestamp');
+        if(timing.active_ms>0&&['first_started_at','last_active_at','tracking_started_at'].some(k=>timing[k]===null))errors.push(p+': elapsed time requires recorded session timestamps');
+        if(stamp(timing.first_started_at)&&stamp(timing.last_active_at)&&Date.parse(timing.last_active_at)<Date.parse(timing.first_started_at))errors.push(p+': last activity precedes first start');
+      }
+    }
+    return errors;
   }
   function validateEpisodeUnsafe(doc,index,dataset,catalogue,requireComplete=true){
     const r=doc.episodes[index],ep=doc.tasks.layout.episodes[index],errors=[];
     inspect(r,errors);if(errors.length)return errors;
     if(!obj(r)||!ep)return ['Episode record or shared target is missing.'];
-    const legacy=clone(r);delete legacy.checks;errors.push(...Core.validateDraftEpisode(legacy,ep,catalogue));
+    const legacy=clone(r);delete legacy.checks;delete legacy.answer_provenance;delete legacy.direction_versions;delete legacy.time_tracking;errors.push(...Core.validateDraftEpisode(legacy,ep,catalogue),...provenanceErrors(doc,index));
     const boundaryScope=doc.boundary_questions_version===BOUNDARY_QUESTIONS_VERSION,collectionScope=doc.collection_checks_version===COLLECTION_CHECKS_VERSION;
     if(keys(r.checks,['indoor_region_correct','exterior_region_correct','surfaces',...(boundaryScope?['boundary']:[]),...(collectionScope?['opening_passage','indoor_visibility']:[])],[],'checks',errors)){
       for(const k of ['indoor_region_correct','exterior_region_correct'])enumCheck(r.checks[k],YES,'checks.'+k,errors);
@@ -275,7 +456,7 @@
     }
     if(requireComplete&&r.status!=='excluded'){
       const ready=episodeCollectionReady(doc.tasks,index,dataset,catalogue);if(!ready.ready)errors.push(doc.tasks.settings.collection_mode==='provisional'?'Researcher pending: shared targets and directions must be complete before completing this provisional collection scene.':'Researcher pending: shared targets, directions and research settings must be reviewed before completing this scene.');
-      const qs=questions(doc,index,dataset,catalogue);for(const q of qs)if(!filled(get(r,q.path)))errors.push(q.path+': '+q.title);
+      const qs=questions(doc,index,dataset,catalogue);for(const q of qs){if(!filled(get(r,q.path)))errors.push(q.path+': '+q.title);else if(answerStatus(doc,index,q.path).state==='needs_reanswer')errors.push(q.path+': needs redoing because its saved direction version no longer matches.');}
       if(qs.some(q=>{const v=get(r,q.path);return v===ND||(Array.isArray(v)&&v.includes(ND));})&&!filled(r.answers.notes))errors.push('answers.notes: add one short explanation for the Not sure answers in this scene.');
       if(boundaryScope&&['multiple','other'].includes(r.checks.boundary?.blockage)&&!filled(r.answers.notes))errors.push('answers.notes: name the multiple or other opening blockers in the scene note.');
     }
@@ -284,10 +465,11 @@
   const validateEpisode=safe(validateEpisodeUnsafe);
   function validateUnsafe(doc,dataset,catalogue,requireComplete=false){
     const errors=[];inspect(doc,errors);if(errors.length)return errors;
-    if(!keys(doc,['schema','build_id','task_id','tasks','annotator','profile','created_at','updated_at','annotation_status','benchmark_ready','episodes','ui','migration_log'],['boundary_questions_version','collection_checks_version','automatic_surface_labels','surface_label_audit'],'export',errors))return errors;
+    if(!keys(doc,['schema','build_id','task_id','tasks','annotator','profile','created_at','updated_at','annotation_status','benchmark_ready','episodes','ui','migration_log'],['boundary_questions_version','collection_checks_version','answer_provenance_version','automatic_surface_labels','surface_label_audit'],'export',errors))return errors;
     if(doc.schema!==SCHEMA)errors.push('export.schema: unsupported');
     if(own(doc,'boundary_questions_version')&&doc.boundary_questions_version!==BOUNDARY_QUESTIONS_VERSION)errors.push('export.boundary_questions_version: unsupported');
     if(own(doc,'collection_checks_version')&&doc.collection_checks_version!==COLLECTION_CHECKS_VERSION)errors.push('export.collection_checks_version: unsupported');
+    if(own(doc,'answer_provenance_version')&&doc.answer_provenance_version!==ANSWER_PROVENANCE_VERSION)errors.push('export.answer_provenance_version: unsupported');
     if(doc.build_id!==dataset.build_id||catalogue.build_id!==dataset.build_id)errors.push('export.build_id: different dataset/catalogue');
     if(typeof doc.annotator!=='string'||!doc.annotator.trim()||doc.annotator.length>200)errors.push('export.annotator: enter your own name (up to 200 characters)');
     if(!stamp(doc.created_at)||!stamp(doc.updated_at))errors.push('export: invalid timestamps');
@@ -375,6 +557,7 @@
       if(!old||!oldEp)continue;
       const row={episode_id:r.episode_id,copied_markers:[],new_or_changed_markers:[],direction_answers_preserved:false};
       r.answers.scene=clone(old.answers.scene);r.answers.notes=old.answers.notes;
+      if(old.time_tracking)r.time_tracking=clone(old.time_tracking);else r.time_tracking.prior_time_unavailable=true;
       const boundaryBoxesSame=signature(oldEp.boundary_boxes)===signature(ep.boundary_boxes);
       if(boundaryBoxesSame)r.answers.boundary=clone(old.answers.boundary);
       else report.warnings.push(r.episode_id+': boundary outline changed; boundary identity/material/state facts require new confirmation.');
@@ -382,9 +565,6 @@
       if(old.checks){r.checks.indoor_region_correct=old.checks.indoor_region_correct;r.checks.exterior_region_correct=old.checks.exterior_region_correct;}
       if(boundaryBoxesSame&&old.checks?.boundary)r.checks.boundary=clone(old.checks.boundary);
       const sourceDirectionsReady=!source.tasks||episodeCollectionReady(source.tasks,source.tasks.layout.episodes.findIndex(x=>x.episode_id===r.episode_id),dataset,catalogue).ready;
-      const directionSame=sourceDirectionsReady&&episodeCollectionReady(tasks,i,dataset,catalogue).ready&&signature(oldEp.directions)===signature(ep.directions)&&signature(oldLayout.conditions)===signature(tasks.layout.conditions)&&(!source.tasks||source.tasks.settings.protocol_notes===tasks.settings.protocol_notes);
-      if(directionSame&&boundaryBoxesSame){r.answers.pathways=clone(old.answers.pathways);if(old.checks?.opening_passage)r.checks.opening_passage=clone(old.checks.opening_passage);row.direction_answers_preserved=true;}
-      else report.warnings.push(r.episode_id+': directional answers need review because direction/condition definitions changed.');
       for(const b of ep.boundary_boxes){const oldBox=oldEp.boundary_boxes.find(x=>x.frame_id===b.frame_id);if(oldBox&&signature(oldBox)===signature(b))r.answers.boundary_visibility[b.frame_id]=clone(old.answers.boundary_visibility[b.frame_id]);}
       if(boundaryBoxesSame)r.answers.boundary_visibility=clone(old.answers.boundary_visibility);
       for(const m of ep.markers){
@@ -393,12 +573,34 @@
         const previous=candidates[0],a=old.answers.surfaces[previous.id],next=r.answers.surfaces[m.id];if(!a)continue;
         report.matched_markers++;row.copied_markers.push({from:previous.id,to:m.id});
         for(const key of Object.keys(next))if(!['reachable','visibility'].includes(key)){next[key]=clone(a[key]);if(key!=='notes'&&filled(a[key]))report.copied_fields++;}
-        if(directionSame&&boundaryBoxesSame)next.reachable=clone(a.reachable);
         const observationsSame=signature(previous.observations)===signature(m.observations);
         if(observationsSame)next.visibility=clone(a.visibility);
         if(observationsSame&&m.side==='indoor'&&old.checks?.indoor_visibility&&own(old.checks.indoor_visibility,previous.id))r.checks.indoor_visibility[m.id]=clone(old.checks.indoor_visibility[previous.id]);
         if(old.checks?.surfaces[previous.id]){r.checks.surfaces[m.id]=clone(old.checks.surfaces[previous.id]);if(!observationsSame)r.checks.surfaces[m.id].same_surface_across_frames=null;}
       }
+      // Directional answers are never silently discarded or rebound to the new
+      // task. Keep their original values and provenance, then compare each
+      // direction separately. Removed targets are archived in the migration log.
+      const sourceContext={...source,episodes:[clone(old)],task_id:source.task_id||source.layout_id||Core.layoutId(oldLayout),tasks:source.tasks||{build_id:source.build_id,layout:oldLayout,settings:{version:'legacy_unspecified',protocol_notes:''}}};
+      r.direction_versions=clone(old.direction_versions||{});
+      row.direction_answers_preserved=true;row.needs_reanswer=0;row.direction_answers_archive=[];
+      const currentPaths=new Set(directionalPaths(r));
+      for(const oldPath of directionalPaths(old)){
+        const value=get(old,oldPath);if(!filled(value))continue;
+        let path=oldPath;
+        const parsed=directionalPath(oldPath),match=parsed.marker_id?row.copied_markers.find(m=>m.from===parsed.marker_id):null;
+        if(match)path=oldPath.replace('answers.surfaces.'+match.from+'.','answers.surfaces.'+match.to+'.');
+        const previous=old.answer_provenance?.[oldPath];
+        let provenance=previous?clone(previous):null;
+        // Only pre-versioned documents may infer missing stamps. Missing stamps
+        // in a modern export are not legitimized by migration.
+        if(!provenance&&!own(source,'answer_provenance_version')){provenance=makeAnswerProvenance(sourceContext,0,oldPath,value,'inferred_from_embedded_task',null);r.direction_versions=clone(sourceContext.episodes[0].direction_versions);}
+        if(!currentPaths.has(path)){row.direction_answers_archive.push({path:oldPath,value:clone(value),provenance});continue;}
+        set(r,path,clone(value));
+        if(provenance){if(!sourceDirectionsReady){provenance.state='needs_reanswer';provenance.reason='The source task did not have usable directions at collection time.';}r.answer_provenance[path]=provenance;}
+        if(answerStatus(doc,i,path).state==='needs_reanswer'){row.needs_reanswer++;row.direction_answers_preserved=false;}
+      }
+      if(row.needs_reanswer)report.warnings.push(r.episode_id+': '+row.needs_reanswer+' directional answers need redoing. Previous values and their original direction versions are retained for audit.');
       if(r.status!=='excluded'){r.status='in_progress';r.completed_at=null;r.exclusion_reason='';}
       if(old.status==='excluded'&&ep.disposition!=='exclude'){r.status='excluded';r.exclusion_reason=old.exclusion_reason;r.completed_at=null;}
       if(source.review?.[ep.episode_id]?.skipped)report.warnings.push(ep.episode_id+': previous skip retained only as provenance; it is not an exclusion.');
@@ -408,8 +610,9 @@
     const flatten=v=>{let out=[];for(const [k,x]of Object.entries(v||{})){if(k==='notes')continue;if(obj(x))out=out.concat(flatten(x));else if(filled(x))out.push(x);}return out;};
     const oldN=source.episodes.reduce((n,r)=>n+flatten(r.answers).length+flatten(r.checks).length,0),newN=doc.episodes.reduce((n,r)=>n+flatten(r.answers).length+flatten(r.checks).length,0);
     report.copied_fields=newN;report.cleared_fields=Math.max(0,oldN-newN);
-    report.warnings.push('Previous completion marks were cleared. Review new targets and unanswered questions before completing again.');
-    doc.migration_log=[...(source.migration_log||[]),{at:new Date().toISOString(),source_schema:source.schema,source_sha256:Core.sha256(stable(source)),source_task_id:source.task_id||source.layout_id||'',target_task_id:tasks.task_id,copied_fields:report.copied_fields,cleared_fields:report.cleared_fields,warnings:clone(report.warnings)}];
+    Object.assign(report,reconcileProvenance(doc));
+    report.warnings.push('Previous completion marks were cleared. Review new targets, unanswered questions and answers marked needs redoing before completing again.');
+    doc.migration_log=[...(source.migration_log||[]),{at:new Date().toISOString(),source_schema:source.schema,source_sha256:Core.sha256(stable(source)),source_task_id:source.task_id||source.layout_id||'',target_task_id:tasks.task_id,copied_fields:report.copied_fields,cleared_fields:report.cleared_fields,needs_reanswer:report.needs_reanswer,direction_answers_archive:report.episodes.filter(row=>row.direction_answers_archive.length).map(row=>({episode_id:row.episode_id,answers:clone(row.direction_answers_archive)})),warnings:clone(report.warnings)}];
     const finalErrors=validate(doc,dataset,catalogue);if(finalErrors.length)throw new Error('Migration produced invalid output: '+finalErrors.slice(0,5).join('; '));
     return {doc,report};
   }
@@ -517,6 +720,6 @@
     const agreement={};for(const [key,stat]of Object.entries(statistics)){const p=stat.pairs,known=p.filter(([a,b])=>a!==ND&&b!==ND),agreed=p.filter(([a,b])=>a===b).length;agreement[key]={cohen_kappa:kappa(p),cohen_kappa_excluding_nd:kappa(known),n_compared:p.length,n_agreed:agreed,n_disagreement:p.length-agreed,n_unanswered:stat.n_unanswered,n_excluded:stat.n_excluded,n_not_applicable:stat.n_not_applicable,n_known_compared:known.length,n_with_nd:p.length-known.length,n_agreed_nd:p.filter(([a,b])=>a===ND&&b===ND).length,observed_agreement:p.length?agreed/p.length:null,rater_a_counts:counts(p.map(x=>x[0])),rater_b_counts:counts(p.map(x=>x[1]))};}
     return {schema:'blockmind_l2_consensus_v1',source_schema:SCHEMA,boundary_questions_version:first.boundary_questions_version||0,collection_checks_version:first.collection_checks_version||0,build_id:first.build_id,layout_id:Core.layoutId(first.tasks.layout),task_id:first.task_id,profile:first.profile,created_at:new Date().toISOString(),annotators:[first.annotator,second.annotator],policy:'Exact independent agreement only; no adjudication. Disagreements drop affected items, not unrelated agreed items. Passage votes are consistency checks, never benchmark answers. ND is uncertainty, not no. Optional L3/audit fields are not required L2 votes.',benchmark_ready:false,completeness:{episodes_total:episodes.length,episodes_excluded:episodes.filter(e=>e.excluded).length,episodes_all_fields_agreed_known:episodes.filter(e=>e.all_fields_agreed_known).length,episodes_with_disagreements:episodes.filter(e=>e.disagreements.length).length},agreement_by_attribute:agreement,episodes};
   }
-  const api={SCHEMA,TASK_SCHEMA,BOUNDARY_QUESTIONS_VERSION,COLLECTION_CHECKS_VERSION,WIDTH_CLASS,BOUNDARY_BLOCKAGE,PASSAGE_OPTIONS,ND,SECTIONS,OBSTRUCTION,createTasks,taskId,validateTasks,episodeReady,episodeCollectionReady,create,validate,validateEpisode,questions,progress,needsBoundaryUpgrade,upgradeBoundary,needsCollectionUpgrade,upgradeCollection,canonicalSelections,migrate,consensus,get,set,hierarchyHash};
+  const api={SCHEMA,TASK_SCHEMA,BOUNDARY_QUESTIONS_VERSION,COLLECTION_CHECKS_VERSION,ANSWER_PROVENANCE_VERSION,WIDTH_CLASS,BOUNDARY_BLOCKAGE,PASSAGE_OPTIONS,ND,SECTIONS,OBSTRUCTION,createTasks,taskId,validateTasks,episodeReady,episodeCollectionReady,create,validate,validateEpisode,questions,progress,needsBoundaryUpgrade,upgradeBoundary,needsCollectionUpgrade,upgradeCollection,needsProvenanceUpgrade,upgradeProvenance,setAnswer,answerStatus,reconcileProvenance,directionalPaths,directionContext,canonicalSelections,migrate,consensus,get,set,hierarchyHash};
   root.L2Full=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

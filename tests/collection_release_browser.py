@@ -126,7 +126,7 @@ def run():
             # including the formerly incorrect dataset argument on note edits.
             complete = page.evaluate('''async()=>{
               const d=L2Collection.getSnapshot().doc,D=L2Collection.getDataset(),K=await fetch('catalogue.json').then(r=>r.json());
-              for(const q of L2Full.questions(d,0,D,K))L2Full.set(d.episodes[0],q.path,q.kind==='multiselect'?[L2Core.ND]:L2Core.ND);
+              for(const q of L2Full.questions(d,0,D,K))L2Full.setAnswer(d,0,q.path,q.kind==='multiselect'?[L2Core.ND]:L2Core.ND);
               d.episodes[0].answers.notes='';d.episodes[0].status='in_progress';
               delete d.automatic_surface_labels;delete d.surface_label_audit;
               return d;

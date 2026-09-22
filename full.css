@@ -8,3 +8,4 @@
 .boundary-measurement>strong{font-size:14px}.boundary-measurement p{font-size:12px;margin:6px 0 0;line-height:1.5}
 .boundary-measurement.unavailable{background:#fff9ea;border-color:#ead8ac}.boundary-form select{max-width:100%}
 @media(max-width:780px){.boundary-form .compact-grid{grid-template-columns:1fr}}
+.needs-redo,.compact-field .needs-redo{display:block;color:#8b5415;font-weight:650;font-size:10px!important;line-height:1.4}.redo-notice{font-size:12px;background:#fff6e7;border-left:3px solid #d09839;color:#704716;padding:11px 13px;margin:12px 0 18px;border-radius:6px}.redo-notice strong{display:block;margin-bottom:4px}#sceneTiming{white-space:nowrap}

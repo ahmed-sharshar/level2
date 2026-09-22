@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Complete BLOCKMIND scene annotation with one compact form per surface and four sun/rain scenarios.">
   <title>BLOCKMIND · Scene annotation</title>
-  <link rel="stylesheet" href="full.css?v=l2-collection-20260921">
+  <link rel="stylesheet" href="full.css?v=l2-directions-20260922">
 </head>
 <body>
   <header class="site-header"><a href="./" class="brand"><span class="brand-icon">B</span>BLOCKMIND</a><span class="header-caption">Scene annotation</span><a class="subtle-link" href="setup.html">Researcher setup</a></header>
   <main>
     <section id="loading" class="welcome-card" role="status">Loading scenes…</section>
     <section id="fatal" class="notice danger hidden" role="alert"></section>
+    <div id="taskUpdateBanner" class="notice warning hidden" role="alert"><strong>The shared task package has changed.</strong><p>Your answers are preserved with their original directions. Editing is paused. Reload, then review the migration: changed Sun &amp; rain and Through-the-opening answers will be marked “Needs redoing”.</p><button id="reloadTasks">Save and reload updated tasks</button></div>
     <section id="welcome" class="welcome-card hidden">
       <p class="eyebrow">Fewer screens, the same complete annotation</p><h1>Look at the scene.<br>Tell us what you see.</h1>
       <p class="intro">Watch a short walk, complete one form per red point, then check sunlight and rain in four scenarios. Related answers stay together, and your progress is saved as you go.</p>
@@ -36,13 +37,13 @@
         </section>
         <section class="question-card" aria-label="Current question"><div id="questionPanel"></div></section>
       </div>
-      <footer class="workspace-footer"><span>“Not sure” records uncertainty. “Skip” leaves a question unanswered.</span><span id="collectionProgress"></span></footer>
+      <footer class="workspace-footer"><span>“Not sure” records uncertainty. “Skip” leaves a question unanswered.</span><span id="sceneTiming"></span><span id="collectionProgress"></span></footer>
     </section>
   </main>
   <input id="importFile" class="hidden" type="file" accept="application/json,.json">
   <dialog id="messageDialog"><h2 id="messageTitle"></h2><p id="messageText"></p><button id="closeMessage" class="primary">Got it</button></dialog>
   <dialog id="migrationDialog"><h2>Review the restored answers</h2><p>Only answers whose targets and conditions still match can be retained. Nothing changes until you confirm.</p><pre id="migrationReport"></pre><div class="actions"><button id="cancelMigration">Cancel</button><button id="confirmMigration" class="primary">Use these answers</button></div></dialog>
   <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
-  <script src="core.js?v=l2-collection-20260921"></script><script src="guided-core.js?v=l2-collection-20260921"></script><script src="redpoint-core.js?v=l2-collection-20260921"></script><script src="instance-labels.js?v=l2-collection-20260921"></script><script src="full-core.js?v=l2-collection-20260921"></script><script src="compact-core.js?v=l2-collection-20260921"></script><script src="full.js?v=l2-collection-20260921"></script>
+  <script src="core.js?v=l2-directions-20260922"></script><script src="guided-core.js?v=l2-directions-20260922"></script><script src="redpoint-core.js?v=l2-directions-20260922"></script><script src="instance-labels.js?v=l2-directions-20260922"></script><script src="full-core.js?v=l2-directions-20260922"></script><script src="compact-core.js?v=l2-directions-20260922"></script><script src="full.js?v=l2-directions-20260922"></script>
 </body>
 </html>

@@ -73,7 +73,7 @@ test('question metadata remains identical to full core',()=>{
 test('unchecked sun/rain fields remain missing, not No',()=>{
   const d=clone(doc),p=K.panels(d,0,dataset,catalogue,'exposure')[0],r=d.episodes[0];
   assert.strictEqual(K.panelProgress(p,r).answered,0);
-  F.set(r,p.questions[0].path,'yes');const partial=K.panelProgress(p,r);
+  F.setAnswer(d,0,p.questions[0].path,'yes');const partial=K.panelProgress(p,r);
   assert.strictEqual(partial.answered,1);assert.strictEqual(partial.missing.length,15);assert(!partial.complete);
   assert.strictEqual(F.get(r,p.questions[1].path),null);
 });
@@ -92,11 +92,11 @@ test('dynamic substrate questions remain on same form and affect completeness',(
 });
 test('pending research directions remain blocked even with historical answers',()=>{
   const t=F.createTasks(dataset,catalogue),d=F.create(dataset,catalogue,t,'Synthetic rater');
-  const p=K.panels(d,0,dataset,catalogue,'exposure')[0];for(const q of p.questions)F.set(d.episodes[0],q.path,'no');
+  const p=K.panels(d,0,dataset,catalogue,'exposure')[0];for(const q of p.questions)F.setAnswer(d,0,q.path,'no');
   assert(p.blocked&&p.block_reason);assert(!K.panelProgress(p,d.episodes[0]).complete);
 });
 test('group progress exposes honest panel and raw field denominators',()=>{
-  const d=clone(doc),p=K.panels(d,0,dataset,catalogue,'exposure')[0];for(const q of p.questions)F.set(d.episodes[0],q.path,'no');
+  const d=clone(doc),p=K.panels(d,0,dataset,catalogue,'exposure')[0];for(const q of p.questions)F.setAnswer(d,0,q.path,'no');
   const progress=K.progress(d,0,dataset,catalogue);
   assert.deepStrictEqual(progress.sections.exposure,{answered:1,total:4,fields_answered:16,fields_total:64});
   assert.strictEqual(progress.fields_total,F.progress(d,0,dataset,catalogue).total);
@@ -159,14 +159,14 @@ test('optional Level 3 visibility remains covered, never silently removed',()=>{
   assert.strictEqual(K.panels(d,0,dataset,catalogue,'visibility').length,12*3+8*12+4);
 });
 test('completed current-scope v2 exports need no presentation migration',()=>{
-  const d=clone(doc);for(const q of F.questions(d,0,dataset,catalogue))F.set(d.episodes[0],q.path,q.kind==='multiselect'?[C.ND]:C.ND);
+  const d=clone(doc);for(const q of F.questions(d,0,dataset,catalogue))F.setAnswer(d,0,q.path,q.kind==='multiselect'?[C.ND]:C.ND);
   d.episodes[0].answers.notes='Synthetic test uncertainty only.';d.episodes[0].status='complete';d.episodes[0].completed_at=new Date().toISOString();d.annotation_status='complete';
   assert.deepStrictEqual(F.validate(d,dataset,catalogue,true),[]);const before=JSON.stringify(d);
   assert.strictEqual(K.progress(d,0,dataset,catalogue).answered,K.progress(d,0,dataset,catalogue).total);
   assert.strictEqual(JSON.stringify(d),before);assert.deepStrictEqual(F.validate(d,dataset,catalogue,true),[]);
 });
 test('grouped presentation leaves consensus and agreement reports exactly unchanged',()=>{
-  const first=clone(doc);for(const q of F.questions(first,0,dataset,catalogue))F.set(first.episodes[0],q.path,q.kind==='multiselect'?[C.ND]:C.ND);
+  const first=clone(doc);for(const q of F.questions(first,0,dataset,catalogue))F.setAnswer(first,0,q.path,q.kind==='multiselect'?[C.ND]:C.ND);
   first.episodes[0].answers.notes='Synthetic test uncertainty only.';first.episodes[0].status='complete';first.episodes[0].completed_at=new Date().toISOString();first.annotation_status='complete';
   const second=clone(first);second.annotator='Synthetic second rater';second.episodes[0].answers.scene.crossing_valid='yes';
   const before=F.consensus(first,second,dataset,catalogue);delete before.created_at;

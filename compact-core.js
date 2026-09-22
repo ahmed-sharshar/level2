@@ -49,8 +49,9 @@
     return Array.from(grouped.values());
   }
 
-  function panelProgress(panel, record) {
-    const missing = panel.questions.filter(q => !filled(F.get(record, q.path)));
+  function panelProgress(panel, record, doc, index) {
+    const missing = panel.questions.filter(q => !filled(F.get(record, q.path)) ||
+      (doc && F.answerStatus(doc,index,q.path).state==='needs_reanswer'));
     return {
       answered:panel.questions.length - missing.length,
       total:panel.questions.length,
@@ -66,7 +67,7 @@
     const missing = [];
     let answered = 0, fieldsAnswered = 0, fieldsTotal = 0;
     for (const panel of grouped) {
-      const p = panelProgress(panel, record), section = sections[panel.section];
+      const p = panelProgress(panel, record, doc, index), section = sections[panel.section];
       section.total++;
       section.fields_answered += p.answered;
       section.fields_total += p.total;

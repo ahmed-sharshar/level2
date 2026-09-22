@@ -282,9 +282,13 @@ def run(entry='index.html'):
             # New sets are never reverse-engineered from those old responses.
             legacy = copy.deepcopy(doc)
             legacy.pop('collection_checks_version')
+            legacy.pop('answer_provenance_version', None)
             for record in legacy['episodes']:
                 record['checks'].pop('opening_passage')
                 record['checks'].pop('indoor_visibility')
+                record.pop('answer_provenance', None)
+                record.pop('direction_versions', None)
+                record.pop('time_tracking', None)
             legacy.pop('automatic_surface_labels', None)
             legacy.pop('surface_label_audit', None)
             legacy = page.evaluate('''async d=>{
@@ -319,12 +323,12 @@ def run(entry='index.html'):
             agreement = page.evaluate('''async()=>{
               const data=L2Collection.getDataset(),cat=await fetch("catalogue.json").then(r=>r.json()),s=L2Collection.getSnapshot();
               const a=L2Full.create(data,cat,s.doc.tasks,"SYNTHETIC CONSENSUS A");
-              for(const q of L2Full.questions(a,0,data,cat))L2Full.set(a.episodes[0],q.path,q.kind==="multiselect"?[L2Core.ND]:L2Core.ND);
+              for(const q of L2Full.questions(a,0,data,cat))L2Full.setAnswer(a,0,q.path,q.kind==="multiselect"?[L2Core.ND]:L2Core.ND);
               a.episodes[0].answers.notes="SYNTHETIC consensus fixture, not real votes";
               a.episodes[0].status="complete";a.episodes[0].completed_at=new Date().toISOString();a.annotation_status="complete";
               const marker=a.tasks.layout.episodes[0].markers.find(m=>m.side==="indoor").id;
               a.episodes[0].checks.indoor_visibility[marker]=["f07"];
-              a.episodes[0].checks.opening_passage.d1.open=["sunlight","visible_light"];
+              L2Full.setAnswer(a,0,"checks.opening_passage.d1.open",["sunlight","visible_light"]);
               const b=L2Core.clone(a);b.annotator="SYNTHETIC CONSENSUS B";
               b.episodes[0].checks.indoor_visibility[marker]=["f08"];
               const c=L2Full.consensus(a,b,data,cat).episodes[0];

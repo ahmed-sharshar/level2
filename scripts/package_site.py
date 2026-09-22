@@ -29,8 +29,10 @@ ROOT_FILES = {
     "SUN_RAIN.md",
     "COLLECTION_CHECKS.md",
     "COLLECTION_RELEASE.md", "data/provisional_collection_preparation.json",
+    "DIRECTION_VERSIONS.md",
 }
 VALIDATION_FILES = {
+    "direction_version_release_summary.json",
     "collection_release_summary.json",
     "browser_test_report.json", "scientific_review.md", "bundle_check.json",
     "welcome-desktop.png", "coordinator-desktop.png", "annotator-surfaces-desktop.png",

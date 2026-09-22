@@ -12,7 +12,7 @@ tasks.layout.layout_id=C.layoutId(tasks.layout);tasks.task_id=F.taskId(tasks);
 let errors=F.validateTasks(tasks,D,K,true);if(errors.length)throw Error(JSON.stringify(errors));
 const blank=F.create(D,K,tasks,'full-browser-test');const complete=C.clone(blank);
 const set=(o,p,v)=>{const a=p.split('.');for(const k of a.slice(0,-1))o=o[k];o[a.at(-1)]=v;};
-for(const q of F.questions(complete,0,D,K))set(complete.episodes[0],q.path,q.kind==='multiselect'?[C.ND]:C.ND);
+for(const q of F.questions(complete,0,D,K))F.setAnswer(complete,0,q.path,q.kind==='multiselect'?[C.ND]:C.ND);
 complete.episodes[0].answers.notes='SYNTHETIC AUTOMATED TEST ONLY: explicit uncertainty, not real human annotation.';
 complete.episodes[0].status='complete';complete.episodes[0].completed_at=new Date().toISOString();complete.annotation_status='complete';
 errors=F.validate(complete,D,K,true);if(errors.length)throw Error(JSON.stringify(errors));

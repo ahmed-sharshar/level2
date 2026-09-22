@@ -56,6 +56,13 @@ consistency checks—not GT. **Visibility** keeps the door checks and adds one
 images 7–12 checklist per indoor point. Old answers remain preserved. See
 [COLLECTION_CHECKS.md](COLLECTION_CHECKS.md) for fields, upgrades and rule status.
 
+**Direction changes and time:** every Sun & rain / Through-the-opening answer
+keeps its original direction and scenario version. Affected answers are marked
+**Needs redoing** after an update, with previous values retained for audit.
+Exports also record each annotator's active time per scene (hidden/idle time is
+excluded; earlier untracked time is unknown). See
+[DIRECTION_VERSIONS.md](DIRECTION_VERSIONS.md).
+
 Annotate independently using **different annotator IDs**. Separate browser
 profiles are not required: local drafts are namespaced by ID. IDs are not
 passwords; do not enter another annotator's ID or exchange raw answers. There

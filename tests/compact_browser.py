@@ -309,7 +309,14 @@ def run(entry='index.html'):
                 before = snap(page)['doc']
                 page.locator('#importFile').set_input_files(path)
                 page.locator('#messageDialog').wait_for(state='visible')
-                check('Unsafe ' + label + ' import cannot replace current answers', snap(page)['doc'] == before)
+                after = snap(page)['doc']
+                # A visible focused page accrues time while the dialog opens;
+                # every field other than clock metadata must remain identical.
+                for candidate in (before, after):
+                    candidate.pop('updated_at', None)
+                    for episode in candidate['episodes']:
+                        episode.pop('time_tracking', None)
+                check('Unsafe ' + label + ' import cannot replace current answers', after == before)
                 page.locator('#closeMessage').click()
 
             page.set_viewport_size({'width': 1440, 'height': 1050})
